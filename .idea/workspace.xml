@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1f6327a-b22d-4fc2-8152-6a4ebaf4a3f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2871a16e-21bb-438a-a02e-ba1f4c664c63.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2871a16e-21bb-438a-a02e-ba1f4c664c63.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/studio/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/studio/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +131,11 @@
       <workItem from="1750003246292" duration="2391000" />
       <workItem from="1750005668564" duration="11614000" />
       <workItem from="1750018052993" duration="192000" />
-      <workItem from="1750025349199" duration="6116000" />
+      <workItem from="1750025349199" duration="6435000" />
+      <workItem from="1750032300453" duration="111000" />
+      <workItem from="1750086831125" duration="285000" />
+      <workItem from="1750087489897" duration="501000" />
+      <workItem from="1750089064514" duration="742000" />
     </task>
     <servers />
   </component>
