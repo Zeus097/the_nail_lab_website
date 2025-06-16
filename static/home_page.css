@@ -81,6 +81,21 @@ nav h1 {
     font-size: 3rem;
 }
 
+nav a:hover {
+    font-weight: bolder;
+    border-bottom: solid black 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    padding: 3px 5px;
+}
+
+nav a:active {
+    color: white;
+    transform: scale(0.95);
+    background-color: black;
+    border-radius: 10px;
+}
+
 header .second-row a {
     margin-right: 9px;
 }
