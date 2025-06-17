@@ -1,0 +1,43 @@
+nav {
+    position: fixed;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    width: 900px;
+    height: 70px;
+    border-radius: 100px;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    padding: 0px 80px;
+    top: 60px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+nav h1 {
+    color: #000000;
+    font-size: 3rem;
+}
+
+nav a:hover {
+    font-weight: bolder;
+    border-bottom: solid black 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    padding: 3px 5px;
+}
+
+nav a:active {
+    color: white;
+    transform: scale(0.95);
+    background-color: black;
+    border-radius: 10px;
+}
+
+.blue-i {
+    color: #d9cafe;
+}
