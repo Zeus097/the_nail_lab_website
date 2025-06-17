@@ -7,66 +7,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iCream</title>
+    <title>Diamond beauty studio</title>
     {% block styles %}
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     {% endblock %}
     <script src="https://kit.fontawesome.com/305e1f6e92.js" crossorigin="anonymous"></script>
 </head>
+
+<!-- 
+    TODO: Log in/out & Register logic #}
+-->
  
 <body>
+
     <header>
-        
-        {#        TODO: Log in/out & Register logic        #}
-        
-        <a href="#" class="logout">Отписване</a>
+        {% include 'common/nav.html' %}
     </header>
+
     <main>
         
-        {% include 'common/nav.html' %}
-        
-        <section class="first-section">
-            <div class="first-container">
+        {% block content %}
+            
+            <section class="logo-section">
+                <div>{#  The purpose of this container is to position the LOGO #}</div>
+            </section>
+            
+            <section class="info-section">
                 
-            </div>
-        </section>
-        <section class="second-section">
-            <div class="second-container">
-                <div class="white-row-line"></div>
-                <h1>Lorem Ipsum</h1>
-                <div class="outer-row-box">
-                    <div class="inner-column-box">
-                        <h2>За нас</h2>
-                        <h3>Lorem Ipsum</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                <h1>Lorem Ipsum</h1>    
+                <div class="row-line"></div>
+                
+                <div class="second-container">
+                    
+                    <div class="left-div">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        </p>
                     </div>
-                    <img src="#" alt="Studio">
-                    <div class="inner-column-box">
-                        <h2>Характеристики за нас</h2>
-                        <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                            ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum
-                            est dolor</p>
-                        <div class="icon-column">
-                            <div class="icon-row">
-                                <i class="fa fa-check" aria-hidden="true"></i>
-                                <h3>Eos kasd eos dolor</h3>
-                            </div>
-                            <div class="icon-row">
-                                <i class="fa fa-check" aria-hidden="true"></i>
-                                <h3>Eos kasd eos dolor</h3>
-                            </div>
-                            <div class="icon-row">
-                                <i class="fa fa-check" aria-hidden="true"></i>
-                                <h3>Eos kasd eos dolor</h3>
-                            </div>
-                        </div>
+                    
+                    <div class="right-div">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        </p>
                     </div>
+                    
                 </div>
-            </div>
-        </section>
+                
+            </section>
+            
+            <section class="make-up-section"></section>
+            
+            <section class="hir-section"></section>
+            
+            <section class="nails-section"></section>
+            
+        {% endblock %}
+    
     </main>
+
 </body>
 
-    {% include 'common/footer.html' %}
+{% include 'common/footer.html' %}
 
 </html>
