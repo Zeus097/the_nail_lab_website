@@ -1,0 +1,96 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond beauty studio</title>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% endblock %}
+    <script src="https://kit.fontawesome.com/305e1f6e92.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- 
+    TODO: Log in/out & Register logic #}
+-->
+ 
+<body>
+
+    <header>
+        {% include 'common/nav.html' %}
+    </header>
+
+    <main>
+        
+        {% block content %}
+            
+            <section class="logo-section">
+                <div>{#  The purpose of this container is to position the LOGO #}</div>
+            </section>
+            
+            <section class="info-section">
+                
+                <h1>Lorem Ipsum</h1>    
+                <div class="row-line"></div>
+                
+                <div class="second-container">
+                    
+                    <div class="left-div">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        </p>
+                    </div>
+                    
+                    <div class="right-div">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </section>
+            
+            <section class="make-up-section">
+                <a href="">
+                    <div>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+            </section>
+            
+            <section class="hair-section">
+                <a href="">
+                    <div>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+            </section>
+            
+            <section class="nails-section">
+                <a href="">
+                    <div>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </a>
+            </section>
+            
+        {% endblock %}
+    
+    </main>
+
+</body>
+
+{% include 'common/footer.html' %}
+
+</html>
