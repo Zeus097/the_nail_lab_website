@@ -28,7 +28,7 @@ footer {
     display: inline-block;
     transform: rotate(-8deg);
     margin-right: -5px;
-    color: grey;
+    color: #cc103e;
 }
 
 .footer-column p {
