@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 
 PROJECT_APPS = [
     'studio',
-    'staff',
+    'employee',
     'voucher',
     'photos',
     'accounts',

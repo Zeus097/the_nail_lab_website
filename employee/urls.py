@@ -1,5 +1,5 @@
 from django.urls import path, include
-from staff import views
+from employee import views
 
 # urlpatterns = [
 #     path('staff_photos/', include([

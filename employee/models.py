@@ -1,14 +1,9 @@
 from django.db import models
-from staff.validators import ImageSizeValidator
-from staff.choices import JobTypeChoice
+from employee.validators import ImageSizeValidator
 
 
 class EmployeeBio(models.Model):
     name = models.CharField(max_length=100)
-    job_type = models.CharField(
-        max_length=50,
-        choices=JobTypeChoice.choices
-    )
     biography = models.CharField(max_length=500)
     telephone_number = models.CharField(max_length=20)
     services = models.ManyToManyField('services.BaseService', related_name='employees')
