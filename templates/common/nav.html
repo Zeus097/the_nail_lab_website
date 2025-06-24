@@ -1,60 +1,67 @@
-<nav>
-    <h1>Th<span class="header-letter">e</span>&nbsp;&nbsp;Nai<span class="header-letter">L</span>&nbsp;&nbsp;Lab</h1>
-
-    <div class="nav-left">
+{% if user.is_authenticated %}
+    <nav>
+        <h1>Th<span class="header-letter">e</span>&nbsp;&nbsp;Nai<span class="header-letter">L</span>&nbsp;&nbsp;Lab</h1>
         
-        <a href="{% url 'homepage' %}" title="Начало">
-            <div class="nav-item">
-                <i class="fa-solid fa-house"></i>
-                <p>Начало</p>
+            <div class="nav-left">
+                
+                <a href="{% url 'homepage' %}" title="Начало">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-house"></i>
+                        <p>Начало</p>
+                    </div>
+                </a>
+                
+                <a href="#" title="Услуги">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-store"></i>
+                        <p>Услуги</p>
+                    </div>
+                </a>
+                
+                <a href="#" title="Ваучери">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-money-check-dollar"></i>
+                        <p>Ваучери</p>
+                    </div>
+                </a>
+                
+                <a href="#" title="Галерия">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-images"></i>
+                        <p>Галерия</p>
+                    </div>
+                </a>
+                
+                <a href="#" title="Контакти">
+                    <div class="nav-item">
+                        <i class="fa-regular fa-address-book"></i>
+                        <p>Контакти</p>
+                    </div>
+                </a>
+                
+                </div>
+            
+            <div class="nav-right">
+                
+                  <a href="#" title="Профил">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Профил</p>
+                    </div>
+                </a>
+                
+                <a href="#" title="Търсачка">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p>Търсачка</p>
+                    </div>
+                </a>
+                
             </div>
-        </a>
         
-        <a href="#" title="Услуги">
-            <div class="nav-item">
-                <i class="fa-solid fa-store"></i>
-                <p>Услуги</p>
-            </div>
-        </a>
-        
-        <a href="#" title="Ваучери">
-            <div class="nav-item">
-                <i class="fa-solid fa-money-check-dollar"></i>
-                <p>Ваучери</p>
-            </div>
-        </a>
-        
-        <a href="#" title="Галерия">
-            <div class="nav-item">
-                <i class="fa-solid fa-images"></i>
-                <p>Галерия</p>
-            </div>
-        </a>
-        
-        <a href="#" title="Контакти">
-            <div class="nav-item">
-                <i class="fa-regular fa-address-book"></i>
-                <p>Контакти</p>
-            </div>
-        </a>
-        
-        </div>
+    </nav>
+{% else %}    
     
-    <div class="nav-right">
-        
-          <a href="#" title="Профил">
-            <div class="nav-item">
-                <i class="fa-solid fa-user"></i>
-                <p>Профил</p>
-            </div>
-        </a>
-        
-        <a href="#" title="Търсачка">
-            <div class="nav-item">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <p>Търсачка</p>
-            </div>
-        </a>
-        
-    </div>
-</nav>
+        <h1>Th<span class="header-letter">e</span>&nbsp;&nbsp;Nai<span class="header-letter">L</span>&nbsp;&nbsp;Lab</h1>
+    
+{% endif %}
