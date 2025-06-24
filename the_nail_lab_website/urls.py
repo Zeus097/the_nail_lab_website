@@ -23,10 +23,11 @@ from the_nail_lab_website import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('studio.urls')),
+    path('accounts/', include('accounts.urls')),
     # path('staff_photos/', include('staff_photos.urls')),
     # path('voucher/', include('voucher.urls')),
     # path('photos/', include('photos.urls')),
-    # path('accounts/', include('accounts.urls')),
+    # path('user/', include('user.urls')),
     # path('services/', include('services.urls')),
 ]
 

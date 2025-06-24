@@ -1,8 +1,8 @@
 from django.urls import path, include
-from accounts import views
+from user import views
 
 # urlpatterns = [
-#     path('accounts/', include([
+#     path('user/', include([
 #             path(...)
 #         ]))
 # ]

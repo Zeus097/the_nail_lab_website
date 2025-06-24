@@ -34,12 +34,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 PROJECT_APPS = [
+    'accounts',
     'studio',
     'employee',
+    'services',
+    'user',
     'voucher',
     'photos',
-    'accounts',
-    'services'
 ]
 
 INSTALLED_APPS = [
@@ -148,3 +149,5 @@ MEDIA_ROOT = BASE_DIR / 'media_files'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.BaseUser'

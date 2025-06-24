@@ -1,10 +1,10 @@
-from django.contrib.auth.models import User
 from django.db import models
 from employee.validators import ImageSizeValidator
+from the_nail_lab_website import settings
 
 
 class EmployeeBio(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     biography = models.CharField(max_length=500)
     telephone_number = models.CharField(max_length=20)
