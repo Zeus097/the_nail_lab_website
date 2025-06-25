@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% block content %}
+    
+<section class="login-section">
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Вход</button>
+        <p class="register-prompt">
+            Нямаш акаунт? 
+            <a href="{% url 'register' %}">
+                Регистрирай се
+            </a>
+        </p>
+    </form>
+</section>
+
+{% endblock %}
 
 
 
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button>Login</button>
-    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
-</form>
 
-
-
-
-
-
-
-</body>
-</html>

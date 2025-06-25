@@ -6,4 +6,11 @@ from accounts import views
 urlpatterns = [
     path('registration/', views.UserRegistrationView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
+
+    '''
+    
+    TODO: Add logout logic and make the button inside the profile menu
+    
+    '''
+
 ]

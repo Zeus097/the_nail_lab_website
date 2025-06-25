@@ -5,5 +5,20 @@ from django.contrib.auth.forms import UserCreationForm
 class BaseUserCreationForm(UserCreationForm):
     class Meta:
         model = get_user_model()
-        fields = ('username', 'email')
+        fields = ('username', 'email', 'password1', 'password2')
+        labels = {
+            'username': 'Потребителско име',
+            'email': 'Имейл',
+            'password1': 'Парола',
+            'password2': 'Потвърди парола',
+        }
+
+        help_texts = {
+            'username': 'Позволени са букви, цифри и @/./+/-/_ само.',
+            'email': 'Въведи валиден имейл адрес.',
+        }
+
+
+
+
 

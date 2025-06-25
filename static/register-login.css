@@ -1,0 +1,81 @@
+.register-section,
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.register-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.register-form label,
+.login-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.register-form input,
+.register-form select,
+.login-form input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.register-form input:focus,
+.register-form select:focus,
+.login-form input:focus {
+    outline: none;
+    border-color: #cc103e;
+    box-shadow: 0 0 0 2px rgba(204, 16, 62, 0.2);
+}
+
+.register-form button,
+.login-form button {
+    padding: 12px;
+    background-color: #cc103e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.register-form button:hover,
+.login-form button:hover {
+    background-color: #a00c31;
+}
+
+.register-prompt {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.register-prompt a {
+    color: #cc103e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-prompt a:hover {
+    text-decoration: underline;
+}

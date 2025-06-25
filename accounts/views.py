@@ -16,4 +16,3 @@ class UserRegistrationView(CreateView):
         login(self.request, user)
         return response
 
-
