@@ -5,14 +5,14 @@
         <h1>Добре дошли!</h1>
         
         <div class="home-page-unauthorized">
-            <a href="#" title="Вход">
+            <a href="{% url 'login' %}" title="Вход">
                 <div class="unauthorized-div">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <p>Вход</p>
                 </div>
             </a>
             
-            <a href="#" title="Регистрация">
+            <a href="{% url 'register' %}" title="Регистрация">
                 <div class="unauthorized-div">
                     <i class="fa-regular fa-address-card"></i>
                     <p>Регистрация</p>
@@ -20,10 +20,5 @@
             </a>
         </div>
     </section>
-    
-    <!--
-          TODO: Да стилизирам и да добавя както във навигация две иконки за вход
-           и регистрация с линкове към съответните форми и да ги доразвия..
-    -->
     
 {% endblock %}

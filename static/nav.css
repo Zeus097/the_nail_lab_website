@@ -10,9 +10,12 @@ nav {
     height: 70px;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
-    padding: 10px 40px;
+    padding: 0 20px;
     top: 60px;
     box-sizing: border-box;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav h1 {
