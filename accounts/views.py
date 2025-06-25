@@ -1,8 +1,8 @@
 from django.contrib.auth import login
-from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from accounts.forms import BaseUserCreationForm
+from user.models import  ClientProfile
 
 
 class UserRegistrationView(CreateView):
@@ -14,5 +14,20 @@ class UserRegistrationView(CreateView):
         response = super().form_valid(form)
         user = self.object
         login(self.request, user)
+
+        #Закачване на потребителския профил
+        ClientProfile.objects.create(user=user)
+
+        # try:
+        #     profile = ClientProfile.objects.create(user=user)
+        #     print(f"✅ Профил създаден за {user.username}")
+        # except Exception as e:
+        #     print(f"❌ Грешка при създаване на профил: {e}")
+
+
         return response
 
+    # def form_invalid(self, form):
+    #     print("❌ ФОРМАТА Е НЕВАЛИДНА")
+    #     print(form.errors)
+    #     return super().form_invalid(form)
