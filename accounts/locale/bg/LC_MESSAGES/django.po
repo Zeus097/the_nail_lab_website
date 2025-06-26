@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: The Nail Lab Website\n"
+"Report-Msgid-Bugs-To: support@example.com\n"
+"POT-Creation-Date: 2025-06-26 22:59+0300\n"
+"PO-Revision-Date: 2025-06-26 23:10+0300\n"
+"Last-Translator: Vasil Dimitrov <vasil@example.com>\n"
+"Language-Team: Bulgarian Team <bg@example.com>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: accounts/forms.py:13
+msgid "Потребителско име"
+msgstr "Потребителско име"
+
+#: accounts/forms.py:14
+msgid "Имейл"
+msgstr "Имейл"
+
+#: accounts/forms.py:15 accounts/forms.py:55
+msgid "Парола"
+msgstr "Парола"
+
+#: accounts/forms.py:16 accounts/forms.py:41
+msgid "Потвърди паролата"
+msgstr "Потвърди паролата"
+
+#: accounts/forms.py:20
+msgid "Позволени са букви, цифри и @/./+/-/_ само."
+msgstr "Позволени са букви, цифри и @/./+/-/_ само."
+
+#: accounts/forms.py:21
+msgid "Въведи валиден имейл адрес."
+msgstr "Въведи валиден имейл адрес"
+
+#: accounts/forms.py:28
+msgid "Въведи потребителско име"
+msgstr "Въведи потребителско име"
+
+#: accounts/forms.py:33
+msgid "Въведи имейл адрес"
+msgstr "Въведи имейл адрес"
+
+#: accounts/forms.py:37
+msgid "Създай парола"
+msgstr "Създай парола"
+
+#: accounts/forms.py:50
+msgid "Потребителско име или имейл.."
+msgstr "Потребителско име или имейл.."
