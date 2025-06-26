@@ -2,9 +2,12 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
 
+UserModel = get_user_model()
+
+
 class BaseUserCreationForm(UserCreationForm):
-    class Meta:
-        model = get_user_model()
+    class Meta(UserCreationForm.Meta):
+        model = UserModel
         fields = ('username', 'email', 'password1', 'password2')
         labels = {
             'username': 'Потребителско име',

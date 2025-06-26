@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 
 from django.conf.urls import static
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,6 +82,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'the_nail_lab_website.wsgi.application'
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.authentication.LogInWithEmail',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 
 # Database
@@ -151,4 +157,5 @@ MEDIA_ROOT = BASE_DIR / 'media_files'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.BaseUser'
-LOGIN_REDIRECT_URL = 'homepage'
+LOGIN_REDIRECT_URL = reverse_lazy('homepage')
+LOGOUT_REDIRECT_URL = reverse_lazy('homepage')

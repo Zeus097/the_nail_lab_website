@@ -13,21 +13,7 @@ class UserRegistrationView(CreateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         user = self.object
+        ClientProfile.objects.create(user=user)
         login(self.request, user)
 
-        #Закачване на потребителския профил
-        ClientProfile.objects.create(user=user)
-
-        # try:
-        #     profile = ClientProfile.objects.create(user=user)
-        #     print(f"✅ Профил създаден за {user.username}")
-        # except Exception as e:
-        #     print(f"❌ Грешка при създаване на профил: {e}")
-
-
         return response
-
-    # def form_invalid(self, form):
-    #     print("❌ ФОРМАТА Е НЕВАЛИДНА")
-    #     print(form.errors)
-    #     return super().form_invalid(form)
