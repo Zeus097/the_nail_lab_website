@@ -11,9 +11,11 @@ urlpatterns = [
 
     
     # TODO: Add logout logic and make the button inside the profile menu
-    #  and read from lecturer for logout with method POST in GitHub forumApp
-    #  and the style none to be added in ceparate CSS in the logout.css, when I crate it!
-    #  It has it on screenshot thoo, so I can do it in the file for logout.html..!
+
+    # TODO: Read from lecturer for logout with method POST in GitHub forumApp
+    #  and the style none to be added in separate CSS in the logout.css, when I crate it!
+
+    # TODO: It has it on screenshot thoo, so I can do it in the file for logout.html..!
 
 
 ]
