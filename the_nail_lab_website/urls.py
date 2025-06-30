@@ -28,7 +28,7 @@ urlpatterns = [
     # path('voucher/', include('voucher.urls')),
     # path('photos/', include('photos.urls')),
     # path('user/', include('user.urls')),
-    # path('services/', include('services.urls')),
+    path('services/', include('services.urls')),
 ]
 
 if settings.DEBUG:
