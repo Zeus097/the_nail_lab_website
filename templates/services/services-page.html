@@ -1,6 +1,19 @@
 {% extends 'common/base.html' %}
 {% block content %}
 
-    
+    {% for service in services %}
+        
+        <section class="nails-section">
+            <a href="">
+                <div>
+                    <p>{{ service.name }}</p>          # TODO: Fix design and add image in DB for visualisation
+                    <p>{{ service.description }}</p>   # TODO: Add cosy background with shadow
+                    <p>{{ service.price }} лв.</p>     # TODO: Make the text inline if this is not aesthetic
+                    <p>{{ service.duration }}мин.</p>
+                </div>
+            </a>
+        </section>
+        
+    {% endfor %}
     
 {% endblock %}
