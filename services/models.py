@@ -2,8 +2,8 @@ from django.db import models
 
 
 class BaseService(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.CharField(max_length=50)
+    name = models.CharField(max_length=150)
+    description = models.CharField(max_length=250)
     price = models.DecimalField(max_digits=100, decimal_places=2)
     duration = models.IntegerField()
 
