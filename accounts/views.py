@@ -2,7 +2,7 @@ from django.contrib.auth import login
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from accounts.forms import BaseUserCreationForm
-from user.models import ClientProfile
+from accounts.models import ClientProfile
 
 
 class UserRegistrationView(CreateView):

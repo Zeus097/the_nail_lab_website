@@ -24,11 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('studio.urls')),
     path('accounts/', include('accounts.urls')),
-    # path('employee_photos/', include('employee.urls')),
+    path('services/', include('services.urls')),
     # path('voucher/', include('voucher.urls')),
     # path('photos/', include('photos.urls')),
-    # path('user/', include('user.urls')),
-    path('services/', include('services.urls')),
 ]
 
 if settings.DEBUG:

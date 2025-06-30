@@ -35,11 +35,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 PROJECT_APPS = [
-    'accounts',
     'studio',
-    'employee',
+    'accounts',
     'services',
-    'user',
     'voucher',
     'photos',
 ]
