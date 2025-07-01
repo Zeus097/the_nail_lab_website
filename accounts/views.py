@@ -1,9 +1,10 @@
 from django.contrib.auth import login
+from django.db import IntegrityError
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from accounts.forms import BaseUserCreationForm
-from accounts.models import ClientProfile
+from accounts.models import ClientProfile, EmployeeBio
 
 
 class UserRegistrationView(CreateView):
@@ -15,10 +16,6 @@ class UserRegistrationView(CreateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         user = self.object
-        ClientProfile.objects.create(user=user)
+        EmployeeBio.objects.create(user=user)
         login(self.request, user, backend='accounts.authentication.LogInWithEmail')
-
-        if user.is_employee:
-            return redirect('homepage')
-
         return response

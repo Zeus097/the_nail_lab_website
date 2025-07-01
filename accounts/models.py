@@ -14,6 +14,8 @@ class BaseUser(AbstractUser):
 
 
 class EmployeeBio(models.Model):
+    # Using signal to attach this model to the employee profile, created through Admin interface
+
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     biography = models.CharField(max_length=500)
