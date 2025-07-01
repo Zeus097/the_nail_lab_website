@@ -50,6 +50,7 @@ main {
     border-top-right-radius: 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    margin: 30px;
 }
 
 .info-section {
@@ -100,6 +101,7 @@ main {
     height: 400px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .nails-section a {

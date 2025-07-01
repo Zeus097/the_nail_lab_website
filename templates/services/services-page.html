@@ -1,25 +1,27 @@
 {% extends 'common/base.html' %}
 {% block content %}
 
+<section class="services-main">
     {% for service in services %}
-        
-        <section class="service-section">
+        <div class="service-section">
             <span>
                 <div class="left-div">
-                    <p>{{ service.name }}</p>
-                    <p>{{ service.description|truncatewords:20 }}</p>
+                    <h4>{{ service.name }}</h4>
+                    <p>{{ service.description|truncatewords:10 }}</p>
                     <a href="#">Прочети още...</a>
                 </div>
                 
                 <div class="right-div">
+                    <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
                     <p>Цена: {{ service.price }} лв.</p>
                     <p>Време: {{ service.duration }}мин.</p>
                 </div>
             </span>
-        </section>
-        
+        </div>
     {% endfor %}
-    
+</section>
+
+<div class="pagination-wrapper">
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
@@ -37,9 +39,6 @@
             {% endif %}
         </span>
     </div>
-    
+</div>
+
 {% endblock %}
-
-
-# TODO: Fix design and add image in DB for visualisation
-# TODO: Линк към страница със пълното инфо, СЛАГАМ МУ И ИД НА ЛИНКА ЗА ДА МЕ ВОДИ ДО СЪОТВЕТНАТА СТРАНИЦА
