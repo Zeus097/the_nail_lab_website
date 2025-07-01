@@ -4,18 +4,18 @@
     {% for service in services %}
         
         <section class="service-section">
-            <a href="">
+            <span href="">
                 <div class="left-div">
                     <p>{{ service.name }}</p>
                     <p>{{ service.description|truncatewords:20 }}</p>
-                    <p>Прочети още...</p>
+                    <a  >Прочети още...</a>
                 </div>
                 
                 <div class="right-div">
                     <p>Цена: {{ service.price }} лв.</p>
                     <p>Време: {{ service.duration }}мин.</p>
                 </div>
-            </a>
+            </span>
         </section>
         
     {% endfor %}
