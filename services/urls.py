@@ -3,5 +3,5 @@ from services import views
 
 
 urlpatterns = [
-    path('services/', views.ServiceListView.as_view(), name='services'),
+    path('', views.ServiceListView.as_view(), name='services'),
 ]

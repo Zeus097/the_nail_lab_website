@@ -3,17 +3,44 @@
 
     {% for service in services %}
         
-        <section class="nails-section">
+        <section class="service-section">
             <a href="">
-                <div>
-                    <p>{{ service.name }}</p>               # TODO: Fix design and add image in DB for visualisation
-                    <p>{{ service.description }}</p>        # TODO: Add cosy background with shadow
-                    <p>{{ service.price }} лв.</p>          # TODO: Make the text inline if this is not aesthetic
-                    <p>{{ service.duration }}мин.</p>       # TODO: Прочети още --> бутон
+                <div class="left-div">
+                    <p>{{ service.name }}</p>
+                    <p>{{ service.description|truncatewords:20 }}</p>
+                </div>
+                
+                <div class="right-div">
+                    <p>Цена: {{ service.price }} лв.</p>
+                    <p>Време: {{ service.duration }}мин.</p>
                 </div>
             </a>
         </section>
         
     {% endfor %}
     
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1&query={{ query }}">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}&query={{ query }}">previous</a>
+            {% endif %}
+        
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+        
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&query={{ query }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}&query={{ query }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    
 {% endblock %}
+
+
+# TODO: Fix design and add image in DB for visualisation
+# TODO: Add cosy background with shadow
+# TODO: Make the text inline if this is not aesthetic
+# TODO: Прочети още --> бутон

@@ -94,8 +94,6 @@ main {
 .nails-section {
     display: flex;
     background-image: url('home_page/nails.png');
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
     background-position: right ;
     gap: 10px;
     width: 100%;
