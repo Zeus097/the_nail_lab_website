@@ -8,9 +8,9 @@
                 <div class="left-div">
                     <h4>{{ service.name }}</h4>
                     <p>{{ service.description|truncatewords:10 }}</p>
-                    <a href="#">Прочети още...</a>
+                    <a href="{% url 'service_details' service.id %}" class="button-like-a">Прочети още...</a>
                 </div>
-                
+
                 <div class="right-div">
                     <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
                     <p>Цена: {{ service.price }} лв.</p>
@@ -28,11 +28,11 @@
                 <a href="?page=1&query={{ query }}">&laquo; first</a>
                 <a href="?page={{ page_obj.previous_page_number }}&query={{ query }}">previous</a>
             {% endif %}
-        
+
             <span class="current">
                 Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
             </span>
-        
+
             {% if page_obj.has_next %}
                 <a href="?page={{ page_obj.next_page_number }}&query={{ query }}">next</a>
                 <a href="?page={{ page_obj.paginator.num_pages }}&query={{ query }}">last &raquo;</a>
