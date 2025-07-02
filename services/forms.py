@@ -8,7 +8,7 @@ class SearchForm(forms.Form):
         max_length=100,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Търси по име и описание...',
+                'placeholder': 'Търси услуга...',
                 'class': 'search-input',
                 'style': 'width: 100%;',
                 'autofocus': 'autofocus',
