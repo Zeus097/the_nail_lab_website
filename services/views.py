@@ -37,8 +37,7 @@ class ServiceListView(LoginRequiredMixin, ListView):
         return super().get_context_data(object_list=object_list, **kwargs)
 
 
-def service_details(request, pk):
-    service = BaseService.objects.get(pk=pk)
-    context = {'service': service}
-
-    return render(request, 'services/service-details.html', context)
+class ServiceDetailView(LoginRequiredMixin, DetailView):
+    model = BaseService
+    template_name = 'services/service-details.html'
+    context_object_name = 'service'
