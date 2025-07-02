@@ -4,6 +4,12 @@
     margin: 2rem 0;
 }
 
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .step-links {
     display: flex;
     gap: 1rem;
@@ -14,6 +20,8 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
 }
+
+
 
 .step-links a {
     text-decoration: none;

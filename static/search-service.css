@@ -21,21 +21,8 @@ body div.search-form-div {
 
 .search-input {
     padding: 10px;
-    border-radius: 10px;
     border: 2px solid black;
-}
-
-.search-input:hover {
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-    padding: 8px;
-    color: white;
-}
-
-.search-input:active {
-    color: white;
-    transform: scale(0.95);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .search-form button {
@@ -45,14 +32,33 @@ body div.search-form-div {
     justify-content: center;
 }
 
+.search-form button {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
 .search-form button:hover {
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-    padding: 8px;
+    transform: scale(1.05);
 }
 
 .search-form button:active {
-    color: white;
     transform: scale(0.95);
     border-radius: 10px;
+}
+
+.search-input:hover {
+    border-radius: 10px;
+    transform: scale(1.05);
+}
+
+.search-input:focus {
+    border-color: black;
+    outline: black;
 }

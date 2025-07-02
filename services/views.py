@@ -21,11 +21,15 @@ class ServiceListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         queryset = self.model.objects.all()
         search_parameter = self.request.GET.get(self.query_param)
+
         if search_parameter:
+            parameter = search_parameter.strip()
             queryset = queryset.filter(
-                Q(name__icontains=search_parameter)
+                Q(name__icontains=parameter)
                 |
-                Q(description__icontains=search_parameter)
+                Q(description__icontains=parameter)
+                |
+                Q(price__icontains=parameter)
             )
         return queryset.order_by('id')
 
