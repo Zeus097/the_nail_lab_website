@@ -43,19 +43,22 @@
             
             <div class="nav-right">
                 
-                  <a href="#" title="Профил">
+                <a href="#" title="Профил">
                     <div class="nav-item">
                         <i class="fa-solid fa-user"></i>
                         <p>Профил</p>
                     </div>
                 </a>
                 
-                <a href="#" title="Изход">
-                    <div class="nav-item">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <p>Изход</p>
-                    </div>
-                </a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" title="Изход" class="logout-button">
+                        <div class="nav-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <p>Изход</p>
+                        </div>
+                    </button>
+                </form>
                 
             </div>
         

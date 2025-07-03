@@ -7,7 +7,7 @@ from accounts.forms import CustomLoginForm
 urlpatterns = [
     path('registration/', views.UserRegistrationView.as_view(), name='register'),
     path('login/', LoginView.as_view(authentication_form=CustomLoginForm), name='login'),
-    # path('', LogoutView.as_view(), name='logout'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 
         #
         # TODO: Add logout logic and make the button inside the profile menu

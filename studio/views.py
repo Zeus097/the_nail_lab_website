@@ -12,6 +12,7 @@ def home_page(request):
 
 class HomePageView(TemplateView):
     success_url = reverse_lazy('home-page')
+
     def get_template_names(self):
         if self.request.user.is_authenticated:
             return ['common/base.html']

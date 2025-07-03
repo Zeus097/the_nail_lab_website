@@ -38,6 +38,14 @@ nav a {
     padding: 0 5px;
 }
 
+nav form {
+    padding: 0 5px;
+}
+
+.logout-form {
+    padding: 0 5px;
+}
+
 nav a:hover {
     font-weight: bolder;
     border-bottom: solid black 1px;
@@ -65,3 +73,68 @@ nav a:active {
     flex-direction: column;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font: inherit;
+}
+
+.logout-button .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item,
+.logout-button:hover {
+    font-weight: bolder;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    padding: 3px 5px;
+}
+
+.logout-button:hover {
+    font-weight: bolder;
+    border-bottom: solid black 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    padding: 3px 5px;
+}
+
+.logout-button:active .nav-item,
+.logout-button:active {
+    color: white;
+    transform: scale(1.95);
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+

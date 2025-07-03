@@ -17,5 +17,9 @@ class UserRegistrationView(CreateView):
         response = super().form_valid(form)
         user = self.object
         EmployeeBio.objects.create(user=user)
-        login(self.request, user, backend='accounts.authentication.LogInWithEmail')
+
+        if response.status_code in [301, 302]:
+            login(self.request, user, backend='accounts.authentication.LogInWithEmail')
+
         return response
+
