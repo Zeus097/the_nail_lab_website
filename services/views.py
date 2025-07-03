@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.views.generic import ListView, DetailView
 
 from services.forms import SearchForm
@@ -21,14 +22,19 @@ class ServiceListView(LoginRequiredMixin, ListView):
         search_parameter = self.request.GET.get(self.query_param)
 
         if search_parameter:
-            parameter = search_parameter.strip()
-            queryset = queryset.filter(
-                Q(name__icontains=parameter)
+            parameter = search_parameter.strip().lower()
+
+            queryset = queryset.annotate(
+                lower_name=Lower('name'),
+                lower_description=Lower('description'),
+            ).filter(
+                Q(lower_name__icontains=parameter)
                 |
-                Q(description__icontains=parameter)
+                Q(lower_description__icontains=parameter)
                 |
                 Q(price__icontains=parameter)
             )
+
         return queryset.order_by('id')
 
     def get_context_data(self, *, object_list=None, **kwargs):
