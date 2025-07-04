@@ -79,3 +79,30 @@
 .register-prompt a:hover {
     text-decoration: underline;
 }
+
+
+.google-login-wrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.google-login-prompt {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.google-login-btn {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.google-login-btn:hover {
+    background-color: #357ae8;
+}

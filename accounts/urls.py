@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', LoginView.as_view(authentication_form=CustomLoginForm), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
 
+    path('login/google/', views.google_login_redirect, name='login-google'),
 ]

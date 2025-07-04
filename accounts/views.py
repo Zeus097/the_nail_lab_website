@@ -23,3 +23,6 @@ class UserRegistrationView(CreateView):
 
         return response
 
+
+def google_login_redirect(request):
+    return redirect('social:begin', backend='google-oauth2')
