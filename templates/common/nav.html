@@ -1,5 +1,12 @@
+{% load static %}
+
 {% if user.is_authenticated %}
-    <nav>
+    <nav class="base-navigation-bar">
+    
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    
         <h1>Th<span class="header-letter">e</span>&nbsp;&nbsp;Nai<span class="header-letter">L</span>&nbsp;&nbsp;Lab</h1>
         
             <div class="nav-left">
@@ -39,8 +46,8 @@
                     </div>
                 </a>
                 
-                </div>
-            
+            </div>
+        
             <div class="nav-right">
                 
                 <a href="#" title="Профил">
@@ -61,8 +68,11 @@
                 </form>
                 
             </div>
-        
+    
     </nav>
+    
+     <script src="{% static 'hamburger-nav.js' %}"></script>
+    
 {% else %}    
     
         <h1>Th<span class="header-letter">e</span>&nbsp;&nbsp;Nai<span class="header-letter">L</span>&nbsp;&nbsp;Lab</h1>

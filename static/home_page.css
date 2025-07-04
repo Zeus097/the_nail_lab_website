@@ -18,6 +18,7 @@ body {
     max-width: 1200px;
     width: 100%;
     background: linear-gradient(to bottom, #ffffff, #efefef);
+    min-width: 793px;
 }
 
 main {
@@ -144,20 +145,3 @@ main {
     border-radius: 10px;
 }
 
-
-
-
-
-
-/*TODO: Style the mobile version*/
-
-
-/*flex: 1 1 100%; --> Цялото съдържание се заема */
-
-
-
-/*@media screen and (max-width: 896px) {*/
-
-    /*Да фиксирам размера*/
-
-/*}*/

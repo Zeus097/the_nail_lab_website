@@ -1,4 +1,4 @@
-nav {
+.base-navigation-bar {
     position: fixed;
     z-index: 1000;
     background-color: #ffffff;
@@ -18,7 +18,7 @@ nav {
     transform: translateX(-50%);
 }
 
-nav h1 {
+.base-navigation-bar h1 {
     color: #000000;
     font-size: 3rem;
     margin-right: 30px;
@@ -32,13 +32,13 @@ nav h1 {
     gap: 20px; /* Optional spacing between links */
 }
 
-nav a {
+.base-navigation-bar a {
     color: black;
     text-decoration: none;
     padding: 0 5px;
 }
 
-nav form {
+.base-navigation-bar form {
     padding: 0 5px;
 }
 
@@ -46,7 +46,7 @@ nav form {
     padding: 0 5px;
 }
 
-nav a:hover {
+.base-navigation-bar a:hover {
     font-weight: bolder;
     border-bottom: solid black 1px;
     border-radius: 2px;
@@ -54,7 +54,7 @@ nav a:hover {
     padding: 3px 5px;
 }
 
-nav a:active {
+.base-navigation-bar a:active {
     color: white;
     transform: scale(1.95);
     background-color: black;
@@ -73,18 +73,6 @@ nav a:active {
     flex-direction: column;
     align-items: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .logout-button {
     background: none;
@@ -130,6 +118,84 @@ nav a:active {
 
 
 
+
+.hamburger i {
+  display: none;
+}
+
+@media (max-width: 768px) {
+    /* Show hamburger button */
+    .base-navigation-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        max-width: 100%;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .hamburger i {
+         display: block;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: auto; /* push hamburger right */
+        color: black;
+        padding: 5px 0;
+    }
+
+    /* Hide nav-left and nav-right by default */
+    .nav-left,
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    /* When nav has 'open' class, show nav-left and nav-right stacked vertically */
+    .base-navigation-bar.open .nav-left,
+    .base-navigation-bar.open .nav-right {
+        display: flex;
+    }
+
+    /* Stack nav items inside nav-left and nav-right vertically, full width */
+    .nav-left a,
+    .nav-right a,
+    .logout-button {
+        width: 100%;
+        padding: 10px 15px;
+        border-bottom: 1px solid #ccc;
+        /*text-align: left;*/
+        justify-items: center;
+
+    }
+
+    /* Align nav-items text & icon horizontally in mobile */
+    .nav-item {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .logout-button:active .nav-item,
+    .logout-button:active,
+    .base-navigation-bar a:active {
+        transform: scale(1.05);
+    }
+
+}
 
 
 
