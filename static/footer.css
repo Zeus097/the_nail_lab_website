@@ -6,7 +6,7 @@ footer {
     justify-content: center;
     align-items: center;
     max-width: 1200px;
-    min-width: 800px;
+    /*min-width: 800px;*/
 }
 
 .footer-column {
@@ -73,7 +73,7 @@ footer {
 }
 
 .get-in-touch-vertical {
-     display: flex;
+    display: flex;
     justify-content: center; /* center all child elements as a group */
     align-items: flex-start;
     gap: 40px; /* spacing between columns and separator */

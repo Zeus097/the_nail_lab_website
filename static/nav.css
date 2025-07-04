@@ -124,6 +124,11 @@
 }
 
 @media (max-width: 768px) {
+    body {
+        max-width: 100%;
+
+    }
+
     /* Show hamburger button */
     .base-navigation-bar {
         flex-direction: column;

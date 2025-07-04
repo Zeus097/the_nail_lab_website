@@ -6,7 +6,7 @@ header {
     margin-top: 80px;
     width: 100%;
     max-width: 1200px;
-    min-width: 800px;
+    /*min-width: 800px;*/
     position: relative;
     padding: 20px;
     gap: 20px;
