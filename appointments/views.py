@@ -15,20 +15,21 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-
-        kwargs['employee'] = EmployeeBio.objects.first()
+        kwargs['employee'] = EmployeeBio.objects.first()  # единственият маникюрист
         return kwargs
 
     def form_valid(self, form):
         appointment = form.save(commit=False)
         appointment.client = ClientProfile.objects.get(user=self.request.user)
+        appointment.employee = EmployeeBio.objects.first()
         appointment.save()
         return super().form_valid(form)
 
 
 class AppointmentListView(LoginRequiredMixin, ListView):
     model = Appointment
-    template_name = 'common/base.html'
+    template_name = 'appointments/appointments-list.html'
+    context_object_name = 'appointment_list'
 
     def get_queryset(self):
         user = self.request.user

@@ -1,0 +1,23 @@
+{% for appointment in appointment_list %}
+    {% if appointment %}
+        <section class="nails-section">
+            <a href="">
+                <div>
+                    <p>
+                         {{ appointment.date }} – {{ appointment.start_time }} – {{ appointment.service.name }}
+                    </p>
+                </div>
+            </a>
+        </section>
+    {% endif %}
+{% empty %}
+    <section class="nails-section">
+            <a href="">
+                <div>
+                    <p>
+                         Няма запазени часове!
+                    </p>
+                </div>
+            </a>
+        </section>
+{% endfor %}
