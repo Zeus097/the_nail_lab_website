@@ -27,6 +27,7 @@ urlpatterns = [
     path('services/', include('services.urls')),
     # path('voucher/', include('voucher.urls')),
     # path('photos/', include('photos.urls')),
+    path('auth/', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:

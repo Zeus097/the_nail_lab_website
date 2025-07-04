@@ -34,6 +34,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+GOOGLE_AUTHENTICATION = [
+    'social_django',
+]
+
 PROJECT_APPS = [
     'studio',
     'accounts',
@@ -49,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + PROJECT_APPS
+
+] + PROJECT_APPS + GOOGLE_AUTHENTICATION
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,6 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # GOOGLE
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'the_nail_lab_website.urls'
@@ -74,6 +82,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # GOOGLE
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -83,6 +95,10 @@ WSGI_APPLICATION = 'the_nail_lab_website.wsgi.application'
 
 AUTHENTICATION_BACKENDS = [
     'accounts.authentication.LogInWithEmail',
+    'django.contrib.auth.backends.ModelBackend',
+
+    # GOOGLE BACKENDS
+    'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
@@ -166,3 +182,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.BaseUser'
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
+
+# GOOGLE SETTINGS_____________________________________
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+#  ____________________________________________________
