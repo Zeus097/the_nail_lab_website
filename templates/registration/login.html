@@ -8,22 +8,19 @@
         <button type="submit">Вход</button>
 
         <p class="register-prompt">
-            Нямаш акаунт? 
+            Нямаш акаунт?
             <a href="{% url 'register' %}">
                 Регистрирай се
             </a>
         </p>
-
-        <div class="google-login-wrapper">
-            <p class="google-login-prompt">Или влез с Google:</p>
-            <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next|urlencode }}">
-                <button type="button" class="google-login-btn">
-                    Вход с Google
-                </button>
-            </a>
-        </div>
-        
     </form>
+
+    <div class="google-login-wrapper">
+        <p class="google-login-prompt">Или влез с Google:</p>
+        <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next|urlencode }}" class="google-login-btn">
+            Вход с Google
+        </a>
+    </div>
 </section>
 
 {% endblock %}

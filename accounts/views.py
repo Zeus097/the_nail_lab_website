@@ -1,8 +1,11 @@
 from django.contrib.auth import login
 from django.db import IntegrityError
+from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
+from social_django.utils import load_strategy
+
 from accounts.forms import BaseUserCreationForm
 from accounts.models import ClientProfile, EmployeeBio
 
@@ -25,4 +28,5 @@ class UserRegistrationView(CreateView):
 
 
 def google_login_redirect(request):
-    return redirect('social:begin', backend='google-oauth2')
+    url = reverse('social:begin', args=['google-oauth2'])
+    return redirect(url)

@@ -189,4 +189,12 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SEC
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = False  # Since using HTTP locally
+SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
+
+# Helps social_django generate absolute URLs correctly
+SOCIAL_AUTH_STRATEGY = 'social_django.strategy.DjangoStrategy'
+
+
 #  ____________________________________________________
