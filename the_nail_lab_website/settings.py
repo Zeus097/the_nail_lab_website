@@ -42,8 +42,8 @@ PROJECT_APPS = [
     'studio',
     'accounts',
     'services',
-    'voucher',
     'photos',
+    'appointments',
 ]
 
 INSTALLED_APPS = [

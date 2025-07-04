@@ -28,25 +28,42 @@
                 <div>{#  The purpose of this container is to position the LOGO #}</div>
             </section>
             
-            <section class="nails-section">
-                <a href="">
-                    <div>
-                        <p>
-                             Поглези себе си с красив маникюр – заслужаваш го! Запиши своя час още днес и нека се погрижим ръцете ти да изглеждат съвършено. Очакваме те с усмивка и професионализъм!
-                        </p>
-                    </div>
-                </a>
-            </section>
             
-            <section class="nails-section">
-                <a href="">
-                    <div>
-                        <p>
-                            Вид услуга със снимка
-                        </p>
-                    </div>
-                </a>
-            </section>
+            
+            
+            
+            {% for appointment in appointment_list %}
+                {% if appointment %}
+                    <section class="nails-section">
+                        <a href="">
+                            <div>
+                                <p>
+                                     {{ appointment.date }} – {{ appointment.start_time }} – {{ appointment.service.name }}
+                                </p>
+                            </div>
+                        </a>
+                    </section>
+                {% endif %}
+            {% empty %}
+                <section class="nails-section">
+                        <a href="">
+                            <div>
+                                <p>
+                                     Няма запазени часове!
+                                </p>
+                            </div>
+                        </a>
+                    </section>
+            {% endfor %}
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
              <section class="info-section">
                 

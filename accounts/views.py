@@ -1,13 +1,10 @@
 from django.contrib.auth import login
-from django.db import IntegrityError
-from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
-from social_django.utils import load_strategy
 
 from accounts.forms import BaseUserCreationForm
-from accounts.models import ClientProfile, EmployeeBio
+from accounts.models import EmployeeBio
 
 
 class UserRegistrationView(CreateView):
