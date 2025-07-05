@@ -25,11 +25,11 @@ class HomePageView(TemplateView):
         if user.is_authenticated:
             if hasattr(user, "clientprofile"):
                 context['appointment_list'] = Appointment.objects.filter(
-                    client__user=user, date__gte=today
+                    client__user=user,
                 ).order_by("date", "start_time")
             elif hasattr(user, "employeebio"):
                 context['appointment_list'] = Appointment.objects.filter(
-                    employee__user=user, date__gte=today
+                    employee__user=user,
                 ).order_by("date", "start_time")
             else:
                 context['appointment_list'] = []

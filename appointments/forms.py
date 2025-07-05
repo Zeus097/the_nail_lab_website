@@ -1,14 +1,21 @@
 from django import forms
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta, time, date
 from django.core.exceptions import ValidationError
 from appointments.models import Appointment
+
 
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ['service', 'date', 'start_time']
         widgets = {
-            'date': forms.DateInput(attrs={'type': 'date'}),
+            'date': forms.DateInput(attrs={
+                'type': 'date',
+                # 'class': '',
+                'placeholder': 'YYYY-MM-DD',
+                'style': 'background-color:white'
+
+            }),
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
         }
 
@@ -20,30 +27,30 @@ class AppointmentForm(forms.ModelForm):
         cleaned_data = super().clean()
         service = cleaned_data.get('service')
         start_time = cleaned_data.get('start_time')
-        date = cleaned_data.get('date')
+        date_value = cleaned_data.get('date')
         employee = self.employee
 
-        if not all([service, start_time, date, employee]):
-            return  # Ако няма някое от полетата, пропускаме за сега
+        if date_value and date_value < date.today():
+            raise ValidationError("Не може да запишеш час за минала дата.")
 
-        # Изчисляваме крайно време
-        end_time = (datetime.combine(date, start_time) + timedelta(minutes=service.duration)).time()
+        if not all([service, start_time, date_value, employee]):
+            return  # Ако няма някое от полетата, пропуска
 
-        # Проверка за работно време
+        end_time = (datetime.combine(date_value, start_time) + timedelta(minutes=service.duration)).time()
+
         if start_time < time(9, 0) or end_time > time(18, 0):
             raise ValidationError("Процедурата трябва да е в рамките на работното време (09:00 - 18:00).")
 
-        # Проверка за припокриване с други часове на същия служител
+        # Проверка за припокриване с други часове
         overlapping = Appointment.objects.filter(
             employee=employee,
-            date=date,
+            date=date_value,
         )
-        # Ако това е редакция (update), изключваме текущия запис, ако има pk
         if self.instance.pk:
             overlapping = overlapping.exclude(pk=self.instance.pk)
 
-        this_start = datetime.combine(date, start_time)
-        this_end = datetime.combine(date, end_time)
+        this_start = datetime.combine(date_value, start_time)
+        this_end = datetime.combine(date_value, end_time)
 
         for appt in overlapping:
             other_start = datetime.combine(appt.date, appt.start_time)
