@@ -14,7 +14,7 @@
     top: 60px;
     box-sizing: border-box;
     margin: 0 auto;
-    left: 50%;
+    left: 51.5%;
     transform: translateX(-50%);
 }
 
@@ -199,6 +199,13 @@
     .base-navigation-bar a:active {
         transform: scale(1.05);
     }
+
+     .second-container {
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+    }
+
 
 }
 

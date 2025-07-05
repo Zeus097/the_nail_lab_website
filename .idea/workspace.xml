@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/nav.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/vasildimitrov/Vasko storgo i sekretno/Programming/Programming_with_python/WEBSITE PROJECT/the_nail_lab_website",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,6 +45,11 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -54,13 +59,18 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
+        <env name="DB_NAME" value="the_nail_lab_website_2025" />
+        <env name="DB_USER" value="postgres" />
+        <env name="DB_PASSWORD" value="0897535532" />
+        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
+        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (the_nail_lab_website) (4)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="com.fapiko.jetbrains.plugins.better_direnv.runconfigs.PycharmRunConfigurationExtension">
@@ -98,6 +108,7 @@
       <workItem from="1751699985022" duration="312000" />
       <workItem from="1751700301240" duration="113000" />
       <workItem from="1751700447825" duration="41000" />
+      <workItem from="1751703076955" duration="4020000" />
     </task>
     <servers />
   </component>
