@@ -1,6 +1,6 @@
 {% for appointment in appointment_list %}
     {% if appointment %}
-        <section class="nails-section">
+        <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
             <a href="">
                 <div>
                     <p>
@@ -12,12 +12,12 @@
     {% endif %}
 {% empty %}
     <section class="nails-section">
-            <a href="">
-                <div>
-                    <p>
-                         Няма запазени часове!
-                    </p>
-                </div>
-            </a>
-        </section>
+        <a href="">
+            <div>
+                <p>
+                    Няма запазени часове!
+                </p>
+            </div>
+        </a>
+    </section>
 {% endfor %}
