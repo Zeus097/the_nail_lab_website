@@ -1,19 +1,37 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
 from django.views.generic import TemplateView
+from django.urls import reverse_lazy
+from appointments.models import Appointment
+from datetime import date
 
 
 # Create your views here.
 
 
-def home_page(request):
-    return render(request, 'common/base.html')
-
-
 class HomePageView(TemplateView):
-    success_url = reverse_lazy('home-page')
+    success_url = reverse_lazy('homepage')
 
     def get_template_names(self):
         if self.request.user.is_authenticated:
             return ['common/base.html']
         return ['common/home-no-profile.html']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        user = self.request.user
+        today = date.today()
+
+        if user.is_authenticated:
+            if hasattr(user, "clientprofile"):
+                context['appointment_list'] = Appointment.objects.filter(
+                    client__user=user, date__gte=today
+                ).order_by("date", "start_time")
+            elif hasattr(user, "employeebio"):
+                context['appointment_list'] = Appointment.objects.filter(
+                    employee__user=user, date__gte=today
+                ).order_by("date", "start_time")
+            else:
+                context['appointment_list'] = []
+
+        return context
