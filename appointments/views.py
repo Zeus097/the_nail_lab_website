@@ -1,10 +1,14 @@
+from django.core.exceptions import ValidationError
+from django.forms.utils import ErrorList
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from appointments.models import Appointment, DayOff
-from appointments.forms import AppointmentForm
+from appointments.forms import AppointmentForm, DayOffForm
 from accounts.models import ClientProfile, EmployeeBio
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
+from django import forms
 
 
 class AppointmentCreateView(LoginRequiredMixin, CreateView):
@@ -42,13 +46,18 @@ class AppointmentListView(LoginRequiredMixin, ListView):
 
 class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = DayOff
-    fields = ['date']
+    form_class = DayOffForm
     template_name = 'appointments/employee-dayoff.html'
     success_url = reverse_lazy('homepage')
 
     def test_func(self):
         return self.request.user.is_employee
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['employee'] = get_object_or_404(EmployeeBio, user=self.request.user)
+        return kwargs
+
     def form_valid(self, form):
-        form.instance.employee = EmployeeBio.objects.get(user=self.request.user)
+        form.instance.employee = get_object_or_404(EmployeeBio, user=self.request.user)
         return super().form_valid(form)
