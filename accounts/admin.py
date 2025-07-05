@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from accounts.models import BaseUser, EmployeeBio
+from accounts.models import BaseUser, EmployeeBio,ClientProfile
 
 
 @admin.register(BaseUser)
@@ -17,3 +17,12 @@ class BaseUserAdmin(UserAdmin):
             'fields': ('is_client', 'is_employee',)
         }),
     )
+
+@admin.register(EmployeeBio)
+class EmployeeBioAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(ClientProfile)
+class ClientProfileAdmin(admin.ModelAdmin):
+    pass

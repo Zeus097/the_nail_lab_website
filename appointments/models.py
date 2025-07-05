@@ -56,6 +56,9 @@ class Appointment(models.Model):
             if not (this_end <= other_start or this_start >= other_end):
                 raise ValidationError("Часът се припокрива с друга процедура.")
 
+    def __str__(self):
+        return f"{self.client} - {self.date} - {self.start_time} - {self.service}"
+
 
 class DayOff(models.Model):
     employee = models.ForeignKey(EmployeeBio, on_delete=models.CASCADE)
