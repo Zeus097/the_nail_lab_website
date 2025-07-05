@@ -3,9 +3,18 @@
         <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
             <a href="">
                 <div>
+                    <h3>
+                        {{ appointment.service.name }}
+                    </h3>
                     <p>
-                         {{ appointment.date }} – {{ appointment.start_time }} – {{ appointment.service.name }}
+                         {{ appointment.date }} – {{ appointment.start_time }}
                     </p>
+                    <p>
+                        {% if appointment.comment %}
+                            {{ appointment.comment }}
+                        {% endif %}
+                    </p>
+                    
                 </div>
             </a>
         </section>

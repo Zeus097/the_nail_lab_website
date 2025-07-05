@@ -96,6 +96,7 @@ main {
 
 .nails-section {
     display: flex;
+    flex-direction: column;
     background: #cc103e;
     /*background-image: url('home_page/nails.png');*/
     background-repeat: inherit;
@@ -110,7 +111,6 @@ main {
 
 .nails-section a {
     display: flex;
-    flex-direction: column;
     padding: 20px;
     width: 100%;
     height: 100%;
@@ -118,7 +118,9 @@ main {
 
 .nails-section a div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 5px;
     width: 40%;
     height: 40%;
     /*background-size: cover;*/
@@ -133,8 +135,13 @@ main {
 .nails-section a div p {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     color: black;
+}
+
+.nails-section a div h3 {
+    color: black;
+    margin-bottom: 20px;
 }
 
 .nails-section a:hover {

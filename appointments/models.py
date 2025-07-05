@@ -13,6 +13,10 @@ class Appointment(models.Model):
     service = models.ForeignKey(BaseService, on_delete=models.CASCADE)
     date = models.DateField()
     start_time = models.TimeField()
+    comment = models.TextField(
+        blank=True,
+        null=True,
+    )
 
     @property
     def end_time(self):

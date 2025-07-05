@@ -1,11 +1,7 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from appointments.models import Appointment
 from datetime import date
-
-
-# Create your views here.
 
 
 class HomePageView(TemplateView):
@@ -20,7 +16,6 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         user = self.request.user
-        today = date.today()
 
         if user.is_authenticated:
             if hasattr(user, "clientprofile"):
