@@ -25,4 +25,5 @@ class EmployeeBioAdmin(admin.ModelAdmin):
 
 @admin.register(ClientProfile)
 class ClientProfileAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['user', 'user__email', 'phone',]
+
