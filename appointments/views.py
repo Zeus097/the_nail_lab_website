@@ -15,7 +15,7 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['employee'] = EmployeeBio.objects.first()  # единственият маникюрист
+        kwargs['employee'] = EmployeeBio.objects.first()
         return kwargs
 
     def form_valid(self, form):

@@ -2,7 +2,7 @@ from django.db import models
 
 from services.models import BaseService
 from accounts.models import EmployeeBio, ClientProfile
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta, time, date
 
 from django.core.exceptions import ValidationError
 
@@ -17,13 +17,16 @@ class Appointment(models.Model):
     @property
     def end_time(self):
         if not self.date or not self.start_time or not self.service:
-            return None  # предпазна мярка
+            return None
         start_dt = datetime.combine(self.date, self.start_time)
         return (start_dt + timedelta(minutes=self.service.duration)).time()
 
     def clean(self):
         if not self.employee_id or not self.service_id or not self.date or not self.start_time:
             return
+
+        if self.date < date.today():
+            raise ValidationError("Не може да се записва процедура за минала дата.")
 
         working_start = time(9, 0)
         working_end = time(18, 0)
