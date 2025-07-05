@@ -25,13 +25,22 @@
                     </div>
                 </a>
                 
-                <a href="{% url 'appointment_create' %}" title="Ваучери">
+                <a href="{% url 'appointment_create' %}" title="Запази час">
                     <div class="nav-item">
                         <i class="fa-solid fa-calendar-check"></i>
                         <p>Запази час</p>
                     </div>
                 </a>
                 
+                {% if is_employee %}
+                    <a href="{% url 'employee_dayoff' %}" title="Почивен ден">
+                        <div class="nav-item">
+                            <i class="fa-solid fa-hand-peace"></i>
+                            <p>Почивен ден</p>
+                        </div>
+                    </a>
+                {% endif %}
+            
                 <a href="#" title="Галерия">
                     <div class="nav-item">
                         <i class="fa-solid fa-images"></i>

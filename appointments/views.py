@@ -1,9 +1,9 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from appointments.models import Appointment
+from appointments.models import Appointment, DayOff
 from appointments.forms import AppointmentForm
 from accounts.models import ClientProfile, EmployeeBio
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
 
 
@@ -38,3 +38,17 @@ class AppointmentListView(LoginRequiredMixin, ListView):
         elif user.is_client:
             return Appointment.objects.filter(client__user=user)
         return Appointment.objects.none()
+
+
+class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    model = DayOff
+    fields = ['date']
+    template_name = 'appointments/employee-dayoff.html'
+    success_url = reverse_lazy('homepage')
+
+    def test_func(self):
+        return self.request.user.is_employee
+
+    def form_valid(self, form):
+        form.instance.employee = EmployeeBio.objects.get(user=self.request.user)
+        return super().form_valid(form)

@@ -1,10 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from appointments.models import Appointment
-from datetime import date
 
 
-class HomePageView(TemplateView):
+class HomePageView(LoginRequiredMixin, TemplateView):
     success_url = reverse_lazy('homepage')
 
     def get_template_names(self):
@@ -14,10 +14,10 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         user = self.request.user
 
         if user.is_authenticated:
+            context['is_employee'] = getattr(user, 'is_employee', False)
             if hasattr(user, "clientprofile"):
                 context['appointment_list'] = Appointment.objects.filter(
                     client__user=user,
@@ -28,5 +28,7 @@ class HomePageView(TemplateView):
                 ).order_by("date", "start_time")
             else:
                 context['appointment_list'] = []
+        else:
+            context['is_employee'] = False
 
         return context
