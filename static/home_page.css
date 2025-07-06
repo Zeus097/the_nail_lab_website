@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Pacifico';
-    src: url('fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
+    font-family: 'Old_Standard_TT';
+    src: url('fonts/Old_Standard_TT/OldStandardTT-Italic.ttf') format('truetype');
 }
 
 * {
@@ -14,7 +14,7 @@ a {
 }
 
 body {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Old_Standard_TT', serif;
     letter-spacing: 0.05em;
     margin: 0 auto;
     max-width: 1200px;
