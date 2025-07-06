@@ -2,6 +2,7 @@ from django.db import models
 
 from services.models import BaseService
 from accounts.models import EmployeeBio, ClientProfile
+
 from datetime import datetime, timedelta, time, date
 
 from django.core.exceptions import ValidationError

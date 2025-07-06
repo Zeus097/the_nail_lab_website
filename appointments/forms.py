@@ -9,7 +9,13 @@ class AppointmentForm(forms.ModelForm):
         model = Appointment
         fields = ['service', 'date', 'start_time', 'comment']
         widgets = {
-            'date': forms.DateInput(attrs={'type': 'date', 'placeholder': 'YYYY-MM-DD', 'style': 'background-color:white'}),
+            'date': forms.DateInput(
+                attrs={
+                    'type': 'date',
+                    'placeholder': 'YYYY-MM-DD',
+                    'style': 'background-color:white'
+                }
+            ),
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
         }
 
