@@ -42,7 +42,7 @@ GOOGLE_AUTHENTICATION = [
 
 PROJECT_APPS = [
     'studio',
-    'accounts',
+    'accounts.apps.AccountsConfig',  # Заради сигнали е така, за да не гръмне за дублиране при миграции
     'services',
     'photos',
     'appointments',
@@ -84,7 +84,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'studio.context_processors.user_role_context',  # За да покаже в навигацията линка за почивка навсякъде
+
+                'studio.context_processors.user_role_context',
+                # За да покаже в навигацията линка за почивка
+                # нa служителя независимо дали се намира на адрес '' или не..!
 
                 # GOOGLE
                 'social_django.context_processors.backends',

@@ -1,24 +1,34 @@
+from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.utils.translation import gettext_lazy as _
+
+from accounts.validators import PhoneValidator
 
 UserModel = get_user_model()
 
 
 class BaseUserCreationForm(UserCreationForm):
+    telephone_number = forms.CharField(
+        max_length=20,
+        required=True,
+        label=_('Телефонен номер'),
+        validators=[PhoneValidator()],
+        widget=forms.TextInput(attrs={'placeholder': _('Въведи телефонен номер')})
+    )
+
     class Meta(UserCreationForm.Meta):
         model = UserModel
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ('username', 'email', 'telephone_number', 'password1', 'password2')
         labels = {
             'username': _('Потребителско име'),
             'email': _('Имейл'),
             'password1': _('Парола'),
             'password2': _('Потвърди паролата'),
+            'telephone_number': _('Телефонен номер'),
         }
-
         help_texts = {
             'username': _('Позволени са букви, цифри и @/./+/-/_ само.'),
-            'email': _('Въведи валиден имейл адрес.'),
         }
 
     def __init__(self, *args, **kwargs):

@@ -33,7 +33,6 @@ class HomePageView(LoginRequiredMixin, TemplateView):
             else:
                 context['appointment_list'] = []
 
-            # ТОВА Е НАЙ-ВАЖНОТО — преместено извън elif-а
             context['day_off_list'] = DayOff.objects.select_related('employee').order_by('date')
 
         else:

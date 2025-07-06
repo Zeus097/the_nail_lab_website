@@ -1,10 +1,7 @@
 from django.db import models
-
 from services.models import BaseService
 from accounts.models import EmployeeBio, ClientProfile
-
 from datetime import datetime, timedelta, time, date
-
 from django.core.exceptions import ValidationError
 
 
@@ -24,7 +21,7 @@ class Appointment(models.Model):
         return (start_dt + timedelta(minutes=self.service.duration)).time()
 
     def clean(self):
-        if not self.employee_id or not self.service_id or not self.date or not self.start_time:
+        if not all([self.employee, self.service, self.date, self.start_time]):
             return
 
         if self.date < date.today():
@@ -40,11 +37,10 @@ class Appointment(models.Model):
         if self.start_time < working_start or end_time > working_end:
             raise ValidationError("Процедурата трябва да е в рамките на работното време (09:00 - 18:00).")
 
-        overlapping = Appointment.objects.filter(employee=self.employee, date=self.date).exclude(pk=self.pk)
-
         appointment_start = datetime.combine(self.date, self.start_time)
         appointment_end = datetime.combine(self.date, end_time)
 
+        overlapping = Appointment.objects.filter(employee=self.employee, date=self.date).exclude(pk=self.pk)
         for appointment in overlapping:
             other_start = datetime.combine(appointment.date, appointment.start_time)
             other_end = datetime.combine(appointment.date, appointment.end_time)
@@ -66,7 +62,7 @@ class DayOff(models.Model):
         unique_together = ["employee", "date"]
 
     def clean(self):
-        if not self.employee_id or not self.date:
+        if not self.employee or not self.date:
             return
 
         if Appointment.objects.filter(employee=self.employee, date=self.date).exists():

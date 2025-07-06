@@ -1,4 +1,5 @@
 from typing import Optional
+import re
 
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
@@ -23,3 +24,15 @@ class ImageSizeValidator:
     def __call__(self, value):
         if value.size > self.image_size_limit * 1024 * 1024:
             raise ValidationError(self.message)
+
+
+@deconstructible
+class PhoneValidator:
+    phone_regex = re.compile(r'^\+?\d{9,15}$')  # +optional, 9-15 цифри
+
+    message = "Телефонният номер трябва да съдържа 9 до 15 цифри и може да започва с '+'."
+    code = 'invalid_phone'
+
+    def __call__(self, value):
+        if not self.phone_regex.match(value):
+            raise ValidationError(self.message, code=self.code)

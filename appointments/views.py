@@ -20,10 +20,9 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
         return kwargs
 
     def form_valid(self, form):
-        appointment = form.save(commit=False)
-        appointment.client = ClientProfile.objects.get(user=self.request.user)
-        appointment.employee = EmployeeBio.objects.first()
-        appointment.save()
+        client_profile, created = ClientProfile.objects.get_or_create(user=self.request.user)
+        form.instance.client = client_profile
+        form.instance.employee = EmployeeBio.objects.first()
         return super().form_valid(form)
 
 
@@ -56,7 +55,6 @@ class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return kwargs
 
     def form_valid(self, form):
-        form.instance.employee = get_object_or_404(EmployeeBio, user=self.request.user)
         return super().form_valid(form)
 
 
@@ -68,21 +66,3 @@ class DayOffListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         user = self.request.user
         return DayOff.objects.select_related('employee', 'employee__user').order_by('date')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

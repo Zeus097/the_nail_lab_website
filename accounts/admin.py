@@ -18,12 +18,16 @@ class BaseUserAdmin(UserAdmin):
         }),
     )
 
+
 @admin.register(EmployeeBio)
 class EmployeeBioAdmin(admin.ModelAdmin):
-    pass
+    model = EmployeeBio
+    list_display = ('name', 'user__email',)
 
 
 @admin.register(ClientProfile)
 class ClientProfileAdmin(admin.ModelAdmin):
-    list_display = ['user', 'user__email', 'phone',]
+    model = ClientProfile
+    list_display = ('name', 'user__email',)
+
 
