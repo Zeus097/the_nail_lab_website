@@ -1,6 +1,6 @@
 from django.db import models
 
-from appointments.validators import AppointmentFormCleanValidator
+from appointments.validators import AppointmentModelCleanValidator
 from services.models import BaseService
 from accounts.models import EmployeeBio, ClientProfile
 from datetime import datetime, timedelta, time, date
@@ -23,7 +23,7 @@ class Appointment(models.Model):
         return (start_dt + timedelta(minutes=self.service.duration)).time()
 
     def clean(self):
-        validator = AppointmentFormCleanValidator()
+        validator = AppointmentModelCleanValidator()
         validator(self)
 
     def __str__(self):
