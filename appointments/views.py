@@ -58,3 +58,31 @@ class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     def form_valid(self, form):
         form.instance.employee = get_object_or_404(EmployeeBio, user=self.request.user)
         return super().form_valid(form)
+
+
+class DayOffListView(LoginRequiredMixin, ListView):
+    model = DayOff
+    template_name = 'appointments/list-of-the-employee-dayoff.html'
+    context_object_name = 'day_off_list'
+
+    def get_queryset(self):
+        user = self.request.user
+        return DayOff.objects.filter(employee__user=user)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
