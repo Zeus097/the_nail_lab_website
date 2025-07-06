@@ -25,8 +25,6 @@ class AppointmentForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        # Не викай instance.full_clean() тук
-        # Просто сетвай instance.employee, за да го ползва clean() на модела
         self.instance.employee = self.employee
         return cleaned_data
 

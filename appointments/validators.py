@@ -4,7 +4,7 @@ from django.utils.deconstruct import deconstructible
 
 
 @deconstructible
-class AppointmentValidator:
+class AppointmentFormCleanValidator:
     def __init__(self, get_overlapping_qs=None, get_day_off_qs=None):
         self.get_overlapping_qs = get_overlapping_qs
         self.get_day_off_qs = get_day_off_qs
