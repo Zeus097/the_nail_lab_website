@@ -1,4 +1,6 @@
 from django.db import models
+
+from appointments.validators import AppointmentValidator
 from services.models import BaseService
 from accounts.models import EmployeeBio, ClientProfile
 from datetime import datetime, timedelta, time, date
@@ -21,34 +23,8 @@ class Appointment(models.Model):
         return (start_dt + timedelta(minutes=self.service.duration)).time()
 
     def clean(self):
-        if not all([self.employee, self.service, self.date, self.start_time]):
-            return
-
-        if self.date < date.today():
-            raise ValidationError("Не може да се записва процедура за минала дата.")
-
-        working_start = time(9, 0)
-        working_end = time(18, 0)
-        end_time = self.end_time
-
-        if end_time is None:
-            return
-
-        if self.start_time < working_start or end_time > working_end:
-            raise ValidationError("Процедурата трябва да е в рамките на работното време (09:00 - 18:00).")
-
-        appointment_start = datetime.combine(self.date, self.start_time)
-        appointment_end = datetime.combine(self.date, end_time)
-
-        overlapping = Appointment.objects.filter(employee=self.employee, date=self.date).exclude(pk=self.pk)
-        for appointment in overlapping:
-            other_start = datetime.combine(appointment.date, appointment.start_time)
-            other_end = datetime.combine(appointment.date, appointment.end_time)
-            if not (appointment_end <= other_start or appointment_start >= other_end):
-                raise ValidationError("Часът се припокрива с друга процедура.")
-
-        if DayOff.objects.filter(employee=self.employee, date=self.date).exists():
-            raise ValidationError("Денят е отбелязан като почивен.")
+        validator = AppointmentValidator()
+        validator(self)
 
     def __str__(self):
         return f"{self.client} - {self.date} - {self.start_time} - {self.service}"
