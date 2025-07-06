@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg/schema/public.abK9xQ.meta" afterDir="false" />
@@ -161,7 +162,7 @@
       <workItem from="1751782821626" duration="3069000" />
       <workItem from="1751785927215" duration="1305000" />
       <workItem from="1751787242977" duration="1606000" />
-      <workItem from="1751788860696" duration="654000" />
+      <workItem from="1751788860696" duration="1187000" />
     </task>
     <servers />
   </component>
