@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta, time, date
+from datetime import datetime, time, date
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 
@@ -40,14 +40,16 @@ class AppointmentValidator:
         if day_off_qs.exists():
             raise ValidationError("Денят е отбелязан като почивен.")
 
-    def _default_overlapping(self, instance):
+    @staticmethod
+    def _default_overlapping(instance):
         from appointments.models import Appointment  # lazy import to avoid circular dependency
         return Appointment.objects.filter(
             employee=instance.employee,
             date=instance.date
         ).exclude(pk=instance.pk)
 
-    def _default_day_off(self, instance):
+    @staticmethod
+    def _default_day_off(instance):
         from appointments.models import DayOff
         return DayOff.objects.filter(
             employee=instance.employee,
