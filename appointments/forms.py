@@ -31,7 +31,6 @@ class AppointmentForm(forms.ModelForm):
         return cleaned_data
 
 
-
 class DayOffForm(forms.ModelForm):
     class Meta:
         model = DayOff
