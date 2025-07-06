@@ -18,6 +18,7 @@ body {
     letter-spacing: 0.05em;
     margin: 0 auto;
     max-width: 1200px;
+    min-width: 320px;
     width: 100%;
     background: linear-gradient(to bottom, #ffffff, #efefef);
     /*min-width: 793px;*/
@@ -65,8 +66,7 @@ main {
     padding-top: 30px;
     gap: 10px;
     width: 100%;
-    height: 400px;
-    max-height: 800px;
+    min-height: 300px;
 }
 
 .row-line{
@@ -160,6 +160,18 @@ main {
 }
 
 
+@media (max-width: 1024px) {
+
+    .second-container {
+        flex-direction: column;
+        width: 90%;
+        gap: 10px;
+    }
+
+    .left-div, .right-div {
+        text-align: center;
+    }
+}
 
 
 @media (max-width: 768px) {
@@ -169,17 +181,40 @@ main {
     }
 
     .second-container {
-        width: 70%;
-        max-width: 100%;
+        flex-direction: column;
         justify-content: center;
+        width: 90%;
+        max-width: 100%;
         max-height: 100%;
+        gap: 20px;
     }
 
+    .second-container p {
+        padding: 5px;
+        margin: 10px;
+    }
 }
 
 
+@media (max-width: 400px) {
 
+    .info-section {
+        height: 620px;
+    }
 
+    .second-container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
 
 
 

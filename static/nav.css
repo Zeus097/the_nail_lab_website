@@ -124,10 +124,6 @@
 }
 
 @media (max-width: 768px) {
-    body {
-        max-width: 100%;
-
-    }
 
     /* Show hamburger button */
     .base-navigation-bar {
@@ -200,19 +196,5 @@
         transform: scale(1.05);
     }
 
-     .second-container {
-        flex-direction: column;
-        width: 90%;
-        gap: 20px;
-    }
-
-
 }
-
-
-
-
-
-
-
 
