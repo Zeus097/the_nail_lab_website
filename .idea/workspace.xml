@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/studio/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointments/list-of-the-employee-dayoff.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/list-of-the-employee-dayoff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_nail_lab_website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_nail_lab_website/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -49,7 +59,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.pro.customization.django.DjangoModulesConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -58,6 +68,33 @@
     ]
   }
 }</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="the_nail_lab_website" is-module-sdk="true" working-directory="$PROJECT_DIR$">
+        <envs>
+          <env key="DB_NAME" value="the_nail_lab_website_2025" />
+          <env key="DB_PASSWORD" value="0897535532" />
+          <env key="DB_USER" value="postgres" />
+          <env key="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
+          <env key="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
+          <env key="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
+        </envs>
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="the_nail_lab_website" />
+        <option name="myEnvs">
+          <map>
+            <entry key="DB_NAME" value="the_nail_lab_website_2025" />
+            <entry key="DB_PASSWORD" value="0897535532" />
+            <entry key="DB_USER" value="postgres" />
+            <entry key="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
+            <entry key="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
+            <entry key="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
+          </map>
+        </option>
+        <option name="myWorkingDirectory" value="$PROJECT_DIR$" />
+      </console-settings>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="the_nail_lab_website" type="Python.DjangoServer" factoryName="Django server">
       <module name="the_nail_lab_website" />
@@ -66,11 +103,11 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DB_NAME" value="the_nail_lab_website_2025" />
+        <env name="DB_PASSWORD" value="0897535532" />
+        <env name="DB_USER" value="postgres" />
         <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
         <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
-        <env name="DB_NAME" value="the_nail_lab_website_2025" />
-        <env name="DB_USER" value="postgres" />
-        <env name="DB_PASSWORD" value="0897535532" />
         <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
         <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
       </envs>
@@ -120,6 +157,11 @@
       <workItem from="1751729967898" duration="4559000" />
       <workItem from="1751738247891" duration="2304000" />
       <workItem from="1751776219077" duration="914000" />
+      <workItem from="1751777137452" duration="5588000" />
+      <workItem from="1751782821626" duration="3069000" />
+      <workItem from="1751785927215" duration="1305000" />
+      <workItem from="1751787242977" duration="1606000" />
+      <workItem from="1751788860696" duration="654000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,5 @@
 venv/
 .venv/
 .envrc
+.env
+.envrc

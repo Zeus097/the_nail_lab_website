@@ -67,7 +67,7 @@ class DayOffListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         user = self.request.user
-        return DayOff.objects.filter(employee__user=user)
+        return DayOff.objects.select_related('employee', 'employee__user').order_by('date')
 
 
 

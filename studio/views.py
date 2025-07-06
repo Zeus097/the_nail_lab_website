@@ -1,7 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from appointments.models import Appointment
+
+from accounts.models import EmployeeBio
+from appointments.models import Appointment, DayOff
 
 
 class HomePageView(LoginRequiredMixin, TemplateView):
@@ -16,19 +18,26 @@ class HomePageView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         user = self.request.user
 
+        context['is_employee'] = getattr(user, 'is_employee', False)
+
         if user.is_authenticated:
-            context['is_employee'] = getattr(user, 'is_employee', False)
             if hasattr(user, "clientprofile"):
                 context['appointment_list'] = Appointment.objects.filter(
                     client__user=user,
                 ).order_by("date", "start_time")
+
             elif hasattr(user, "employeebio"):
                 context['appointment_list'] = Appointment.objects.filter(
                     employee__user=user,
                 ).order_by("date", "start_time")
             else:
                 context['appointment_list'] = []
+
+            # ТОВА Е НАЙ-ВАЖНОТО — преместено извън elif-а
+            context['day_off_list'] = DayOff.objects.select_related('employee').order_by('date')
+
         else:
-            context['is_employee'] = False
+            context['appointment_list'] = []
+            context['day_off_list'] = []
 
         return context

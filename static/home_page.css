@@ -111,6 +111,17 @@ main {
     margin-bottom: 10px;
 }
 
+.rest-day {
+    display: flex;
+    flex-direction: row;
+    background: #4ac1f7;
+    height: 300px;
+}
+
+.rest-day a {
+
+}
+
 .nails-section a {
     display: flex;
     padding: 20px;

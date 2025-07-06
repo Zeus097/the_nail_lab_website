@@ -6,7 +6,7 @@
         <option name="rootFolder" value="$MODULE_DIR$" />
         <option name="settingsModule" value="the_nail_lab_website/settings.py" />
         <option name="manageScript" value="$MODULE_DIR$/manage.py" />
-        <option name="environment" value="&lt;map/&gt;" />
+        <option name="environment" value="&lt;map&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_PORT&lt;/string&gt;&#10;    &lt;string&gt;5432&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_USER&lt;/string&gt;&#10;    &lt;string&gt;postgres&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;SECRET_KEY&lt;/string&gt;&#10;    &lt;string&gt;%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_NAME&lt;/string&gt;&#10;    &lt;string&gt;the_nail_lab_website_2025&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_HOST&lt;/string&gt;&#10;    &lt;string&gt;localhost&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;SOCIAL_AUTH_GOOGLE_OAUTH2_KEY&lt;/string&gt;&#10;    &lt;string&gt;768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET&lt;/string&gt;&#10;    &lt;string&gt;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&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_PASSWORD&lt;/string&gt;&#10;    &lt;string&gt;0897535532&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;&lt;/map&gt;" />
         <option name="doNotUseTestRunner" value="false" />
         <option name="trackFilePattern" value="migrations" />
       </configuration>
