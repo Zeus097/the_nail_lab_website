@@ -1,10 +1,12 @@
+from django import forms
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 
-from accounts.forms import BaseUserCreationForm
-from accounts.models import EmployeeBio
+from accounts.forms import BaseUserCreationForm, CompleteProfileForm
+from accounts.models import EmployeeBio, BaseUser
 
 
 class UserRegistrationView(CreateView):
@@ -26,3 +28,13 @@ class UserRegistrationView(CreateView):
 def google_login_redirect(request):
     url = reverse('social:begin', args=['google-oauth2'])
     return redirect(url)
+
+
+class CompleteProfileView(LoginRequiredMixin, UpdateView):
+    form_class = CompleteProfileForm
+    model = BaseUser
+    template_name = 'registration/complete_profile.html'
+    success_url = reverse_lazy('homepage')
+
+    def get_object(self):
+        return self.request.user

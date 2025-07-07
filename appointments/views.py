@@ -1,3 +1,4 @@
+from services.models import BaseService
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -15,14 +16,12 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('homepage')
 
     def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['employee'] = EmployeeBio.objects.first()
-        return kwargs
+        return super().get_form_kwargs()
 
     def form_valid(self, form):
-        client_profile, created = ClientProfile.objects.get_or_create(user=self.request.user)
+        client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
         form.instance.client = client_profile
-        form.instance.employee = EmployeeBio.objects.first()
+        form.instance.employee = form.cleaned_data['employee']  # <- това е ключово
         return super().form_valid(form)
 
 
@@ -34,9 +33,9 @@ class AppointmentListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         user = self.request.user
         if user.is_employee:
-            return Appointment.objects.filter(employee__user=user)
+            return Appointment.objects.filter(employee__user=user).order_by("date", "start_time")
         elif user.is_client:
-            return Appointment.objects.filter(client__user=user)
+            return Appointment.objects.filter(client__user=user).order_by("date", "start_time")
         return Appointment.objects.none()
 
 

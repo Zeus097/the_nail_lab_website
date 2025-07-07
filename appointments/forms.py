@@ -1,32 +1,37 @@
 from django import forms
-from datetime import date
 from django.core.exceptions import ValidationError
+
+from accounts.models import EmployeeBio
 from appointments.models import Appointment, DayOff
 
 
 class AppointmentForm(forms.ModelForm):
+    employee = forms.ModelChoiceField(
+        queryset=EmployeeBio.objects.all(),
+        required=True,
+        label="Избери служител"
+    )
+
     class Meta:
         model = Appointment
-        fields = ['service', 'date', 'start_time', 'comment']
+        fields = ['employee', 'service', 'date', 'start_time', 'comment']
         widgets = {
-            'date': forms.DateInput(
-                attrs={
-                    'type': 'date',
-                    'placeholder': 'YYYY-MM-DD',
-                    'style': 'background-color:white'
-                }
-            ),
+            'date': forms.DateInput(attrs={'type': 'date'}),
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
+            'comment': forms.Textarea(attrs={'rows': 3}),
         }
 
     def __init__(self, *args, **kwargs):
-        self.employee = kwargs.pop('employee', None)
+        service = kwargs.pop('service', None)
         super().__init__(*args, **kwargs)
 
+        if service:
+            # Филтрирай служителите по това дали предлагат услугата
+            self.fields['employee'].queryset = EmployeeBio.objects.filter(services=service)
+
     def clean(self):
-        cleaned_data = super().clean()
-        self.instance.employee = self.employee
-        return cleaned_data
+        return super().clean()
+
 
 
 class DayOffForm(forms.ModelForm):

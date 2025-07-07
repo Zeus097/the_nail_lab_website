@@ -3,15 +3,54 @@
         <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
             <a href="">
                 <div>
+                
+                    <p>Вид на услугата:</p>
+                
                     <h3>
                         {{ appointment.service.name }}
                     </h3>
+                
                     <p>
-                         {{ appointment.date }} – {{ appointment.start_time }}
+                        Клиент:&nbsp;
+                        <strong>
+                            {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
+                        </strong>
                     </p>
+                
+                    <p>
+                        Специалист:&nbsp;
+                        <strong>
+                            {{ appointment.employee.user.get_full_name|default:appointment.client.user.username }}
+                        </strong>
+                    </p>
+                
+                    <p>
+                        Телефон:&nbsp;
+                        <strong>
+                            {{ appointment.client.user.telephone_number }}
+                        </strong>
+                    </p>
+                
+                    <p>
+                        Имейл адрес:&nbsp;
+                        <strong>
+                            {{ appointment.client.email }}
+                        </strong>
+                    </p>
+                
+                    <p>
+                        Дата и час:&nbsp;
+                        <strong>
+                            {{ appointment.date }} – {{ appointment.start_time }}
+                        </strong> 
+                    </p>
+
                     <p>
                         {% if appointment.comment %}
-                            {{ appointment.comment }}
+                            Коментар:&nbsp;
+                            <strong>
+                                {{ appointment.comment|truncatewords:10 }}
+                            </strong> 
                         {% endif %}
                     </p>
                     

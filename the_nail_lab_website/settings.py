@@ -193,11 +193,38 @@ LOGOUT_REDIRECT_URL = reverse_lazy('login')
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = False  # Since using HTTP locally
 SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
+
+SOCIAL_AUTH_PIPELINE = [
+    # 1. Взимане на информация от Google
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+
+    # 2. Ако вече има потребител с този email → свържи
+    'social_core.pipeline.social_auth.associate_by_email',  # FIX: ако email вече съществува
+
+    # 3. Подготовка на потребителя
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+
+    # 4. Свързване на social акаунта с потребителя
+    'social_core.pipeline.social_auth.associate_user',
+
+    # 5. Тук започва твоята логика (safe, вече има `user`)
+    'accounts.pipeline.create_client_profile',  # Създаване на клиентски профил
+    'accounts.pipeline.check_profile_data',     # Пренасочване ако няма парола/телефон
+
+    # 6. Зареждане на допълнителни данни
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+]
+
 
 # Helps social_django generate absolute URLs correctly
 SOCIAL_AUTH_STRATEGY = 'social_django.strategy.DjangoStrategy'

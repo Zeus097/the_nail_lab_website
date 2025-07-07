@@ -111,17 +111,6 @@ main {
     margin-bottom: 10px;
 }
 
-.rest-day {
-    display: flex;
-    flex-direction: row;
-    background: #4ac1f7;
-    height: 300px;
-}
-
-.rest-day a {
-
-}
-
 .nails-section a {
     display: flex;
     padding: 20px;
@@ -133,15 +122,16 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
     gap: 5px;
-    width: 40%;
-    height: 40%;
+    width: 60%;
+    height: 80%;
     /*background-size: cover;*/
     /*background-repeat: no-repeat;*/
     /*background-position: center;*/
     background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
-    margin: 50px 20px 50px 20px;
+    /*margin: 50px 20px 50px 20px;*/
     border-radius: 10px;
 }
 
@@ -150,11 +140,17 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     color: black;
+    margin-bottom: 10px;
 }
 
 .nails-section a div h3 {
     color: black;
     margin-bottom: 20px;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 7px;
+    width: fit-content;
 }
 
 .nails-section a:hover {
@@ -168,6 +164,13 @@ main {
     transform: scale(0.95);
 
     border-radius: 10px;
+}
+
+.rest-day {
+    display: flex;
+    flex-direction: row;
+    background: #4ac1f7;
+    height: 300px;
 }
 
 

@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
+from accounts.models import BaseUser
 from accounts.validators import PhoneValidator
 
 UserModel = get_user_model()
@@ -66,4 +67,31 @@ class CustomLoginForm(AuthenticationForm):
         })
 
 
+class CompleteProfileForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput(), required=True, label="Парола")
+    password2 = forms.CharField(widget=forms.PasswordInput(), required=True, label="Потвърди паролата")
 
+    class Meta:
+        model = BaseUser
+        fields = ['email', 'telephone_number']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if BaseUser.objects.exclude(pk=self.instance.pk).filter(email=email).exists():
+            raise forms.ValidationError("Този имейл вече е зает.")
+        return email
+
+    def clean(self):
+        cleaned_data = super().clean()
+        pw1 = cleaned_data.get('password')
+        pw2 = cleaned_data.get('password2')
+        if pw1 and pw2 and pw1 != pw2:
+            raise forms.ValidationError("Паролите не съвпадат.")
+        return cleaned_data
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data['password'])
+        if commit:
+            user.save()
+        return user

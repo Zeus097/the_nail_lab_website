@@ -15,6 +15,15 @@ class Appointment(models.Model):
     start_time = models.TimeField()
     comment = models.TextField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Записване на час"
+        verbose_name_plural = "Записване на часове"
+
+    def save(self, *args, **kwargs):
+        if not self.employee_id:
+            raise ValueError("Записът на час задължително трябва да има служител.")
+        super().save(*args, **kwargs)
+
     @property
     def end_time(self):
         if not self.date or not self.start_time or not self.service:
