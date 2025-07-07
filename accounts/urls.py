@@ -11,4 +11,5 @@ urlpatterns = [
 
     path('login/google/', views.google_login_redirect, name='login-google'),
     path('complete-profile/', views.CompleteProfileView.as_view(), name='complete-profile'),
+
 ]

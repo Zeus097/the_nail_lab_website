@@ -1,4 +1,3 @@
-from services.models import BaseService
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -21,7 +20,7 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
         form.instance.client = client_profile
-        form.instance.employee = form.cleaned_data['employee']  # <- това е ключово
+        form.instance.employee = form.cleaned_data['employee']
         return super().form_valid(form)
 
 
@@ -39,6 +38,7 @@ class AppointmentListView(LoginRequiredMixin, ListView):
         return Appointment.objects.none()
 
 
+# -----------------------------------
 class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = DayOff
     form_class = DayOffForm

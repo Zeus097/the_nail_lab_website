@@ -12,7 +12,6 @@ def sync_user_profiles(sender, instance, created, **kwargs):
 
     # NEW USER
     if created:
-        # Ако не е служител, го маркираме като клиент
         if not instance.is_employee:
             instance.is_client = True
             instance.save(update_fields=['is_client'])

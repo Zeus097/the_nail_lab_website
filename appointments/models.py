@@ -1,9 +1,8 @@
 from django.db import models
-
 from appointments.validators import AppointmentModelCleanValidator
 from services.models import BaseService
 from accounts.models import EmployeeBio, ClientProfile
-from datetime import datetime, timedelta, time, date
+from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
 
 
@@ -39,6 +38,7 @@ class Appointment(models.Model):
         return f"{self.client} - {self.date} - {self.start_time} - {self.service}"
 
 
+# --------------------------------
 class DayOff(models.Model):
     employee = models.ForeignKey(EmployeeBio, on_delete=models.CASCADE)
     date = models.DateField()

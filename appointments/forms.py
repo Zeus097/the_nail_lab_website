@@ -1,6 +1,5 @@
 from django import forms
 from django.core.exceptions import ValidationError
-
 from accounts.models import EmployeeBio
 from appointments.models import Appointment, DayOff
 
@@ -26,14 +25,13 @@ class AppointmentForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         if service:
-            # Филтрирай служителите по това дали предлагат услугата
             self.fields['employee'].queryset = EmployeeBio.objects.filter(services=service)
 
     def clean(self):
         return super().clean()
 
 
-
+# ----------------------------------------
 class DayOffForm(forms.ModelForm):
     class Meta:
         model = DayOff

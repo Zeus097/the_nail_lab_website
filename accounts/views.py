@@ -1,4 +1,3 @@
-from django import forms
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
@@ -6,7 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView
 
 from accounts.forms import BaseUserCreationForm, CompleteProfileForm
-from accounts.models import EmployeeBio, BaseUser
+from accounts.models import BaseUser
 
 
 class UserRegistrationView(CreateView):
