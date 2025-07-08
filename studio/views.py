@@ -5,7 +5,7 @@ from django.utils.timezone import now
 from appointments.models import Appointment, DayOff
 
 
-class HomePageView(LoginRequiredMixin, TemplateView):
+class HomePageView(TemplateView):
     success_url = reverse_lazy('homepage')
 
     def get_template_names(self):
