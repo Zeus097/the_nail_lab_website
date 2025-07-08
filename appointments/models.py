@@ -1,15 +1,13 @@
 from django.db import models
 from appointments.validators import AppointmentModelCleanValidator
-from services.models import BaseService
-from accounts.models import EmployeeBio, ClientProfile
 from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
 
 
 class Appointment(models.Model):
-    client = models.ForeignKey(ClientProfile, on_delete=models.CASCADE)
-    employee = models.ForeignKey(EmployeeBio, on_delete=models.CASCADE)
-    service = models.ForeignKey(BaseService, on_delete=models.CASCADE)
+    client = models.ForeignKey('accounts.ClientProfile', on_delete=models.CASCADE)
+    employee = models.ForeignKey('accounts.EmployeeBio', on_delete=models.CASCADE)
+    service = models.ForeignKey('services.BaseService', on_delete=models.CASCADE)
     date = models.DateField()
     start_time = models.TimeField()
     comment = models.TextField(blank=True, null=True)
@@ -40,7 +38,7 @@ class Appointment(models.Model):
 
 # --------------------------------
 class DayOff(models.Model):
-    employee = models.ForeignKey(EmployeeBio, on_delete=models.CASCADE)
+    employee = models.ForeignKey('accounts.EmployeeBio', on_delete=models.CASCADE)
     date = models.DateField()
 
     class Meta:
