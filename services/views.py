@@ -17,32 +17,31 @@ class ServiceListView(LoginRequiredMixin, ListView):
     query_param = "query"
     form_class = SearchForm
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        query = self.request.GET.get(self.query_param, '')
+
+        kwargs.update({
+            'search_form': self.form_class(initial={'query': query}),
+            'query': query,
+        })
+        return super().get_context_data(object_list=object_list, **kwargs)
+
     def get_queryset(self):
+        #  За да търси и с малки букви - нова база с подходящ локал,
+        #  за да се настрои 'datcollate' (bg_BG.UTF-8) и
+        #  след това -миграции към новата база,
+
         queryset = self.model.objects.all()
         search_parameter = self.request.GET.get(self.query_param)
 
         if search_parameter:
-            parameter = search_parameter.strip().lower()
-
-            queryset = queryset.annotate(
-                lower_name=Lower('name'),
-                lower_description=Lower('description'),
-            ).filter(
-                Q(lower_name__icontains=parameter)
+            queryset = queryset.filter(
+                Q(name__icontains=search_parameter)
                 |
-                Q(lower_description__icontains=parameter)
-                |
-                Q(price__icontains=parameter)
+                Q(description__icontains=search_parameter)
             )
 
         return queryset.order_by('id')
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        kwargs.update({
-            'search_form': self.form_class,
-            'query': self.request.GET.get(self.query_param, ''),
-        })
-        return super().get_context_data(object_list=object_list, **kwargs)
 
 
 class ServiceDetailView(LoginRequiredMixin, DetailView):

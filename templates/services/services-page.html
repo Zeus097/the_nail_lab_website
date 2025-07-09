@@ -4,23 +4,33 @@
     {% include 'common/search-service.html' %}
 
     <section class="services-main">
-        {% for service in services %}
-            <div class="service-section">
-                <span>
-                    <div class="left-div">
-                        <h4>{{ service.name }}</h4>
-                        <p>{{ service.description|truncatewords:3 }}</p>
-                        <a href="{% url 'service_details' service.id %}" class="button-like-a">Прочети още...</a>
-                    </div>
+        {% if services %}
+            {% for service in services %}
+                <div class="service-section">
+                    <span>
+                        <div class="left-div">
+                            <h4>{{ service.name }}</h4>
+                            <p>{{ service.description|truncatewords:3 }}</p>
+                            <a href="{% url 'service_details' service.id %}" class="button-like-a">Прочети още...</a>
+                        </div>
     
-                    <div class="right-div">
-                        <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
-                        <p>Цена: {{ service.price }} лв.</p>
-                        <p>Време: {{ service.duration }}мин.</p>
-                    </div>
-                </span>
-            </div>
-        {% endfor %}
+                        <div class="right-div">
+                            <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
+                            <p>Цена: {{ service.price }} лв.</p>
+                            <p>Време: {{ service.duration }}мин.</p>
+                        </div>
+                    </span>
+                </div>
+            {% endfor %}
+        {% else %}
+            
+            {% if query %}
+                <p>Няма намерени резултати за "{{ query }}".</p>
+            {% else %}  {#  Проверка ако няма данни в базата #}
+                <p>Няма налични услуги.</p>
+            
+            {% endif %}
+        {% endif %}
     </section>
     
     <div class="pagination-wrapper">
