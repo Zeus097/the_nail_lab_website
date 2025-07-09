@@ -32,7 +32,7 @@ class AppointmentForm(forms.ModelForm):
             self.fields['employee'].queryset = EmployeeBio.objects.filter(services=service)
 
     employee = forms.ModelChoiceField(
-        queryset=BaseUser.objects.filter(is_employee=True),
+        queryset=EmployeeBio.objects.all(),
         required=True,
         label= 'Избери служител'
     )
@@ -67,13 +67,5 @@ class DayOffForm(forms.ModelForm):
 
         self.instance.employee = self.employee
         self.instance.date = date_value
-
-        try:
-            self.instance.full_clean()
-        except ValidationError as e:
-
-            for field, messages in e.message_dict.items():
-                for msg in messages:
-                    self.add_error(field, msg)
 
         return cleaned_data

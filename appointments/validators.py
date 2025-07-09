@@ -1,6 +1,7 @@
 from datetime import datetime, time, date
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
+from django.utils.timezone import localtime
 
 
 @deconstructible
@@ -39,6 +40,12 @@ class AppointmentModelCleanValidator:
         day_off_qs = self.get_day_off_qs(instance) if self.get_day_off_qs else self._default_day_off(instance)
         if day_off_qs.exists():
             raise ValidationError("Денят е отбелязан като почивен.")
+
+        if instance.date == date.today():
+            current_time = localtime().time()
+            if instance.start_time < current_time:
+                raise ValidationError("Не може да се запазва час за изминал час от днешния ден.")
+
 
     @staticmethod
     def _default_overlapping(instance):

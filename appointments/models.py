@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.timezone import now
+
 from appointments.validators import AppointmentModelCleanValidator
 from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
@@ -47,6 +49,9 @@ class DayOff(models.Model):
     def clean(self):
         if not self.employee or not self.date:
             return
+
+        if self.date < now().date():
+            raise ValidationError({"date": "Не може да отбележиш ден като почивен в миналото."})
 
         if Appointment.objects.filter(employee=self.employee, date=self.date).exists():
             raise ValidationError({"date": "Не може да отбележиш ден като почивен, защото има записани клиенти."})
