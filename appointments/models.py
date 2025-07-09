@@ -10,7 +10,7 @@ class Appointment(models.Model):
     service = models.ForeignKey('services.BaseService', on_delete=models.CASCADE)
     date = models.DateField()
     start_time = models.TimeField()
-    comment = models.TextField(blank=True, null=True)
+    comment = models.CharField(max_length=200, blank=True, null=True)
 
     class Meta:
         verbose_name = "Записване на час"

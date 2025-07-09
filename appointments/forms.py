@@ -1,23 +1,27 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from accounts.models import EmployeeBio
+from accounts.models import BaseUser, EmployeeBio
 from appointments.models import Appointment, DayOff
 
 
 class AppointmentForm(forms.ModelForm):
-    employee = forms.ModelChoiceField(
-        queryset=EmployeeBio.objects.all(),
-        required=True,
-        label="Избери служител"
-    )
-
     class Meta:
         model = Appointment
         fields = ['employee', 'service', 'date', 'start_time', 'comment']
+        labels = {
+            'service': 'Услуги',
+            'date': 'Дата',
+            'start_time': 'Начален час',
+            'comment': 'Коментар (по избор)'
+        }
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
-            'comment': forms.Textarea(attrs={'rows': 3}),
+            'comment': forms.Textarea(attrs={
+                'rows': 10, 'cols': 40, 'maxlength': 200,
+                'placeholder': 'Максимален брой символи - 200',
+                'style': 'padding: 10px;'
+            }),
         }
 
     def __init__(self, *args, **kwargs):
@@ -26,6 +30,12 @@ class AppointmentForm(forms.ModelForm):
 
         if service:
             self.fields['employee'].queryset = EmployeeBio.objects.filter(services=service)
+
+    employee = forms.ModelChoiceField(
+        queryset=BaseUser.objects.filter(is_employee=True),
+        required=True,
+        label= 'Избери служител'
+    )
 
     def clean(self):
         return super().clean()
@@ -38,6 +48,9 @@ class DayOffForm(forms.ModelForm):
         fields = ['date']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'})
+        }
+        labels = {
+            'date': 'Дата'
         }
 
     def __init__(self, *args, **kwargs):

@@ -1,20 +1,19 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-
-    <h2>Заяви почивен ден</h2>
-
-    <form method="post">
+<section class="register-section">
+    <form method="post" class="register-form">
+        <h2 style="text-align: center; margin-bottom: 20px;">Заяви почивен ден</h2>
         {% csrf_token %}
         {{ form.as_p }}
 
         {% if form.non_field_errors %}
-            <div class="error">
+            <div class="error" style="color: red;">
                 {{ form.non_field_errors }}
             </div>
         {% endif %}
 
         <button type="submit">Запази</button>
     </form>
-    
+</section>
 {% endblock %}
