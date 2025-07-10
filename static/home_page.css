@@ -104,11 +104,10 @@ main {
     display: flex;
     flex-direction: column;
     background: #cc103e;
-    background-repeat: inherit;
     background-position: center;
     gap: 10px;
     width: 100%;
-    height: 400px;
+    height: fit-content;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -171,9 +170,10 @@ main {
 
 .rest-day {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: #a8dbf6;
-    height: 300px;
+    height: fit-content;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 
