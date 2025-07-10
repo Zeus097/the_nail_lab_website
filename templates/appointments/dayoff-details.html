@@ -6,10 +6,10 @@
     <div class="dayoff-details-div">
 
         <div class="dayoff-info">
-            <p>Почивен ден: {{ day_off.date|date:"d.m.Y" }}</p>
+            <p>Почивен ден: {{ dayoff.date }}</p>
             
             <div class="appointment-buttons">
-                <a href="#" class="button-like-a">Промени</a>
+                <a href="{% url 'day_off_edit' dayoff.pk %}" class="button-like-a">Промени</a>
                 <a href="#" class="button-like-a">Изтрий</a>
             </div>
             

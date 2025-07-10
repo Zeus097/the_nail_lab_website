@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from appointments.models import Appointment, DayOff
-from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffForm
+from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffForm, DayOffEditForm
 from accounts.models import ClientProfile, EmployeeBio
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
@@ -55,7 +55,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
     model = Appointment
     form_class = AppointmentEditForm
     template_name = 'appointments/appointment-edit.html'
-    pk_url_kwarg = 'pk'
+    # pk_url_kwarg = 'pk'  # Not needed because the default is 'pk'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -127,17 +127,62 @@ class CurrentDayOffDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailVie
     def test_func(self):
         day_off = self.get_object()
         user = self.request.user
-        return hasattr(user, "employeebio") and day_off.employee.user  == user
+        return hasattr(user, "employeebio") and day_off.employee.user == user
 
     def handle_no_permission(self):
         return redirect(reverse_lazy('homepage'))
 
 
 class CurrentDayOffEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    pass
+    model = DayOff
+    form_class = DayOffEditForm
+    template_name = 'appointments/dayoff-edit.html'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['employee'] = self.request.user.employeebio
+        return kwargs
+
+    def form_valid(self, form):
+        self.object = form.save()
+        return super().form_valid(form)
+
+    def test_func(self):
+        day_off = self.get_object()
+        user = self.request.user
+        return hasattr(user, "employeebio") and day_off.employee.user == user
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('homepage'))
+
+    def get_success_url(self):
+        return reverse_lazy('day_off_details', kwargs={'pk': self.object.pk})
 
 
 class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

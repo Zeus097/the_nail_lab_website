@@ -12,7 +12,7 @@ urlpatterns = [
         path('appointment-delete/', views.CurrentAppointmentDeleteView.as_view(), name='appointment_delete'),
 
         path('day_off-details/', views.CurrentDayOffDetailView.as_view(), name='day_off_details'),
-        # path('day_off-edit/', views.CurrentDayOffEditView.as_view(), name='day_off_edit'),
+        path('day_off-edit/', views.CurrentDayOffEditView.as_view(), name='day_off_edit'),
         # path('day_off-delete/', views.CurrentDayOffDeleteView.as_view(), name='day_off_delete'),
 
     ]))

@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointments/dayoff-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/dayoff-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -196,6 +199,8 @@
       <workItem from="1752151775401" duration="1535000" />
       <workItem from="1752153566973" duration="18000" />
       <workItem from="1752153603725" duration="8000" />
+      <workItem from="1752153748866" duration="6427000" />
+      <workItem from="1752162433882" duration="988000" />
     </task>
     <servers />
   </component>
