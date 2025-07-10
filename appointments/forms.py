@@ -1,5 +1,5 @@
 from django import forms
-from accounts.models import BaseUser, EmployeeBio
+from accounts.models import EmployeeBio
 from appointments.models import Appointment, DayOff
 
 
@@ -28,7 +28,10 @@ class AppointmentForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         if service:
+            self.fields['service'].initial = service
             self.fields['employee'].queryset = EmployeeBio.objects.filter(services=service)
+        else:
+            self.fields['employee'].queryset = EmployeeBio.objects.all()
 
     employee = forms.ModelChoiceField(
         queryset=EmployeeBio.objects.all(),

@@ -4,6 +4,7 @@ body div.search-form-div {
     flex-direction: column;
     flex-wrap: nowrap;
     width: 45%;
+    min-width: 280px;
     border-radius: 10px;
 }
 

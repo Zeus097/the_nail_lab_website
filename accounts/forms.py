@@ -52,6 +52,10 @@ class BaseUserCreationForm(UserCreationForm):
         })
 
 
+class ProfileEditForm(BaseUserCreationForm):
+    pass
+
+
 class CustomLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

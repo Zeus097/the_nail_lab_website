@@ -23,6 +23,7 @@ class BaseUserAdmin(UserAdmin):
 class EmployeeBioAdmin(admin.ModelAdmin):
     model = EmployeeBio
     list_display = ('name', 'user__email',)
+    filter_horizontal = ('services',)  # widget for ManyToMany
 
 
 @admin.register(ClientProfile)

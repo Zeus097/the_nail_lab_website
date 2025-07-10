@@ -1,11 +1,11 @@
 from django.contrib.auth import login
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
 
 from accounts.forms import BaseUserCreationForm, CompleteProfileForm
-from accounts.models import BaseUser
+from accounts.models import BaseUser, ClientProfile, EmployeeBio
 
 
 class UserRegistrationView(CreateView):
@@ -37,3 +37,54 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         return self.request.user
+
+
+class CurrentProfileDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+    template_name = "accounts/profile_detail.html"
+
+    def get_object(self, queryset=None):
+        user = self.request.user
+
+        if user.is_client:
+            return ClientProfile.objects.get(user=user)
+
+        elif user.is_employee:
+            return EmployeeBio.objects.get(user=user)
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_authenticated and (user.is_client or user.is_employee)
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy("homepage"))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['user_type'] = 'client' if user.is_client else 'employee'
+        return context
+
+
+class CurrentProfileEditView(LoginRequiredMixin, UpdateView):
+    pass
+
+
+class CurrentProfileDeleteView(LoginRequiredMixin, DeleteView):
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

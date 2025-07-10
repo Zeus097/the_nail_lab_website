@@ -2,10 +2,11 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from appointments.models import Appointment, DayOff
-from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffForm, DayOffEditForm
+from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm
 from accounts.models import ClientProfile, EmployeeBio
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
+from services.models import BaseService
 
 
 class AppointmentCreateView(LoginRequiredMixin, CreateView):
@@ -15,7 +16,13 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('homepage')
 
     def get_form_kwargs(self):
-        return super().get_form_kwargs()
+        kwargs = super().get_form_kwargs()
+        service_id = self.request.GET.get('service_id')
+        if service_id:
+            service = BaseService.objects.filter(id=service_id).first()
+            if service:
+                kwargs['service'] = service
+        return kwargs
 
     def form_valid(self, form):
         client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
@@ -93,7 +100,7 @@ class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, Dele
 # -----------------------------------
 class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = DayOff
-    form_class = DayOffForm
+    form_class = DayOffCreateForm
     template_name = 'appointments/employee-dayoff.html'
     success_url = reverse_lazy('homepage')
 

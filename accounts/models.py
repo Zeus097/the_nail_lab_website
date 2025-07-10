@@ -30,14 +30,15 @@ class EmployeeBio(models.Model):
         blank=True,
         null=True
     )
-    biography = models.CharField(max_length=500)
+    biography = models.CharField(max_length=500, blank=True)
     services = models.ManyToManyField('services.BaseService', related_name='employees')
 
     photo = models.ImageField(
         upload_to='staff_photos',
         validators=[
             ImageSizeValidator(5)
-        ]
+        ],
+        blank=True,
     )
 
     def __str__(self):
