@@ -45,17 +45,9 @@ class AppointmentListView(LoginRequiredMixin, ListView):
         return Appointment.objects.none()
 
 
-class CurrentAppointmentDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
     model = Appointment
     template_name = 'appointments/appointment-details.html'
-
-    def test_func(self):
-        appointment = self.get_object()
-        user = self.request.user
-        return hasattr(user, "clientprofile") and appointment.client.user == user
-
-    def handle_no_permission(self):
-        return redirect(reverse_lazy('homepage'))
 
 
 class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

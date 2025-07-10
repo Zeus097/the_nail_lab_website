@@ -11,17 +11,27 @@
                     </h3>
                 
                     <p>
-                        Клиент:&nbsp;
+                        Дата:&nbsp;
                         <strong>
-                            {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
-                        </strong>
+                            {{ appointment.date }}
+                        </strong> 
                     </p>
                 
                     <p>
-                        Специалист:&nbsp;
+                        Час:&nbsp;
                         <strong>
-                            {{ appointment.employee.user.get_full_name|default:appointment.client.user.username }}
-                        </strong>
+                            {{ appointment.start_time }}
+                        </strong> 
+                    </p>
+                
+                    <p>
+                        <strong>Цена:&nbsp;</strong> 
+                        {{ appointment.service.price}} лв.
+                    </p>
+                
+                    <p>
+                        <strong>Време:&nbsp;</strong> 
+                        {{ appointment.service.duration }}мин.
                     </p>
                 
                     <p>
@@ -29,20 +39,6 @@
                         <strong>
                             {{ appointment.client.user.telephone_number }}
                         </strong>
-                    </p>
-                
-                    <p>
-                        Имейл адрес:&nbsp;
-                        <strong>
-                            {{ appointment.client.email }}
-                        </strong>
-                    </p>
-                
-                    <p>
-                        Дата и час:&nbsp;
-                        <strong>
-                            {{ appointment.date }} – {{ appointment.start_time }}
-                        </strong> 
                     </p>
 
                     <p>

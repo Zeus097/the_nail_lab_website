@@ -12,6 +12,10 @@
             <p><strong>Телефон:</strong> {{ appointment.client.user.telephone_number }}</p>
             <p><strong>Имейл адрес:</strong> {{ appointment.client.email }}</p>
             <p><strong>Дата и час:</strong> {{ appointment.date }} – {{ appointment.start_time }}</p>
+            <p>
+                <strong>Време и цена:</strong> 
+                {{ appointment.service.duration }}мин. – {{ appointment.service.price}} лв
+            </p>
 
             {% if appointment.comment %}
                 <p><strong>Коментар:</strong> {{ appointment.comment }}</p>
