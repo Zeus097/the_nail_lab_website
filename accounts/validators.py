@@ -34,5 +34,7 @@ class PhoneValidator:
     code = 'invalid_phone'
 
     def __call__(self, value):
-        if not self.phone_regex.match(value):
+        normalized = value.replace(' ', '')
+
+        if not self.phone_regex.match(normalized):
             raise ValidationError(self.message, code=self.code)
