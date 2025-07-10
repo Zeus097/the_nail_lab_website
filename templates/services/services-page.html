@@ -10,7 +10,7 @@
                     <span>
                         <div class="left-div">
                             <h4>{{ service.name }}</h4>
-                            <p>{{ service.description|truncatewords:3 }}</p>
+                            <p>{{ service.description|truncatechars:10 }}</p>
                             <a href="{% url 'service_details' service.id %}" class="button-like-a">Прочети още...</a>
                         </div>
     

@@ -1,7 +1,7 @@
 {% for appointment in appointment_list %}
     {% if appointment %}
         <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
-            <a href="">
+            <a href="{% url 'appointment_details' appointment.pk %}">
                 <div>
                 
                     <p>Вид на услугата:</p>
@@ -49,7 +49,7 @@
                         {% if appointment.comment %}
                             Коментар:&nbsp;
                             <strong>
-                                {{ appointment.comment|truncatewords:2 }}
+                                {{ appointment.comment|truncatechars:15 }}
                             </strong> 
                         {% endif %}
                     </p>

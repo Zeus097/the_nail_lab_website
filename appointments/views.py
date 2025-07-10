@@ -1,6 +1,6 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 from appointments.models import Appointment, DayOff
 from appointments.forms import AppointmentForm, DayOffForm
 from accounts.models import ClientProfile, EmployeeBio
@@ -36,6 +36,19 @@ class AppointmentListView(LoginRequiredMixin, ListView):
         elif user.is_client:
             return Appointment.objects.filter(client__user=user).order_by("date", "start_time")
         return Appointment.objects.none()
+
+
+class CurrentAppointmentDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+    model = Appointment
+    template_name = 'appointments/appointment-details.html'
+
+    def test_func(self):
+        appointment = self.get_object()
+        user = self.request.user
+        return hasattr(user, "clientprofile") and appointment.client.user == user
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('homepage'))
 
 
 # -----------------------------------

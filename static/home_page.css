@@ -3,6 +3,10 @@
     src: url('fonts/Old_Standard_TT/OldStandardTT-Italic.ttf') format('truetype');
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,13 +25,13 @@ body {
     min-width: 320px;
     width: 100%;
     background: linear-gradient(to bottom, #ffffff, #efefef);
-    /*min-width: 793px;*/
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -100,7 +104,6 @@ main {
     display: flex;
     flex-direction: column;
     background: #cc103e;
-    /*background-image: url('home_page/nails.png');*/
     background-repeat: inherit;
     background-position: center;
     gap: 10px;
@@ -112,26 +115,26 @@ main {
 }
 
 .nails-section a {
-    display: flex;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .nails-section a div {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     justify-content: center;
-    margin: auto;
+    margin: 25px auto;
+    align-items: center;
     gap: 5px;
     width: 60%;
+    max-width: 100%;
     height: 90%;
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: center;*/
     background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
-    /*margin: 50px 20px 50px 20px;*/
     border-radius: 10px;
 }
 
@@ -169,7 +172,7 @@ main {
 .rest-day {
     display: flex;
     flex-direction: row;
-    background: #4ac1f7;
+    background: #a8dbf6;
     height: 300px;
 }
 
@@ -207,6 +210,17 @@ main {
         padding: 5px;
         margin: 10px;
     }
+
+    .nails-section {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nails-section a div {
+        width: 100%;
+    }
+
 }
 
 

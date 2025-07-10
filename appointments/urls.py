@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from appointments import views
 
 urlpatterns = [
@@ -6,4 +6,9 @@ urlpatterns = [
     path('list/', views.AppointmentListView.as_view(), name='appointment_list'),
     path('day_off/', views.DayOffCreateView.as_view(), name='employee_dayoff'),
     path('day_off-list/', views.DayOffListView.as_view(), name='dayoff_list'),
+    path('<int:pk>/', include([
+        path('details/', views.CurrentAppointmentDetailView.as_view(), name='appointment_details'),
+
+    ]))
+
 ]

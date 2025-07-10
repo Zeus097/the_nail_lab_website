@@ -14,7 +14,7 @@
     top: 60px;
     box-sizing: border-box;
     margin: 0 auto;
-    left: 51.5%;
+    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -29,7 +29,6 @@
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px; /* Optional spacing between links */
 }
 
 .base-navigation-bar a {
