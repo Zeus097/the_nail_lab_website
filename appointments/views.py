@@ -76,7 +76,19 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
 
 
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    pass
+    model = Appointment
+    template_name = 'appointments/appointment-delete-confirmation.html'
+    pk_url_kwarg = 'pk'
+
+    def test_func(self):
+        appointment = self.get_object()
+        user = self.request.user
+        return hasattr(user, "clientprofile") and appointment.client.user == user
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('homepage'))
+
+    success_url = reverse_lazy('homepage')
 
 
 # -----------------------------------

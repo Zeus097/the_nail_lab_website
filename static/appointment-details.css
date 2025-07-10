@@ -75,6 +75,15 @@
     transform: scale(0.95);
 }
 
+.delete-form-a {
+    border-radius: 12px;
+    width: 100%;
+}
+
+.delete-form-a button {
+    width: inherit;
+}
+
 @media (max-width: 768px) {
     .appointment-details-div {
         flex-direction: column;

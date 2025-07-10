@@ -49,7 +49,6 @@ class AppointmentEditForm(AppointmentForm):
     pass
 
 
-
 # ----------------------------------------
 class DayOffForm(forms.ModelForm):
     class Meta:
