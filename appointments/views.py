@@ -78,7 +78,6 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Appointment
     template_name = 'appointments/appointment-delete-confirmation.html'
-    pk_url_kwarg = 'pk'
 
     def test_func(self):
         appointment = self.get_object()
@@ -160,8 +159,18 @@ class CurrentDayOffEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView)
 
 
 class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    pass
+    model = DayOff
+    template_name = 'appointments/dayoff-delete-confirmation.html'
 
+    def test_func(self):
+        day_off = self.get_object()
+        user = self.request.user
+        return hasattr(user, "employeebio") and day_off.employee.user == user
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('homepage'))
+
+    success_url = reverse_lazy('homepage')
 
 
 

@@ -10,7 +10,7 @@
             
             <div class="appointment-buttons">
                 <a href="{% url 'day_off_edit' dayoff.pk %}" class="button-like-a">Промени</a>
-                <a href="#" class="button-like-a">Изтрий</a>
+                <a href="{% url 'day_off_delete' dayoff.pk %}" class="button-like-a">Изтрий</a>
             </div>
             
         </div>
