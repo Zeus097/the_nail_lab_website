@@ -5,8 +5,8 @@
     align-items: center;
     padding: 80px 20px;
     width: 100%;
-    gap: 40px; /* add space between form and google button */
-    flex-wrap: wrap; /* responsive wrapping */
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .register-form,

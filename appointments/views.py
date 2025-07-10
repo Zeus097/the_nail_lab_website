@@ -118,3 +118,26 @@ class DayOffListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         user = self.request.user
         return DayOff.objects.select_related('employee', 'employee__user').order_by('date')
+
+
+class CurrentDayOffDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+    model = DayOff
+    template_name = 'appointments/dayoff-details.html'
+
+    def test_func(self):
+        day_off = self.get_object()
+        user = self.request.user
+        return hasattr(user, "employeebio") and day_off.employee.user  == user
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('homepage'))
+
+
+class CurrentDayOffEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    pass
+
+
+class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    pass
+
+

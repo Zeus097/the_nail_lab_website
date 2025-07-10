@@ -1,4 +1,5 @@
-.appointment-details-section {
+.appointment-details-section,
+.dayoff-details-section {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
@@ -6,7 +7,13 @@
     width: 100%;
 }
 
-.appointment-details-div {
+.dayoff-details-section {
+    width: 40%;
+    height: 300px;
+}
+
+.appointment-details-div,
+.dayoff-details-div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,14 +27,22 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 20px;
 }
 
-.appointment-left-info {
+.dayoff-details-div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.appointment-left-info,
+.dayoff-info {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.appointment-left-info p {
+.appointment-left-info p,
+.dayoff-info p {
     margin: 0;
     font-size: 1rem;
 }

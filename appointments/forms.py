@@ -1,5 +1,4 @@
 from django import forms
-from django.core.exceptions import ValidationError
 from accounts.models import BaseUser, EmployeeBio
 from appointments.models import Appointment, DayOff
 
@@ -77,3 +76,11 @@ class DayOffForm(forms.ModelForm):
         self.instance.date = date_value
 
         return cleaned_data
+
+
+class DayOffCreateForm(DayOffForm):
+    pass
+
+
+class DayOffEditForm(DayOffForm):
+    pass
