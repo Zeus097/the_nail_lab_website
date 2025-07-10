@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appointments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appointments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/appointments-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointments-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/services/services-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services/services-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -194,6 +193,9 @@
       <workItem from="1752057645958" duration="169000" />
       <workItem from="1752057873276" duration="341000" />
       <workItem from="1752058530863" duration="1028000" />
+      <workItem from="1752059578724" duration="11020000" />
+      <workItem from="1752150575192" duration="1038000" />
+      <workItem from="1752151654362" duration="95000" />
     </task>
     <servers />
   </component>

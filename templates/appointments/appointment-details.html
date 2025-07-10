@@ -18,7 +18,7 @@
             {% endif %}
 
             <div class="appointment-buttons">
-                <a href="#" class="button-like-a">Промени</a>
+                <a href="{% url 'appointment_edit' appointment.pk %}" class="button-like-a">Промени</a>
                 <a href="#" class="button-like-a">Изтрий</a>
             </div>
         </div>

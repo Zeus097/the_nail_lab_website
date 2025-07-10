@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from appointments.models import Appointment, DayOff
-from appointments.forms import AppointmentForm, DayOffForm
+from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffForm
 from accounts.models import ClientProfile, EmployeeBio
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
@@ -10,7 +10,7 @@ from django.views.generic import ListView
 
 class AppointmentCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
-    form_class = AppointmentForm
+    form_class = AppointmentCreateForm
     template_name = 'appointments/create-appointment.html'
     success_url = reverse_lazy('homepage')
 
@@ -49,6 +49,34 @@ class CurrentAppointmentDetailView(LoginRequiredMixin, UserPassesTestMixin, Deta
 
     def handle_no_permission(self):
         return redirect(reverse_lazy('homepage'))
+
+
+class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Appointment
+    form_class = AppointmentEditForm
+    template_name = 'appointments/appointment-edit.html'
+    pk_url_kwarg = 'pk'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.clean()
+        self.object.save()
+        return super().form_valid(form)
+
+    def test_func(self):
+        appointment = self.get_object()
+        user = self.request.user
+        return hasattr(user, "clientprofile") and appointment.client.user == user
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('homepage'))
+
+    def get_success_url(self):
+        return reverse_lazy('appointment_details', kwargs={'pk': self.object.pk})
+
+
+class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    pass
 
 
 # -----------------------------------

@@ -41,6 +41,15 @@ class AppointmentForm(forms.ModelForm):
         return super().clean()
 
 
+class AppointmentCreateForm(AppointmentForm):
+    pass
+
+
+class AppointmentEditForm(AppointmentForm):
+    pass
+
+
+
 # ----------------------------------------
 class DayOffForm(forms.ModelForm):
     class Meta:
