@@ -35,9 +35,8 @@ class EmployeeBio(models.Model):
 
     photo = models.ImageField(
         upload_to='staff_photos',
-        validators=[
-            ImageSizeValidator(5)
-        ],
+        default='defaults/default_user.png',
+        validators=[ImageSizeValidator(5)],
         blank=True,
     )
 
@@ -52,10 +51,10 @@ class ClientProfile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     photo = models.FileField(
-        validators=[
-            ImageSizeValidator(5),
-        ],
-        upload_to='files',
+        upload_to='user_photos',
+        default='defaults/default_user.png',
+        validators=[ImageSizeValidator(5)],
+        blank=True,
     )
 
     def __str__(self):

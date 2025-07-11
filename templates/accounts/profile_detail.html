@@ -1,32 +1,35 @@
 {% extends 'common/base.html' %}
+{% load static %}
+{% get_media_prefix as media_url %}
 
 {% block content %}
     
-  {% if user_type == "client" %}
-      
-    <h1>Клиентски профил на {{ object.user.username }}</h1>
-    <p><strong>Имейл:</strong> {{ object.email }}</p>
-    <p><strong>Име:</strong> {{ object.name }}</p>
-    {% if object.photo %}
-      <img src="{{ object.photo.url }}" alt="Снимка на клиента" style="max-width:200px;">
-    {% endif %}
-
-  {% elif user_type == "employee" %}
-    <h2>Служебен профил на {{ object.user.username }}</h2>
-    <p><strong>Потребителско име:</strong> {{ object.user.username }}</p>
-    <p><strong>Име:</strong> {{ object.name }}</p>
-    <p><strong>Биография:</strong> {{ object.biography }}</p>
-    <p><strong>Услуги:</strong> 
-      {% for service in object.services.all %}
-        {{ service.name }}{% if not forloop.last %}, {% endif %}
-      {% empty %}
-        Няма избрани услуги.
-      {% endfor %}
-    </p>
-    {% if object.photo %}
-      <img src="{{ object.photo.url }}" alt="Снимка на служителя" style="max-width:200px;">
-    {% endif %}
+    {% if user_type == "client" %}
+        
+        {% if object.photo and object.photo.name %}
+            <img src="{{ object.photo.url }}" alt="Профилна снимка" style="max-width:200px;">
+        {% else %}
+            <img src="{{ media_url }}defaults/default_user.png" style="max-width:200px;">
+        {% endif %}
+        
+        <h1>Клиентски профил на {{ object.user.username }}</h1>
+        <p><strong>Име:</strong> {{ object.name }}</p>
+        <p><strong>Имейл:</strong> {{ object.email }}</p>
+        
+    {% elif user_type == "employee" %}
+        
+        {% if object.photo and object.photo.name %}
+            <img src="{{ object.photo.url }}" alt="Профилна снимка" style="max-width:200px;">
+        {% else %}
+            <img src="{{ media_url }}defaults/default_user.png" style="max-width:200px;">
+        {% endif %}
+        
+        <h1>Служебен профил на {{ object.user.username }}</h1>
+        <p><strong>Потребителско име:</strong> {{ object.user.username }}</p>
+        <p><strong>Име:</strong> {{ object.name }}</p>
+        <p><strong>Биография:</strong> {{ object.biography }}</p>
+        <p><strong>Услуги:</strong></p>
   
-  {% endif %}
+    {% endif %}
     
 {% endblock %}
