@@ -1,10 +1,11 @@
+from django.http import Http404
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
 
-from accounts.forms import BaseUserCreationForm, CompleteProfileForm
+from accounts.forms import BaseUserCreationForm, CompleteProfileForm, ProfilePhotoForm
 from accounts.models import BaseUser, ClientProfile, EmployeeBio
 
 
@@ -51,6 +52,8 @@ class CurrentProfileDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailVi
         elif user.is_employee:
             return EmployeeBio.objects.get(user=user)
 
+        raise Http404("Няма такъв профил за този потребител.")
+
     def test_func(self):
         user = self.request.user
         return user.is_authenticated and (user.is_client or user.is_employee)
@@ -65,6 +68,7 @@ class CurrentProfileDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailVi
         return context
 
 
+
 class CurrentProfileEditView(LoginRequiredMixin, UpdateView):
     pass
 
@@ -73,10 +77,24 @@ class CurrentProfileDeleteView(LoginRequiredMixin, DeleteView):
     pass
 
 
+class CurrentUserProfileView(LoginRequiredMixin, DetailView):
+    template_name = 'accounts/profile_detail.html'
+    model = BaseUser
+
+    def get_object(self, queryset=None):
+        return self.request.user
 
 
+class ProfilePhotoUpdateView(LoginRequiredMixin, UpdateView):
+    model = BaseUser
+    form_class = ProfilePhotoForm
+    template_name = 'accounts/update_photo.html'
 
+    def get_object(self):
+        return self.request.user
 
+    def get_success_url(self):
+        return reverse('profile_details', kwargs={'pk': self.object.pk})
 
 
 

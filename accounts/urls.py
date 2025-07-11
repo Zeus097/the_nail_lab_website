@@ -13,7 +13,8 @@ urlpatterns = [
     path('complete-profile/', views.CompleteProfileView.as_view(), name='complete-profile'),
 
     path('<int:pk>/', include([
-        path('profile-details/', views.CurrentProfileDetailView.as_view(), name='profile_details'),
+        path('profile/', views.CurrentUserProfileView.as_view(), name='profile_details'),
+        path('profile/update-photo/', views.ProfilePhotoUpdateView.as_view(), name='update_photo'),
     #     path('profile-edit/', views.CurrentProfileEditView.as_view(), name='profile_edit'),
     #     path('profile-delete/', views.CurrentProfileDeleteView.as_view(), name='profile_delete'),
     ]))

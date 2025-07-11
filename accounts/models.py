@@ -8,9 +8,13 @@ class BaseUser(AbstractUser):
     email = models.EmailField(unique=True)
     is_client = models.BooleanField(default=False)
     is_employee = models.BooleanField(default=False)
-    telephone_number = models.CharField(
-        max_length=20,
-        validators=[PhoneValidator()],
+    telephone_number = models.CharField(max_length=20, validators=[PhoneValidator()])
+    photo = models.ImageField(
+        upload_to='user_photos',
+        blank=True,
+        null=True,
+        default='defaults/default_user.png',
+        validators=[ImageSizeValidator(5)],
     )
 
     def __str__(self):
@@ -33,13 +37,6 @@ class EmployeeBio(models.Model):
     biography = models.CharField(max_length=500, blank=True)
     services = models.ManyToManyField('services.BaseService', related_name='employees')
 
-    photo = models.ImageField(
-        upload_to='staff_photos',
-        default='defaults/default_user.png',
-        validators=[ImageSizeValidator(5)],
-        blank=True,
-    )
-
     def __str__(self):
         return f"{self.user.username}"
 
@@ -50,12 +47,6 @@ class ClientProfile(models.Model):
         verbose_name_plural = "Клиентски профили"
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    photo = models.FileField(
-        upload_to='user_photos',
-        default='defaults/default_user.png',
-        validators=[ImageSizeValidator(5)],
-        blank=True,
-    )
 
     def __str__(self):
         return f"{self.user.username}"

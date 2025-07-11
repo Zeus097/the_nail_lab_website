@@ -20,13 +20,21 @@ class BaseUserAdmin(UserAdmin):
 @admin.register(EmployeeBio)
 class EmployeeBioAdmin(admin.ModelAdmin):
     model = EmployeeBio
-    list_display = ('name', 'user__email',)
-    filter_horizontal = ('services',)  # widget for ManyToMany
+    list_display = ('name', 'user_email',)
+    filter_horizontal = ('services',)
+
+    def user_email(self, obj):
+        return obj.user.email
+    user_email.short_description = 'Имейл'
 
 
 @admin.register(ClientProfile)
 class ClientProfileAdmin(admin.ModelAdmin):
     model = ClientProfile
-    list_display = ('name', 'user__email',)
+    list_display = ('name', 'user_email',)
+
+    def user_email(self, obj):
+        return obj.user.email
+    user_email.short_description = 'Имейл'
 
 

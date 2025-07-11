@@ -4,10 +4,10 @@
             <a href="{% url 'appointment_details' appointment.pk %}">
                 <div>
                 
-                    <p>Вид на услугата:</p>
+                    
                 
                     <h3>
-                        {{ appointment.service.name }}
+                        Вид на услугата:&nbsp;{{ appointment.service.name }}
                     </h3>
                 
                     <p>
@@ -35,9 +35,9 @@
                     </p>
                 
                     <p>
-                        Телефон:&nbsp;
+                        Име:&nbsp;
                         <strong>
-                            {{ appointment.client.user.telephone_number }}
+                            {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
                         </strong>
                     </p>
 

@@ -1,0 +1,30 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="change-photo-container">
+    <h2>Смени профилната снимка</h2>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="file-input-wrapper">
+        <label for="id_photo" class="custom-file-label">Избери файл</label>
+        {{ form.photo }}
+
+        {% if user.photo %}
+          <div class="current-photo">
+            <span>Текуща снимка:</span>
+            <a href="{{ user.photo.url }}" class="photo-link" target="_blank">
+              {{ user.photo.name|slice:":10" }}...
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <button type="submit" class="button-like-a">Запази</button>
+    </form>
+
+    <a href="{% url 'profile_details' user.pk %}" class="button-like-a back-link">Назад</a>
+  </section>
+{% endblock %}

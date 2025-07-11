@@ -17,12 +17,12 @@ def check_profile_data(strategy, details, user=None, *args, **kwargs):
     if not user:
         return
 
-    if not hasattr(user, 'clientprofile'):
-        return
+    needs_completion = not user.has_usable_password() or not user.telephone_number
 
-    if not user.has_usable_password() or not user.telephone_number:
+    if needs_completion:
         login(strategy.request, user, backend='django.contrib.auth.backends.ModelBackend')
         return strategy.redirect('/accounts/complete-profile/')
+
 
 
 

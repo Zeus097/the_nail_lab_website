@@ -3,33 +3,39 @@
 {% get_media_prefix as media_url %}
 
 {% block content %}
-    
-    {% if user_type == "client" %}
+
+<section class="profile-details-section">
+    <div class="profile-details-div">
+
+        <div class="profile-info">
+            {% if user.get_full_name %}
+                <h1>Профил на {{ user.get_full_name }}</h1>
+            {% else %}
+                <h1>Профил на {{ user.username }}</h1>
+            {% endif %}
+
+            {% if user.photo %}
+                <img src="{{ user.photo.url }}" alt="Профилна снимка" class="profile-photo">
+            {% else %}
+                <img src="{{ media_url }}defaults/default_user.png" alt="Снимка по подразбиране" class="profile-photo">
+            {% endif %}
+
+            <a href="{% url 'update_photo' user.pk %}" class="button-like-a">Смени снимката</a>
         
-        {% if object.photo and object.photo.name %}
-            <img src="{{ object.photo.url }}" alt="Профилна снимка" style="max-width:200px;">
-        {% else %}
-            <img src="{{ media_url }}defaults/default_user.png" style="max-width:200px;">
-        {% endif %}
+            <p><strong>Потребителско име:</strong> {{ user.username }}</p>
+            
+            <p><strong>Имейл:</strong> {{ user.email }}</p>
+            <p><strong>Телефон:</strong> {{ user.telephone_number }}</p>
+
+            {% if user.is_employee %}
+                {% if user.employeebio.biography %}
+                    <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
+                {% endif %}
+            {% endif %}
         
-        <h1>Клиентски профил на {{ object.user.username }}</h1>
-        <p><strong>Име:</strong> {{ object.name }}</p>
-        <p><strong>Имейл:</strong> {{ object.email }}</p>
-        
-    {% elif user_type == "employee" %}
-        
-        {% if object.photo and object.photo.name %}
-            <img src="{{ object.photo.url }}" alt="Профилна снимка" style="max-width:200px;">
-        {% else %}
-            <img src="{{ media_url }}defaults/default_user.png" style="max-width:200px;">
-        {% endif %}
-        
-        <h1>Служебен профил на {{ object.user.username }}</h1>
-        <p><strong>Потребителско име:</strong> {{ object.user.username }}</p>
-        <p><strong>Име:</strong> {{ object.name }}</p>
-        <p><strong>Биография:</strong> {{ object.biography }}</p>
-        <p><strong>Услуги:</strong></p>
-  
-    {% endif %}
-    
+        </div>
+
+    </div>
+</section>
+
 {% endblock %}

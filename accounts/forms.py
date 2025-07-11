@@ -52,8 +52,21 @@ class BaseUserCreationForm(UserCreationForm):
         })
 
 
-class ProfileEditForm(BaseUserCreationForm):
-    pass
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = BaseUser
+        fields = ['username', 'email', 'telephone_number']
+        labels = {
+            'username': _('Потребителско име'),
+            'email': _('Имейл'),
+            'telephone_number': _('Телефонен номер'),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({'placeholder': _('Потребителско име')})
+        self.fields['email'].widget.attrs.update({'placeholder': _('Имейл')})
+        self.fields['telephone_number'].widget.attrs.update({'placeholder': _('Телефон')})
 
 
 class CustomLoginForm(AuthenticationForm):
@@ -98,3 +111,12 @@ class CompleteProfileForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+
+class ProfilePhotoForm(forms.ModelForm):
+    class Meta:
+        model = BaseUser
+        fields = ['photo']
+        labels = {
+            'photo': 'Снимка',
+        }
