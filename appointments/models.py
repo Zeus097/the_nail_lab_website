@@ -21,7 +21,11 @@ class Appointment(models.Model):
     def save(self, *args, **kwargs):
         if not self.employee_id:
             raise ValueError("Записът на час задължително трябва да има служител.")
+        if not self.service_id:
+            raise ValueError("Записът на час задължително трябва да има услуга.")
         super().save(*args, **kwargs)
+
+
 
     @property
     def end_time(self):
@@ -31,6 +35,9 @@ class Appointment(models.Model):
         return (start_dt + timedelta(minutes=self.service.duration)).time()
 
     def clean(self):
+        if not self.service_id or not self.employee_id or not self.date or not self.start_time:
+            return
+
         validator = AppointmentModelCleanValidator()
         validator(self)
 

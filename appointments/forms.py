@@ -33,6 +33,8 @@ class AppointmentForm(forms.ModelForm):
         else:
             self.fields['employee'].queryset = EmployeeBio.objects.all()
 
+        self.service_queryset = self.fields['service'].queryset
+
     employee = forms.ModelChoiceField(
         queryset=EmployeeBio.objects.all(),
         required=True,
@@ -40,7 +42,10 @@ class AppointmentForm(forms.ModelForm):
     )
 
     def clean(self):
-        return super().clean()
+        cleaned_data = super().clean()
+        if not cleaned_data.get('service'):
+            self.add_error('service', 'Моля, изберете услуга.')
+        return cleaned_data
 
 
 class AppointmentCreateForm(AppointmentForm):

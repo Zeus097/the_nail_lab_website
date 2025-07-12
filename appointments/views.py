@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
@@ -27,8 +28,23 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
         form.instance.client = client_profile
-        form.instance.employee = form.cleaned_data['employee']
+        form.instance.employee = form.cleaned_data.get('employee')
+        form.instance.service = form.cleaned_data.get('service')
+
+        try:
+            form.instance.clean()
+        except ValidationError as e:
+            form.add_error(None, e)
+            return self.form_invalid(form)
+
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        service_id = self.request.GET.get('service_id')
+        if service_id:
+            context['selected_service_id'] = int(service_id)
+        return context
 
 
 class AppointmentListView(LoginRequiredMixin, ListView):

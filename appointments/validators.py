@@ -18,14 +18,14 @@ class AppointmentModelCleanValidator:
             raise ValidationError("Не може да се записва процедура за минала дата.")
 
         working_start = time(9, 0)
-        working_end = time(18, 0)
+        working_end = time(20, 0)
         end_time = instance.end_time
 
         if end_time is None:
             return
 
         if instance.start_time < working_start or end_time > working_end:
-            raise ValidationError("Процедурата трябва да е в рамките на работното време (09:00 - 18:00).")
+            raise ValidationError("Процедурата трябва да е в рамките на работното време (09:00 - 20:00).")
 
         appointment_start = datetime.combine(instance.date, instance.start_time)
         appointment_end = datetime.combine(instance.date, end_time)
@@ -35,7 +35,7 @@ class AppointmentModelCleanValidator:
             other_start = datetime.combine(other.date, other.start_time)
             other_end = datetime.combine(other.date, other.end_time)
             if not (appointment_end <= other_start or appointment_start >= other_end):
-                raise ValidationError("Часът се припокрива с друга процедура.")
+                raise ValidationError("Това време е заето – процедурата започнала по-рано още не е приключила.")
 
         day_off_qs = self.get_day_off_qs(instance) if self.get_day_off_qs else self._default_day_off(instance)
         if day_off_qs.exists():

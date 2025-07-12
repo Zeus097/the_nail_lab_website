@@ -1,12 +1,76 @@
 {% extends 'common/base.html' %}
+{% load static %}
 
 {% block content %}
-    <section class="register-section">
-        <form method="post" class="register-form">
+<section class="register-section">
+    <form method="post" class="register-form">
         <h2 style="text-align: center;">Запази час</h2>
         {% csrf_token %}
-        {{ form.as_p }}
+    
+        {% if form.non_field_errors %}
+            <div class="non-field-errors">
+                {% for error in form.non_field_errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="form-group">
+            {{ form.employee.label_tag }}
+            {{ form.employee }}
+            {% if form.employee.errors %}
+                <div class="error">{{ form.employee.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.service.label_tag }}
+            <select name="{{ form.service.name }}" id="{{ form.service.id_for_label }}">
+                <option value="">-- Избери услуга --</option>
+                {% for service in form.service_queryset %}
+                    <option value="{{ service.id }}"
+                            data-price="{{ service.price }}"
+                            data-duration="{{ service.duration }}"
+                            {% if service.id == selected_service_id %}selected{% endif %}>
+                        {{ service.name }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            {% if form.service.errors %}
+                <div class="error">{{ form.service.errors }}</div>
+            {% endif %}
+
+            <div id="service-info" style="margin-top: 10px; font-style: italic;"></div>
+        </div>
+
+        <div class="form-group">
+            {{ form.date.label_tag }}
+            {{ form.date }}
+            {% if form.date.errors %}
+                <div class="error">{{ form.date.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.start_time.label_tag }}
+            {{ form.start_time }}
+            {% if form.start_time.errors %}
+                <div class="error">{{ form.start_time.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.comment.label_tag }}
+            {{ form.comment }}
+            {% if form.comment.errors %}
+                <div class="error">{{ form.comment.errors }}</div>
+            {% endif %}
+        </div>
+
         <button type="submit">Запази</button>
-        </form>
-    </section>
+    </form>
+</section>
+
+<script src="{% static 'appointment.js' %}"></script>
 {% endblock %}

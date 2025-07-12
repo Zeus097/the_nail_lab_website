@@ -1,6 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-from django.db.models.functions import Lower
 from django.views.generic import ListView, DetailView
 
 from services.forms import SearchForm
