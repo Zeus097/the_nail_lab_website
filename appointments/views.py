@@ -73,8 +73,20 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
     # pk_url_kwarg = 'pk'  # Not needed because the default is 'pk'
 
     def form_valid(self, form):
+        client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
+
         self.object = form.save(commit=False)
-        self.object.clean()
+
+        self.object.client = client_profile
+        self.object.service = form.cleaned_data.get('service')
+        self.object.employee = form.cleaned_data.get('employee')
+
+        try:
+            self.object.clean()
+        except ValidationError as e:
+            form.add_error(None, e)
+            return self.form_invalid(form)
+
         self.object.save()
         return super().form_valid(form)
 
