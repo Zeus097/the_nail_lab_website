@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
 
-from accounts.forms import BaseUserCreationForm, CompleteProfileForm, ProfilePhotoForm
+from accounts.forms import BaseUserCreationForm, CompleteProfileForm, ProfilePhotoForm, ProfileEditForm
 from accounts.models import BaseUser, ClientProfile, EmployeeBio
 
 
@@ -68,9 +68,43 @@ class CurrentProfileDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailVi
         return context
 
 
+class CurrentProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    form_class = ProfileEditForm
+    template_name = 'accounts/profile_edit.html'
 
-class CurrentProfileEditView(LoginRequiredMixin, UpdateView):
-    pass
+    def test_func(self):
+        user = self.request.user
+        return user.is_authenticated and (user.is_client or user.is_employee)
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy("homepage"))
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.clean()
+        self.object.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('profile_details', kwargs={'pk': self.object.pk})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class CurrentProfileDeleteView(LoginRequiredMixin, DeleteView):

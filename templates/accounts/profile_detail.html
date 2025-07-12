@@ -20,7 +20,9 @@
                 <img src="{{ media_url }}defaults/default_user.png" alt="Снимка по подразбиране" class="profile-photo">
             {% endif %}
 
-            <a href="{% url 'update_photo' user.pk %}" class="button-like-a">Смени снимката</a>
+            <a href="{% url 'update_photo' user.pk %}" class="button-like-a">
+                Смени снимката
+            </a>
         
             <p><strong>Потребителско име:</strong> {{ user.username }}</p>
             
@@ -32,6 +34,14 @@
                     <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
                 {% endif %}
             {% endif %}
+        
+            <a href="{% url 'profile_edit' user.pk %}" class="button-like-a">
+                Редактирай Профила
+            </a>
+        
+{#            <a href="{% url '#' user.pk %}" class="button-like-a">#}
+{#                Изтрий Профила#}
+{#            </a>#}
         
         </div>
 
