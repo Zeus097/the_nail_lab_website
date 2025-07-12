@@ -209,4 +209,3 @@ class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVie
 
 
 
-
