@@ -1,3 +1,5 @@
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib import messages
 from django.http import Http404
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -92,7 +94,24 @@ class CurrentProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView
         return reverse_lazy('profile_details', kwargs={'pk': self.object.pk})
 
 
+class ChangePasswordView(PasswordChangeView):
+    template_name = 'accounts/change_password.html'
 
+    def form_valid(self, form):
+        messages.success(self.request, "Паролата е променена успешно.")
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        user = self.request.user
+
+        if user.is_client:
+            profile = user.clientprofile
+        elif user.is_employee:
+            profile = user.employeebio
+        else:
+            raise Exception("Неподдържан тип потребител")
+
+        return reverse_lazy('profile_details', kwargs={'pk': profile.pk})
 
 
 
