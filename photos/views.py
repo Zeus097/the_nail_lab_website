@@ -1,6 +1,6 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin ,UserPassesTestMixin
+from django.shortcuts import redirect
+from django.views.generic import ListView, CreateView, DeleteView
 from django.urls import reverse_lazy
 
 from accounts.models import EmployeeBio
@@ -30,3 +30,18 @@ class GalleryUploadView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.uploader = EmployeeBio.objects.get(user=self.request.user)
         return super().form_valid(form)
+
+
+class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = GalleryPhoto
+    template_name = 'photos_gallery/gallery-delete-img.html'
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_authenticated and user.is_employee
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy("gallery"))
+
+    def get_success_url(self):
+        return reverse_lazy("gallery")

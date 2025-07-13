@@ -7,25 +7,32 @@
         <a href="{% url 'gallery_upload' %}" class="button-like-a">Качи нова снимка</a>
     {% endif %}
     
-    <section class="gallery-container">
-        {% for photo in gallery_list %}
-            <a href="{{ photo.photo.url }}" target="_blank" class="gallery-item-link">
-                <div class="gallery-item">
-                    <img src="{{ photo.photo.url }}" alt="{{ photo.name }}">
-                    
-                    {% if photo.name %}
-                        <h3>{{ photo.name }}</h3>
-                    {% endif %}
-                
-                    {% if photo.description %}
-                        <p>{{ photo.description }}</p>
-                    {% endif %}
-                
-                    <small>{{ photo.upload_date }}<br></small>
+    {% if gallery_list %}
+        <section class="gallery-container">
+            {% for photo in gallery_list %}
+                <div class="gallery-item-wrapper">
+                    <a href="{{ photo.photo.url }}" target="_blank" class="gallery-item-link">
+                        <div class="gallery-item">
+                            <img src="{{ photo.photo.url }}" alt="{{ photo.name }}">
+                            
+                            {% if photo.name %}
+                                <h3>{{ photo.name }}</h3>
+                            {% endif %}
+                        
+                            {% if photo.description %}
+                                <p>{{ photo.description }}</p>
+                            {% endif %}
+                        
+                            <small>{{ photo.upload_date }}<br></small>
+                        </div>
+                    </a>
+                    <a href="{% url 'gallery_delete' photo.pk %}" class="delete-link">Изтрий снимката</a>
                 </div>
-            </a>
-        {% endfor %}
-    </section>
+            {% endfor %}
+        </section>
+    {% else %}
+        <p>Няма снимки</p>
+    {% endif %}
     
     <div class="pagination-wrapper">
         <div class="pagination">
@@ -48,5 +55,3 @@
     </div>
     
 {% endblock %}
-
-
