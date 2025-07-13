@@ -1,14 +1,40 @@
 {% extends 'common/base.html' %}
+{% load static %}
+
 {% block content %}
+    
+    <div class="upload-photo-container">
+    <h2>Качи нова снимка</h2>
 
-<h2>Качи нова снимка</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Качи</button>
-</form>
+        <div class="file-input-wrapper">
+            <label for="id_photo" class="custom-file-label">Избери файл</label>
+            {{ form.photo }}
+            <span id="selected-file-name" class="selected-file-name">Няма избран файл</span>
+        </div>
 
-<a href="{% url 'gallery' %}">Назад</a>
+        {% if form.name %}
+            <div class="file-input-wrapper">
+                <label for="id_name">Заглавие</label>
+                {{ form.name }}
+            </div>
+        {% endif %}
 
+        {% if form.description %}
+            <div class="file-input-wrapper">
+                <label for="id_description">Описание</label>
+                {{ form.description }}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="button-like-a">Качи</button>
+    </form>
+
+    <a href="{% url 'gallery' %}" class="button-like-a back-link">Назад</a>
+    </div>
+    
+    <script src="{% static 'gallery-upload.js' %}"></script>
+    
 {% endblock %}
