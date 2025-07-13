@@ -1,12 +1,17 @@
 from django.core.exceptions import ValidationError
-from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+
+from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
 from appointments.models import Appointment, DayOff
-from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm
+from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm, \
+    SlotSearchForm
 from accounts.models import ClientProfile, EmployeeBio
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
+from django.views import View
+from appointments.utils import find_earliest_available_slots
 from services.models import BaseService
 
 
@@ -19,10 +24,21 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         service_id = self.request.GET.get('service_id')
-        if service_id:
-            service = BaseService.objects.filter(id=service_id).first()
-            if service:
-                kwargs['service'] = service
+        employee_id = self.request.GET.get('employee_id')
+        date = self.request.GET.get('date')
+        start_time = self.request.GET.get('start_time')
+
+        # THE LOGIC IS IN helper_for_views_validation.py for better UI
+        kwargs = inject_service_if_valid(service_id, kwargs)
+        kwargs = inject_employee_if_valid(employee_id, kwargs)
+        # ------------------------------------------------------------
+
+        if date:
+            kwargs.setdefault('initial', {})['date'] = date
+
+        if start_time:
+            kwargs.setdefault('initial', {})['start_time'] = start_time
+
         return kwargs
 
     def form_valid(self, form):
@@ -45,6 +61,18 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
         if service_id:
             context['selected_service_id'] = int(service_id)
         return context
+
+    def get_initial(self):
+        initial = super().get_initial()
+        date = self.request.GET.get('date')
+        start_time = self.request.GET.get('start_time')
+
+        if date:
+            initial['date'] = date
+        if start_time:
+            initial['start_time'] = start_time
+
+        return initial
 
 
 class AppointmentListView(LoginRequiredMixin, ListView):
@@ -200,14 +228,27 @@ class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVie
     success_url = reverse_lazy('homepage')
 
 
+class AvailableSlotsView(View):
+    template_name = 'appointments/available_slots.html'
 
+    def get(self, request):
+        form = SlotSearchForm()
+        return render(request, self.template_name, {'form': form, 'slots': None})
 
+    def post(self, request):
+        form = SlotSearchForm(request.POST)
+        slots = None
 
+        if form.is_valid():
+            employee = form.cleaned_data['employee']
+            service = form.cleaned_data['service']
+            date = form.cleaned_data['date']
+            slots = find_earliest_available_slots(employee, service, date)
 
-
-
-
-
+        return render(request, self.template_name, {
+            'form': form,
+            'slots': slots
+        })
 
 
 

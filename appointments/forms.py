@@ -1,6 +1,7 @@
 from django import forms
 from accounts.models import EmployeeBio
 from appointments.models import Appointment, DayOff
+from services.models import BaseService
 
 
 class AppointmentForm(forms.ModelForm):
@@ -54,6 +55,12 @@ class AppointmentCreateForm(AppointmentForm):
 
 class AppointmentEditForm(AppointmentForm):
     pass
+
+
+class SlotSearchForm(forms.Form):
+    employee = forms.ModelChoiceField(queryset=EmployeeBio.objects.all(), label="Служител")
+    service = forms.ModelChoiceField(queryset=BaseService.objects.all(), label="Услуга")
+    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label="Дата")
 
 
 # ----------------------------------------

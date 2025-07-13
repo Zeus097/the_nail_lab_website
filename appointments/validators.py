@@ -1,7 +1,8 @@
-from datetime import datetime, time, date
+from datetime import datetime, date
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 from django.utils.timezone import localtime
+from appointments.config import WORK_START, WORK_END
 
 
 @deconstructible
@@ -17,15 +18,15 @@ class AppointmentModelCleanValidator:
         if instance.date < date.today():
             raise ValidationError("Не може да се записва процедура за минала дата.")
 
-        working_start = time(9, 0)
-        working_end = time(20, 0)
         end_time = instance.end_time
-
         if end_time is None:
             return
 
-        if instance.start_time < working_start or end_time > working_end:
-            raise ValidationError("Процедурата трябва да е в рамките на работното време (09:00 - 20:00).")
+        if instance.start_time < WORK_START or end_time > WORK_END:
+            raise ValidationError(
+                f"Процедурата трябва да е в рамките на работното време "
+                f"({WORK_START.strftime('%H:%M')} - {WORK_END.strftime('%H:%M')})."
+            )
 
         appointment_start = datetime.combine(instance.date, instance.start_time)
         appointment_end = datetime.combine(instance.date, end_time)
@@ -45,7 +46,6 @@ class AppointmentModelCleanValidator:
             current_time = localtime().time()
             if instance.start_time < current_time:
                 raise ValidationError("Не може да се запазва час за изминал час от днешния ден.")
-
 
     @staticmethod
     def _default_overlapping(instance):
