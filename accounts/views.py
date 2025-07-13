@@ -114,20 +114,23 @@ class ChangePasswordView(PasswordChangeView):
         return reverse_lazy('profile_details', kwargs={'pk': profile.pk})
 
 
+class CurrentProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    template_name = 'accounts/profile_delete.html'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_authenticated and (user.is_client or user.is_employee)
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy("homepage"))
+
+    def get_success_url(self):
+        return reverse_lazy('homepage')
 
 
-
-
-
-
-
-
-
-
-
-
-class CurrentProfileDeleteView(LoginRequiredMixin, DeleteView):
-    pass
 
 
 class CurrentUserProfileView(LoginRequiredMixin, DetailView):

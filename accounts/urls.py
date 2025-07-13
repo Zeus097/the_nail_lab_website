@@ -17,7 +17,7 @@ urlpatterns = [
         path('profile/update-photo/', views.ProfilePhotoUpdateView.as_view(), name='update_photo'),
         path('profile-edit/', views.CurrentProfileEditView.as_view(), name='profile_edit'),
         path('change-password/', views.ChangePasswordView.as_view(), name='change_password'),
-    #     path('profile-delete/', views.CurrentProfileDeleteView.as_view(), name='profile_delete'),
+        path('profile-delete/', views.CurrentProfileDeleteView.as_view(), name='profile_delete'),
     ]))
 
 
