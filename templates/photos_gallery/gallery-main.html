@@ -26,7 +26,11 @@
                             <small>{{ photo.upload_date }}<br></small>
                         </div>
                     </a>
-                    <a href="{% url 'gallery_delete' photo.pk %}" class="delete-link">Изтрий снимката</a>
+                
+                    {% if user.is_employee %}                
+                        <a href="{% url 'gallery_delete' photo.pk %}" class="delete-link">Изтрий снимката</a>
+                    {% endif %}
+                
                 </div>
             {% endfor %}
         </section>
