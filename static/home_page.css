@@ -127,7 +127,7 @@ main {
     box-sizing: border-box;
     justify-content: center;
     margin: 25px auto;
-    align-items: center;
+    align-items: stretch;
     gap: 5px;
     width: 60%;
     max-width: 100%;
@@ -145,7 +145,16 @@ main {
     margin-bottom: 10px;
 }
 
+.nails-section a div .user-data-name-info {
+    margin-top: 15px;
+}
+
+.nails-section a div .user-data-comment-info {
+    margin-top: 15px;
+}
+
 .nails-section a div h3 {
+    align-self: center;
     color: black;
     margin-bottom: 20px;
     border-bottom: 1px solid black;

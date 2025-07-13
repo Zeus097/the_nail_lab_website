@@ -34,14 +34,28 @@
                         {{ appointment.service.duration }}мин.
                     </p>
                 
-                    <p>
+                    <p class="user-data-name-info">
                         Име:&nbsp;
                         <strong>
                             {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
                         </strong>
                     </p>
-
+                
                     <p>
+                        Телефон:&nbsp;
+                        <strong>
+                            {{ appointment.client.user.telephone_number }}
+                        </strong>
+                    </p>
+                
+                    <p>
+                        Имейл:&nbsp;
+                        <strong>
+                            {{ appointment.client.user.email }}
+                        </strong>
+                    </p>
+
+                    <p class="user-data-comment-info">
                         {% if appointment.comment %}
                             Коментар:&nbsp;
                             <strong>
