@@ -56,3 +56,27 @@ msgstr "Създай парола"
 #: accounts/forms.py:50
 msgid "Потребителско име или имейл.."
 msgstr "Потребителско име или имейл.."
+
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Паролата е твърде къса. Трябва да съдържа поне %d символ."
+msgstr[1] "Паролата е твърде къса. Трябва да съдържа поне %d символа."
+
+msgid "Your password must contain at least {min_length} character."
+msgid_plural "Your password must contain at least {min_length} characters."
+msgstr[0] "Паролата трябва да съдържа поне {min_length} символ."
+msgstr[1] "Паролата трябва да съдържа поне {min_length} символа."
+
+
+
+msgid "This password is too common."
+msgstr "Тази парола е често срещана."
+
+msgid "This password is entirely numeric."
+msgstr "Паролата не може да бъде само от цифри."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Паролата не може да прилича на останалата Ви лична информация."
+
+

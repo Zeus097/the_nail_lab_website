@@ -131,8 +131,6 @@ class CurrentProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVi
         return reverse_lazy('homepage')
 
 
-
-
 class CurrentUserProfileView(LoginRequiredMixin, DetailView):
     template_name = 'accounts/profile_detail.html'
     model = BaseUser
