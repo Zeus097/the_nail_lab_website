@@ -53,20 +53,50 @@ class BaseUserCreationForm(UserCreationForm):
 
 
 class ProfileEditForm(forms.ModelForm):
+    # Biography is defined like that,
+    # because is not from BaseUser
+
+    biography = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'rows': 10, 'cols': 40, 'maxlength': 500,
+                'placeholder': 'Максимален брой символи - 500',
+                'style': 'padding: 10px;'
+            }
+        ),
+        required=False,
+        label='Биография'
+    )
+
     class Meta:
         model = BaseUser
         fields = ['username', 'email', 'telephone_number']
-        labels = {
-            'username': _('Потребителско име'),
-            'email': _('Имейл'),
-            'telephone_number': _('Телефонен номер'),
-        }
 
     def __init__(self, *args, **kwargs):
+        user = kwargs.get('instance')
         super().__init__(*args, **kwargs)
+
         self.fields['username'].widget.attrs.update({'placeholder': _('Потребителско име')})
         self.fields['email'].widget.attrs.update({'placeholder': _('Имейл')})
         self.fields['telephone_number'].widget.attrs.update({'placeholder': _('Телефон')})
+
+        if user and user.is_employee:
+            self.fields['biography'].initial = getattr(user.employeebio, 'biography', '')
+
+    def save(self, commit=True):
+        # Save the logic for biography for the EmployeeBio
+        # if the user is employee.
+
+        user = super().save(commit=commit)
+
+        if user.is_employee:
+            biography = self.cleaned_data.get('biography', '')
+            employee_bio = user.employeebio
+            employee_bio.biography = biography
+            if commit:
+                employee_bio.save()
+
+        return user
 
 
 class CustomLoginForm(AuthenticationForm):

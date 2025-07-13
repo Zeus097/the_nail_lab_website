@@ -50,7 +50,21 @@
                 </div>
             {% endif %}
         </div>
-
+    
+        {% if user.is_employee %}
+            <div class="form-group">
+                {{ form.biography.label_tag }}
+                {{ form.biography }}
+                {% if form.biography.errors %}
+                    <div class="error">
+                        {% for error in form.biography.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    
         <button type="submit">Запази промените</button>
     </form>
 </section>
