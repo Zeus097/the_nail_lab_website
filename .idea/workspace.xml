@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="" />
+    <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,6 +208,7 @@
       <workItem from="1752318562472" duration="4666000" />
       <workItem from="1752351041060" duration="1493000" />
       <workItem from="1752383818476" duration="3200000" />
+      <workItem from="1752387026818" duration="4286000" />
     </task>
     <servers />
   </component>

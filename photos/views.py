@@ -1,3 +1,32 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.views.generic import ListView, CreateView
+from django.urls import reverse_lazy
 
-# Create your views here.
+from accounts.models import EmployeeBio
+from photos.forms import GalleryUploadPhotoForm
+from photos.models import GalleryPhoto
+
+
+class GalleryView(LoginRequiredMixin, ListView):
+    model = GalleryPhoto
+    template_name = 'photos_gallery/gallery-main.html'
+    context_object_name = 'gallery_list'
+    paginate_by = 8
+
+    def get_queryset(self):
+        return GalleryPhoto.objects.all().order_by('-upload_date')
+
+
+class GalleryUploadView(LoginRequiredMixin, CreateView):
+    model = GalleryPhoto
+    form_class = GalleryUploadPhotoForm
+    template_name = 'photos_gallery/gallery-upload.html'
+    success_url = reverse_lazy('gallery')
+
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_employee
+
+    def form_valid(self, form):
+        form.instance.uploader = EmployeeBio.objects.get(user=self.request.user)
+        return super().form_valid(form)

@@ -36,6 +36,7 @@ class EmployeeBio(models.Model):
     )
     biography = models.CharField(max_length=500, blank=True)
     services = models.ManyToManyField('services.BaseService', related_name='employees')
+    # ManyToMany because it could have more employees in the future
 
     def __str__(self):
         return f"{self.user.username}"

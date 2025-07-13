@@ -1,0 +1,14 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+<h2>Качи нова снимка</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Качи</button>
+</form>
+
+<a href="{% url 'gallery' %}">Назад</a>
+
+{% endblock %}
