@@ -39,7 +39,7 @@ class EmployeeBio(models.Model):
     # ManyToMany because it could have more employees in the future
 
     def __str__(self):
-        return f"{self.user.username}"
+        return self.user.get_full_name() or self.name or self.user.username
 
 
 class ClientProfile(models.Model):

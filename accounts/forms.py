@@ -70,7 +70,7 @@ class ProfileEditForm(forms.ModelForm):
 
     class Meta:
         model = BaseUser
-        fields = ['username', 'email', 'telephone_number']
+        fields = ['username', 'email', 'telephone_number', 'first_name', 'last_name']
 
     def __init__(self, *args, **kwargs):
         user = kwargs.get('instance')
@@ -119,7 +119,7 @@ class CompleteProfileForm(forms.ModelForm):
 
     class Meta:
         model = BaseUser
-        fields = ['email', 'telephone_number']
+        fields = ['email', 'telephone_number', 'first_name', 'last_name']
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
