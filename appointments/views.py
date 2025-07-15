@@ -13,7 +13,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView
 from django.views import View
 from appointments.utils import find_earliest_available_slots
-from services.models import BaseService
 
 
 class AppointmentCreateView(LoginRequiredMixin, CreateView):

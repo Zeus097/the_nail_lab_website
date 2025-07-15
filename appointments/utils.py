@@ -1,9 +1,17 @@
 from datetime import datetime, timedelta
 from math import ceil
 
-from django.utils.timezone import localtime
+from django.utils.timezone import localtime, make_aware
 from appointments.models import Appointment, DayOff
 from appointments.config import WORK_START, WORK_END, INTERVAL, DAYS_AHEAD
+
+
+def aware_datetime(date_obj, time_obj):
+    naive = datetime.combine(date_obj, time_obj)
+    return make_aware(naive)
+    #  TO PREVENT TYPE ERROR WHEN
+    #  COMPARING timezone(offset-aware) WITH DIFFERENT OBJECT (offset-naive)
+    #       - different object types
 
 
 def find_earliest_available_slots(employee, service, start_date, MAX_SLOTS_PER_DAY):
@@ -25,7 +33,7 @@ def find_earliest_available_slots(employee, service, start_date, MAX_SLOTS_PER_D
             continue
 
         appointments = Appointment.objects.filter(employee=employee, date=current_date)
-        start_dt = datetime.combine(current_date, WORK_START)
+        start_dt = aware_datetime(current_date, WORK_START)
 
         if current_date == today and now_time > WORK_START:
             current_dt = localtime()
@@ -33,7 +41,7 @@ def find_earliest_available_slots(employee, service, start_date, MAX_SLOTS_PER_D
             rounded = current_dt.replace(minute=0, second=0, microsecond=0) + timedelta(minutes=minute)
             start_dt = rounded
 
-        end_dt = datetime.combine(current_date, WORK_END) - duration
+        end_dt = aware_datetime(current_date, WORK_END) - duration
 
         while start_dt <= end_dt:
             slot_start = start_dt
@@ -41,7 +49,7 @@ def find_earliest_available_slots(employee, service, start_date, MAX_SLOTS_PER_D
 
             overlaps = False
             for appt in appointments:
-                appt_start = datetime.combine(appt.date, appt.start_time)
+                appt_start = aware_datetime(appt.date, appt.start_time)
                 appt_end = appt_start + timedelta(minutes=appt.service.duration)
 
                 if not (slot_end <= appt_start or slot_start >= appt_end):
