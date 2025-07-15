@@ -46,6 +46,7 @@
         {% if slots %}
             <div class="available-slots-wrapper">
                 <h3>Налични часове:</h3>
+                <h3 style="text-align: center;">(Най-ранните {{ slots|length }})</h3>
                 
                 <ul class="slot-list">
                     {% for slot in slots %}

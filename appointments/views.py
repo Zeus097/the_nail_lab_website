@@ -4,6 +4,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
+from appointments.config import MAX_SLOTS_PER_DAY
 from appointments.models import Appointment, DayOff
 from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm, \
     SlotSearchForm
@@ -243,7 +244,7 @@ class AvailableSlotsView(View):
             employee = form.cleaned_data['employee']
             service = form.cleaned_data['service']
             date = form.cleaned_data['date']
-            slots = find_earliest_available_slots(employee, service, date)
+            slots = find_earliest_available_slots(employee, service, date, MAX_SLOTS_PER_DAY)
 
         return render(request, self.template_name, {
             'form': form,

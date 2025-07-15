@@ -6,7 +6,7 @@ from appointments.models import Appointment, DayOff
 from appointments.config import WORK_START, WORK_END, INTERVAL, DAYS_AHEAD
 
 
-def find_earliest_available_slots(employee, service, start_date, max_slots=5):
+def find_earliest_available_slots(employee, service, start_date, MAX_SLOTS_PER_DAY):
     slots = []
     duration = timedelta(minutes=service.duration)
     today = localtime().date()
@@ -56,7 +56,7 @@ def find_earliest_available_slots(employee, service, start_date, max_slots=5):
                     "service": service,
                 })
 
-            if len(slots) >= max_slots:
+            if len(slots) >= MAX_SLOTS_PER_DAY:
                 return slots
 
             start_dt += INTERVAL
