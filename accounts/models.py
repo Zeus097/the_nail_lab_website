@@ -8,6 +8,8 @@ class BaseUser(AbstractUser):
     email = models.EmailField(unique=True)
     is_client = models.BooleanField(default=False)
     is_employee = models.BooleanField(default=False)
+    # is_employee = TRUE --> MANUALLY ENTERED ONLY BY ADMIN, THROUGH ADMIN PANEL
+
     telephone_number = models.CharField(max_length=20, validators=[PhoneValidator()])
     photo = models.ImageField(
         upload_to='user_photos',
