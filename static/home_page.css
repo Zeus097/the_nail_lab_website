@@ -48,12 +48,12 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100%;
+    width: 1200px;
     height: 480px;
     flex-direction: column;
     text-align: center;
     background-color: #000000;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 5px;
@@ -192,6 +192,11 @@ main {
 
 @media (max-width: 1024px) {
 
+    .logo-section {
+        height: 420px;
+        width: 1024px;
+    }
+
     .second-container {
         flex-direction: column;
         width: 90%;
@@ -208,6 +213,11 @@ main {
 
     body, main {
         width: 100%;
+    }
+
+    .logo-section {
+        height: 320px;
+        width: 768px;
     }
 
     .second-container {
@@ -237,13 +247,20 @@ main {
 }
 
 @media (max-width: 580px) {
+
     .logo-section {
-        height: 200px;
+        height: 220px;
+        width: 580px;
     }
+
 }
 
 
 @media (max-width: 400px) {
+
+    .logo-section {
+        width: 400px;
+    }
 
     .info-section {
         height: 620px;
