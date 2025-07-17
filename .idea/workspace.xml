@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/home-no-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-no-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/4a19da4787fe2b546208f041f7fa5b3c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/81a9ac6089fa19e5e83af2b0986fb3a0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/cozy-shop-night-5120x2880-18774.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/cozy-shop-night-5120x2880-18774_jHMqWJS.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/dramatic-scenery-3840x2160-20802.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/nature-majesty-revealed-generative-ai-landscape-generative-ai.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/sibillini-national-5760x3840-21129.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_files/certificates/sibillini-national-5760x3840-21129_65KECV9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/address.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +241,7 @@
       <workItem from="1752771457791" duration="456000" />
       <workItem from="1752773682900" duration="59000" />
       <workItem from="1752773745191" duration="283000" />
-      <workItem from="1752779359057" duration="1000000" />
+      <workItem from="1752779359057" duration="4033000" />
     </task>
     <servers />
   </component>

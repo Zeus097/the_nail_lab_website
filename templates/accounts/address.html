@@ -17,23 +17,20 @@
                     <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
                 {% endif %}
             </div>
-
-            {% if user.employeebio.certificates.all %}
-                <div class="certificate-outer-container">
-                    <div class="certificate-inner">
-                        {% for cert in user.employeebio.certificates.all %}
-                            <a href="{{ cert.photo.url }}" target="_blank" rel="noopener noreferrer">
-                                <img src="{{ cert.photo.url }}" alt="Сертификат на {{ user.username }}">
-                            </a>
-                        {% endfor %}
-                        {% for cert in user.employeebio.certificates.all %}
-                            <a href="{{ cert.photo.url }}" target="_blank" rel="noopener noreferrer">
-                                <img src="{{ cert.photo.url }}" alt="Сертификат на {{ user.username }}">
-                            </a>
-                        {% endfor %}
+            
+            {% with certificates=user.employeebio.certificates.all %}
+                {% if certificates %}
+                    <div class="certificate-outer-container">
+                        <div class="certificate-inner">
+                            {% for cert in certificates %}
+                                <a href="{{ cert.photo.url }}" target="_blank" rel="noopener noreferrer">
+                                    <img src="{{ cert.photo.url }}" alt="Сертификат на {{ user.username }}">
+                                </a>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
+                {% endif %}
+            {% endwith %}
         </section>
     {% empty %}
         <p class="no-employees">Няма добавени служители.</p>

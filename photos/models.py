@@ -28,6 +28,11 @@ class GalleryPhoto(models.Model):
 
 
 class CertificateImage(models.Model):
+    class Meta:
+        verbose_name = "Сертификат"
+        verbose_name_plural = "Сертификати"
+
+
     photo = models.ImageField(upload_to='certificates', )
     uploader = models.ForeignKey(
         to='accounts.EmployeeBio',
