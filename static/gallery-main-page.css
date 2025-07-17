@@ -30,7 +30,7 @@
     transform: scale(0.95);
 }
 
-/* Контейнер, който обвива снимката и delete линка */
+
 .gallery-item-wrapper {
     width: 300px;
     display: flex;
@@ -38,7 +38,7 @@
     gap: 8px;
 }
 
-/* Галерия - контейнер */
+
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +47,6 @@
     padding: 20px;
 }
 
-/* Линк към снимката */
 .gallery-item-link {
     text-decoration: none;
     color: inherit;
@@ -66,7 +65,6 @@
     transform: scale(0.98);
 }
 
-/* Съдържание на снимката */
 .gallery-item {
     display: flex;
     flex-direction: column;
@@ -105,7 +103,6 @@
     margin-top: 10px;
 }
 
-/* Линк за изтриване */
 .delete-link {
     display: inline-block;
     background-color: white;
@@ -131,7 +128,7 @@
     transform: scale(0.95);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .gallery-item-wrapper {
         width: 45%;

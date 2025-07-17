@@ -73,6 +73,10 @@ main {
     min-height: 300px;
 }
 
+.info-section a {
+    color: #cc103e;
+}
+
 .row-line{
     background-color: #cc103e;
     height: 3px;

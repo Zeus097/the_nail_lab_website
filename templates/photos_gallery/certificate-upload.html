@@ -4,7 +4,7 @@
 {% block content %}
 
     <section class="certificate-upload-section">
-        <div class="certificate-upload-container">
+        <div>
             <h1>Качи сертификат</h1>
 
             <form method="post" enctype="multipart/form-data" class="certificate-upload-form">
@@ -12,10 +12,10 @@
 
                 <div class="file-input-wrapper">
                     <label for="id_photo">Снимка</label>
-                    
+
                     {{ form.photo }}
                     <label for="id_photo" class="custom-file-label">Избери файл</label>
-                    
+
                     <div class="current-photo">
                         <span id="selected-file-name">Няма избран файл</span>
                     </div>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </section>
-    
+
     <script src="{% static 'gallery-upload.js' %}"></script>
 
 {% endblock %}

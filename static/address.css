@@ -1,106 +1,197 @@
-.studio-address-section {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px 20px;
-    background-color: #f6f6f6;
-    width: 100%;
-}
-
-.studio-info-container {
-    max-width: 800px;
-    width: 100%;
-    padding: 30px;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    text-align: center;
-}
-
-.studio-info-container h2 {
-    margin-bottom: 20px;
-}
-
-.qr-code-box {
-    margin-top: 20px;
-}
-
-.qr-code-img {
-    max-width: 150px;
-    height: auto;
-}
-
-
-.employees-addresses-section {
-    width: 100%;
+.employee-card {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fefefe;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 40px 20px;
-    background-color: inherit;
+    gap: 25px;
 }
 
-.employee-contact-card {
-    width: 100%;
-    max-width: 900px;
-    padding: 20px 30px;
-    border-radius: 15px;
-    background-color: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 6px 16px;
-    display: flex;
-    justify-content: center;
-}
 
 .employee-info {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    gap: 12px;
-    width: 100%;
-    max-width: 600px;
-}
-
-.employee-info h2 {
-    margin-bottom: 10px;
-}
-
-.employee-info p {
-    margin: 0;
-    font-size: 1rem;
 }
 
 .employee-photo {
-    max-width: 180px;
-    height: auto;
-    margin: 0 auto 15px auto;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 8px 16px;
-    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+    border: 3px solid #ddd;
 }
+
+
+.certificate-outer-container {
+    overflow: hidden;
+    position: relative;
+    height: 230px;
+}
+
+
+.certificate-inner {
+    display: flex;
+    gap: 20px;
+    animation: scrollLeft 30s linear infinite;
+    width: max-content;
+}
+
+
+.certificate-inner img {
+    width: 200px;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.certificate-inner img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 
 .no-employees {
     text-align: center;
-    font-size: 1.1rem;
-    color: #777;
+    margin: 50px 0;
+    font-size: 1.2rem;
+    color: #666;
 }
 
 
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
-@media (max-width: 768px) {
-    .employee-contact-card {
-        padding: 20px;
+@media (min-width: 769px) and (max-width: 922px) {
+    .employee-card {
+        padding: 20px 15px;
+        margin: 25px auto;
+        width: 95%;
+        max-width: 95%;
+        box-sizing: border-box;
     }
 
     .employee-photo {
-        max-width: 140px;
-        margin-bottom: 12px;
+        width: 130px;
+        height: 130px;
     }
 
-    .studio-info-container {
-        padding: 20px;
+    .certificate-outer-container {
+        height: 180px;
+        overflow: hidden;
+        position: relative;
     }
 
-    .qr-code-img {
-        max-width: 120px;
+    .certificate-inner {
+        display: flex;
+        gap: 18px;
+        width: max-content;
+        animation: scrollLeftTablet 28s linear infinite;
+        will-change: transform;
+    }
+
+    .certificate-inner img {
+        width: 160px;
+        height: 180px;
+        flex-shrink: 0;
+    }
+
+    .certificate-inner:hover {
+        animation-play-state: paused;
+    }
+
+    .certificate-outer-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    @keyframes scrollLeftTablet {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .employee-card {
+        padding: 15px 10px;
+        margin: 20px 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .employee-info {
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    .employee-info p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .employee-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .certificate-outer-container {
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .certificate-inner {
+        display: flex;
+        gap: 16px;
+        width: max-content;
+        animation: scrollLeftMobile 25s linear infinite;
+        will-change: transform;
+    }
+
+    .certificate-inner img {
+        width: 120px;
+        height: 140px;
+        flex-shrink: 0;
+    }
+
+    .certificate-outer-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .certificate-inner:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scrollLeftMobile {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 }

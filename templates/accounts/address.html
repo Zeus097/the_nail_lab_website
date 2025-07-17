@@ -2,19 +2,13 @@
 {% block content %}
     
     {% for user in addresses %}
-        <section class="employees-addresses-section">
-            <div class="employee-contact-card-text">
-                {% if user.get_full_name %}
-                    <h2>{{ user.get_full_name }}</h2>
-                {% else %}
-                    <h2>{{ user.username }}</h2>
-                {% endif %}
+        <section class="employee-card">
+            <div class="employee-info">
+                <h2>{{ user.get_full_name|default:user.username }}</h2>
 
-                {% if user.photo %}
-                    <img src="{{ user.photo.url }}" alt="Профилна снимка" class="employee-photo">
-                {% else %}
-                    <img src="{{ media_url }}defaults/default_user.png" alt="Снимка по подразбиране" class="employee-photo">
-                {% endif %}
+                <img src="{% if user.photo %}{{ user.photo.url }}{% else %}{{ media_url }}defaults/default_user.png{% endif %}"
+                     alt="Профилна снимка"
+                     class="employee-photo">
 
                 <p><strong>Имейл:</strong> {{ user.email }}</p>
                 <p><strong>Телефон:</strong> {{ user.telephone_number }}</p>
@@ -25,8 +19,8 @@
             </div>
 
             {% if user.employeebio.certificates.all %}
-                <div class="employee-contact-card-certificates">
-                    <div class="scrolling-certificates">
+                <div class="certificate-outer-container">
+                    <div class="certificate-inner">
                         {% for cert in user.employeebio.certificates.all %}
                             <a href="{{ cert.photo.url }}" target="_blank" rel="noopener noreferrer">
                                 <img src="{{ cert.photo.url }}" alt="Сертификат на {{ user.username }}">
@@ -40,10 +34,13 @@
                     </div>
                 </div>
             {% endif %}
-
         </section>
     {% empty %}
         <p class="no-employees">Няма добавени служители.</p>
     {% endfor %}
-
+    
+    {% if not request.user.is_authenticated %}
+        <a href="{% url 'homepage' %}" class="button-like-a">Върни се</a>
+    {% endif %}
+    
 {% endblock %}
