@@ -236,6 +236,12 @@ main {
 
 }
 
+@media (max-width: 580px) {
+    .logo-section {
+        height: 200px;
+    }
+}
+
 
 @media (max-width: 400px) {
 

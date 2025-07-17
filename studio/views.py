@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from django.utils.timezone import localtime
@@ -46,3 +47,8 @@ class HomePageView(TemplateView):
                 context['day_off_list'] = DayOff.objects.select_related('employee', 'employee__user').order_by('date')
 
         return context
+
+
+def preview_404(request):
+    return render(request, '404.html', status=404)
+    # FOR TESTING 404 BEFORE DEPLOYMENT

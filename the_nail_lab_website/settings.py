@@ -42,7 +42,7 @@ GOOGLE_AUTHENTICATION = [
 
 PROJECT_APPS = [
     'studio',
-    'accounts.apps.AccountsConfig',  # Заради сигнали е така, за да не гръмне за дублиране при миграции
+    'accounts.apps.AccountsConfig',  # BECAUSE OF THE SIGNAL, TO PREVENT ERROR DUPLICATION WHEN MIGRATING
     'services',
     'photos',
     'appointments',
