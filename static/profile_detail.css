@@ -36,6 +36,10 @@
 .profile-info p {
     margin: 0;
     font-size: 1rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 100%;
 }
 
 img.profile-photo {

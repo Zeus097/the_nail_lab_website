@@ -34,8 +34,8 @@ class CertificateImage(models.Model):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='uploaded_gallery_photos',
+        related_name='certificates',
     )
 
     def __str__(self):
-        return f"Certificate by {self.uploader.user.username if self.uploader else 'Unknown'}"
+        return f"Сертификат от: {self.uploader.user.username if self.uploader else 'Непознат'}"
