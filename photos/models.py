@@ -25,3 +25,17 @@ class GalleryPhoto(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.description} - {self.upload_date}"
+
+
+class CertificateImage(models.Model):
+    photo = models.ImageField(upload_to='certificates', )
+    uploader = models.ForeignKey(
+        to='accounts.EmployeeBio',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='uploaded_gallery_photos',
+    )
+
+    def __str__(self):
+        return f"Certificate by {self.uploader.user.username if self.uploader else 'Unknown'}"

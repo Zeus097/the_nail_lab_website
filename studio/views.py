@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from django.utils.timezone import now
+from django.utils.timezone import localtime
 from appointments.models import Appointment, DayOff
 
 
@@ -15,7 +15,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-        today = now().date()
+        today = localtime().date()
 
         context['is_employee'] = getattr(user, 'is_employee', False)
         context['is_admin'] = user.is_superuser

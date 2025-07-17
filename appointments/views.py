@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
@@ -10,7 +10,6 @@ from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOf
     SlotSearchForm
 from accounts.models import ClientProfile, EmployeeBio
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import ListView
 from django.views import View
 from appointments.utils import find_earliest_available_slots
 
@@ -73,20 +72,6 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
             initial['start_time'] = start_time
 
         return initial
-
-
-class AppointmentListView(LoginRequiredMixin, ListView):
-    model = Appointment
-    template_name = 'appointments/appointments-list.html'
-    context_object_name = 'appointment_list'
-
-    def get_queryset(self):
-        user = self.request.user
-        if user.is_employee:
-            return Appointment.objects.filter(employee__user=user).order_by("date", "start_time")
-        elif user.is_client:
-            return Appointment.objects.filter(client__user=user).order_by("date", "start_time")
-        return Appointment.objects.none()
 
 
 class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
@@ -164,16 +149,6 @@ class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return super().form_valid(form)
 
 
-class DayOffListView(LoginRequiredMixin, ListView):
-    model = DayOff
-    template_name = 'appointments/list-of-the-employee-dayoff.html'
-    context_object_name = 'day_off_list'
-
-    def get_queryset(self):
-        user = self.request.user
-        return DayOff.objects.select_related('employee', 'employee__user').order_by('date')
-
-
 class CurrentDayOffDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = DayOff
     template_name = 'appointments/dayoff-details.html'
@@ -249,14 +224,6 @@ class AvailableSlotsView(View):
             'form': form,
             'slots': slots
         })
-
-
-
-
-
-
-
-
 
 
 

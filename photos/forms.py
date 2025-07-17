@@ -1,5 +1,5 @@
 from django import forms
-from photos.models import GalleryPhoto
+from photos.models import GalleryPhoto, CertificateImage
 
 
 class GalleryBaseForm(forms.ModelForm):
@@ -20,5 +20,10 @@ class GalleryBaseForm(forms.ModelForm):
         }
 
 
-class GalleryUploadPhotoForm(GalleryBaseForm):
-    pass
+class CertificateBaseForm(forms.ModelForm):
+    class Meta:
+        model = CertificateImage
+        fields = ['photo']
+        labels = {
+            'photo': 'Снимка'
+        }

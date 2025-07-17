@@ -5,7 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
+from django.views.generic import CreateView, UpdateView, DetailView, DeleteView, ListView
 
 from accounts.forms import BaseUserCreationForm, CompleteProfileForm, ProfilePhotoForm, ProfileEditForm
 from accounts.models import BaseUser, ClientProfile, EmployeeBio
@@ -151,8 +151,13 @@ class ProfilePhotoUpdateView(LoginRequiredMixin, UpdateView):
         return reverse('profile_details', kwargs={'pk': self.object.pk})
 
 
+class ContactListView(ListView):
+    model = BaseUser
+    template_name = 'accounts/address.html'
+    context_object_name = 'addresses'
 
-
+    def get_queryset(self):
+        return BaseUser.objects.filter(is_employee=True).order_by('first_name')
 
 
 

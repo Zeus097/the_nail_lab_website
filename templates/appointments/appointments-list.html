@@ -3,51 +3,51 @@
         <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
             <a href="{% url 'appointment_details' appointment.pk %}">
                 <div>
-                
-                    
-                
+
+
+
                     <h3>
                         Вид на услугата:&nbsp;{{ appointment.service.name }}
                     </h3>
-                
+
                     <p>
                         Дата:&nbsp;
                         <strong>
                             {{ appointment.date }}
-                        </strong> 
+                        </strong>
                     </p>
-                
+
                     <p>
                         Час:&nbsp;
                         <strong>
                             {{ appointment.start_time }}
-                        </strong> 
+                        </strong>
                     </p>
-                
+
                     <p>
-                        <strong>Цена:&nbsp;</strong> 
+                        <strong>Цена:&nbsp;</strong>
                         {{ appointment.service.price}} лв.
                     </p>
-                
+
                     <p>
-                        <strong>Време:&nbsp;</strong> 
+                        <strong>Време:&nbsp;</strong>
                         {{ appointment.service.duration }}мин.
                     </p>
-                
+
                     <p class="user-data-name-info">
                         Име:&nbsp;
                         <strong>
                             {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
                         </strong>
                     </p>
-                
+
                     <p>
                         Телефон:&nbsp;
                         <strong>
                             {{ appointment.client.user.telephone_number }}
                         </strong>
                     </p>
-                
+
                     <p>
                         Имейл:&nbsp;
                         <strong>
@@ -60,7 +60,7 @@
                             Коментар:&nbsp;
                             <strong>
                                 {{ appointment.comment|truncatechars:15 }}
-                            </strong> 
+                            </strong>
                         {% endif %}
                     </p>
 

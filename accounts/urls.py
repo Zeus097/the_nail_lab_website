@@ -18,16 +18,8 @@ urlpatterns = [
         path('profile-edit/', views.CurrentProfileEditView.as_view(), name='profile_edit'),
         path('change-password/', views.ChangePasswordView.as_view(), name='change_password'),
         path('profile-delete/', views.CurrentProfileDeleteView.as_view(), name='profile_delete'),
-    ]))
+    ])),
 
-
-
-
-
-
-
-
-
-
+    path('address/', views.ContactListView.as_view(), name='contact_list'),
 
 ]

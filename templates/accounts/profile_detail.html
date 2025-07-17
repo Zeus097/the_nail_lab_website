@@ -35,6 +35,12 @@
                 {% endif %}
             {% endif %}
         
+            {% if user.is_employee %}
+                <a href="{% url 'certificate_upload' %}" class="button-like-a">
+                    Качи сертификат
+                </a>
+            {% endif %}
+        
             <a href="{% url 'profile_edit' user.pk %}" class="button-like-a">
                 Редактирай Профила
             </a>

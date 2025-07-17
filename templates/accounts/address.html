@@ -1,0 +1,53 @@
+{% extends 'common/base.html' %}
+{% block content %}
+    
+    <section class="studio-address-section">
+        <div class="studio-info-container">
+            <h2>Информация за студиото</h2>
+            <p><strong>Адрес:</strong> гр. Търговище, ул. Сердика 5 </p>
+            <p><strong>Телефон:</strong> +359 87 6706061</p>
+            <div class="qr-code-box">
+                <img src="{{ studio_qr_url }}" alt="QR код за адреса" class="qr-code-img">
+            </div>
+        </div>
+    </section>
+    
+    <section class="employees-addresses-section">
+        {% for user in addresses %}
+            <div class="employee-contact-card">
+                <div class="employee-info">
+                    {% if user.get_full_name %}
+                        <h2>{{ user.get_full_name }}</h2>
+                    {% else %}
+                        <h2>{{ user.username }}</h2>
+                    {% endif %}
+
+                    {% if user.photo %}
+                        <img src="{{ user.photo.url }}" alt="Профилна снимка" class="employee-photo">
+                    {% else %}
+                        <img src="{{ media_url }}defaults/default_user.png" alt="Снимка по подразбиране" class="employee-photo">
+                    {% endif %}
+
+                    <p><strong>Имейл:</strong> {{ user.email }}</p>
+                    <p><strong>Телефон:</strong> {{ user.telephone_number }}</p>
+
+                    {% if user.employeebio.biography %}
+                        <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
+                    {% endif %}
+                
+                    {% if user.employeebio.certificates %}
+                        {% for employee in user.employeebio %}
+                            {{ employee.certificates }}
+                        {% endfor %}
+                    {% endif %}
+                
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-employees">Няма добавени служители.</p>
+        {% endfor %}
+    </section>
+
+{% endblock %}
+
+

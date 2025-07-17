@@ -4,8 +4,8 @@ from django.views.generic import ListView, CreateView, DeleteView
 from django.urls import reverse_lazy
 
 from accounts.models import EmployeeBio
-from photos.forms import GalleryUploadPhotoForm
-from photos.models import GalleryPhoto
+from photos.forms import GalleryBaseForm, CertificateBaseForm
+from photos.models import GalleryPhoto, CertificateImage
 
 
 class GalleryView(LoginRequiredMixin, ListView):
@@ -20,7 +20,7 @@ class GalleryView(LoginRequiredMixin, ListView):
 
 class GalleryUploadView(LoginRequiredMixin, CreateView):
     model = GalleryPhoto
-    form_class = GalleryUploadPhotoForm
+    form_class = GalleryBaseForm
     template_name = 'photos_gallery/gallery-upload.html'
     success_url = reverse_lazy('gallery')
 
@@ -45,3 +45,17 @@ class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         return reverse_lazy("gallery")
+
+
+class CertificateUploadView(LoginRequiredMixin,  UserPassesTestMixin, CreateView):
+    model = CertificateImage
+    form_class = CertificateBaseForm
+    template_name = 'photos_gallery/certificate-upload.html'
+    success_url = reverse_lazy('contact_list')
+
+    def test_func(self):
+        return hasattr(self.request.user, 'employeebio')
+
+    def form_valid(self, form):
+        form.instance.uploader = self.request.user.employeebio
+        return super().form_valid(form)
