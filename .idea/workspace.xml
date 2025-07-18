@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/4a19da4787fe2b546208f041f7fa5b3c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/81a9ac6089fa19e5e83af2b0986fb3a0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/cozy-shop-night-5120x2880-18774.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/cozy-shop-night-5120x2880-18774_jHMqWJS.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/dramatic-scenery-3840x2160-20802.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/nature-majesty-revealed-generative-ai-landscape-generative-ai.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/sibillini-national-5760x3840-21129.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/certificates/sibillini-national-5760x3840-21129_65KECV9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/photos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/address.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,30 +40,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.the_nail_lab_website.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/vasildimitrov/Vasko storgo i sekretno/Programming/Programming_with_python/WEBSITE PROJECT/the_nail_lab_website&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.pro.customization.django.DjangoModulesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.Unnamed.executor": "Run",
+    "Django Server.the_nail_lab_web_site.executor": "Debug",
+    "Django Server.the_nail_lab_website.executor": "Run",
+    "Python.manage.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/vasildimitrov/Vasko storgo i sekretno/Programming/Programming_with_python/WEBSITE PROJECT/the_nail_lab_website",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="the_nail_lab_website" is-module-sdk="true" working-directory="$PROJECT_DIR$">
@@ -109,7 +101,35 @@
       <recent name="$PROJECT_DIR$/accounts" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.the_nail_lab_website">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="com.fapiko.jetbrains.plugins.better_direnv.runconfigs.PycharmRunConfigurationExtension">
+        <option name="DIRENV_ENABLED" value="true" />
+        <option name="DIRENV_TRUSTED" value="true" />
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="the_nail_lab_website" type="Python.DjangoServer" factoryName="Django server">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="$PROJECT_DIR$" />
@@ -145,6 +165,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.the_nail_lab_website" />
+      <item itemvalue="Python.manage" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -242,6 +271,16 @@
       <workItem from="1752773682900" duration="59000" />
       <workItem from="1752773745191" duration="283000" />
       <workItem from="1752779359057" duration="4033000" />
+      <workItem from="1752783400583" duration="602000" />
+      <workItem from="1752798156392" duration="771000" />
+      <workItem from="1752807672685" duration="16000" />
+      <workItem from="1752808140636" duration="103000" />
+      <workItem from="1752808264212" duration="5000" />
+      <workItem from="1752841569151" duration="2236000" />
+      <workItem from="1752843853370" duration="1217000" />
+      <workItem from="1752845077207" duration="150000" />
+      <workItem from="1752845231873" duration="37000" />
+      <workItem from="1752845272165" duration="662000" />
     </task>
     <servers />
   </component>
@@ -258,5 +297,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$manage.coverage" NAME="manage Coverage Results" MODIFIED="1752842634954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
