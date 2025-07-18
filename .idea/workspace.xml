@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,8 +164,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.the_nail_lab_website" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Django Server.the_nail_lab_website" />
     </list>
     <recent_temporary>
       <list>
@@ -282,6 +280,7 @@
       <workItem from="1752845231873" duration="37000" />
       <workItem from="1752845272165" duration="2823000" />
       <workItem from="1752850654572" duration="687000" />
+      <workItem from="1752853060016" duration="177000" />
     </task>
     <servers />
   </component>
