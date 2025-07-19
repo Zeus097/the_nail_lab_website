@@ -5,6 +5,18 @@
 
 ## Short description
     The Nail Lab is a Django Web Project.
+        
+        The website has a home page for users who do not have a user profile,
+        with brief information about the site.
+        
+        <img width="632" height="846" alt="Screenshot 2025-07-19 at 18 29 09" src="https://github.com/user-attachments/assets/7d3c8e15-0b34-4562-88c1-8bcb71bd3185" />
+
+        Options to log in (if they have an account, they can also log in with Google) 
+        or register.
+
+        The website also has a home page for users who already have a user profile,
+        having permission for full CRUD operations over their profile and current appointments.
+
         Its purpose is to:
             To show what services the specialist offers;
             To check if there are free hours and book if it's possible;
