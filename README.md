@@ -5,8 +5,8 @@
 
 ## Short description
     The Nail Lab is a Django Web Project.
-    Its purpose is to:
-        To show what services the specialist offers;
+        Its purpose is to:
+            To show what services the specialist offers;
             To check if there are free hours and book if it's possible;
             To reserve manicure hours;
             To show reserved hours only to the client and the specialist for whom the appointment is made;
