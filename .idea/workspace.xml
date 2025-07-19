@@ -4,157 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="" />
+    <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="Python Script" />
-        <option value="HTML File" />
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2zRhqKdW78phpVWd8SkWrdiexpt" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="303sw3sElm8dDE1D5xvjTHYA84t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Django Server.the_nail_lab_web_site.executor&quot;: &quot;Debug&quot;,
-    &quot;Django Server.the_nail_lab_website.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/vasildimitrov/Vasko storgo i sekretno/Programming/Programming_with_python/WEBSITE PROJECT/the_nail_lab_website&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.the_nail_lab_website.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/vasildimitrov/Desktop/the_nail_lab_website",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings module-name="the_nail_lab_website" is-module-sdk="true" working-directory="$PROJECT_DIR$">
-        <envs>
-          <env key="DB_NAME" value="the_nail_lab_website_2025" />
-          <env key="DB_PASSWORD" value="0897535532" />
-          <env key="DB_USER" value="postgres" />
-          <env key="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
-          <env key="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
-          <env key="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
-        </envs>
-        <option name="myUseModuleSdk" value="true" />
-        <option name="myModuleName" value="the_nail_lab_website" />
-        <option name="myEnvs">
-          <map>
-            <entry key="DB_NAME" value="the_nail_lab_website_2025" />
-            <entry key="DB_PASSWORD" value="0897535532" />
-            <entry key="DB_USER" value="postgres" />
-            <entry key="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
-            <entry key="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
-            <entry key="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
-          </map>
-        </option>
-        <option name="myWorkingDirectory" value="$PROJECT_DIR$" />
-      </console-settings>
-    </option>
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/media_files/defaults" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/accounts" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Django Server.the_nail_lab_website">
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="the_nail_lab_website" />
-      <option name="ENV_FILES" value="$PROJECT_DIR$" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="com.fapiko.jetbrains.plugins.better_direnv.runconfigs.PycharmRunConfigurationExtension">
-        <option name="DIRENV_ENABLED" value="true" />
-        <option name="DIRENV_TRUSTED" value="true" />
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+}]]></component>
+  <component name="RunManager">
     <configuration name="the_nail_lab_website" type="Python.DjangoServer" factoryName="Django server">
       <module name="the_nail_lab_website" />
-      <option name="ENV_FILES" value="$PROJECT_DIR$" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DB_NAME" value="the_nail_lab_website_2025" />
-        <env name="DB_PASSWORD" value="0897535532" />
-        <env name="DB_USER" value="postgres" />
         <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
-        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
-        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
-        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (the_nail_lab_website)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="com.fapiko.jetbrains.plugins.better_direnv.runconfigs.PycharmRunConfigurationExtension">
-        <option name="DIRENV_ENABLED" value="true" />
-        <option name="DIRENV_TRUSTED" value="true" />
-      </EXTENSION>
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="localhost" />
+      <option name="host" value="" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -163,143 +78,27 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Django Server.the_nail_lab_website" />
-      <item itemvalue="Python.manage" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.manage" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
+        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d007a7ce-a7af-4f1a-aae4-62c3d11c5b97" name="Changes" comment="" />
-      <created>1751699983772</created>
+      <changelist id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="" />
+      <created>1752867826815</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1751699983772</updated>
-      <workItem from="1751699985022" duration="312000" />
-      <workItem from="1751700301240" duration="113000" />
-      <workItem from="1751700447825" duration="41000" />
-      <workItem from="1751703076955" duration="10113000" />
-      <workItem from="1751713209491" duration="2174000" />
-      <workItem from="1751724348417" duration="5591000" />
-      <workItem from="1751729967898" duration="4559000" />
-      <workItem from="1751738247891" duration="2304000" />
-      <workItem from="1751776219077" duration="914000" />
-      <workItem from="1751777137452" duration="5588000" />
-      <workItem from="1751782821626" duration="3069000" />
-      <workItem from="1751785927215" duration="1305000" />
-      <workItem from="1751787242977" duration="1606000" />
-      <workItem from="1751788860696" duration="1500000" />
-      <workItem from="1751792407069" duration="454000" />
-      <workItem from="1751792864844" duration="5729000" />
-      <workItem from="1751807468576" duration="68000" />
-      <workItem from="1751807797258" duration="11259000" />
-      <workItem from="1751820591428" duration="27140000" />
-      <workItem from="1751883217915" duration="42000" />
-      <workItem from="1751883337241" duration="73000" />
-      <workItem from="1751888181014" duration="4000" />
-      <workItem from="1751960713356" duration="1623000" />
-      <workItem from="1751962390418" duration="191000" />
-      <workItem from="1751967291826" duration="317000" />
-      <workItem from="1751967767407" duration="930000" />
-      <workItem from="1751968701856" duration="2000" />
-      <workItem from="1751969614752" duration="919000" />
-      <workItem from="1751971185391" duration="2342000" />
-      <workItem from="1751973704046" duration="144000" />
-      <workItem from="1751973849960" duration="15000" />
-      <workItem from="1751973867578" duration="7000" />
-      <workItem from="1752039769302" duration="277000" />
-      <workItem from="1752040136398" duration="20000" />
-      <workItem from="1752040274330" duration="10000" />
-      <workItem from="1752040307326" duration="13123000" />
-      <workItem from="1752055340197" duration="1933000" />
-      <workItem from="1752057340018" duration="41000" />
-      <workItem from="1752057420618" duration="16000" />
-      <workItem from="1752057444905" duration="152000" />
-      <workItem from="1752057617690" duration="8000" />
-      <workItem from="1752057645958" duration="169000" />
-      <workItem from="1752057873276" duration="341000" />
-      <workItem from="1752058530863" duration="1028000" />
-      <workItem from="1752059578724" duration="11020000" />
-      <workItem from="1752150575192" duration="1038000" />
-      <workItem from="1752151654362" duration="95000" />
-      <workItem from="1752151775401" duration="1535000" />
-      <workItem from="1752153566973" duration="18000" />
-      <workItem from="1752153603725" duration="8000" />
-      <workItem from="1752153748866" duration="6427000" />
-      <workItem from="1752162433882" duration="16181000" />
-      <workItem from="1752247906684" duration="15600000" />
-      <workItem from="1752301052525" duration="12555000" />
-      <workItem from="1752318562472" duration="4666000" />
-      <workItem from="1752351041060" duration="1493000" />
-      <workItem from="1752383818476" duration="3200000" />
-      <workItem from="1752387026818" duration="4286000" />
-      <workItem from="1752391390435" duration="3913000" />
-      <workItem from="1752396507485" duration="9250000" />
-      <workItem from="1752411966255" duration="561000" />
-      <workItem from="1752426138251" duration="12030000" />
-      <workItem from="1752492512323" duration="97000" />
-      <workItem from="1752492617096" duration="3000" />
-      <workItem from="1752492713118" duration="36000" />
-      <workItem from="1752548549909" duration="44000" />
-      <workItem from="1752550911151" duration="1781000" />
-      <workItem from="1752589415119" duration="2079000" />
-      <workItem from="1752591637733" duration="2625000" />
-      <workItem from="1752597684365" duration="1782000" />
-      <workItem from="1752645892141" duration="12000" />
-      <workItem from="1752645905840" duration="3000" />
-      <workItem from="1752645915713" duration="2000" />
-      <workItem from="1752685663404" duration="535000" />
-      <workItem from="1752699450419" duration="195000" />
-      <workItem from="1752704611984" duration="27434000" />
-      <workItem from="1752771457791" duration="456000" />
-      <workItem from="1752773682900" duration="59000" />
-      <workItem from="1752773745191" duration="283000" />
-      <workItem from="1752779359057" duration="4033000" />
-      <workItem from="1752783400583" duration="602000" />
-      <workItem from="1752798156392" duration="771000" />
-      <workItem from="1752807672685" duration="16000" />
-      <workItem from="1752808140636" duration="103000" />
-      <workItem from="1752808264212" duration="5000" />
-      <workItem from="1752841569151" duration="2236000" />
-      <workItem from="1752843853370" duration="1217000" />
-      <workItem from="1752845077207" duration="150000" />
-      <workItem from="1752845231873" duration="37000" />
-      <workItem from="1752845272165" duration="2823000" />
-      <workItem from="1752850654572" duration="687000" />
-      <workItem from="1752853060016" duration="177000" />
-      <workItem from="1752853278839" duration="617000" />
+      <updated>1752867826815</updated>
+      <workItem from="1752867828173" duration="520000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/the_nail_lab_website$manage.coverage" NAME="manage Coverage Results" MODIFIED="1752842634954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
