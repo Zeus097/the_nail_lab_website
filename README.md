@@ -1,7 +1,5 @@
 # The Nail Lab Website
 
-## Homepage cover for authorized users
-<img width="628" height="764" alt="Screenshot 2025-07-18 at 18 54 37" src="https://github.com/user-attachments/assets/7fa0c61a-8481-4159-b292-cd65931ec7dd" />
 
 ## Short description
     The Nail Lab is a Django Web Project.
@@ -18,6 +16,8 @@
 
         The website also has a home page for users who already have a user profile,
         having permission for full CRUD operations over their profile and current appointments.
+
+<img width="628" height="764" alt="Screenshot 2025-07-18 at 18 54 37" src="https://github.com/user-attachments/assets/7fa0c61a-8481-4159-b292-cd65931ec7dd" />
 
         Its purpose is to:
             To show what services the specialist offers;
