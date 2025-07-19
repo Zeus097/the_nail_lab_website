@@ -7,7 +7,7 @@
 }
 
 .service-section {
-    width: 50%; /* 3 per row */
+    width: 90%; /* 3 per row and 90% to prevent broken design when SEARCH find 1 service for example*/
     min-width: 280px;
     max-width: 500px;
     height: 300px;
@@ -190,7 +190,7 @@ body section.service-details-section {
 
 @media (min-width: 901px) and (max-width: 1100px) {
     .service-section {
-        width: 45%;
+        width: 90%;  /* To prevent broken design when SEARCH find 1 service for example*/
     }
 }
 
