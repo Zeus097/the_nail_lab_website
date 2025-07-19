@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ea69ecc9-98ed-4bc6-a903-e3593ce3ae38/storage_v2/_src_/database/the_nail_lab_website_2025.Uilwwg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +18,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="303sw3sElm8dDE1D5xvjTHYA84t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,12 +28,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Django Server.the_nail_lab_website.executor": "Run",
+    "Django Server.the_nail_lab_website.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/vasildimitrov/Desktop/the_nail_lab_website",
     "node.js.detected.package.eslint": "true",
@@ -49,6 +44,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -60,6 +60,14 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
+        <env name="DB_NAME" value="the_nail_lab_website_2025" />
+        <env name="DB_USER" value="postgres" />
+        <env name="DB_PASSWORD" value="0897535532" />
+        <env name="DB_HOST" value="localhost" />
+        <env name="DB_PORT" value="5432" />
+        <env name="SECRET_KEY" value="'%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6'" />
+        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
+        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.12 (the_nail_lab_website)" />
@@ -95,6 +103,9 @@
       <option name="presentableId" value="Default" />
       <updated>1752867826815</updated>
       <workItem from="1752867828173" duration="520000" />
+      <workItem from="1752885899625" duration="1231000" />
+      <workItem from="1752896718497" duration="304000" />
+      <workItem from="1752897345660" duration="1730000" />
     </task>
     <servers />
   </component>

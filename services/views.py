@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
+from django.db.models.functions import Lower
 
 from services.forms import SearchForm
 from services.models import BaseService
@@ -26,19 +27,20 @@ class ServiceListView(LoginRequiredMixin, ListView):
         return super().get_context_data(object_list=object_list, **kwargs)
 
     def get_queryset(self):
-        #  За да търси и с малки букви - нова база с подходящ локал,
-        #  за да се настрои 'datcollate' (bg_BG.UTF-8) и
-        #  след това -миграции към новата база,
-
+        #  За да търси и с малки букви - 'datcollate' (bg_BG.UTF-8)
         queryset = self.model.objects.all()
         search_parameter = self.request.GET.get(self.query_param)
 
         if search_parameter:
-            queryset = queryset.filter(
-                Q(name__icontains=search_parameter)
-                |
-                Q(description__icontains=search_parameter)
+            lower_query = search_parameter.lower()
+            queryset = queryset.annotate(
+                lower_name=Lower('name'),
+                lower_description=Lower('description'),
+            ).filter(
+                Q(lower_name__contains=lower_query) |
+                Q(lower_description__contains=lower_query)
             )
+
 
         return queryset.order_by('id')
 
