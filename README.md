@@ -14,6 +14,8 @@
         Options to log in (if they have an account, they can also log in with Google) 
         or register.
 
+<img width="933" height="800" alt="Screenshot 2025-07-19 at 18 28 53" src="https://github.com/user-attachments/assets/544fa6ef-db9c-4fad-85fa-4766730c4d90" />
+
         The website also has a home page for users who already have a user profile,
         having permission for full CRUD operations over their profile and current appointments.
 
