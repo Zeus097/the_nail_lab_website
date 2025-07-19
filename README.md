@@ -7,11 +7,11 @@
     The Nail Lab is a Django Web Project.
     Its purpose is to:
         To show what services the specialist offers;
-        To check if there are free hours and book if it's possible;
-        To reserve manicure hours;
-        To show reserved hours only to the client and the specialist for whom the appointment is made;
-        To edit its appointment and change it if its available.        
-        To show if the specialist has a day off
-        To show a gallery in which only the employee can upload photos of their work;
-        To show contacts and information about the specialist
-        The user has access to their profile and can accordingly edit and delete it if they wish;
+            To check if there are free hours and book if it's possible;
+            To reserve manicure hours;
+            To show reserved hours only to the client and the specialist for whom the appointment is made;
+            To edit its appointment and change it if its available.        
+            To show if the specialist has a day off
+            To show a gallery in which only the employee can upload photos of their work;
+            To show contacts and information about the specialist
+            The user has access to their profile and can accordingly edit and delete it if they wish;
