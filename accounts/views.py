@@ -46,7 +46,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
 
 
 class CurrentProfileDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
-    template_name = "accounts/profile_detail.html"
+    template_name = "accounts/profile_details.html"
 
     def get_object(self, queryset=None):
         user = self.request.user
