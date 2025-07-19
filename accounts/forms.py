@@ -14,9 +14,13 @@ class BaseUserCreationForm(UserCreationForm):
         required=True,
         label=_('Телефонен номер'),
         validators=[PhoneValidator()],
-        widget=forms.TextInput(attrs={'placeholder': _('Въведи телефонен номер')})
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Въведи телефонен номер')
+            }
+        )
     )
-
+    # Превод на български в UserCreationForm
     class Meta(UserCreationForm.Meta):
         model = UserModel
         fields = ('username', 'email', 'telephone_number', 'password1', 'password2')
@@ -70,12 +74,20 @@ class ProfileEditForm(forms.ModelForm):
 
     class Meta:
         model = BaseUser
-        fields = ['username', 'email', 'telephone_number', 'first_name', 'last_name']
+        fields = [
+            'username',
+            'email',
+            'telephone_number',
+            'first_name',
+            'last_name'
+        ]
+
 
     def __init__(self, *args, **kwargs):
         user = kwargs.get('instance')
         super().__init__(*args, **kwargs)
 
+        # Translation
         self.fields['username'].widget.attrs.update({'placeholder': _('Потребителско име')})
         self.fields['email'].widget.attrs.update({'placeholder': _('Имейл')})
         self.fields['telephone_number'].widget.attrs.update({'placeholder': _('Телефон')})
@@ -99,6 +111,7 @@ class ProfileEditForm(forms.ModelForm):
         return user
 
 
+# Using built in LoginView from django.contrib.auth.views
 class CustomLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -113,9 +126,18 @@ class CustomLoginForm(AuthenticationForm):
         })
 
 
+# If logging with GOOGLE for First time, adds the profile in project DB with needed fields
+# and attaches the profile to GOOGLE email
 class CompleteProfileForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput(), required=True, label="Парола")
-    password2 = forms.CharField(widget=forms.PasswordInput(), required=True, label="Потвърди паролата")
+    password = forms.CharField(
+        widget=forms.PasswordInput(),
+        required=True,
+        label="Парола"
+    )
+    password2 = forms.CharField(
+        widget=forms.PasswordInput(),
+        required=True,
+        label="Потвърди паролата")
 
     class Meta:
         model = BaseUser

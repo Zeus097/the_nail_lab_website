@@ -13,13 +13,13 @@ urlpatterns = [
     path('complete-profile/', views.CompleteProfileView.as_view(), name='complete-profile'),
 
     path('<int:pk>/', include([
-        path('profile/', views.CurrentUserProfileView.as_view(), name='profile_details'),
-        path('profile/update-photo/', views.ProfilePhotoUpdateView.as_view(), name='update_photo'),
-        path('profile-edit/', views.CurrentProfileEditView.as_view(), name='profile_edit'),
-        path('change-password/', views.ChangePasswordView.as_view(), name='change_password'),
-        path('profile-delete/', views.CurrentProfileDeleteView.as_view(), name='profile_delete'),
+        path('profile/', views.CurrentProfileDetailView.as_view(), name='profile-details'),
+        path('profile/update-photo/', views.ProfilePhotoUpdateView.as_view(), name='update-photo'),
+        path('profile-edit/', views.CurrentProfileEditView.as_view(), name='profile-edit'),
+        path('change-password/', views.ChangePasswordView.as_view(), name='change-password'),
+        path('profile-delete/', views.CurrentProfileDeleteView.as_view(), name='profile-delete'),
     ])),
 
-    path('address/', views.ContactListView.as_view(), name='contact_list'),
+    path('address/', views.ContactListView.as_view(), name='contact-list'),
 
 ]

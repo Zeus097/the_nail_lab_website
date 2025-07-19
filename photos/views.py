@@ -51,7 +51,7 @@ class CertificateUploadView(LoginRequiredMixin,  UserPassesTestMixin, CreateView
     model = CertificateImage
     form_class = CertificateBaseForm
     template_name = 'photos_gallery/certificate-upload.html'
-    success_url = reverse_lazy('contact_list')
+    success_url = reverse_lazy('contact-list')
 
     def test_func(self):
         return hasattr(self.request.user, 'employeebio')

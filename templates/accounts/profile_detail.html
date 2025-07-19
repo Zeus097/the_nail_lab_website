@@ -8,6 +8,7 @@
     <div class="profile-details-div">
 
         <div class="profile-info">
+
             {% if user.get_full_name %}
                 <h1>Профил на {{ user.get_full_name }}</h1>
             {% else %}
@@ -20,7 +21,7 @@
                 <img src="{{ media_url }}defaults/default_user.png" alt="Снимка по подразбиране" class="profile-photo">
             {% endif %}
 
-            <a href="{% url 'update_photo' user.pk %}" class="button-like-a">
+            <a href="{% url 'update-photo' user.pk %}" class="button-like-a">
                 Смени снимката
             </a>
         
@@ -33,23 +34,21 @@
                 {% if user.employeebio.biography %}
                     <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
                 {% endif %}
-            {% endif %}
-        
-            {% if user.is_employee %}
+
                 <a href="{% url 'certificate_upload' %}" class="button-like-a">
                     Качи сертификат
                 </a>
             {% endif %}
         
-            <a href="{% url 'profile_edit' user.pk %}" class="button-like-a">
+            <a href="{% url 'profile-edit' user.pk %}" class="button-like-a">
                 Редактирай Профила
             </a>
         
-            <a href="{% url 'change_password' user.pk %}" class="button-like-a">
+            <a href="{% url 'change-password' user.pk %}" class="button-like-a">
                 Промени парола
             </a>
         
-            <a href="{% url 'profile_delete' user.pk %}" class="button-like-a">
+            <a href="{% url 'profile-delete' user.pk %}" class="button-like-a">
                 Изтрий Профила
             </a>
         

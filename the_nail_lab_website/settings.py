@@ -200,27 +200,27 @@ SOCIAL_AUTH_REDIRECT_IS_HTTPS = False  # Since using HTTP locally
 SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
 
 SOCIAL_AUTH_PIPELINE = [
-    # 1. Взимане на информация от Google
+    # 1. Get info from Google
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
     'social_core.pipeline.social_auth.auth_allowed',
     'social_core.pipeline.social_auth.social_user',
 
-    # 2. Ако вече има потребител с този email → свържи
-    'social_core.pipeline.social_auth.associate_by_email',  # FIX: ако email вече съществува
+    # 2. IF there is a user with this email → CONNECT
+    'social_core.pipeline.social_auth.associate_by_email',  # FIX: if email already exists
 
-    # 3. Подготовка на потребителя
+    # 3. Preparing the user
     'social_core.pipeline.user.get_username',
     'social_core.pipeline.user.create_user',
 
-    # 4. Свързване на social акаунта с потребителя
+    # 4. Connecting social account with the user
     'social_core.pipeline.social_auth.associate_user',
 
-    # 5. Тук започва твоята логика (safe, вече има `user`)
-    'accounts.pipeline.create_client_profile',  # Създаване на клиентски профил
-    'accounts.pipeline.check_profile_data',     # Пренасочване ако няма парола/телефон
+    # 5. CUSTOM LOGIC (safe, already has `user`)
+    'accounts.pipeline.create_client_profile',  # Creating client
+    'accounts.pipeline.check_profile_data',     # Redirecting if no password/ph. number
 
-    # 6. Зареждане на допълнителни данни
+    # 6. Loading additional data
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 ]

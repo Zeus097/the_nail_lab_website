@@ -18,7 +18,7 @@ class ImageSizeValidator:
     @message.setter
     def message(self, value):
         if value is None:
-            self.__message = f"Размерът на снимката трябва да е по малък от {self.image_size_limit}MB!"
+            self.__message = f"Размерът на снимката трябва да е по-малък от {self.image_size_limit}MB!"
         self.__message = value
 
     def __call__(self, value):
@@ -35,6 +35,7 @@ class PhoneValidator:
 
     def __call__(self, value):
         normalized = value.replace(' ', '')
+        # case if user enter ph. number with spaces
 
         if not self.phone_regex.match(normalized):
             raise ValidationError(self.message, code=self.code)

@@ -23,15 +23,18 @@ class UserRegistrationView(CreateView):
         user.telephone_number = form.cleaned_data.get('telephone_number', '')
         user.save()
 
+        # USING LogInWithEmail from authentication.py to log in with email
         login(self.request, user, backend='accounts.authentication.LogInWithEmail')
         return response
 
 
+# GOOGLE LOG IN
 def google_login_redirect(request):
     url = reverse('social:begin', args=['google-oauth2'])
     return redirect(url)
 
 
+# GOOGLE attach user to project db if Logging for first time with GOOGLE
 class CompleteProfileView(LoginRequiredMixin, UpdateView):
     form_class = CompleteProfileForm
     model = BaseUser
@@ -91,27 +94,27 @@ class CurrentProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('profile_details', kwargs={'pk': self.object.pk})
+        return reverse_lazy('profile-details', kwargs={'pk': self.object.pk})
 
 
-class ChangePasswordView(PasswordChangeView):
+class ChangePasswordView(LoginRequiredMixin, UserPassesTestMixin, PasswordChangeView):
     template_name = 'accounts/change_password.html'
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_authenticated and (user.is_client or user.is_employee)
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy("homepage"))
 
     def form_valid(self, form):
         messages.success(self.request, "Паролата е променена успешно.")
         return super().form_valid(form)
 
     def get_success_url(self):
-        user = self.request.user
+        self.request.session.clear()
+        return reverse_lazy('homepage')
 
-        if user.is_client:
-            profile = user.clientprofile
-        elif user.is_employee:
-            profile = user.employeebio
-        else:
-            raise Exception("Неподдържан тип потребител")
-
-        return reverse_lazy('profile_details', kwargs={'pk': profile.pk})
 
 
 class CurrentProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -131,13 +134,6 @@ class CurrentProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVi
         return reverse_lazy('homepage')
 
 
-class CurrentUserProfileView(LoginRequiredMixin, DetailView):
-    template_name = 'accounts/profile_detail.html'
-    model = BaseUser
-
-    def get_object(self, queryset=None):
-        return self.request.user
-
 
 class ProfilePhotoUpdateView(LoginRequiredMixin, UpdateView):
     model = BaseUser
@@ -148,7 +144,7 @@ class ProfilePhotoUpdateView(LoginRequiredMixin, UpdateView):
         return self.request.user
 
     def get_success_url(self):
-        return reverse('profile_details', kwargs={'pk': self.object.pk})
+        return reverse('profile-details', kwargs={'pk': self.object.pk})
 
 
 class ContactListView(ListView):

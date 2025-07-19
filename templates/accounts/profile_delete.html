@@ -9,7 +9,7 @@
             </h2>
             {% csrf_token %}
             <button type="submit">Да</button>
-            <a href="{% url 'profile_details' object.pk %}" class="delete-form-a">
+            <a href="{% url 'profile-details' object.pk %}" class="delete-form-a">
                 <button type="button">Отказ</button>
             </a>
         </form>
