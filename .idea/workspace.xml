@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/address.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/address.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/appointment.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/04_appointment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/appointment_details.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/04_appointment_details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/address.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/appointment-delete-confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointment_delete_confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/appointment-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointment_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/appointment-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointment_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/appointments-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointments_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/create-appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/create_appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/dayoff-delete-confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/day_off_delete_confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/dayoff-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/day_off_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/dayoff-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/day_off_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/employee-dayoff.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/day_off_employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/list-of-the-employee-dayoff.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/list_of_the_employee_day_off.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +105,7 @@
       <workItem from="1752896718497" duration="304000" />
       <workItem from="1752897345660" duration="3164000" />
       <workItem from="1752936686501" duration="18676000" />
-      <workItem from="1753027205373" duration="11360000" />
+      <workItem from="1753027205373" duration="11762000" />
     </task>
     <servers />
   </component>

@@ -78,8 +78,15 @@
     Also checks if the Day is valid(present day and working day) and user can book an appointment only if the 
     range (in minutes) fits the free time between appointments. In other words it can not book during the time when the
     nail artist is awready busy.
-
     
+<img width="412" height="614" alt="Запази час" src="https://github.com/user-attachments/assets/5483fbbd-9a7d-4f93-99d8-6470f46beccd" />
+    
+    It also have a feature to check for available hours on a current date. The service is looking for the first 5
+    available appointments on a selected date. If there are none- looks for the next day(max 30 days).
+
+<img width="424" height="349" alt="Провери за свободен час" src="https://github.com/user-attachments/assets/4f0d346b-2bc9-430b-ae0c-19302e1ea948" />
+<img width="971" height="466" alt="Screenshot 2025-07-21 at 1 03 36" src="https://github.com/user-attachments/assets/6bfa08e4-99b3-4f74-8de0-c87c7c9d9651" />
+
     The DayOff model gets the info for employee also through ForeignKey and has date fierld.
     It's main goal is to give the employee opportunity to take a break on a day of his choice, only if this day
     is free of appointments.
