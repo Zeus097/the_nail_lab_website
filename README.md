@@ -55,8 +55,8 @@
     In addition, the employee profil has a biography section and has the permission to add certificates,
     which appear in the Contacts page as part of his business card.
 
-    Client Profil example
+### Client Profil example
 <img width="581" height="781" alt="Screenshot 2025-07-20 at 2 59 39" src="https://github.com/user-attachments/assets/d55cff37-4208-4cf2-8508-87e454713426" />
 
-    Employee Profil example
+### Employee Profil example
 <img width="447" height="816" alt="Screenshot 2025-07-20 at 3 00 45" src="https://github.com/user-attachments/assets/9a5e1fac-753b-4d46-a906-2159dcb5741f" />
