@@ -1,7 +1,7 @@
 {% for appointment in appointment_list %}
     {% if appointment %}
         <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
-            <a href="{% url 'appointment_details' appointment.pk %}">
+            <a href="{% url 'appointment-details' appointment.pk %}">
                 <div>
 
 

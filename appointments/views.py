@@ -112,7 +112,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
         return redirect(reverse_lazy('homepage'))
 
     def get_success_url(self):
-        return reverse_lazy('appointment_details', kwargs={'pk': self.object.pk})
+        return reverse_lazy('appointment-details', kwargs={'pk': self.object.pk})
 
 
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -185,7 +185,7 @@ class CurrentDayOffEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView)
         return redirect(reverse_lazy('homepage'))
 
     def get_success_url(self):
-        return reverse_lazy('day_off_details', kwargs={'pk': self.object.pk})
+        return reverse_lazy('day-off-details', kwargs={'pk': self.object.pk})
 
 
 class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

@@ -3,7 +3,7 @@
     {% for day_off in day_off_list %}
         
         <section class="nails-section rest-day">
-            <a href="{% url 'day_off_details' day_off.pk %}">
+            <a href="{% url 'day-off-details' day_off.pk %}">
                 <div>
                     
                     <h3>{{ day_off.employee.name }}</h3>

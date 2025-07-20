@@ -1,6 +1,6 @@
 {% extends 'common/base.html' %}
 {% block content %}
-    
+
     {% for user in addresses %}
         <section class="employee-card">
             <div class="employee-info">
@@ -17,7 +17,7 @@
                     <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
                 {% endif %}
             </div>
-            
+
             {% with certificates=user.employeebio.certificates.all %}
                 {% if certificates %}
                     <div class="certificate-outer-container">
@@ -25,6 +25,12 @@
                             {% for cert in certificates %}
                                 <a href="{{ cert.photo.url }}" target="_blank" rel="noopener noreferrer">
                                     <img src="{{ cert.photo.url }}" alt="Сертификат на {{ user.username }}">
+                                </a>
+                            {% endfor %}
+                            {# Duplicating the same images for the loop (seeing the first attached to the last) #}
+                            {% for cert in certificates %}
+                                <a href="{{ cert.photo.url }}" target="_blank" rel="noopener noreferrer">
+                                    <img src="{{ cert.photo.url }}" alt="Сертификат на {{ user.username }} (копие)">
                                 </a>
                             {% endfor %}
                         </div>
@@ -35,9 +41,9 @@
     {% empty %}
         <p class="no-employees">Няма добавени служители.</p>
     {% endfor %}
-    
+
     {% if not request.user.is_authenticated %}
         <a href="{% url 'homepage' %}" class="button-like-a">Върни се</a>
     {% endif %}
-    
+
 {% endblock %}

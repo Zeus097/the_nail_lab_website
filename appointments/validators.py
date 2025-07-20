@@ -57,7 +57,7 @@ class AppointmentModelCleanValidator:
 
     @staticmethod
     def _default_day_off(instance):
-        from appointments.models import DayOff
+        from appointments.models import DayOff # same lazy import to avoid circular dependency as above
         return DayOff.objects.filter(
             employee=instance.employee,
             date=instance.date

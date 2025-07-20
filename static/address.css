@@ -1,4 +1,5 @@
 .employee-card {
+    width: 100%;
     max-width: 900px;
     margin: 30px auto;
     padding: 20px;
@@ -8,8 +9,8 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+    box-sizing: border-box;
 }
-
 
 .employee-info {
     text-align: center;
@@ -28,40 +29,37 @@
 .certificate-outer-container {
     overflow: hidden;
     position: relative;
-    height: 230px;
+    width: 100%;
+    height: auto;
 }
-
 
 .certificate-inner {
     display: flex;
     gap: 20px;
     animation: scrollLeft 30s linear infinite;
     width: max-content;
+    min-width: 100%;
 }
 
+.certificate-inner a {
+    flex-shrink: 0;
+}
 
 .certificate-inner img {
     width: 200px;
-    height: 220px;
+    height: auto;
+    max-height: 220px;
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .certificate-inner img:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
-
-
-.no-employees {
-    text-align: center;
-    margin: 50px 0;
-    font-size: 1.2rem;
-    color: #666;
-}
-
 
 @keyframes scrollLeft {
     0% {
@@ -72,15 +70,8 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 922px) {
-    .employee-card {
-        padding: 20px 15px;
-        margin: 25px auto;
-        width: 95%;
-        max-width: 95%;
-        box-sizing: border-box;
-    }
 
+@media (max-width: 922px) {
     .employee-photo {
         width: 130px;
         height: 130px;
@@ -88,31 +79,16 @@
 
     .certificate-outer-container {
         height: 180px;
-        overflow: hidden;
-        position: relative;
     }
 
     .certificate-inner {
-        display: flex;
         gap: 18px;
-        width: max-content;
         animation: scrollLeftTablet 28s linear infinite;
-        will-change: transform;
     }
 
     .certificate-inner img {
         width: 160px;
         height: 180px;
-        flex-shrink: 0;
-    }
-
-    .certificate-inner:hover {
-        animation-play-state: paused;
-    }
-
-    .certificate-outer-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
     }
 
     @keyframes scrollLeftTablet {
@@ -125,33 +101,7 @@
     }
 }
 
-
 @media (max-width: 768px) {
-    body {
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    .employee-card {
-        padding: 15px 10px;
-        margin: 20px 0;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .employee-info {
-        text-align: center;
-        padding: 0 5px;
-    }
-
-    .employee-info p {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        white-space: normal;
-    }
-
     .employee-photo {
         width: 100px;
         height: 100px;
@@ -159,31 +109,16 @@
 
     .certificate-outer-container {
         height: 150px;
-        overflow: hidden;
-        position: relative;
     }
 
     .certificate-inner {
-        display: flex;
         gap: 16px;
-        width: max-content;
         animation: scrollLeftMobile 25s linear infinite;
-        will-change: transform;
     }
 
     .certificate-inner img {
         width: 120px;
         height: 140px;
-        flex-shrink: 0;
-    }
-
-    .certificate-outer-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .certificate-inner:hover {
-        animation-play-state: paused;
     }
 
     @keyframes scrollLeftMobile {

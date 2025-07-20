@@ -28,14 +28,14 @@
                     </div>
                 </a>
             
-                <a href="{% url 'available_slots' %}" title="Свободничасове">
+                <a href="{% url 'available-slots' %}" title="Свободничасове">
                     <div class="nav-item">
                         <i class="fa-solid fa-star fa-beat"></i>
                         <p>Часове</p>
                     </div>
                 </a>
                 
-                <a href="{% url 'appointment_create' %}" title="Запази час">
+                <a href="{% url 'appointment-create' %}" title="Запази час">
                     <div class="nav-item">
                         <i class="fa-solid fa-calendar-check"></i>
                         <p>Запази час</p>
@@ -43,7 +43,7 @@
                 </a>
                 
                 {% if is_employee %}
-                    <a href="{% url 'employee_dayoff' %}" title="Почивен ден">
+                    <a href="{% url 'employee-day-off' %}" title="Почивен ден">
                         <div class="nav-item">
                             <i class="fa-solid fa-hand-peace"></i>
                             <p>Почивен ден</p>

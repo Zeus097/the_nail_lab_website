@@ -32,8 +32,14 @@
             The user has access to their profile and can accordingly edit and delete it if they wish;
 
 ## The project has 5 apps
+    
+    👤 accounts;
+    ⏳ appointments;
+    📷 photos;
+    💅 services;
+    🏠 studio;
 
-### accounts app
+### 👤 accounts app
     This app, contains the user profile logic.
     It has One BaseUser model and two children for different user roles(EmployeeBio and ClientProfile).
     Models have additional validators for img size and phone number validation.
@@ -60,3 +66,19 @@
 
 ### Employee Profil example
 <img width="447" height="816" alt="Screenshot 2025-07-20 at 3 00 45" src="https://github.com/user-attachments/assets/9a5e1fac-753b-4d46-a906-2159dcb5741f" />
+
+### appointments app
+    This app contains the appointments logic.
+    It has two models: Appointment & DayOff
+    
+    The Appointment model gets the info for user, employee and service through ForeignKey and also its data:
+    date, start_time and comment.
+    It has validator that is called in the model's save method.
+    The validator 'AppointmentModelCleanValidator', checks if employee, service, date and start_time are picked.
+    Also checks if the Day is valid(present day and working day) and user can book an appointment only if the 
+    range (in minutes) fits the free time between appointments. In other words it can not book during the time when the
+    nail artist is awready busy.
+    
+    The DayOff model gets the info for employee also through ForeignKey and has date fierld.
+    It's main goal is to give the employee opportunity to take a break on a day of his choice, only if this day
+    is free of appointments.

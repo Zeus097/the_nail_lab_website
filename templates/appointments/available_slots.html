@@ -52,7 +52,7 @@
                     {% for slot in slots %}
                         <li class="slot-item">
                             <span>{{ slot.date }} в {{ slot.start_time }}</span>
-                            <a href="{% url 'appointment_create' %}?service_id={{ slot.service.id }}&employee_id={{ slot.employee.id }}&date={{ slot.date|date:'Y-m-d' }}&start_time={{ slot.start_time }}" class="slot-book-btn">
+                            <a href="{% url 'appointment-create' %}?service_id={{ slot.service.id }}&employee_id={{ slot.employee.id }}&date={{ slot.date|date:'Y-m-d' }}&start_time={{ slot.start_time }}" class="slot-book-btn">
                                 Запази
                             </a>
                         </li>
