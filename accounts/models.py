@@ -39,7 +39,7 @@ class EmployeeBio(models.Model):
         blank=True,
         null=True
     )
-    biography = models.CharField(max_length=500, blank=True)
+    biography = models.TextField(blank=True)
     services = models.ManyToManyField('services.BaseService', related_name='employees')
     # ManyToMany because it could have more employees in the future.
     # Services are only for nails. Every new employee offers same services.

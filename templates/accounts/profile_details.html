@@ -32,7 +32,10 @@
 
             {% if user.is_employee %}
                 {% if user.employeebio.biography %}
-                    <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
+                    <p class="address-biography">
+                        <strong>Биография:</strong><br>
+                        {{ user.employeebio.biography }}
+                    </p>
                 {% endif %}
 
                 <a href="{% url 'certificate_upload' %}" class="button-like-a">

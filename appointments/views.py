@@ -17,7 +17,7 @@ from appointments.utils import find_earliest_available_slots
 class AppointmentCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
     form_class = AppointmentCreateForm
-    template_name = 'appointments/create-appointment.html'
+    template_name = 'appointments/create_appointment.html'
     success_url = reverse_lazy('homepage')
 
     def get_form_kwargs(self):
@@ -76,13 +76,13 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
 class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
     model = Appointment
-    template_name = 'appointments/appointment-details.html'
+    template_name = 'appointments/appointment_details.html'
 
 
 class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Appointment
     form_class = AppointmentEditForm
-    template_name = 'appointments/appointment-edit.html'
+    template_name = 'appointments/appointment_edit.html'
     # pk_url_kwarg = 'pk'  # Not needed because the default is 'pk'
 
     def form_valid(self, form):
@@ -117,7 +117,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
 
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Appointment
-    template_name = 'appointments/appointment-delete-confirmation.html'
+    template_name = 'appointments/appointment_delete_confirmation.html'
 
     def test_func(self):
         appointment = self.get_object()
@@ -134,7 +134,7 @@ class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, Dele
 class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = DayOff
     form_class = DayOffCreateForm
-    template_name = 'appointments/employee-dayoff.html'
+    template_name = 'appointments/day_off_employee.html'
     success_url = reverse_lazy('homepage')
 
     def test_func(self):
@@ -151,7 +151,7 @@ class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 class CurrentDayOffDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = DayOff
-    template_name = 'appointments/dayoff-details.html'
+    template_name = 'appointments/day_off_details.html'
 
     def test_func(self):
         day_off = self.get_object()
@@ -165,7 +165,7 @@ class CurrentDayOffDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailVie
 class CurrentDayOffEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = DayOff
     form_class = DayOffEditForm
-    template_name = 'appointments/dayoff-edit.html'
+    template_name = 'appointments/day_off_edit.html'
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -190,7 +190,7 @@ class CurrentDayOffEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView)
 
 class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = DayOff
-    template_name = 'appointments/dayoff-delete-confirmation.html'
+    template_name = 'appointments/day_off_delete_confirmation.html'
 
     def test_func(self):
         day_off = self.get_object()

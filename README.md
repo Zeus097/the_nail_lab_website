@@ -2,7 +2,7 @@
 
 
 ## Short description
-    The Nail Lab is a Django Web Project.
+    The Nail Lab PetqG is a Django Web Project.
         
         The website has a home page for users who do not have a user profile,
         with brief information about the site.
@@ -78,6 +78,7 @@
     Also checks if the Day is valid(present day and working day) and user can book an appointment only if the 
     range (in minutes) fits the free time between appointments. In other words it can not book during the time when the
     nail artist is awready busy.
+
     
     The DayOff model gets the info for employee also through ForeignKey and has date fierld.
     It's main goal is to give the employee opportunity to take a break on a day of his choice, only if this day

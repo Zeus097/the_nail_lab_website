@@ -63,8 +63,7 @@ class ProfileEditForm(forms.ModelForm):
     biography = forms.CharField(
         widget=forms.Textarea(
             attrs={
-                'rows': 10, 'cols': 40, 'maxlength': 500,
-                'placeholder': 'Максимален брой символи - 500',
+                'rows': 10, 'cols': 40,
                 'style': 'padding: 10px;'
             }
         ),

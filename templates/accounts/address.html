@@ -10,11 +10,14 @@
                      alt="Профилна снимка"
                      class="employee-photo">
 
-                <p><strong>Имейл:</strong> {{ user.email }}</p>
-                <p><strong>Телефон:</strong> {{ user.telephone_number }}</p>
+                <p><strong>Имейл:&nbsp;</strong> {{ user.email }}</p>
+                <p><strong>Телефон:&nbsp;</strong> {{ user.telephone_number }}</p>
 
                 {% if user.employeebio.biography %}
-                    <p><strong>Биография:</strong> {{ user.employeebio.biography }}</p>
+                    <p class="address-biography">
+                        <strong>Биография:</strong><br>
+                        {{ user.employeebio.biography }}<br>
+                    </p>
                 {% endif %}
             </div>
 
