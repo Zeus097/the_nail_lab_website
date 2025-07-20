@@ -30,3 +30,33 @@
             To show a gallery in which only the employee can upload photos of their work;
             To show contacts and information about the specialist
             The user has access to their profile and can accordingly edit and delete it if they wish;
+
+## The project has 5 apps
+
+### accounts app
+    This app, contains the user profile logic.
+    It has One BaseUser model and two children for different user roles(EmployeeBio and ClientProfile).
+    Models have additional validators for img size and phone number validation.
+    Every new user is set as client with the help of a signal. The employee profiles are set only 
+    by admin user through admin panel. Upon creation the signal checks if the new user has status and 
+    if not employee it is set as client.
+    The user has option to authenticat with its email. The 'ModelBackend' is rewritten.
+    
+    It has also an option to log in with Google email. It uses a pipeline which checks if the user logs for first time,
+    redirecting it to fill a form for to complete it's profile(Save in DB).
+    The authentication process goes through SOCIAL_AUTH_PIPELINE steps using 
+    social authentication, such as Google authentication via django-allauth or social-auth-app-django.
+    They are arranged in order and sepparated with comments for better readability.
+
+    The client profile has full CRUD operations on his profil and can:
+        upload profile picture;
+        edit profil info;
+        delete profil.
+    In addition, the employee profil has a biography section and has the permission to add certificates,
+    which appear in the Contacts page as part of his business card.
+
+    Client Profil example
+<img width="581" height="781" alt="Screenshot 2025-07-20 at 2 59 39" src="https://github.com/user-attachments/assets/d55cff37-4208-4cf2-8508-87e454713426" />
+
+    Employee Profil example
+<img width="447" height="816" alt="Screenshot 2025-07-20 at 3 00 45" src="https://github.com/user-attachments/assets/9a5e1fac-753b-4d46-a906-2159dcb5741f" />
