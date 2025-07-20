@@ -39,7 +39,7 @@ class AppointmentForm(forms.ModelForm):
     employee = forms.ModelChoiceField(
         queryset=EmployeeBio.objects.all(),
         required=True,
-        label= 'Избери служител'
+        label='Избери служител'
     )
 
     def clean(self):

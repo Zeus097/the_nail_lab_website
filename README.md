@@ -108,3 +108,7 @@
     The DayOff model gets the info for employee also through ForeignKey and 
     has date fierld. It's main goal is to give the employee opportunity to 
     take a break on a day of his choice, only if this day is free of appointments.
+
+
+
+

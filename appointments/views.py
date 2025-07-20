@@ -76,13 +76,13 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
 class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
     model = Appointment
-    template_name = 'appointments/appointment_details.html'
+    template_name = 'appointments/details_appointment.html'
 
 
 class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Appointment
     form_class = AppointmentEditForm
-    template_name = 'appointments/appointment_edit.html'
+    template_name = 'appointments/edit_appointment.html'
     # pk_url_kwarg = 'pk'  # Not needed because the default is 'pk'
 
     def form_valid(self, form):
@@ -117,7 +117,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
 
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Appointment
-    template_name = 'appointments/appointment_delete_confirmation.html'
+    template_name = 'appointments/delete_confirmation_appointment.html'
 
     def test_func(self):
         appointment = self.get_object()
@@ -130,7 +130,7 @@ class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, Dele
     success_url = reverse_lazy('homepage')
 
 
-# -----------------------------------
+# -----------------------------------------------------------------------------------------------
 class DayOffCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = DayOff
     form_class = DayOffCreateForm
@@ -203,6 +203,7 @@ class CurrentDayOffDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVie
     success_url = reverse_lazy('homepage')
 
 
+# -----------------------------------------------------------------------------------------------
 class AvailableSlotsView(View):
     template_name = 'appointments/available_slots.html'
 

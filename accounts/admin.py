@@ -7,10 +7,28 @@ from accounts.models import BaseUser, EmployeeBio,ClientProfile
 class BaseUserAdmin(UserAdmin):
     model = BaseUser
 
-    list_display = ('username', 'email', 'telephone_number', 'is_client', 'is_employee', 'is_staff', 'is_superuser', 'date_joined', 'last_login')
-    list_filter = ('is_client', 'is_employee',)
-    search_fields = ('username', 'email')
-    ordering = ('-date_joined',)
+    list_display = [
+        'username',
+        'email',
+        'telephone_number',
+        'is_client',
+        'is_employee',
+        'is_staff',
+        'is_superuser',
+        'date_joined',
+        'last_login'
+    ]
+    list_filter = [
+        'is_client',
+        'is_employee',
+    ]
+    search_fields = [
+        'username',
+        'email'
+    ]
+    ordering = [
+        '-date_joined',
+    ]
 
 
     # Choose the profile role
@@ -25,7 +43,10 @@ class BaseUserAdmin(UserAdmin):
 class EmployeeBioAdmin(admin.ModelAdmin):
     model = EmployeeBio
 
-    list_display = ('name', 'user_email',)
+    list_display = [
+        'name',
+        'user_email',
+    ]
 
     # In order to show user_email, because is BaseUserAdmin attribute
     def user_email(self, obj):
@@ -37,7 +58,10 @@ class EmployeeBioAdmin(admin.ModelAdmin):
 class ClientProfileAdmin(admin.ModelAdmin):
     model = ClientProfile
 
-    list_display = ('name', 'user_email',)
+    list_display = [
+        'name',
+        'user_email',
+    ]
 
     # In order to show user_email, because is BaseUserAdmin attribute
     def user_email(self, obj):

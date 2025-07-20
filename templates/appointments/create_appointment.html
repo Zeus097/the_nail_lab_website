@@ -3,6 +3,7 @@
 
 {% block content %}
 <section class="register-section">
+
     <form method="post" class="register-form">
         <h2 style="text-align: center;">Запази час</h2>
         {% csrf_token %}
@@ -15,6 +16,7 @@
             </div>
         {% endif %}
 
+        {# CHOOSE EMPLOYEE #}
         <div class="form-group">
             {{ form.employee.label_tag }}
             {{ form.employee }}
@@ -23,6 +25,7 @@
             {% endif %}
         </div>
 
+        {# SERVICE TYPE #}
         <div class="form-group">
             {{ form.service.label_tag }}
             <select name="{{ form.service.name }}" id="{{ form.service.id_for_label }}">
@@ -44,6 +47,7 @@
             <div id="service-info" style="margin-top: 10px; font-style: italic;"></div>
         </div>
 
+        {# SERVICE DATE #}
         <div class="form-group">
             {{ form.date.label_tag }}
             {{ form.date }}
@@ -52,6 +56,7 @@
             {% endif %}
         </div>
 
+        {# SERVICE HOUR #}
         <div class="form-group">
             {{ form.start_time.label_tag }}
             {{ form.start_time }}
@@ -60,6 +65,7 @@
             {% endif %}
         </div>
 
+        {# SERVICE COMMENT #}
         <div class="form-group">
             {{ form.comment.label_tag }}
             {{ form.comment }}
@@ -72,5 +78,6 @@
     </form>
 </section>
 
+{# TO SHOW THE PRICE AND DURATION AFTER THEY ARE PICKED #}
 <script src="{% static '04_appointment.js' %}"></script>
 {% endblock %}
