@@ -67,6 +67,9 @@
 ### Employee Profil example
 <img width="447" height="816" alt="Screenshot 2025-07-20 at 3 00 45" src="https://github.com/user-attachments/assets/9a5e1fac-753b-4d46-a906-2159dcb5741f" />
 
+### Address example
+<img width="984" height="870" alt="Screenshot 2025-07-21 at 1 08 26" src="https://github.com/user-attachments/assets/c2d4c071-6148-4324-bdc3-5410af37d684" />
+
 ### appointments app
     This app contains the appointments logic.
     It has two models: Appointment & DayOff
