@@ -16,7 +16,8 @@
 <img width="380" height="906" alt="Screenshot 2025-07-19 at 18 37 53" src="https://github.com/user-attachments/assets/4f14ba29-64cf-4f77-8c5a-6a7f89350621" />       
 
         The website also has a home page for users who already have a user profile,
-        having permission for full CRUD operations over their profile and current appointments.
+        having permission for full CRUD operations over their profile 
+        and current appointments.
 
 <img width="628" height="764" alt="Screenshot 2025-07-18 at 18 54 37" src="https://github.com/user-attachments/assets/7fa0c61a-8481-4159-b292-cd65931ec7dd" />
 
@@ -24,12 +25,15 @@
             To show what services the specialist offers;
             To check if there are free hours and book if it's possible;
             To reserve manicure hours;
-            To show reserved hours only to the client and the specialist for whom the appointment is made;
+            To show reserved hours only to the client and the specialist for 
+                whom the appointment is made;
             To edit its appointment and change it if its available.        
             To show if the specialist has a day off
-            To show a gallery in which only the employee can upload photos of their work;
+            To show a gallery in which only the employee can upload photos 
+                of their work;
             To show contacts and information about the specialist
-            The user has access to their profile and can accordingly edit and delete it if they wish;
+            The user has access to their profile and can accordingly edit 
+                and delete it if they wish;
 
 ## The project has 5 apps
     
