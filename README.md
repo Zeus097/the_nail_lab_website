@@ -41,25 +41,33 @@
 
 ### 👤 accounts app
     This app, contains the user profile logic.
-    It has One BaseUser model and two children for different user roles(EmployeeBio and ClientProfile).
-    Models have additional validators for img size and phone number validation.
-    Every new user is set as client with the help of a signal. The employee profiles are set only 
-    by admin user through admin panel. Upon creation the signal checks if the new user has status and 
-    if not employee it is set as client.
-    The user has option to authenticat with its email. The 'ModelBackend' is rewritten.
+    It has One BaseUser model and two children for 
+    different user roles(EmployeeBio and ClientProfile).
+    Models have additional validators for img size and 
+    phone number validation.
+    Every new user is set as client with the help of a signal.
+    The employee profiles are set only 
+    by admin user through admin panel. Upon creation the signal
+    checks if the new user has status and if not employee it is
+    set as client.
+    The user has option to authenticat with its email. 
+    The 'ModelBackend' is rewritten.
     
-    It has also an option to log in with Google email. It uses a pipeline which checks if the user logs for first time,
+    It has also an option to log in with Google email. 
+    It uses a pipeline which checks if the user logs for first time,
     redirecting it to fill a form for to complete it's profile(Save in DB).
     The authentication process goes through SOCIAL_AUTH_PIPELINE steps using 
-    social authentication, such as Google authentication via django-allauth or social-auth-app-django.
+    social authentication, such as Google authentication via django-allauth 
+    or social-auth-app-django.
     They are arranged in order and sepparated with comments for better readability.
 
     The client profile has full CRUD operations on his profil and can:
         upload profile picture;
         edit profil info;
         delete profil.
-    In addition, the employee profil has a biography section and has the permission to add certificates,
-    which appear in the Contacts page as part of his business card.
+    In addition, the employee profil has a biography section and has the 
+    permission to add certificates, which appear in the Contacts page as
+    part of his business card.
 
 ### Client Profil example
 <img width="581" height="781" alt="Screenshot 2025-07-20 at 2 59 39" src="https://github.com/user-attachments/assets/d55cff37-4208-4cf2-8508-87e454713426" />
@@ -74,22 +82,25 @@
     This app contains the appointments logic.
     It has two models: Appointment & DayOff
     
-    The Appointment model gets the info for user, employee and service through ForeignKey and also its data:
-    date, start_time and comment.
+    The Appointment model gets the info for user, employee and service through 
+    ForeignKey and also its data: date, start_time and comment.
     It has validator that is called in the model's save method.
-    The validator 'AppointmentModelCleanValidator', checks if employee, service, date and start_time are picked.
-    Also checks if the Day is valid(present day and working day) and user can book an appointment only if the 
-    range (in minutes) fits the free time between appointments. In other words it can not book during the time when the
+    The validator 'AppointmentModelCleanValidator', checks if employee, service, 
+    date and start_time are picked.
+    Also checks if the Day is valid(present day and working day) and user can book
+    an appointment only if the range (in minutes) fits the free time between 
+    appointments. In other words it can not book during the time when the
     nail artist is awready busy.
     
 <img width="412" height="614" alt="Запази час" src="https://github.com/user-attachments/assets/5483fbbd-9a7d-4f93-99d8-6470f46beccd" />
     
-    It also have a feature to check for available hours on a current date. The service is looking for the first 5
-    available appointments on a selected date. If there are none- looks for the next day(max 30 days).
+    It also have a feature to check for available hours on a current date. 
+    The service is looking for the first 5 available appointments on a 
+    selected date. If there are none- looks for the next day(max 30 days).
 
 <img width="424" height="349" alt="Провери за свободен час" src="https://github.com/user-attachments/assets/4f0d346b-2bc9-430b-ae0c-19302e1ea948" />
 <img width="971" height="466" alt="Screenshot 2025-07-21 at 1 03 36" src="https://github.com/user-attachments/assets/6bfa08e4-99b3-4f74-8de0-c87c7c9d9651" />
 
-    The DayOff model gets the info for employee also through ForeignKey and has date fierld.
-    It's main goal is to give the employee opportunity to take a break on a day of his choice, only if this day
-    is free of appointments.
+    The DayOff model gets the info for employee also through ForeignKey and 
+    has date fierld. It's main goal is to give the employee opportunity to 
+    take a break on a day of his choice, only if this day is free of appointments.
