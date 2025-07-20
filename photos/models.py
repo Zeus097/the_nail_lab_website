@@ -2,6 +2,9 @@ from django.db import models
 
 
 class GalleryPhoto(models.Model):
+    class Meta:
+        verbose_name = "Галерия"
+
     name = models.CharField(
         max_length=50,
         null=True,

@@ -4,8 +4,8 @@ from photos.models import GalleryPhoto, CertificateImage
 
 @admin.register(GalleryPhoto)
 class GalleryPhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'uploader', 'upload_date')
-    search_fields = ('name', 'description')
+    list_display = ('name', 'upload_date', 'uploader',)
+    search_fields = ('name', 'description', 'uploader',)
     readonly_fields = ('upload_date',)
 
 
