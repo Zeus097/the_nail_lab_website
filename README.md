@@ -110,7 +110,7 @@
     The service is looking for available appointments on a 
     selected date.
 
-<img width="424" height="349" alt="Провери за свободен час" src="https://github.com/user-attachments/assets/4f0d346b-2bc9-430b-ae0c-19302e1ea948" />
+<img width="418" height="353" alt="Провери за свободен час" src="https://github.com/user-attachments/assets/4bc4872d-a3c2-4fc5-83e8-ccd6ef7ab285" />
 <img width="542" height="472" alt="Налични часове1" src="https://github.com/user-attachments/assets/11509b10-eb5d-44a0-a0d6-f9f790186dbd" />
 <img width="530" height="507" alt="Налични часове2" src="https://github.com/user-attachments/assets/2af1b113-136d-444c-a012-55730ed1c648" />
 
