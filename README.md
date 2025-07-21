@@ -79,13 +79,13 @@
     part of personal business card.
 
 ### Client Profil example
-<img width="581" height="781" alt="Screenshot 2025-07-20 at 2 59 39" src="https://github.com/user-attachments/assets/d55cff37-4208-4cf2-8508-87e454713426" />
+<img width="609" height="683" alt="Screenshot 2025-07-21 at 14 52 17" src="https://github.com/user-attachments/assets/b447d643-be4c-42f8-bd85-23e89dc84fb4" />
 
 ### Employee Profil example
-<img width="447" height="816" alt="Screenshot 2025-07-20 at 3 00 45" src="https://github.com/user-attachments/assets/9a5e1fac-753b-4d46-a906-2159dcb5741f" />
+<img width="491" height="751" alt="Screenshot 2025-07-21 at 14 53 56" src="https://github.com/user-attachments/assets/3587de64-bc73-4e0c-a2cf-258becd050c7" />
 
 ### Address example
-<img width="984" height="870" alt="Screenshot 2025-07-21 at 1 08 26" src="https://github.com/user-attachments/assets/c2d4c071-6148-4324-bdc3-5410af37d684" />
+<img width="733" height="735" alt="Screenshot 2025-07-21 at 14 55 56" src="https://github.com/user-attachments/assets/779136b1-3ff9-4ccf-8522-0cd0d7aa3e3c" />
 
 ### ⏳ appointments app
     This app contains the appointments logic.
@@ -101,8 +101,11 @@
     appointments. In other words it can not book during the time when the
     nail artist is awready busy.
     
-<img width="412" height="614" alt="Запази час" src="https://github.com/user-attachments/assets/5483fbbd-9a7d-4f93-99d8-6470f46beccd" />
-    
+<img width="414" height="607" alt="Screenshot 2025-07-21 at 14 57 30" src="https://github.com/user-attachments/assets/bfaa92c1-662d-4d03-9e5c-2bfae0a809e8" />
+
+    The price and duration are shown with js:
+<img width="413" height="634" alt="Screenshot 2025-07-21 at 14 58 03" src="https://github.com/user-attachments/assets/ff65ea71-3e52-49c6-ae38-ffda6b902f87" />    
+
     It also have a feature to check for available hours on a current date. 
     The service is looking for available appointments on a 
     selected date.
