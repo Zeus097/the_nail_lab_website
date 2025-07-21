@@ -21,6 +21,7 @@
 
 <img width="624" height="734" alt="Screenshot 2025-07-21 at 14 41 00" src="https://github.com/user-attachments/assets/e1d041c5-4579-4c56-b59a-ea8c63d782ef" />
 
+## Purpose
         Its purpose is to:
             To show what services the specialist offers;
             To check if there are free hours and book if it's possible;
