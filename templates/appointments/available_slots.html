@@ -3,6 +3,27 @@
 
 {% block content %}
     <section class="register-section">
+
+        {% if slots %}
+            <div class="available-slots-wrapper">
+                <h3>Налични часове:</h3>
+
+                <ul class="slot-list">
+                    {% for slot in slots %}
+                        <li class="slot-item">
+                            <span>{{ slot.date }} в {{ slot.start_time }}</span>
+                            <a href="{% url 'appointment-create' %}?service_id={{ slot.service.id }}&employee_id={{ slot.employee.id }}&date={{ slot.date|date:'Y-m-d' }}&start_time={{ slot.start_time }}" class="slot-book-btn">
+                                Запази
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        {% elif slots is not none %}
+            <p class="no-slots-msg">Няма свободни часове за тази дата.</p>
+        {% endif %}
+
         <form method="post" class="register-form">
             <h2 style="text-align: center;">Провери за свободен час</h2>
     
@@ -42,27 +63,6 @@
     
             <button type="submit">Провери</button>
         </form>
-    
-        {% if slots %}
-            <div class="available-slots-wrapper">
-                <h3>Налични часове:</h3>
-                <h3 style="text-align: center;">(Най-ранните {{ slots|length }})</h3>
-                
-                <ul class="slot-list">
-                    {% for slot in slots %}
-                        <li class="slot-item">
-                            <span>{{ slot.date }} в {{ slot.start_time }}</span>
-                            <a href="{% url 'appointment-create' %}?service_id={{ slot.service.id }}&employee_id={{ slot.employee.id }}&date={{ slot.date|date:'Y-m-d' }}&start_time={{ slot.start_time }}" class="slot-book-btn">
-                                Запази
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            
-            </div>
-        {% elif slots is not none %}
-            <p class="no-slots-msg">Няма свободни часове за тази дата.</p>
-        {% endif %}
-    
+
     </section>
 {% endblock %}

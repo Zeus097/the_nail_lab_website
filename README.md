@@ -1,4 +1,4 @@
-# The Nail Lab Website
+# The Nail Lab PetqG
 
 
 ## Short description
@@ -99,11 +99,12 @@
 <img width="412" height="614" alt="Запази час" src="https://github.com/user-attachments/assets/5483fbbd-9a7d-4f93-99d8-6470f46beccd" />
     
     It also have a feature to check for available hours on a current date. 
-    The service is looking for the first 5 available appointments on a 
-    selected date. If there are none- looks for the next day(max 30 days).
+    The service is looking for available appointments on a 
+    selected date.
 
 <img width="424" height="349" alt="Провери за свободен час" src="https://github.com/user-attachments/assets/4f0d346b-2bc9-430b-ae0c-19302e1ea948" />
-<img width="971" height="466" alt="Screenshot 2025-07-21 at 1 03 36" src="https://github.com/user-attachments/assets/6bfa08e4-99b3-4f74-8de0-c87c7c9d9651" />
+<img width="542" height="472" alt="Налични часове1" src="https://github.com/user-attachments/assets/11509b10-eb5d-44a0-a0d6-f9f790186dbd" />
+<img width="530" height="507" alt="Налични часове2" src="https://github.com/user-attachments/assets/2af1b113-136d-444c-a012-55730ed1c648" />
 
     The DayOff model gets the info for employee also through ForeignKey and 
     has date fierld. It's main goal is to give the employee opportunity to 

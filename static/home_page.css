@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Old_Standard_TT';
-    src: url('fonts/Old_Standard_TT/OldStandardTT-Italic.ttf') format('truetype');
+    font-family: 'WDXL_Lubrifont_SC';
+    src: url("fonts/WDXL_Lubrifont_SC/WDXLLubrifontSC-Regular.ttf") format("truetype");
 }
 
 html, body {
@@ -18,7 +18,7 @@ a {
 }
 
 body {
-    font-family: 'Old_Standard_TT', serif;
+    font-family: 'WDXL_Lubrifont_SC', serif;
     letter-spacing: 0.05em;
     margin: 0 auto;
     max-width: 1200px;
