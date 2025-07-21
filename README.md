@@ -7,19 +7,19 @@
         The website has a home page for users who do not have a user profile,
         with brief information about the site.
         
-<img width="632" height="846" alt="Screenshot 2025-07-19 at 18 29 09" src="https://github.com/user-attachments/assets/7d3c8e15-0b34-4562-88c1-8bcb71bd3185" />
+<img width="632" height="841" alt="Screenshot 2025-07-21 at 14 36 07" src="https://github.com/user-attachments/assets/632ff90a-fcf3-47af-9d9d-4d75982a779f" />
 
         Options to log in (if they have an account, they can also log in with Google) 
         or register.
 
-<img width="933" height="800" alt="Screenshot 2025-07-19 at 18 28 53" src="https://github.com/user-attachments/assets/544fa6ef-db9c-4fad-85fa-4766730c4d90" />
-<img width="380" height="906" alt="Screenshot 2025-07-19 at 18 37 53" src="https://github.com/user-attachments/assets/4f14ba29-64cf-4f77-8c5a-6a7f89350621" />       
+<img width="1025" height="842" alt="Screenshot 2025-07-21 at 14 37 54" src="https://github.com/user-attachments/assets/fd8577b6-4465-494f-bcd8-1caa1be6d157" />
+<img width="481" height="796" alt="Screenshot 2025-07-21 at 14 38 19" src="https://github.com/user-attachments/assets/3151b42b-6c25-4181-893b-4d4072c48bdc" />      
 
         The website also has a home page for users who already have a user profile,
         having permission for full CRUD operations over their profile 
         and current appointments.
 
-<img width="628" height="764" alt="Screenshot 2025-07-18 at 18 54 37" src="https://github.com/user-attachments/assets/7fa0c61a-8481-4159-b292-cd65931ec7dd" />
+<img width="624" height="734" alt="Screenshot 2025-07-21 at 14 41 00" src="https://github.com/user-attachments/assets/e1d041c5-4579-4c56-b59a-ea8c63d782ef" />
 
         Its purpose is to:
             To show what services the specialist offers;
@@ -165,11 +165,12 @@
     CRUD operations upon his profile and appointments.
     The appointments related to him are displayed in his homepage and
     if there is a day off for the employee- can see it too.
-<img width="1258" height="118" alt="homepage_client" src="https://github.com/user-attachments/assets/f30f7da6-5437-44c1-bcda-b0d3f78ccbf1" />
+<img width="630" height="697" alt="homepage_client" src="https://github.com/user-attachments/assets/db5271ad-bdb9-4724-9248-9975079f2f29" />
 
     If the user is authenticated and authorised as a employee -
     full CRUD operations upon his profile and it's own appointments.
     Can see all clients appointments and if there is a day off for 
     the employee- can see it too.
-<img width="1220" height="85" alt="homepage_employee" src="https://github.com/user-attachments/assets/6e4c60f5-336a-4da8-83e5-4be488f25495" />
+<img width="614" height="925" alt="homepage_employee" src="https://github.com/user-attachments/assets/801749f6-fe56-437b-88e3-398debba0efe" />
+
 
