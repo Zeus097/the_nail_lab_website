@@ -82,7 +82,7 @@
 ### Address example
 <img width="984" height="870" alt="Screenshot 2025-07-21 at 1 08 26" src="https://github.com/user-attachments/assets/c2d4c071-6148-4324-bdc3-5410af37d684" />
 
-### appointments app
+### ⏳ appointments app
     This app contains the appointments logic.
     It has two models: Appointment & DayOff
     
@@ -110,15 +110,25 @@
     has date fierld. It's main goal is to give the employee opportunity to 
     take a break on a day of his choice, only if this day is free of appointments.
 
-### photos app
+### 📷 photos app
     It has two models: GalleryPhoto & CertificateImage
 
     The GalleryPhoto model gives the oopportunity of the employee to upload photos,
     showing off her work with clients. Users can see them but only employee can 
     UPLOAD/DELETE.
 
+## User point of view
+<img width="583" height="471" alt="userview_gallery" src="https://github.com/user-attachments/assets/15a3fdba-b973-45b3-abcd-b551d92b156e" />
+
+## Employee point of view
+<img width="608" height="599" alt="employeeview_gallery" src="https://github.com/user-attachments/assets/e8bebc37-0b09-46ba-b1a8-856c60c01122" />
+
+
     The CertificateImage model is pretty much the same. The difference is that the
     photos show degree and are displayed in the address page, where employee info
     takes place. The employee uploads them through a button in account details,
     but deletion process requires Admin intervention, using Admin panel.
+<img width="733" height="735" alt="certificates" src="https://github.com/user-attachments/assets/a0381ad7-fe2f-4a63-b55f-92e251619096" />
 
+
+### 💅 services app
