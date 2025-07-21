@@ -72,5 +72,8 @@ class DayOff(models.Model):
         if Appointment.objects.filter(employee=self.employee, date=self.date).exists():
             raise ValidationError({"date": "Не може да отбележиш ден като почивен, защото има записани клиенти."})
 
+        if DayOff.objects.filter(employee=self.employee, date=self.date).exists():
+            raise ValidationError({"date": "Деня вече е отбелязан като почивен."})
+
     def __str__(self):
         return f"{self.employee.user.username} - {self.date}"
