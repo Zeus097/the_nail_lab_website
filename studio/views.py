@@ -29,7 +29,7 @@ class HomePageView(TemplateView):
                 context['appointment_list'] = Appointment.objects.filter(
                     date__gte=today
                 ).order_by("date", "start_time")
-                context['day_off_list'] = DayOff.objects.select_related('employee', 'employee__user').order_by('date')
+
 
             elif hasattr(user, "employeebio"):
                 employee = user.employeebio
@@ -37,14 +37,14 @@ class HomePageView(TemplateView):
                     employee=employee,
                     date__gte=today
                 ).order_by("date", "start_time")
-                context['day_off_list'] = DayOff.objects.select_related('employee', 'employee__user').order_by('date')
 
             elif hasattr(user, "clientprofile"):
                 context['appointment_list'] = Appointment.objects.filter(
                     client__user=user,
                     date__gte=today
                 ).order_by("date", "start_time")
-                context['day_off_list'] = DayOff.objects.select_related('employee', 'employee__user').order_by('date')
+
+            context['day_off_list'] = DayOff.objects.select_related('employee', 'employee__user').order_by('date')
 
         return context
 

@@ -148,3 +148,28 @@
 
 <img width="991" height="831" alt="services" src="https://github.com/user-attachments/assets/20710807-f367-46a6-84cf-a73857f2572b" />
 <img width="434" height="616" alt="current_service" src="https://github.com/user-attachments/assets/c2d30442-4a52-4997-9960-5cb8362d22fe" />
+
+
+
+### 🏠 studio app
+    It has no models
+
+    It's contains the logic for homepage.
+    Based on the user role, it shows different content.
+    
+    If the user is anonymous it renders homepage with no-profile.
+    This is the landing page and the user have only 'get' permissions.
+<img width="661" height="845" alt="homepage_annonumous" src="https://github.com/user-attachments/assets/ee9656bb-061c-4f78-b938-01e929c4f103" />
+    
+    If the user is authenticated and authorised as a client he has full
+    CRUD operations upon his profile and appointments.
+    The appointments related to him are displayed in his homepage and
+    if there is a day off for the employee- can see it too.
+<img width="1258" height="118" alt="homepage_client" src="https://github.com/user-attachments/assets/f30f7da6-5437-44c1-bcda-b0d3f78ccbf1" />
+
+    If the user is authenticated and authorised as a employee -
+    full CRUD operations upon his profile and it's own appointments.
+    Can see all clients appointments and if there is a day off for 
+    the employee- can see it too.
+<img width="1220" height="85" alt="homepage_employee" src="https://github.com/user-attachments/assets/6e4c60f5-336a-4da8-83e5-4be488f25495" />
+
