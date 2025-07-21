@@ -9,11 +9,10 @@
 @import "08_certificate_upload.css";
 @import "09_services.css";
 @import "10_search_service.css";
-
-@import "home_page.css";
-@import "nav.css";
-@import "footer.css";
-@import "header.css";
-@import "home_page_unauthorized.css";
-@import "pagination.css";
+@import "11_home_page.css";
+@import "12_home_page_unauthorized.css";
+@import "13_header.css";
+@import "14_nav.css";
+@import "15_footer.css";
+@import "16_pagination.css";
 @import "404.css";

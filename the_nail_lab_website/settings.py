@@ -86,8 +86,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'studio.context_processors.user_role_context',
-                # За да покаже в навигацията линка за почивка
-                # нa служителя независимо дали се намира на адрес '' или не..!
+                # To show in nav bar rest day for employee on every page.
+                # Without this setting, it shows rest day only on homepage!
 
                 # GOOGLE
                 'social_django.context_processors.backends',
