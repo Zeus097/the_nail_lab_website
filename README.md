@@ -22,17 +22,18 @@
 <img width="624" height="734" alt="Screenshot 2025-07-21 at 14 41 00" src="https://github.com/user-attachments/assets/e1d041c5-4579-4c56-b59a-ea8c63d782ef" />
 
 ## Purpose
-        Its purpose is to:
-            To show what services the specialist offers;
-            To check if there are free hours and book if it's possible;
-            To reserve manicure hours;
-            To show reserved hours only to the client and the specialist for 
+        Its purpose is:
+            to show what services the specialist offers;
+            to check if there are free hours and book if it's possible;
+            to reserve manicure hours;
+            to show reserved hours only to the client and the specialist for 
                 whom the appointment is made;
-            To edit its appointment and change it if its available.        
-            To show if the specialist has a day off
-            To show a gallery in which only the employee can upload photos 
+            to edit its appointment and change it if its available.        
+            to show if the specialist has a day off
+            to show a gallery in which only the employee can upload photos 
                 of their work;
-            To show contacts and information about the specialist
+            to show contacts and information about the specialist
+
             The user has access to their profile and can accordingly edit 
                 and delete it if they wish;
 
