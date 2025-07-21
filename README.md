@@ -117,6 +117,8 @@
     The DayOff model gets the info for employee also through ForeignKey and 
     has date fierld. It's main goal is to give the employee opportunity to 
     take a break on a day of his choice, only if this day is free of appointments.
+<img width="423" height="231" alt="Screenshot 2025-07-21 at 15 03 48" src="https://github.com/user-attachments/assets/bcd7b711-2d1c-4238-a1bd-23f00193ac17" />
+<img width="516" height="348" alt="Screenshot 2025-07-21 at 15 04 22" src="https://github.com/user-attachments/assets/41887e4c-3bac-4f8b-91a6-49198a51fd37" />
 
 ### 📷 photos app
     It has two models: GalleryPhoto & CertificateImage
