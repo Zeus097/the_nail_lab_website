@@ -12,7 +12,7 @@ class ServiceListView(LoginRequiredMixin, ListView):
 
     context_object_name = 'services'
     model = BaseService
-    template_name = 'services/services-page.html'
+    template_name = 'services/services_page.html'
     paginate_by = 4
     query_param = "query"
     form_class = SearchForm
@@ -47,5 +47,5 @@ class ServiceListView(LoginRequiredMixin, ListView):
 
 class ServiceDetailView(LoginRequiredMixin, DetailView):
     model = BaseService
-    template_name = 'services/service-details.html'
+    template_name = 'services/service_details.html'
     context_object_name = 'service'

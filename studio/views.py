@@ -11,7 +11,7 @@ class HomePageView(TemplateView):
     def get_template_names(self):
         if self.request.user.is_authenticated:
             return ['common/base.html']
-        return ['common/home-no-profile.html']
+        return ['common/home_no_profile.html']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

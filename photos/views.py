@@ -10,7 +10,7 @@ from photos.models import GalleryPhoto, CertificateImage
 
 class GalleryView(LoginRequiredMixin, ListView):
     model = GalleryPhoto
-    template_name = 'photos_gallery/gallery-main.html'
+    template_name = 'photos_gallery/gallery_main.html'
     context_object_name = 'gallery_list'
     paginate_by = 8
 
@@ -19,9 +19,11 @@ class GalleryView(LoginRequiredMixin, ListView):
 
 
 class GalleryUploadView(LoginRequiredMixin, CreateView):
+    # Uses js to visualize the photo name
+
     model = GalleryPhoto
     form_class = GalleryBaseForm
-    template_name = 'photos_gallery/gallery-upload.html'
+    template_name = 'photos_gallery/gallery_upload.html'
     success_url = reverse_lazy('gallery')
 
     def test_func(self):
@@ -32,30 +34,24 @@ class GalleryUploadView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class GalleryDeleteView(LoginRequiredMixin, DeleteView):
     model = GalleryPhoto
-    template_name = 'photos_gallery/gallery-delete-img.html'
-
-    def test_func(self):
-        user = self.request.user
-        return user.is_authenticated and user.is_employee
-
-    def handle_no_permission(self):
-        return redirect(reverse_lazy("gallery"))
+    template_name = 'photos_gallery/gallery_delete_img.html'
 
     def get_success_url(self):
         return reverse_lazy("gallery")
 
 
-class CertificateUploadView(LoginRequiredMixin,  UserPassesTestMixin, CreateView):
+class CertificateUploadView(LoginRequiredMixin,  CreateView):
+    # Also uses js to visualize the photo name
+
     model = CertificateImage
     form_class = CertificateBaseForm
-    template_name = 'photos_gallery/certificate-upload.html'
+    template_name = 'photos_gallery/certificate_upload.html'
     success_url = reverse_lazy('contact-list')
-
-    def test_func(self):
-        return hasattr(self.request.user, 'employeebio')
 
     def form_valid(self, form):
         form.instance.uploader = self.request.user.employeebio
         return super().form_valid(form)
+
+# ADMIN WILL DELETE CERTIFICATES!

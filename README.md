@@ -110,6 +110,15 @@
     has date fierld. It's main goal is to give the employee opportunity to 
     take a break on a day of his choice, only if this day is free of appointments.
 
+### photos app
+    It has two models: GalleryPhoto & CertificateImage
 
+    The GalleryPhoto model gives the oopportunity of the employee to upload photos,
+    showing off her work with clients. Users can see them but only employee can 
+    UPLOAD/DELETE.
 
+    The CertificateImage model is pretty much the same. The difference is that the
+    photos show degree and are displayed in the address page, where employee info
+    takes place. The employee uploads them through a button in account details,
+    but deletion process requires Admin intervention, using Admin panel.
 

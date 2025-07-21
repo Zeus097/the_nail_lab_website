@@ -17,7 +17,7 @@ from appointments.utils import find_earliest_available_slots
 class AppointmentCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
     form_class = AppointmentCreateForm
-    template_name = 'appointments/create_appointment.html'
+    template_name = 'appointments/appointment_create.html'
     success_url = reverse_lazy('homepage')
 
     def get_form_kwargs(self):
@@ -76,13 +76,13 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
 class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
     model = Appointment
-    template_name = 'appointments/details_appointment.html'
+    template_name = 'appointments/appointment_details.html'
 
 
 class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Appointment
     form_class = AppointmentEditForm
-    template_name = 'appointments/edit_appointment.html'
+    template_name = 'appointments/appointment_edit.html'
     # pk_url_kwarg = 'pk'  # Not needed because the default is 'pk'
 
     def form_valid(self, form):
@@ -117,7 +117,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Update
 
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Appointment
-    template_name = 'appointments/delete_confirmation_appointment.html'
+    template_name = 'appointments/appointment_delete_confirmation.html'
 
     def test_func(self):
         appointment = self.get_object()

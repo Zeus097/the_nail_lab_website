@@ -10,9 +10,9 @@
 @import "pagination.css";
 @import "search_service.css";
 @import "04_appointment_details.css";
-@import "gallery_main_page.css";
-@import "gallery_upload.css";
-@import "available_slots.css";
-@import "address.css";
-@import "certificate_upload.css";
+@import "06_gallery_main_page.css";
+@import "07_gallery_upload.css";
+@import "05_available_slots.css";
+@import "00_address.css";
+@import "09_certificate_upload.css";
 @import "404.css";

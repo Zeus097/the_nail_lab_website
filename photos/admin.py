@@ -4,12 +4,25 @@ from photos.models import GalleryPhoto, CertificateImage
 
 @admin.register(GalleryPhoto)
 class GalleryPhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'upload_date', 'uploader',)
-    search_fields = ('name', 'description', 'uploader',)
-    readonly_fields = ('upload_date',)
+    list_display = [
+        'name',
+        'upload_date',
+        'uploader',
+    ]
+    search_fields = [
+        'name',
+        'description',
+        'uploader',
+    ]
+    readonly_fields = [
+        'upload_date',
+    ]
 
 
 @admin.register(CertificateImage)
 class CertificateImageAdmin(admin.ModelAdmin):
-    list_display = ['photo', 'uploader']
+    list_display = [
+        'photo',
+        'uploader',
+    ]
 
