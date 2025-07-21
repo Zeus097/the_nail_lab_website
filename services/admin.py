@@ -6,4 +6,6 @@ from services.models import BaseService
 
 @admin.register(BaseService)
 class ServiceAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'description', 'price', 'duration']
+    list_filter = ['name', 'price', 'duration']
+    search_fields = ['name', 'price', 'duration']

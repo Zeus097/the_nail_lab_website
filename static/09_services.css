@@ -1,8 +1,8 @@
 .services-main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center all rows */
-    gap: 20px; /* Space between cards */
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
 }
 
@@ -190,7 +190,7 @@ body section.service-details-section {
 
 @media (min-width: 901px) and (max-width: 1100px) {
     .service-section {
-        width: 90%;  /* To prevent broken design when SEARCH find 1 service for example*/
+        width: 90%;  /* Preventing broken design when SEARCH find 1 service for example*/
     }
 }
 

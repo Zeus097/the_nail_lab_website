@@ -113,22 +113,38 @@
 ### 📷 photos app
     It has two models: GalleryPhoto & CertificateImage
 
-    The GalleryPhoto model gives the oopportunity of the employee to upload photos,
-    showing off her work with clients. Users can see them but only employee can 
-    UPLOAD/DELETE.
+    photos app gives the opportunity of the employee to upload:
+        nail photos, showing off her work with clients
+            Users can see them but only employee can 
+            UPLOAD/DELETE; 
+
+        certificate photos, show degree and are displayed in
+            the address page, where employee info takes place.
+            The employee uploads them through a button in 
+            account details, but deletion process requires
+            Admin intervention, using Admin panel.
 
 ## User point of view
 <img width="583" height="471" alt="userview_gallery" src="https://github.com/user-attachments/assets/15a3fdba-b973-45b3-abcd-b551d92b156e" />
+<img width="733" height="735" alt="certificates" src="https://github.com/user-attachments/assets/a0381ad7-fe2f-4a63-b55f-92e251619096" />
 
 ## Employee point of view
 <img width="608" height="599" alt="employeeview_gallery" src="https://github.com/user-attachments/assets/e8bebc37-0b09-46ba-b1a8-856c60c01122" />
 
 
-    The CertificateImage model is pretty much the same. The difference is that the
-    photos show degree and are displayed in the address page, where employee info
-    takes place. The employee uploads them through a button in account details,
-    but deletion process requires Admin intervention, using Admin panel.
-<img width="733" height="735" alt="certificates" src="https://github.com/user-attachments/assets/a0381ad7-fe2f-4a63-b55f-92e251619096" />
-
 
 ### 💅 services app
+    It has one model: BaseService
+    
+    BaseService model is connected with EmployeeBio model 
+    from accounts app through lazy evaluation ManyToManyField
+
+    It has a page that shows all available services and a page
+    for full detail description of the current service.
+
+    Also has a search bar in the top of service_page.
+    The logic is in ServiceListView. It uses service
+    name and service description.
+
+<img width="991" height="831" alt="services" src="https://github.com/user-attachments/assets/20710807-f367-46a6-84cf-a73857f2572b" />
+<img width="434" height="616" alt="current_service" src="https://github.com/user-attachments/assets/c2d30442-4a52-4997-9960-5cb8362d22fe" />
