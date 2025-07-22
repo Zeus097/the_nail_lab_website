@@ -1,8 +1,11 @@
+from django.db.models import Q
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from django.utils.timezone import localtime
 from appointments.models import Appointment, DayOff
+from django.core.paginator import Paginator
+
 
 
 class HomePageView(TemplateView):
@@ -21,30 +24,43 @@ class HomePageView(TemplateView):
         context['is_employee'] = getattr(user, 'is_employee', False)
         context['is_admin'] = user.is_superuser
 
-        context['appointment_list'] = []
-        context['day_off_list'] = []
+        appointment_qs = Appointment.objects.none()
 
         if user.is_authenticated:
             if user.is_superuser:
-                context['appointment_list'] = Appointment.objects.filter(
+                appointment_qs = Appointment.objects.filter(
                     date__gte=today
                 ).order_by("date", "start_time")
-
 
             elif hasattr(user, "employeebio"):
                 employee = user.employeebio
-                context['appointment_list'] = Appointment.objects.filter(
-                    employee=employee,
-                    date__gte=today
+                appointment_qs = Appointment.objects.filter(
+                    Q(employee=employee)
+                    |
+                    Q(created_by=user)
+                    |
+                    Q(date__gte=today)
                 ).order_by("date", "start_time")
 
             elif hasattr(user, "clientprofile"):
-                context['appointment_list'] = Appointment.objects.filter(
+                appointment_qs = Appointment.objects.filter(
                     client__user=user,
                     date__gte=today
                 ).order_by("date", "start_time")
 
-            context['day_off_list'] = DayOff.objects.select_related('employee', 'employee__user').order_by('date')
+            # Using Paginator, because I don't use ListView here
+            paginator = Paginator(appointment_qs, 5)
+            page_number = self.request.GET.get("page")
+            page_obj = paginator.get_page(page_number)
+
+            context['appointment_list'] = page_obj.object_list
+            context['page_obj'] = page_obj
+            context['is_paginated'] = page_obj.has_other_pages()
+            context['paginator'] = paginator
+
+            context['day_off_list'] = DayOff.objects.select_related(
+                'employee', 'employee__user'
+            ).order_by('date')
 
         return context
 

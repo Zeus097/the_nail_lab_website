@@ -4,6 +4,7 @@ from django.utils.timezone import now
 from appointments.validators import AppointmentModelCleanValidator
 from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
+from django.conf import settings
 
 
 class Appointment(models.Model):
@@ -16,6 +17,13 @@ class Appointment(models.Model):
         max_length=200,
         blank=True,
         null=True
+    )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='created_appointments',
     )
 
     class Meta:
