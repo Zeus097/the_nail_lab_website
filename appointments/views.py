@@ -28,7 +28,7 @@ class AppointmentCreateView(LoginRequiredMixin, AppointmentFormInitMixin, Create
         return context
 
     def form_valid(self, form):
-        client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
+        client_profile = get_object_or_404(ClientProfile, user=self.request.user)
         form.instance.client = client_profile
         form.instance.employee = form.cleaned_data.get('employee')
         form.instance.service = form.cleaned_data.get('service')
@@ -66,7 +66,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Appoin
     # pk_url_kwarg = 'pk'  # Not needed because the default is 'pk'
 
     def form_valid(self, form):
-        client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
+        client_profile = get_object_or_404(ClientProfile, user=self.request.user)
 
         self.object = form.save(commit=False)
 

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from accounts.models import BaseUser, EmployeeBio,ClientProfile
+from django.contrib import messages
 
 
 @admin.register(BaseUser)
@@ -30,13 +31,20 @@ class BaseUserAdmin(UserAdmin):
         '-date_joined',
     ]
 
-
-    # Choose the profile role
+    # using 'save_model' method to notify for possible (404) errors.
     fieldsets = UserAdmin.fieldsets + (
         ('Ролева информация', {
             'fields': ('is_client', 'is_employee',)
         }),
     )
+
+    def save_model(self, request, obj, form, change):
+        if not obj.is_client:
+            messages.warning(
+                request, "Премахнали сте отметката от 'Is client'. "
+                         "Това може да причини грешки, свързани с профила."
+            )
+        super().save_model(request, obj, form, change)
 
 
 @admin.register(EmployeeBio)
