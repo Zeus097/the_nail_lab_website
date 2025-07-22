@@ -108,7 +108,7 @@
 
     It also have a feature to check for available hours on a current date. 
     The service is looking for available appointments on a 
-    selected date.
+    selected date and employee.
 
 <img width="418" height="353" alt="Провери за свободен час" src="https://github.com/user-attachments/assets/4bc4872d-a3c2-4fc5-83e8-ccd6ef7ab285" />
 <img width="542" height="472" alt="Налични часове1" src="https://github.com/user-attachments/assets/11509b10-eb5d-44a0-a0d6-f9f790186dbd" />
