@@ -3,7 +3,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
-from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
 from appointments.config import MAX_SLOTS_PER_DAY
 from appointments.mixins import AppointmentFormInitMixin
 from appointments.models import Appointment, DayOff

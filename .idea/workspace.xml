@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointments/mixins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/04_appointment_add_employee_id_in_url.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/appointments/create_edit_form_body.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the_nail_lab_website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
@@ -18,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/templates/appointments/appointment_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointment_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appointments/appointment_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/appointment_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appointments/available_slots.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/available_slots.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointments/create_edit_form_body.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointments/create_edit_form_body.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +144,7 @@
       <workItem from="1753083596828" duration="16000" />
       <workItem from="1753083625888" duration="16905000" />
       <workItem from="1753114509395" duration="59000" />
-      <workItem from="1753117843262" duration="19964000" />
+      <workItem from="1753117843262" duration="20584000" />
     </task>
     <servers />
   </component>
@@ -159,12 +161,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/appointments/views.py</url>
-          <line>206</line>
+          <line>205</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/appointments/views.py</url>
-          <line>194</line>
+          <line>193</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
