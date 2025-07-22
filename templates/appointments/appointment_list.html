@@ -34,8 +34,17 @@
                         {{ appointment.service.duration }}мин.
                     </p>
 
+                    <p>
+                        <strong>Специалист:&nbsp;&nbsp;</strong>
+                        {% if appointment.employee.user.get_full_name %}
+                            {{ appointment.employee.user.get_full_name }}
+                        {% else %}
+                            {{ appointment.employee.user }}
+                        {% endif %}
+                    </p>
+
                     <p class="user-data-name-info">
-                        Име:&nbsp;
+                        Име:&nbsp;&nbsp;
                         <strong>
                             {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
                         </strong>

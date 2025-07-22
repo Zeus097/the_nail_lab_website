@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const serviceSelect = document.getElementById('id_service');
     const serviceInfo = document.getElementById('service-info');
 
-    function updateServiceInfo() {
+    function servicePriceAndDuration() {
         const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
         if (!selectedOption || !selectedOption.value) {
             serviceInfo.innerHTML = '';
@@ -17,5 +17,5 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    serviceSelect.addEventListener('change', updateServiceInfo);
+    serviceSelect.addEventListener('change', servicePriceAndDuration);
 });

@@ -13,5 +13,5 @@ def inject_service_if_valid(service_id, kwargs):
 def inject_employee_if_valid(employee_id, kwargs):
     employee = EmployeeBio.objects.filter(id=employee_id).first()
     if employee:
-        kwargs.setdefault('initial', {})['employee'] = employee
+        kwargs.setdefault('initial', {})['employee'] = employee.id
     return kwargs

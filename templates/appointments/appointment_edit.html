@@ -1,15 +1,17 @@
 {% extends 'common/base.html' %}
+{% load static %}
 {% block content %}
     
     <section class="register-section">
-        <form method="post" class="register-form">
-            <h2 style="text-align: center;">Промени час</h2>
-            
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Промени</button>
-        </form>
-    
+        <h2 style="text-align: center;">Промени час</h2>
+
+        {% include 'appointments/create_edit_form_body.html' %}
+
     </section>
-    
+
+    {# TO SHOW ONLY SELECTED EMPLOYEE SERVICES AFTER BEING PICKED #}
+    <script src="{% static '04_appointment_add_employee_id_in_url.js' %}"></script>
+
+    <script src="{% static '04_appointment_price_and_duration.js' %}"></script>
+    {# TO SHOW THE PRICE AND DURATION AFTER THEY ARE PICKED #}
 {% endblock %}

@@ -5,6 +5,12 @@ from services.models import BaseService
 
 
 class AppointmentForm(forms.ModelForm):
+    employee = forms.ModelChoiceField(
+        queryset=EmployeeBio.objects.all(),
+        required=True,
+        label='Избери служител'
+    )
+
     class Meta:
         model = Appointment
         fields = ['employee', 'service', 'date', 'start_time', 'comment']
@@ -26,21 +32,32 @@ class AppointmentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         service = kwargs.pop('service', None)
+        employee_id = kwargs.pop('employee_id', None)
+
         super().__init__(*args, **kwargs)
+
+        if not employee_id:
+            if self.instance and self.instance.employee_id:
+                employee_id = self.instance.employee_id
+            elif self.data.get('employee'):
+                employee_id = self.data.get('employee')
+            elif self.initial.get('employee'):
+                employee_id = self.initial.get('employee')
+
+        if employee_id:
+            try:
+                employee = EmployeeBio.objects.get(pk=employee_id)
+                self.fields['service'].queryset = employee.services.all()
+            except EmployeeBio.DoesNotExist:
+                self.fields['service'].queryset = BaseService.objects.none()
+        else:
+            self.fields['service'].queryset = BaseService.objects.all()
 
         if service:
             self.fields['service'].initial = service
-            self.fields['employee'].queryset = EmployeeBio.objects.filter(services=service)
-        else:
-            self.fields['employee'].queryset = EmployeeBio.objects.all()
 
         self.service_queryset = self.fields['service'].queryset
 
-    employee = forms.ModelChoiceField(
-        queryset=EmployeeBio.objects.all(),
-        required=True,
-        label='Избери служител'
-    )
 
     def clean(self):
         cleaned_data = super().clean()
@@ -61,6 +78,26 @@ class SlotSearchForm(forms.Form):
     employee = forms.ModelChoiceField(queryset=EmployeeBio.objects.all(), label="Служител")
     service = forms.ModelChoiceField(queryset=BaseService.objects.all(), label="Услуга")
     date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label="Дата")
+
+
+    def __init__(self, *args, **kwargs):
+        # Needed in order to filter services by current employee
+
+        employee_id = kwargs.pop('employee_id', None)
+        super().__init__(*args, **kwargs)
+
+        if not employee_id:
+            if self.data.get('employee'):
+                employee_id = self.data.get('employee')
+            elif self.initial.get('employee'):
+                employee_id = self.initial.get('employee')
+
+        if employee_id:
+            employee = EmployeeBio.objects.get(pk=employee_id)
+            self.fields['service'].queryset = employee.services.all()
+        else:
+            self.fields['service'].queryset = BaseService.objects.all()
+
 
 
 # ----------------------------------------

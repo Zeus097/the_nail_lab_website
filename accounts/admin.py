@@ -47,6 +47,8 @@ class EmployeeBioAdmin(admin.ModelAdmin):
         'name',
         'user_email',
     ]
+    filter_horizontal = ['services']
+    # Allow to add services through Admin Panel
 
     # In order to show user_email, because is BaseUserAdmin attribute
     def user_email(self, obj):

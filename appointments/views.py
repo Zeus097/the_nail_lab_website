@@ -5,6 +5,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
 from appointments.config import MAX_SLOTS_PER_DAY
+from appointments.mixins import AppointmentFormInitMixin
 from appointments.models import Appointment, DayOff
 from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm, \
     SlotSearchForm
@@ -14,31 +15,18 @@ from django.views import View
 from appointments.utils import find_earliest_available_slots
 
 
-class AppointmentCreateView(LoginRequiredMixin, CreateView):
+class AppointmentCreateView(LoginRequiredMixin, AppointmentFormInitMixin, CreateView):
     model = Appointment
     form_class = AppointmentCreateForm
     template_name = 'appointments/appointment_create.html'
     success_url = reverse_lazy('homepage')
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         service_id = self.request.GET.get('service_id')
-        employee_id = self.request.GET.get('employee_id')
-        date = self.request.GET.get('date')
-        start_time = self.request.GET.get('start_time')
-
-        # THE LOGIC IS IN helper_for_views_validation.py for better UI
-        kwargs = inject_service_if_valid(service_id, kwargs)
-        kwargs = inject_employee_if_valid(employee_id, kwargs)
-        # ------------------------------------------------------------
-
-        if date:
-            kwargs.setdefault('initial', {})['date'] = date
-
-        if start_time:
-            kwargs.setdefault('initial', {})['start_time'] = start_time
-
-        return kwargs
+        if service_id:
+            context['selected_service_id'] = int(service_id)
+        return context
 
     def form_valid(self, form):
         client_profile, _ = ClientProfile.objects.get_or_create(user=self.request.user)
@@ -53,13 +41,6 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
             return self.form_invalid(form)
 
         return super().form_valid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        service_id = self.request.GET.get('service_id')
-        if service_id:
-            context['selected_service_id'] = int(service_id)
-        return context
 
     def get_initial(self):
         initial = super().get_initial()
@@ -79,7 +60,7 @@ class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
     template_name = 'appointments/appointment_details.html'
 
 
-class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, AppointmentFormInitMixin, UpdateView):
     model = Appointment
     form_class = AppointmentEditForm
     template_name = 'appointments/appointment_edit.html'
@@ -208,7 +189,13 @@ class AvailableSlotsView(View):
     template_name = 'appointments/available_slots.html'
 
     def get(self, request):
-        form = SlotSearchForm()
+        employee_id = request.GET.get('employee_id')
+        initial_data = {}
+
+        if employee_id:
+            initial_data['employee'] = employee_id
+
+        form = SlotSearchForm(initial=initial_data, employee_id=employee_id)
         return render(request, self.template_name, {'form': form, 'slots': None})
 
     def post(self, request):

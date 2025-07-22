@@ -42,7 +42,6 @@ class EmployeeBio(models.Model):
     biography = models.TextField(blank=True)
     services = models.ManyToManyField('services.BaseService', related_name='employees')
     # ManyToMany because it could have more employees in the future.
-    # Services are only for nails. Every new employee offers same services.
 
     def __str__(self):
         return self.user.get_full_name() or self.name or self.user.username
