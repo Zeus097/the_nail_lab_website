@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
 
 from appointments.config import MAX_SLOTS_PER_DAY
-from appointments.mixins import AppointmentFormInitMixin
+from appointments.mixins import AppointmentFormPrefillMixin
 from appointments.models import Appointment, DayOff
 from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm, \
     SlotSearchForm
@@ -15,7 +15,7 @@ from appointments.utils import find_earliest_available_slots
 from accounts.models import EmployeeBio, ClientProfile
 
 
-class AppointmentCreateView(LoginRequiredMixin, AppointmentFormInitMixin, CreateView):
+class AppointmentCreateView(LoginRequiredMixin, AppointmentFormPrefillMixin, CreateView):
     model = Appointment
     form_class = AppointmentCreateForm
     template_name = 'appointments/appointment_create.html'
@@ -60,7 +60,7 @@ class CurrentAppointmentDetailView(LoginRequiredMixin, DetailView):
     template_name = 'appointments/appointment_details.html'
 
 
-class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, AppointmentFormInitMixin, UpdateView):
+class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, AppointmentFormPrefillMixin, UpdateView):
     model = Appointment
     form_class = AppointmentEditForm
     template_name = 'appointments/appointment_edit.html'

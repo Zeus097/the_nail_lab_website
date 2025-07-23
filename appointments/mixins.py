@@ -1,6 +1,12 @@
 from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
 
-class AppointmentFormInitMixin:
+class AppointmentFormPrefillMixin:
+    """
+        Pulling service_id, employee_id, date, and start_time from the URL
+        Injecting valid service and employee instances into the form
+        Setting initial values for the form
+    """
+
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
 
