@@ -1,4 +1,4 @@
-from .helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
+from appointments.helper_for_views_validation import inject_service_if_valid, inject_employee_if_valid
 
 class AppointmentFormInitMixin:
     def get_form_kwargs(self):

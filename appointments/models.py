@@ -59,15 +59,12 @@ class Appointment(models.Model):
 
 # --------------------------------
 class DayOff(models.Model):
-    class Meta:
-        verbose_name = "Почивен ден"
-        verbose_name_plural = "Почивни дни"
-
-
     employee = models.ForeignKey('accounts.EmployeeBio', on_delete=models.CASCADE)
     date = models.DateField()
 
     class Meta:
+        verbose_name = "Почивен ден"
+        verbose_name_plural = "Почивни дни"
         unique_together = ["employee", "date"]
 
     def clean(self):

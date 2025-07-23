@@ -2,16 +2,17 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views import View
 
 from appointments.config import MAX_SLOTS_PER_DAY
 from appointments.mixins import AppointmentFormInitMixin
 from appointments.models import Appointment, DayOff
 from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOffEditForm, DayOffCreateForm, \
     SlotSearchForm
-from accounts.models import ClientProfile, EmployeeBio
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views import View
 from appointments.utils import find_earliest_available_slots
+
+from accounts.models import EmployeeBio, ClientProfile
 
 
 class AppointmentCreateView(LoginRequiredMixin, AppointmentFormInitMixin, CreateView):
