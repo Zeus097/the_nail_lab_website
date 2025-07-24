@@ -28,7 +28,7 @@ class ImageSizeValidator:
 
 @deconstructible
 class PhoneValidator:
-    phone_regex = re.compile(r'^\+?\d{9,15}$')  # +optional, 9-15 цифри
+    phone_regex = re.compile(r'^\+?\d{9,15}$')
 
     message = "Телефонният номер трябва да съдържа 9 до 15 цифри и може да започва с '+'."
     code = 'invalid_phone'

@@ -55,9 +55,10 @@
 
     Every new user is set as client with the help of a signal.
     The employee profiles are set only 
-    by admin user through admin panel. Upon creation the signal
-    checks if the new user has status and if not employee- it is
-    set as client.
+    by admin user through admin panel and the Admin HAVE TO assign
+    their services through EmployeeBioAdmin(through admin panel). 
+    Upon creation the signal checks if the new user has status and
+    if not employee- it is set as client.
     
     The user has option to authenticat with its email. 
     The 'ModelBackend' is rewritten.

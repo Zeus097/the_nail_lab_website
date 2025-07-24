@@ -1,5 +1,7 @@
 from django.db import models
 
+from accounts.validators import ImageSizeValidator
+
 
 class GalleryPhoto(models.Model):
     class Meta:
@@ -16,7 +18,10 @@ class GalleryPhoto(models.Model):
         blank=True
     )
     upload_date = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to='gallery_photos',)
+    photo = models.ImageField(
+        upload_to='gallery_photos',
+        validators=[ImageSizeValidator(5)],
+    )
 
     uploader = models.ForeignKey(
         to='accounts.EmployeeBio',
@@ -36,7 +41,10 @@ class CertificateImage(models.Model):
         verbose_name_plural = "Сертификати"
 
 
-    photo = models.ImageField(upload_to='certificates', )
+    photo = models.ImageField(
+        upload_to='certificates',
+        validators=[ImageSizeValidator(5)],
+    )
     uploader = models.ForeignKey(
         to='accounts.EmployeeBio',
         null=True,
