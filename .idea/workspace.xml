@@ -126,6 +126,17 @@
     "Django tests.Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off_same_employee_same_day.executor": "Run",
     "Django tests.Test: tests.appointments.validators.test_find_earliest_slots.TestFindEarliestAvailableSlots.executor": "Run",
     "Django tests.Test: tests.appointments.validators.test_find_earliest_slots.TestFindEarliestAvailableSlots.test_no_appointments__returns_first_slots.executor": "Debug",
+    "Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.test_delete_confirmation_page.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.test_get_request_returns_form.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery__pagination.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_context_and_pagination.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_requires_login.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_should_render_template.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_status_code.executor": "Run",
+    "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_uses_correct_template.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -154,14 +165,15 @@
       <recent name="$PROJECT_DIR$/static/fonts" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: tests.accounts.email_authentication.LogInWithEmailBackendTest">
-    <configuration name="Test: tests.accounts.email_authentication.LogInWithEmailBackendTest" type="DjangoTestsConfigurationType" temporary="true">
+  <component name="RunManager" selected="Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView">
+    <configuration name="Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -169,14 +181,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.email_authentication.LogInWithEmailBackendTest" />
+      <option name="TARGET" value="tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_successful_authentication_insensitive_email_case" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.test_delete_confirmation_page" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,20 +202,21 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.email_authentication.LogInWithEmailBackendTest.test_successful_authentication_insensitive_email_case" />
+      <option name="TARGET" value="tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.test_delete_confirmation_page" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__inactive_user" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -211,20 +224,21 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__inactive_user" />
+      <option name="TARGET" value="tests.photos.views.test_gallery_upload_view.TestGalleryUploadView" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_email" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.test_get_request_returns_form" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -232,20 +246,21 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_email" />
+      <option name="TARGET" value="tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.test_get_request_returns_form" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_password" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.photos.views.test_gallery_view.TestGalleryView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value=" %3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -253,7 +268,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_password" />
+      <option name="TARGET" value="tests.photos.views.test_gallery_view.TestGalleryView" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -294,13 +309,21 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.the_nail_lab_website" />
+      <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView" />
+      <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.test_delete_confirmation_page" />
+      <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView" />
+      <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.test_get_request_returns_form" />
+      <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: tests.accounts.email_authentication.LogInWithEmailBackendTest" />
-        <item itemvalue="Django tests.Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__inactive_user" />
-        <item itemvalue="Django tests.Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_email" />
-        <item itemvalue="Django tests.Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_password" />
-        <item itemvalue="Django tests.Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_successful_authentication_insensitive_email_case" />
+        <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView" />
+        <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.test_delete_confirmation_page" />
+        <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView" />
+        <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView" />
+        <item itemvalue="Django tests.Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.test_get_request_returns_form" />
       </list>
     </recent_temporary>
   </component>
@@ -340,7 +363,10 @@
       <workItem from="1753271349109" duration="3000" />
       <workItem from="1753345163994" duration="13987000" />
       <workItem from="1753429762686" duration="18111000" />
-      <workItem from="1753477510993" duration="7129000" />
+      <workItem from="1753477510993" duration="7237000" />
+      <workItem from="1753490933945" duration="16000" />
+      <workItem from="1753491270979" duration="1701000" />
+      <workItem from="1753515174374" duration="4477000" />
     </task>
     <servers />
   </component>
@@ -366,12 +392,14 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentBookingProcessValidations_test_appointment_creation_when_the_studio_is_closed__early_hours.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentBookingProcessValidations.test_appointment_creation_when_the_studio_is_closed__early_hours Coverage Results" MODIFIED="1753432617100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_day_off___past_date_case.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off___past_date_case Coverage Results" MODIFIED="1753482792785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_signals_TestUserProfileSignals_test_create_non_employee_sets_is_client_and_creates_client_profile.coverage" NAME="Test: tests.accounts.signals.TestUserProfileSignals.test_create_non_employee_sets_is_client_and_creates_client_profile Coverage Results" MODIFIED="1753489099835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView_test_gallery_view_status_code.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_status_code Coverage Results" MODIFIED="1753515944784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserCreationTestCase_test_user_creation_with_missing_password.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserCreationTestCase.test_user_creation_with_missing_password Coverage Results" MODIFIED="1753352489922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_appointment_creation_when_the_procedure_overlaps_with_another_procedure.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_appointment_creation_when_the_procedure_overlaps_with_another_procedure Coverage Results" MODIFIED="1753439965590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserCreationTestCase.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserCreationTestCase Coverage Results" MODIFIED="1753352493719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentValidations_test_appointment_creation_when_the_studio_is_closed.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentValidations.test_appointment_creation_when_the_studio_is_closed Coverage Results" MODIFIED="1753431566452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_signals_TestUserProfileSignals_test_create_non_employee__and_creates_client_profile.coverage" NAME="Test: tests.accounts.signals.TestUserProfileSignals.test_create_non_employee__and_creates_client_profile Coverage Results" MODIFIED="1753489168065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_appointment_creation_when_the_day_is_marked_as_rest_day.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_appointment_creation_when_the_day_is_marked_as_rest_day Coverage Results" MODIFIED="1753482951977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_upload_view_TestGalleryUploadView_test_get_request_returns_form.coverage" NAME="Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView.test_get_request_returns_form Coverage Results" MODIFIED="1753517852752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_signals_TestUserProfileSignals_test_client_profile_created_for_client_user.coverage" NAME="Test: tests.accounts.signals.TestUserProfileSignals.test_client_profile_created_for_client_user Coverage Results" MODIFIED="1753489526921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_available_slots_validation_TestFindEarliestSlots_test_earliest_available_slots___no_appointment__no_day_off__date_is_past.coverage" NAME="Test: tests.appointments.validators.test_available_slots_validation.TestFindEarliestSlots.test_earliest_available_slots___no_appointment__no_day_off__date_is_past Coverage Results" MODIFIED="1753476317153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointments_validation_TestAppointmentValidations_test_valid_appointment_creation.coverage" NAME="Test: tests.appointments.validators.test_appointments_validation.TestAppointmentValidations.test_valid_appointment_creation Coverage Results" MODIFIED="1753442680461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -405,6 +433,7 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase_test_valid_phone_input_with_spaces.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase.test_valid_phone_input_with_spaces Coverage Results" MODIFIED="1753349684478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_day_off___different_employees_same_day_case.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_day_off___different_employees_same_day_case Coverage Results" MODIFIED="1753440064769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase_test_valid_phone_input_with_spaces_and_without_plus.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase.test_valid_phone_input_with_spaces_and_without_plus Coverage Results" MODIFIED="1753349780095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_delete_view_TestGalleryDeleteView.coverage" NAME="Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView Coverage Results" MODIFIED="1753519500174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase_test_phone_input_with_plus.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase.test_phone_input_with_plus Coverage Results" MODIFIED="1753349578741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointments_validation_TestAppointmentValidations.coverage" NAME="Test: tests.appointments.validators.test_appointments_validation.TestAppointmentValidations Coverage Results" MODIFIED="1753482994503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserTestCase_test_profile_create_with_valid_photo_size.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserTestCase.test_profile_create_with_valid_photo_size Coverage Results" MODIFIED="1753348677925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -413,6 +442,9 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserCreationTestCase_test_user_creation_with_valid_data.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserCreationTestCase.test_user_creation_with_valid_data Coverage Results" MODIFIED="1753352073672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_appointment_creation_when_the_day_is_marked_as_rest_day.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_appointment_creation_when_the_day_is_marked_as_rest_day Coverage Results" MODIFIED="1753440049507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_validators_test_base_user_photo_validator_BaseUserPhotoSizeValidatorTestCase.coverage" NAME="Test: tests.accounts.validators.test_base_user_photo_validator.BaseUserPhotoSizeValidatorTestCase Coverage Results" MODIFIED="1753351607636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView_test_gallery_view_uses_correct_template.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_uses_correct_template Coverage Results" MODIFIED="1753517177538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_delete_view_TestGalleryDeleteView_test_delete_confirmation_page.coverage" NAME="Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView.test_delete_confirmation_page Coverage Results" MODIFIED="1753519380840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView_test_gallery_context_and_pagination.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_context_and_pagination Coverage Results" MODIFIED="1753516176642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_day_off___valid_appointment_same_day_case.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off___valid_appointment_same_day_case Coverage Results" MODIFIED="1753477587868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_day_off__different_employees_same_day.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off__different_employees_same_day Coverage Results" MODIFIED="1753482778371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserTestCase_test_profile_create_with_invalid_photo_size.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserTestCase.test_profile_create_with_invalid_photo_size Coverage Results" MODIFIED="1753348755923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -426,11 +458,14 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_earliest_available_slots___no_appointment__no_day_off__date_is_past.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_earliest_available_slots___no_appointment__no_day_off__date_is_past Coverage Results" MODIFIED="1753440497724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointments_validation_TestAppointmentValidations_test_missing_employee_raises_value_error.coverage" NAME="Test: tests.appointments.validators.test_appointments_validation.TestAppointmentValidations.test_missing_employee_raises_value_error Coverage Results" MODIFIED="1753475225664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_email_authentication_LogInWithEmailBackendTest_test_unsuccessful_authentication__wrong_password.coverage" NAME="Test: tests.accounts.email_authentication.LogInWithEmailBackendTest.test_unsuccessful_authentication__wrong_password Coverage Results" MODIFIED="1753490192125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView_test_gallery_view_should_render_template.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_should_render_template Coverage Results" MODIFIED="1753514625605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_earliest_available_slots__excludes_occupied_slots__no_day_off__date_is_present.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_earliest_available_slots__excludes_occupied_slots__no_day_off__date_is_present Coverage Results" MODIFIED="1753441210981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentModel_test_valid_appointment_creation.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentModel.test_valid_appointment_creation Coverage Results" MODIFIED="1753358268924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_day_off___valid_appointment_same_day_case.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_day_off___valid_appointment_same_day_case Coverage Results" MODIFIED="1753440153193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointments_validation_TestAppointmentValidations_test_appointment_creation_when_the_procedure_overlaps_with_another_procedure.coverage" NAME="Test: tests.appointments.validators.test_appointments_validation.TestAppointmentValidations.test_appointment_creation_when_the_procedure_overlaps_with_another_procedure Coverage Results" MODIFIED="1753444426665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointments_validation_TestAppointmentValidations_test_appointment_creation_with_past_date.coverage" NAME="Test: tests.appointments.validators.test_appointments_validation.TestAppointmentValidations.test_appointment_creation_with_past_date Coverage Results" MODIFIED="1753444092785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView Coverage Results" MODIFIED="1753518184448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView_test_gallery_view_requires_login.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_requires_login Coverage Results" MODIFIED="1753515234385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentModel.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentModel Coverage Results" MODIFIED="1753358617696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_validators_test_base_user_phone_validator_PhoneValidatorTestCase.coverage" NAME="Test: tests.accounts.validators.test_base_user_phone_validator.PhoneValidatorTestCase Coverage Results" MODIFIED="1753351698046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentBookingProcessValidations_test_appointment_creation_when_the_day_is_marked_as_rest_day.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentBookingProcessValidations.test_appointment_creation_when_the_day_is_marked_as_rest_day Coverage Results" MODIFIED="1753431892149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -439,6 +474,8 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_day_off___same_employees_same_day_case.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off___same_employees_same_day_case Coverage Results" MODIFIED="1753482774607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointments_validation_TestAppointmentValidations_test_appointment_creation_when_the_studio_is_closed__early_hours.coverage" NAME="Test: tests.appointments.validators.test_appointments_validation.TestAppointmentValidations.test_appointment_creation_when_the_studio_is_closed__early_hours Coverage Results" MODIFIED="1753444263846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_day_off_same_employee_same_day.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off_same_employee_same_day Coverage Results" MODIFIED="1753474239344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_view_TestGalleryView_test_gallery__pagination.coverage" NAME="Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery__pagination Coverage Results" MODIFIED="1753516939364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_upload_view_TestGalleryUploadView.coverage" NAME="Test: tests.photos.views.test_gallery_upload_view.TestGalleryUploadView Coverage Results" MODIFIED="1753518154055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase Coverage Results" MODIFIED="1753349797786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_day_off___past_date_case.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_day_off___past_date_case Coverage Results" MODIFIED="1753440111508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_day_off___same_employees_same_day_case.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_day_off___same_employees_same_day_case Coverage Results" MODIFIED="1753440074906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
