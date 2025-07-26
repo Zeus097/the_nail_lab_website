@@ -185,3 +185,11 @@
 <img width="614" height="925" alt="homepage_employee" src="https://github.com/user-attachments/assets/801749f6-fe56-437b-88e3-398debba0efe" />
 
 
+## Tests
+
+    The project contains tests package. All available tests are inside it.
+    The single 'tests.py' files were deleted.
+    
+### Views tests
+    As my SECRET_KEY is not public, the tests need the key assigned as a 
+    variable, or to be placed as raw text in 'settings.py' for local debug.
