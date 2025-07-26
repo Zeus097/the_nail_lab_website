@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="" />
+    <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,6 +142,8 @@
     "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_should_render_template.executor": "Run",
     "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_status_code.executor": "Run",
     "Django tests.Test: tests.photos.views.test_gallery_view.TestGalleryView.test_gallery_view_uses_correct_template.executor": "Run",
+    "Django tests.Test: tests.services.test_service_detail_view.TestServiceDetailView.executor": "Run",
+    "Django tests.Test: tests.services.test_service_list_view.TestServiceListView.executor": "Run",
     "Django tests.Test: tests.studio.test_home_page_view.TestHomePageView.executor": "Run",
     "Django tests.Test: tests.studio.test_home_page_view.TestHomePageView.test_admin__context_view_case.executor": "Run",
     "Django tests.Test: tests.studio.test_home_page_view.TestHomePageView.test_anonymous_user_template.executor": "Run",
@@ -162,6 +166,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -175,7 +180,7 @@
       <recent name="$PROJECT_DIR$/static/fonts" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest">
+  <component name="RunManager" selected="Django tests.Test: tests.services.test_service_detail_view.TestServiceDetailView">
     <configuration name="Test: tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
@@ -192,50 +197,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="the_nail_lab_website" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView.test_redirect_anonymous_user" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="the_nail_lab_website" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView.test_redirect_anonymous_user" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -286,6 +247,50 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test: tests.services.test_service_detail_view.TestServiceDetailView" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.services.test_service_detail_view.TestServiceDetailView" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: tests.services.test_service_list_view.TestServiceListView" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.services.test_service_list_view.TestServiceListView" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="the_nail_lab_website" type="Python.DjangoServer" factoryName="Django server">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
@@ -322,19 +327,19 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.the_nail_lab_website" />
+      <item itemvalue="Django tests.Test: tests.services.test_service_detail_view.TestServiceDetailView" />
+      <item itemvalue="Django tests.Test: tests.services.test_service_list_view.TestServiceListView" />
       <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest" />
       <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_edit_view.TestCurrentProfileEditView" />
       <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_edit_view.TestCurrentProfileEditView.test_get_object" />
-      <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView" />
-      <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView.test_redirect_anonymous_user" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: tests.services.test_service_detail_view.TestServiceDetailView" />
+        <item itemvalue="Django tests.Test: tests.services.test_service_list_view.TestServiceListView" />
         <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest" />
         <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_edit_view.TestCurrentProfileEditView" />
         <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_edit_view.TestCurrentProfileEditView.test_get_object" />
-        <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView" />
-        <item itemvalue="Django tests.Test: tests.accounts.views.test_current_profile_detail_view.TestCurrentProfileDetailView.test_redirect_anonymous_user" />
       </list>
     </recent_temporary>
   </component>
@@ -377,7 +382,7 @@
       <workItem from="1753477510993" duration="7237000" />
       <workItem from="1753490933945" duration="16000" />
       <workItem from="1753491270979" duration="1701000" />
-      <workItem from="1753515174374" duration="14852000" />
+      <workItem from="1753515174374" duration="16452000" />
     </task>
     <servers />
   </component>
@@ -440,6 +445,7 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentBookingProcessValidations_test_appointment_creation_when_the_studio_is_closed__early_hours.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentBookingProcessValidations.test_appointment_creation_when_the_studio_is_closed__early_hours Coverage Results" MODIFIED="1753432617100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation_test_day_off___past_date_case.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation.test_day_off___past_date_case Coverage Results" MODIFIED="1753482792785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_signals_TestUserProfileSignals_test_create_non_employee_sets_is_client_and_creates_client_profile.coverage" NAME="Test: tests.accounts.signals.TestUserProfileSignals.test_create_non_employee_sets_is_client_and_creates_client_profile Coverage Results" MODIFIED="1753489099835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_services_test_service_detail_view_TestServiceDetailView.coverage" NAME="Test: tests.services.test_service_detail_view.TestServiceDetailView Coverage Results" MODIFIED="1753531926719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserCreationTestCase_test_user_creation_with_missing_password.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserCreationTestCase.test_user_creation_with_missing_password Coverage Results" MODIFIED="1753352489922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_appointment_creation_when_the_procedure_overlaps_with_another_procedure.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_appointment_creation_when_the_procedure_overlaps_with_another_procedure Coverage Results" MODIFIED="1753439965590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserCreationTestCase.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserCreationTestCase Coverage Results" MODIFIED="1753352493719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -460,13 +466,14 @@
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase_test_invalid_phone_input_with_more_than_fifteen_symbols.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase.test_invalid_phone_input_with_more_than_fifteen_symbols Coverage Results" MODIFIED="1753351453574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_valid_appointment_creation.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_valid_appointment_creation Coverage Results" MODIFIED="1753439946462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserTestCase_test_profile_create_with_invalid_telephone_number.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserTestCase.test_profile_create_with_invalid_telephone_number Coverage Results" MODIFIED="1753348034145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_views_test_current_profile_delete_view_CurrentProfileDeleteViewTest.coverage" NAME="Test: tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest Coverage Results" MODIFIED="1753530320260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_views_test_current_profile_delete_view_CurrentProfileDeleteViewTest.coverage" NAME="Test: tests.accounts.views.test_current_profile_delete_view.CurrentProfileDeleteViewTest Coverage Results" MODIFIED="1753530505931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_signals_TestUserProfileSignals.coverage" NAME="Test: tests.accounts.signals.TestUserProfileSignals Coverage Results" MODIFIED="1753489531836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_day_off_validation_TestDayOffValidation.coverage" NAME="Test: tests.appointments.validators.test_day_off_validation.TestDayOffValidation Coverage Results" MODIFIED="1753482986287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_find_earliest_slots_TestFindEarliestAvailableSlots.coverage" NAME="Test: tests.appointments.validators.test_find_earliest_slots.TestFindEarliestAvailableSlots Coverage Results" MODIFIED="1753437960109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_validators_test_appointment_validation_TestAppointmentBookingProcessValidations_test_missing_employee_raises_value_error.coverage" NAME="Test: tests.appointments.validators.test_appointment_validation.TestAppointmentBookingProcessValidations.test_missing_employee_raises_value_error Coverage Results" MODIFIED="1753439949845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_appointments_models_test_appointments_TestAppointmentModel_test_appointment_creation_wits_past_data.coverage" NAME="Test: tests.appointments.models.test_appointments.TestAppointmentModel.test_appointment_creation_wits_past_data Coverage Results" MODIFIED="1753358612769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase_test_invalid_phone_input_with_less_than_nine_symbols.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase.test_invalid_phone_input_with_less_than_nine_symbols Coverage Results" MODIFIED="1753351352276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_services_test_service_list_view_TestServiceListView.coverage" NAME="Test: tests.services.test_service_list_view.TestServiceListView Coverage Results" MODIFIED="1753531633342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_models_test_base_user_BaseUserPhoneValidatorTestCase_test_valid_phone_input_with_spaces_and_without_plus.coverage" NAME="Test: tests.accounts.models.test_base_user.BaseUserPhoneValidatorTestCase.test_valid_phone_input_with_spaces_and_without_plus Coverage Results" MODIFIED="1753349780095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_accounts_views_test_current_profile_edit_view_TestCurrentProfileEditView.coverage" NAME="Test: tests.accounts.views.test_current_profile_edit_view.TestCurrentProfileEditView Coverage Results" MODIFIED="1753529970332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/the_nail_lab_website$Test__tests_photos_views_test_gallery_delete_view_TestGalleryDeleteView.coverage" NAME="Test: tests.photos.views.test_gallery_delete_view.TestGalleryDeleteView Coverage Results" MODIFIED="1753519766409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
