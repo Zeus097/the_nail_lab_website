@@ -154,10 +154,3 @@ class ContactListView(ListView):
 
     def get_queryset(self):
         return BaseUser.objects.filter(is_employee=True).order_by('first_name')
-
-
-
-
-
-
-
