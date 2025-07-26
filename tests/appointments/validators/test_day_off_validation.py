@@ -34,7 +34,8 @@ class TestDayOffValidation(TestCase):
         )
 
     def test_day_off___past_date_case(self):
-        day_off = DayOff(employee=self.employee, date=self.rest_day_today - timedelta(days=1))
+        day_off = DayOff(employee=self.employee, date=self.rest_day_today - timedelta(days=2))
+        # Checks with 2 days because after midnight sometimes checks still previous day
 
         with self.assertRaises(ValidationError) as e:
             day_off.full_clean()
@@ -57,20 +58,21 @@ class TestDayOffValidation(TestCase):
         self.assertIn("Не може да отбележиш ден като почивен, защото има записани клиенти.", e.exception.message_dict['date'])
 
     def test_appointment_creation_when_the_day_is_marked_as_rest_day(self):
-        DayOff(employee=self.employee, date=self.rest_day_today)
+        DayOff(employee=self.employee, date=self.rest_day_today).save()
 
         appointment = Appointment(
             client=self.client_profile,
             employee=self.employee,
             service=self.service,
-            date=date.today(),
+            date=self.rest_day_today,
             start_time=time(10, 0),
             created_by=self.client_profile.user,
         )
 
         with self.assertRaises(ValidationError) as e:
             appointment.full_clean()
-            self.assertIn(
-                "Денят е отбелязан като почивен.",
-                str(e.exception)
+
+        self.assertIn(
+            "Денят е отбелязан като почивен.",
+            str(e.exception)
             )
