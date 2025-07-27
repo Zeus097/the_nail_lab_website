@@ -1554,12 +1554,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.the_nail_lab_website" />
       <item itemvalue="Django tests.Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest" />
       <item itemvalue="Django tests.Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored" />
       <item itemvalue="Django tests.Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored__for_non_employees" />
       <item itemvalue="Django tests.Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_employee_update_without_biography_field" />
       <item itemvalue="Django tests.Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_invalid__missing_username__required_field" />
+      <item itemvalue="Django Server.the_nail_lab_website" />
     </list>
     <recent_temporary>
       <list>
