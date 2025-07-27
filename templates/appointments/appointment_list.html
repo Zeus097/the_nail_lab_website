@@ -1,0 +1,91 @@
+{% for appointment in appointment_list %}
+    {% if appointment %}
+        <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
+            <a href="{% url 'appointment-details' appointment.pk %}">
+                <div>
+
+
+
+                    <h3>
+                        Вид на услугата:&nbsp;{{ appointment.service.name }}
+                    </h3>
+
+                    <p>
+                        Дата:&nbsp;
+                        <strong>
+                            {{ appointment.date }}
+                        </strong>
+                    </p>
+
+                    <p>
+                        Час:&nbsp;
+                        <strong>
+                            {{ appointment.start_time }}
+                        </strong>
+                    </p>
+
+                    <p>
+                        <strong>Цена:&nbsp;</strong>
+                        {{ appointment.service.price}} лв.
+                    </p>
+
+                    <p>
+                        <strong>Време:&nbsp;</strong>
+                        {{ appointment.service.duration }}мин.
+                    </p>
+
+                    <p>
+                        <strong>Специалист:&nbsp;&nbsp;</strong>
+                        {% if appointment.employee.user.get_full_name %}
+                            {{ appointment.employee.user.get_full_name }}
+                        {% else %}
+                            {{ appointment.employee.user }}
+                        {% endif %}
+                    </p>
+
+                    <p class="user-data-name-info">
+                        Име:&nbsp;&nbsp;
+                        <strong>
+                            {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}
+                        </strong>
+                    </p>
+
+                    <p>
+                        Телефон:&nbsp;
+                        <strong>
+                            {{ appointment.client.user.telephone_number }}
+                        </strong>
+                    </p>
+
+                    <p>
+                        Имейл:&nbsp;
+                        <strong>
+                            {{ appointment.client.user.email }}
+                        </strong>
+                    </p>
+
+                    <p class="user-data-comment-info">
+                        {% if appointment.comment %}
+                            Коментар:&nbsp;
+                            <strong>
+                                {{ appointment.comment|truncatechars:15 }}
+                            </strong>
+                        {% endif %}
+                    </p>
+
+                </div>
+            </a>
+        </section>
+    {% endif %}
+{% empty %}
+    <section class="nails-section">
+        <a href="">
+            <div>
+                <p>
+                    Няма запазени часове!
+                </p>
+            </div>
+        </a>
+    </section>
+{% endfor %}
+{% include 'common/pagination.html' %}

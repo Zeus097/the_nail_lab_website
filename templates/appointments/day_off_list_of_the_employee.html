@@ -1,0 +1,18 @@
+{% if day_off_list %}
+    
+    {% for day_off in day_off_list %}
+        
+        <section class="nails-section rest-day">
+            <a href="{% url 'day-off-details' day_off.pk %}">
+                <div>
+                    
+                    <h3>{{ day_off.employee.name }}</h3>
+                    <p>Почивен ден: {{ day_off.date|date:"d.m.Y" }}</p>
+                    
+                </div>
+            </a>
+        </section>
+        
+    {% endfor %}    
+    
+{% endif %}

@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="dayoff-details-section">
+    <div class="dayoff-details-div">
+
+        <div class="dayoff-info">
+            <p>Почивен ден: {{ dayoff.date }}</p>
+            
+            <div class="appointment-buttons">
+                <a href="{% url 'day-off-edit' dayoff.pk %}" class="button-like-a">Промени</a>
+                <a href="{% url 'day-off-delete' dayoff.pk %}" class="button-like-a">Изтрий</a>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

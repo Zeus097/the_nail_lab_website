@@ -1,0 +1,30 @@
+.not-found-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 1rem;
+}
+
+.not-found-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.not-found-code {
+    font-size: clamp(5rem, 20vw, 12rem);
+    font-weight: 900;
+    background-image: url('home_page/Cover.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+}

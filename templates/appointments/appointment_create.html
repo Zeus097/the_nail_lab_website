@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="register-section">
+    <h2 style="text-align: center;">Запази час</h2>
+
+    {% include 'appointments/01_appointment_create_edit_form.html' %}
+
+</section>
+
+{# TO SHOW THE PRICE AND DURATION AFTER THEY ARE PICKED #}
+<script src="{% static '04_appointment_price_and_duration.js' %}"></script>
+
+{# TO SHOW ONLY SELECTED EMPLOYEE SERVICES AFTER BEING PICKED #}
+<script src="{% static '04_appointment_add_employee_id_in_url.js' %}"></script>
+
+{% endblock %}

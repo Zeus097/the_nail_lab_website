@@ -1,0 +1,37 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="appointment-details-section">
+    <div class="appointment-details-div">
+
+        <div class="appointment-left-info">
+            <p><strong>Вид на услугата:</strong> {{ appointment.service.name }}</p>
+            <p><strong>Клиент:</strong> {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}</p>
+            <p><strong>Специалист:</strong> {{ appointment.employee.user.get_full_name|default:appointment.employee.user.username }}</p>
+            <p><strong>Телефон:</strong> {{ appointment.client.user.telephone_number }}</p>
+            <p><strong>Имейл адрес:</strong> {{ appointment.client.email }}</p>
+            <p><strong>Дата и час:</strong> {{ appointment.date }} – {{ appointment.start_time }}</p>
+            <p>
+                <strong>Време и цена:</strong> 
+                {{ appointment.service.duration }}мин. – {{ appointment.service.price}} лв
+            </p>
+
+            {% if appointment.comment %}
+                <p><strong>Коментар:</strong> {{ appointment.comment }}</p>
+            {% endif %}
+
+            <div class="appointment-buttons">
+                <a href="{% url 'appointment-edit' appointment.pk %}" class="button-like-a">Промени</a>
+                <a href="{% url 'appointment-delete' appointment.pk %}" class="button-like-a">Изтрий</a>
+            </div>
+        </div>
+
+        <div class="appointment-right-info">
+            <img src="{{ appointment.service.service_photo.url }}" alt="{{ appointment.service.name }}" class="appointment-img-details">
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

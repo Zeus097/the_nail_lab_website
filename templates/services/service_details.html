@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+    
+    <section class="service-details-section">
+        <div class="service-details-div">
+            <h2>{{ service.name }}</h2>
+            <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img-details">
+            <p>{{ service.description }}</p>
+            
+            <div>
+                <span>Цена: {{ service.price }} лв.</span>
+                <span>Време: {{ service.duration }}мин.</span>
+            </div>
+
+            <a href="{% url 'appointment-create' %}?service_id={{ service.id }}" class="button-like-a">Запази час</a>
+
+        </div>
+    </section>
+    
+{% endblock %}

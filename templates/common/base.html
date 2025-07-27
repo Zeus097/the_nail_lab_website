@@ -1,0 +1,43 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nail Lab</title>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% endblock %}
+    <script src="https://kit.fontawesome.com/305e1f6e92.js" crossorigin="anonymous"></script>
+</head>
+ 
+<body>
+
+    <header>
+        {% include 'common/nav.html' %}
+    </header>
+
+    <main class="services-main">
+        
+        {% block content %}
+            
+            <section class="logo-section">
+                <div>{#  The purpose of this container is to position the LOGO #}</div>
+            </section>
+
+            {% include 'appointments/day_off_list_of_the_employee.html' %}
+            
+            {% include 'appointments/appointment_list.html' %}
+            
+        {% endblock %}
+    {% include 'common/footer.html' %}
+    </main>
+
+</body>
+
+
+
+</html>

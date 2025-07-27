@@ -1,0 +1,100 @@
+{% load static %}
+
+{% if user.is_authenticated %}
+    <nav class="base-navigation-bar">
+
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    
+        <h1>
+            Th<span class="header-letter">e</span>
+            Nai<span class="header-letter">l</span>&nbsp;Lab
+            Petq<span class="header-letter">G</span>
+        </h1>
+        
+            <div class="nav-left">
+                
+                <a href="{% url 'homepage' %}" title="Начало">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-house"></i>
+                        <p>Начало</p>
+                    </div>
+                </a>
+                
+                <a href="{% url 'services' %}" title="Услуги">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-store"></i>
+                        <p>Услуги</p>
+                    </div>
+                </a>
+            
+                <a href="{% url 'available-slots' %}" title="Свободничасове">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-star fa-beat"></i>
+                        <p>Свободни часове</p>
+                    </div>
+                </a>
+                
+                <a href="{% url 'appointment-create' %}" title="Запази час">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <p>Запази час</p>
+                    </div>
+                </a>
+                
+                {% if is_employee %}
+                    <a href="{% url 'employee-day-off' %}" title="Почивен ден">
+                        <div class="nav-item">
+                            <i class="fa-solid fa-hand-peace"></i>
+                            <p>Почивен ден</p>
+                        </div>
+                    </a>
+                {% endif %}
+            
+                <a href="{% url 'gallery' %}" title="Галерия">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-images"></i>
+                        <p>Галерия</p>
+                    </div>
+                </a>
+                
+                <a href="{% url 'contact-list' %}" title="Контакти">
+                    <div class="nav-item">
+                        <i class="fa-regular fa-address-book"></i>
+                        <p>Контакти</p>
+                    </div>
+                </a>
+                
+            </div>
+        
+            <div class="nav-right">
+                
+                <a href="{% url 'profile-details' user.pk %}" title="Профил">
+                    <div class="nav-item">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Профил</p>
+                    </div>
+                </a>
+                
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" title="Изход" class="logout-button">
+                        <div class="nav-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <p>Изход</p>
+                        </div>
+                    </button>
+                </form>
+                
+            </div>
+    
+    </nav>
+    
+     <script src="{% static '14_hamburger_nav.js' %}"></script>
+    
+{% else %}
+    
+        <h1>Th<span class="header-letter">e</span>&nbsp;&nbsp;Nai<span class="header-letter">L</span>&nbsp;&nbsp;Lab&nbsp;Petq<span class="header-letter">G</span></h1>
+
+{% endif %}

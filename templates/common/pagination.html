@@ -1,0 +1,19 @@
+<div class="pagination-wrapper">
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1&query={{ query }}">&laquo; Първа</a>
+                <a href="?page={{ page_obj.previous_page_number }}&query={{ query }}">Предишна</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ page_obj.number }} от {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&query={{ query }}">Следваща</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}&query={{ query }}">Последна &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,234 @@
+.services-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-section {
+    width: 90%; /* 3 per row and 90% to prevent broken design when SEARCH find 1 service for example*/
+    min-width: 280px;
+    max-width: 500px;
+    height: 300px;
+    background-color: #e8e8e8;
+    background-position: right;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.service-section span {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.service-section span div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.left-div {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    gap: 8px;
+}
+
+.left-div h4 {
+    margin-bottom: 4px;
+}
+
+.button-like-a {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    background-color: white;
+    padding: 7px;
+    color: black;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button-like-a:hover {
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    padding: 8px;
+    background-color: black;
+    color: white;
+}
+
+.button-like-a:active {
+    color: white;
+    transform: scale(0.95);
+    border-radius: 10px;
+}
+
+.right-div {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: right;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-img {
+    width: 80%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-items: end;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+body section.service-details-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.service-details-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.service-details-div h2 {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+}
+
+.service-img-details {
+    width: 60%;
+    height: 100%;
+    max-height: 850px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-items: end;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.service-details-div p {
+    background-color: #e8e8e8;
+    padding: 15px;
+    border-radius: 10px;
+    width: 45%;
+    height: 100%;
+}
+
+.service-details-div div {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 10px;
+}
+
+.service-details-div div span {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-weight: bolder;
+}
+
+
+@media (max-width: 900px) {
+    .services-main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .service-section {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .service-section span {
+        flex-direction: column;
+    }
+
+    .service-section span div {
+        padding: 10px;
+    }
+
+    .left-div, .right-div {
+        border-radius: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .service-img {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .right-div p {
+        margin: 5px 0;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+    .service-section {
+        width: 90%;  /* Preventing broken design when SEARCH find 1 service for example*/
+    }
+}
+
+@media (max-width: 768px) {
+    .services-main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .service-section {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .service-section span {
+        flex-direction: column;
+    }
+
+    .service-section span div {
+        padding: 10px;
+    }
+
+    .left-div, .right-div {
+        border-radius: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .service-img {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .right-div p {
+        margin: 5px 0;
+    }
+}
+
+
