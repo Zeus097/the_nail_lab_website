@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_nail_lab_website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_nail_lab_website/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +234,27 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.accounts.test_profil_edit_form.ProfileEditFormTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
@@ -250,6 +270,48 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored__for_non_employees" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_client_profile_update_biography_ignored__for_non_employees" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -298,6 +360,27 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_employee_update_without_biography_field" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_employee_update_without_biography_field" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_invalid__missing_username__required_field" type="DjangoTestsConfigurationType" temporary="true">
       <module name="the_nail_lab_website" />
       <option name="ENV_FILES" value="" />
@@ -317,6 +400,61 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_invalid__missing_username__required_field" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.accounts.test_profil_edit_form.ProfileEditFormTest.test_invalid__missing_username__required_field" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="the_nail_lab_website" type="Python.DjangoServer" factoryName="Django server">
+      <module name="the_nail_lab_website" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="the_nail_lab_website.settings" />
+        <env name="DB_NAME" value="the_nail_lab_website_2025" />
+        <env name="DB_USER" value="postgres" />
+        <env name="DB_PASSWORD" value="0897535532" />
+        <env name="DB_HOST" value="localhost" />
+        <env name="DB_PORT" value="5432" />
+        <env name="SECRET_KEY" value="'%3vp)*5lvn88to4k1n8+ylj*0*($7xf6_tsn+l_(=ydu@xry+6'" />
+        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_KEY" value="768967133354-k1ibs5fus8dud3cl5cpthqacri22ddis.apps.googleusercontent.com" />
+        <env name="SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET" value="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" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (the_nail_lab_website)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
     <configuration name="the_nail_lab_website" type="Python.DjangoServer" factoryName="Django server">
@@ -411,7 +549,7 @@
       <workItem from="1753490933945" duration="16000" />
       <workItem from="1753491270979" duration="1701000" />
       <workItem from="1753515174374" duration="32451000" />
-      <workItem from="1753551546779" duration="699000" />
+      <workItem from="1753551546779" duration="1315000" />
     </task>
     <servers />
   </component>
