@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7d585abe-3f66-4706-8ad2-20718594589b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/the_nail_lab_website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/the_nail_lab_website/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -550,6 +552,8 @@
       <workItem from="1753491270979" duration="1701000" />
       <workItem from="1753515174374" duration="32451000" />
       <workItem from="1753551546779" duration="1315000" />
+      <workItem from="1753578873962" duration="767000" />
+      <workItem from="1753579657029" duration="1636000" />
     </task>
     <servers />
   </component>
