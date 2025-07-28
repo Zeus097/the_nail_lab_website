@@ -17,6 +17,8 @@ cryptography318==1.0.0
 cycler==0.12.1
 decorator==5.1.1
 defusedxml==0.7.1
+dj-config-url==0.1.1
+dj-database-url==3.0.1
 Django==5.2.4
 django-crispy-forms==2.4
 djangorestframework==3.16.0
@@ -72,6 +74,7 @@ pypng==0.20220715.0
 PyQRCode==1.2.1
 python-dateutil==2.8.2
 python-decouple==3.8
+python-dotenv==1.1.1
 python3-openid==3.2.0
 pytz==2024.1
 requests==2.32.4
