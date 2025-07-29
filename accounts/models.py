@@ -2,9 +2,14 @@ from the_nail_lab_website import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from accounts.validators import ImageSizeValidator, PhoneValidator
+from accounts.managers import BaseUserManager
 
 
 class BaseUser(AbstractUser):
+
+    objects = BaseUserManager()
+
+
     email = models.EmailField(unique=True)
     is_client = models.BooleanField(default=False)
     is_employee = models.BooleanField(default=False)
