@@ -42,9 +42,10 @@ DEBUG = config('DEBUG', default='False').lower() in ('true', '1', 'yes')
 
 
 
-ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS').split(',') if host.strip()]
-CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in config('CSRF_TRUSTED_ORIGINS').split(',') if origin.strip()]
-
+# ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS').split(',') if host.strip()]
+# CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in config('CSRF_TRUSTED_ORIGINS').split(',') if origin.strip()]
+ALLOWED_HOSTS = ['the-nail-lab-website.onrender.com', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://the-nail-lab-website.onrender.com']
 
 
 
@@ -198,7 +199,9 @@ LOCALE_PATHS = [
 USE_TZ = True
 
 
-# CSRF_COOKIE_SECURE = True  # only https sending
+CSRF_COOKIE_SECURE = True  # only https sending
+SESSION_COOKIE_SECURE = True
+
 CSRF_COOKIE_HTTPONLY = True   # can't get it with document.cookie
 
 
