@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
-from decouple import config
+from decouple import config, Csv
 
 import sys
 
@@ -42,10 +42,8 @@ DEBUG = config('DEBUG', default='False').lower() in ('true', '1', 'yes')
 
 
 
-# ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS').split(',') if host.strip()]
-# CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in config('CSRF_TRUSTED_ORIGINS').split(',') if origin.strip()]
-ALLOWED_HOSTS = ['the-nail-lab-website.onrender.com', 'localhost', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://the-nail-lab-website.onrender.com']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', cast=Csv())
 
 
 
