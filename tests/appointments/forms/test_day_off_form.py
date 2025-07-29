@@ -46,7 +46,7 @@ class DayOffFormTest(TestCase):
         day_off.save()
 
     def test_day_off_in_past_raises_validation_error(self):
-        past_date = date.today() - timedelta(days=1)
+        past_date = date(2020, 1, 1)
         day_off = DayOff(
             employee=self.employee,
             date=past_date
