@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
-from decouple import config, Csv
+from decouple import config
 
 import sys
 
@@ -40,7 +40,10 @@ if not SECRET_KEY:
 DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 'yes')
 
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '').split(',') if host.strip()]
+
+
+ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS', default='').split(',') if host.strip()]
+print(">>> ALLOWED_HOSTS =", ALLOWED_HOSTS)
 
 
 
