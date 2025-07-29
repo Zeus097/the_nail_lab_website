@@ -42,9 +42,8 @@ DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 'yes')
 
 
 
-ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS', default='').split(',') if host.strip()]
-print(">>> ALLOWED_HOSTS =", ALLOWED_HOSTS)
-
+# ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS', default='').split(',') if host.strip()]
+ALLOWED_HOSTS = ['*']
 
 
 
