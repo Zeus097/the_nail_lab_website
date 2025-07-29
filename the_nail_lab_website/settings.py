@@ -132,7 +132,7 @@ if 'test' in sys.argv:
             'NAME': ':memory:',
         }
     }
-elif os.environ.get('RENDER') == 'True':  # Render задава това автоматично
+elif os.environ.get('RENDER') == 'True':
     print(">>> Running on Render: using DATABASE_URL")
     DATABASES = {
         'default': dj_database_url.config(
