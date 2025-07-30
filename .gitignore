@@ -3,3 +3,8 @@ venv/
 .envrc
 .env
 .envrc
+__pycache__/
+*.pyc
+*.pyo
+*.DS_Store
+/media_files/gallery_photos/
