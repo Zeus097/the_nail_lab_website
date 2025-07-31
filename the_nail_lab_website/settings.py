@@ -234,8 +234,13 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SEC
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = reverse_lazy('homepage')
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = False  # Since using HTTP locally
-SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = ENVIRONMENT == "production"
+
+if ENVIRONMENT == "production":
+    SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'https://the-nail-lab.onrender.com/complete/google-oauth2/'
+else:
+    SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
+
 
 SOCIAL_AUTH_PIPELINE = [
     # 1. Get info from Google
