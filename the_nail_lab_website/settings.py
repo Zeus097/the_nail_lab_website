@@ -10,10 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
+from decouple import config, Csv
+from dotenv import load_dotenv
+
 import os
 
-from decouple import config, Csv
+
+ENVIRONMENT = os.environ.get("DJANGO_ENV", "development").lower()
+if ENVIRONMENT == "development":
+    load_dotenv()
+
+
+
+from pathlib import Path
+
 
 import sys
 
@@ -21,8 +31,8 @@ from django.conf.urls import static
 from django.urls import reverse_lazy
 
 import dj_database_url
-from dotenv import load_dotenv
-load_dotenv()
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,12 +136,13 @@ AUTHENTICATION_BACKENDS = [
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-if 'test' in sys.argv:
+if ENVIRONMENT == "production":
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': ':memory:',
-        }
+        'default': dj_database_url.config(
+            default=f"postgresql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')}/{os.environ.get('DB_NAME')}",
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
 else:
     DATABASES = {
@@ -141,7 +152,7 @@ else:
             'USER': config('DB_USER'),
             'PASSWORD': config('DB_PASSWORD'),
             'HOST': config('DB_HOST'),
-            'PORT': config('DB_PORT'),
+            'PORT': config('DB_PORT', default='5432'),
         }
     }
 
