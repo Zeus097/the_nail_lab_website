@@ -25,7 +25,12 @@ def create_test_image_file():
 
 class TestGalleryView(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='ivan', email='ivan@test.com', password='asd123')
+        self.user = User.objects.create_user(
+            username='ivan',
+            email='ivan@test.com',
+            password='asd123',
+            telephone_number='0899123456',
+        )
         self.employee = EmployeeBio.objects.create(user=self.user)
         self.client.login(username='ivan', email='ivan@test.com', password='asd123')
 

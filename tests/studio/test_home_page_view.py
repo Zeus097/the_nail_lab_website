@@ -25,8 +25,8 @@ class TestHomePageView(TestCase):
             username='client',
             email='client@mail.com',
             password='123asd',
+            is_client=True,
             telephone_number='08971112346',
-            is_client=True
         )
 
         cls.employee_user = User.objects.create_user(
@@ -41,6 +41,7 @@ class TestHomePageView(TestCase):
             username='admin',
             email='admin@mail.com',
             password='asd123534dgd',
+            telephone_number='0899123456',
         )
 
         cls.client_profile = ClientProfile.objects.get(user=cls.client_user)
@@ -55,7 +56,8 @@ class TestHomePageView(TestCase):
         User.objects.create_user(
             username='testuser',
             email='test@mail.com',
-            password='asd123'
+            password='asd123',
+            telephone_number='0888123456',
         )
         self.client.login(username='testuser', password='asd123')
 

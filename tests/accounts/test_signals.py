@@ -12,6 +12,7 @@ class TestUserProfileSignals(TestCase):
             password='asd123',
             is_employee=False,
             is_client=False,
+            telephone_number='0899123456',
         )
 
         # Check after the signal is triggered
@@ -26,6 +27,7 @@ class TestUserProfileSignals(TestCase):
             password='asd123',
             is_employee=False,
             is_client=False,
+            telephone_number='0899123456',
         )
 
         client = ClientProfile.objects.filter(user=user)
@@ -37,7 +39,8 @@ class TestUserProfileSignals(TestCase):
             email='test1@example.com',
             password='asd1233215',
             is_employee=True,
-            is_client=False
+            is_client=False,
+            telephone_number='0899123456',
         )
 
         emp_bio = EmployeeBio.objects.filter(user=user).first()
@@ -50,7 +53,8 @@ class TestUserProfileSignals(TestCase):
             email='client1@example.com',
             password='d12332',
             is_employee=False,
-            is_client=True
+            is_client=True,
+            telephone_number='0899123456',
         )
         client_profile = ClientProfile.objects.filter(user=user)
         self.assertTrue(client_profile.exists())

@@ -16,6 +16,7 @@ class TestCurrentProfileDetailView(TestCase):
             password='asd123',
             email='client@mail.com',
             is_client=True,
+            telephone_number='0899123456',
         )
 
         cls.employee_user = User.objects.create_user(
@@ -23,6 +24,7 @@ class TestCurrentProfileDetailView(TestCase):
             password='asd123321',
             email='employee@mail.com',
             is_employee=True,
+            telephone_number='0899123456'
         )
 
 
@@ -32,6 +34,7 @@ class TestCurrentProfileDetailView(TestCase):
             email='otheruser@mail.com',
             is_client=False,
             is_employee=False,
+            telephone_number='0899123456'
         )
 
 

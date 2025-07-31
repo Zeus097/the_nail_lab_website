@@ -19,6 +19,7 @@ class AppointmentCreateViewTests(TestCase):
             password='asd123',
             email='client@mail.com',
             is_client=True,
+            telephone_number='0899123456',
         )
 
         cls.employee_user = User.objects.create_user(
@@ -26,6 +27,7 @@ class AppointmentCreateViewTests(TestCase):
             password='asd123321',
             email='employee@mail.com',
             is_employee=True,
+            telephone_number='0899123456',
         )
 
         cls.service = BaseService.objects.create(

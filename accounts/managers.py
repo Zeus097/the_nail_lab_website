@@ -1,13 +1,11 @@
 from django.contrib.auth.base_user import BaseUserManager
 
 class BaseUserManager(BaseUserManager):
-    def create_user(self, username, email, password=None, **extra_fields):
+    def create_user(self, username, email, telephone_number, password=None, **extra_fields):
         if not email:
             raise ValueError('Всеки потребител трябва да има имейл адрес.')
         if not username:
             raise ValueError('Всеки потребител трябва да има потребителско име.')
-
-        telephone_number = extra_fields.get('telephone_number')
         if not telephone_number:
             raise ValueError('Телефонният номер е задължителен.')
 
@@ -22,7 +20,7 @@ class BaseUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, email, password=None, **extra_fields):
+    def create_superuser(self, username, email, telephone_number, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -35,4 +33,10 @@ class BaseUserManager(BaseUserManager):
         if not extra_fields.get('is_superuser'):
             raise ValueError('Администраторът трябва да има включен is_superuser=True.')
 
-        return self.create_user(username, email, password, **extra_fields)
+        return self.create_user(
+            username=username,
+            email=email,
+            password=password,
+            telephone_number=telephone_number,
+            **extra_fields
+        )

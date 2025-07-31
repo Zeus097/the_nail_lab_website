@@ -7,7 +7,12 @@ User = get_user_model()
 
 class TestGalleryUploadView(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='ivan', email='ivan@test.com', password='asd123')
+        self.user = User.objects.create_user(
+            username='ivan',
+            email='ivan@test.com',
+            password='asd123',
+            telephone_number='0899123456',
+        )
         self.client.login(username='ivan', email='ivan@test.com', password='asd123')
 
     def test_get_request_returns_form(self):

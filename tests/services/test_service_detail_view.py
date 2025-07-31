@@ -16,6 +16,7 @@ class TestServiceDetailView(TestCase):
             password='asd123',
             email='client@mail.com',
             is_client=True,
+            telephone_number='0899123456',
         )
 
         cls.service = BaseService.objects.create(

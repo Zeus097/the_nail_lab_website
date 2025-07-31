@@ -12,6 +12,7 @@ class LogInWithEmailBackendTest(TestCase):
             email='test@mail.com',
             password='asd123',
             is_active=True,
+            telephone_number='0899123456'
         )
 
         self.inactive_user = User.objects.create_user(
@@ -19,6 +20,7 @@ class LogInWithEmailBackendTest(TestCase):
             email='test2@mail.com',
             password='asd123321',
             is_active=False,
+            telephone_number='0899123456'
         )
 
     def test_successful_authentication_insensitive_email_case(self):
