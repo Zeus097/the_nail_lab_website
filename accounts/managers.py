@@ -4,12 +4,20 @@ class BaseUserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
         if not email:
             raise ValueError('Всеки потребител трябва да има имейл адрес.')
-
         if not username:
             raise ValueError('Всеки потребител трябва да има потребителско име.')
 
+        telephone_number = extra_fields.get('telephone_number')
+        if not telephone_number:
+            raise ValueError('Телефонният номер е задължителен.')
+
         email = self.normalize_email(email)
-        user = self.model(username=username, email=email, **extra_fields)
+        user = self.model(
+            username=username,
+            email=email,
+            telephone_number=telephone_number,
+            **extra_fields
+        )
         user.set_password(password)
         user.save(using=self._db)
         return user

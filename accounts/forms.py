@@ -55,6 +55,13 @@ class BaseUserCreationForm(UserCreationForm):
             'placeholder': _('Потвърди паролата'),
         })
 
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.telephone_number = self.cleaned_data["telephone_number"]
+        if commit:
+            user.save()
+        return user
+
 
 class ProfileEditForm(forms.ModelForm):
     # Biography is defined like that,
