@@ -96,3 +96,4 @@ Werkzeug==3.0.6
 whitenoise==6.9.0
 django-storages
 boto3
+django-storages[boto3]
