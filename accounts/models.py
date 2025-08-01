@@ -1,5 +1,3 @@
-from django.core.exceptions import ValidationError
-
 from the_nail_lab_website import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
