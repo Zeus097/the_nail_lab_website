@@ -280,6 +280,8 @@ SOCIAL_AUTH_STRATEGY = 'social_django.strategy.DjangoStrategy'
 
 # ========== Supabase Storage (Media files) ==========
 if ENVIRONMENT == "production":
+    print("⚠️ [DEBUG] Using Supabase S3Boto3Storage for media files")
+
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
     AWS_ACCESS_KEY_ID = os.environ.get("SUPABASE_PUBLIC_ANON_KEY")
