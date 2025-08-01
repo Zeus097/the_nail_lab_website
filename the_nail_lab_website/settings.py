@@ -69,6 +69,10 @@ PROJECT_APPS = [
     'services',
     'photos',
     'appointments',
+<<<<<<< HEAD
+=======
+    'storages',  # For online db
+>>>>>>> ae15bfa (Supabase storage integration and settings cleanup)
 ]
 
 INSTALLED_APPS = [
@@ -218,6 +222,10 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae15bfa (Supabase storage integration and settings cleanup)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -274,3 +282,21 @@ SOCIAL_AUTH_STRATEGY = 'social_django.strategy.DjangoStrategy'
 
 
 #  ____________________________________________________
+<<<<<<< HEAD
+=======
+
+
+# ========== Supabase Storage (Media files) ==========
+if ENVIRONMENT == "production":
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+    AWS_ACCESS_KEY_ID = config("SUPABASE_PUBLIC_ANON_KEY")
+    AWS_SECRET_ACCESS_KEY = config("SUPABASE_PUBLIC_ANON_KEY")  # за Supabase, key = secret
+    AWS_STORAGE_BUCKET_NAME = config("SUPABASE_BUCKET")
+    AWS_S3_ENDPOINT_URL = f"{config('SUPABASE_URL')}/storage/v1"
+
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    AWS_QUERYSTRING_AUTH = False  # Important for public URL access
+
+>>>>>>> ae15bfa (Supabase storage integration and settings cleanup)
