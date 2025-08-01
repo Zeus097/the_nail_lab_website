@@ -31,9 +31,6 @@ class BaseUser(AbstractUser):
         validators=[ImageSizeValidator(5)],
     )
 
-    def clean(self):
-        if self.is_client and not self.telephone_number:
-            raise ValidationError("Клиентите трябва да имат телефонен номер.")
 
     def __str__(self):
         return self.username

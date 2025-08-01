@@ -11,7 +11,7 @@ UserModel = get_user_model()
 class BaseUserCreationForm(UserCreationForm):
     telephone_number = forms.CharField(
         max_length=20,
-        required=True,
+        required=True,  # It requires only through form (option to create admin without tel, through shell)
         label=_('Телефонен номер'),
         validators=[PhoneValidator()],
         widget=forms.TextInput(
