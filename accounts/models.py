@@ -7,6 +7,9 @@ from accounts.managers import BaseUserManager
 
 class BaseUser(AbstractUser):
 
+    objects = BaseUserManager()
+
+
     email = models.EmailField(unique=True)
     is_client = models.BooleanField(default=False)
     is_employee = models.BooleanField(default=False)
@@ -23,11 +26,6 @@ class BaseUser(AbstractUser):
         default='defaults/default_user.png',
         validators=[ImageSizeValidator(5)],
     )
-
-    objects = BaseUserManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'telephone_number']
 
     def __str__(self):
         return self.username
