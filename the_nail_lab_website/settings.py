@@ -69,7 +69,7 @@ PROJECT_APPS = [
     'services',
     'photos',
     'appointments',
-    'storages',  # For online db
+    'storages',  # Required for django-storages
 ]
 
 INSTALLED_APPS = [
