@@ -18,7 +18,7 @@ class BaseUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, email, telephone_number, password=None, **extra_fields):
+    def create_superuser(self, username, email, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -35,6 +35,6 @@ class BaseUserManager(BaseUserManager):
             username=username,
             email=email,
             password=password,
-            telephone_number=telephone_number,
+            telephone_number=extra_fields.get('telephone_number', ''),
             **extra_fields
         )
