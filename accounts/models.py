@@ -1,3 +1,5 @@
+from django.core.exceptions import ValidationError
+
 from the_nail_lab_website import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -17,7 +19,9 @@ class BaseUser(AbstractUser):
 
     telephone_number = models.CharField(
         max_length=20,
-        validators=[PhoneValidator()]
+        validators=[PhoneValidator()],
+        blank=True,
+        null=True,
     )
     photo = models.ImageField(
         upload_to='user_photos',
@@ -27,8 +31,14 @@ class BaseUser(AbstractUser):
         validators=[ImageSizeValidator(5)],
     )
 
+    def clean(self):
+        if self.is_client and not self.telephone_number:
+            raise ValidationError("Клиентите трябва да имат телефонен номер.")
+
     def __str__(self):
         return self.username
+
+
 
 
 class EmployeeBio(models.Model):

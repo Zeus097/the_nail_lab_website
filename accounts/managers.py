@@ -7,10 +7,6 @@ class BaseUserManager(BaseUserManager):
         if not username:
             raise ValueError('Всеки потребител трябва да има потребителско име.')
 
-        # only if not superuser
-        if not extra_fields.get('is_superuser') and not telephone_number:
-            raise ValueError('Телефонният номер е задължителен.')
-
         email = self.normalize_email(email)
         user = self.model(
             username=username,
