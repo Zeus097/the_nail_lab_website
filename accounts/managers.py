@@ -31,10 +31,12 @@ class BaseUserManager(BaseUserManager):
         if not extra_fields.get('is_superuser'):
             raise ValueError('Администраторът трябва да има включен is_superuser=True.')
 
+
+        telephone_number = extra_fields.pop('telephone_number', None)
         return self.create_user(
             username=username,
             email=email,
             password=password,
-            telephone_number=extra_fields.get('telephone_number', ''),
+            telephone_number=telephone_number,
             **extra_fields
         )
