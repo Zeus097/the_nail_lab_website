@@ -28,5 +28,5 @@ urlpatterns = [
     path('appointments/', include('appointments.urls')),
     path('photos/', include('photos.urls')),
     path('auth/', include('social_django.urls', namespace='social')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Because Claudinary  in Production
