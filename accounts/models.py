@@ -4,6 +4,8 @@ from django.db import models
 from accounts.validators import ImageSizeValidator, PhoneValidator
 from accounts.managers import BaseUserManager
 
+from cloudinary_storage.storage import MediaCloudinaryStorage
+
 
 class BaseUser(AbstractUser):
 
@@ -26,6 +28,7 @@ class BaseUser(AbstractUser):
         blank=True,
         null=True,
         # default='defaults/default_user.png',  --> Because Claudinary
+        storage=MediaCloudinaryStorage(),
         validators=[ImageSizeValidator(5)],
     )
 
