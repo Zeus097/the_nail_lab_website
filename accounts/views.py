@@ -27,6 +27,9 @@ class UserRegistrationView(CreateView):
 
         user.backend = settings.AUTHENTICATION_BACKENDS[0]
         login(self.request, user)
+
+        print("✅ Успешна регистрация:", user.email)
+
         return redirect(self.get_success_url())
 
 
