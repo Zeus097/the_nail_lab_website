@@ -4,7 +4,7 @@ from django.db import models
 from accounts.validators import ImageSizeValidator, PhoneValidator
 from accounts.managers import BaseUserManager
 
-from cloudinary_storage.storage import MediaCloudinaryStorage
+# from cloudinary_storage.storage import MediaCloudinaryStorage
 
 
 class BaseUser(AbstractUser):
@@ -27,7 +27,7 @@ class BaseUser(AbstractUser):
         # upload_to='user_photos', #    --> Because Claudinary
         blank=True,
         null=True,
-        storage=MediaCloudinaryStorage(),
+        # storage=MediaCloudinaryStorage(),
         validators=[ImageSizeValidator(5)],
     )
 

@@ -1,6 +1,6 @@
 from django.db import models
 
-from cloudinary_storage.storage import MediaCloudinaryStorage
+# from cloudinary_storage.storage import MediaCloudinaryStorage
 
 
 class BaseService(models.Model):
@@ -13,7 +13,7 @@ class BaseService(models.Model):
     price = models.DecimalField(max_digits=100, decimal_places=2)
     duration = models.IntegerField()
     service_photo = models.ImageField(
-        storage=MediaCloudinaryStorage(),
+        # storage=MediaCloudinaryStorage(),
     )
 
     def __str__(self):

@@ -31,7 +31,7 @@ if not SECRET_KEY:
 DEBUG = config('DEBUG', default='False').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', cast=Csv())
+# CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', cast=Csv())
 
 
 
@@ -125,27 +125,27 @@ AUTHENTICATION_BACKENDS = [
 
 
 
-#  DATABASE CONFIG
-# ===============================
-if ENVIRONMENT == "production":
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=f"postgresql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')}/{os.environ.get('DB_NAME')}",
-            conn_max_age=600,
-            ssl_require=True,
-        )
+# #  DATABASE CONFIG
+# # ===============================
+# if ENVIRONMENT == "production":
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=f"postgresql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')}/{os.environ.get('DB_NAME')}",
+#             conn_max_age=600,
+#             ssl_require=True,
+#         )
+#     }
+# else:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', default='5432'),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME'),
-            'USER': config('DB_USER'),
-            'PASSWORD': config('DB_PASSWORD'),
-            'HOST': config('DB_HOST'),
-            'PORT': config('DB_PORT', default='5432'),
-        }
-    }
+}
 
 
 
@@ -193,7 +193,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
-# MEDIA_URL = '/media/'    --> Empty for Cloudinary in Production
+MEDIA_URL = '/media/' #   --> Empty for Cloudinary in Production
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
@@ -260,13 +260,13 @@ SOCIAL_AUTH_PIPELINE = [
 # CLOUDINARY FOR media storage
 # =================================
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': config('CLOUDINARY_API_KEY'),
-    'API_SECRET': config('CLOUDINARY_API_SECRET'),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+#     'API_KEY': config('CLOUDINARY_API_KEY'),
+#     'API_SECRET': config('CLOUDINARY_API_SECRET'),
+# }
+#
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
