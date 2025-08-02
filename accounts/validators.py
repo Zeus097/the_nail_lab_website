@@ -37,7 +37,7 @@ class PhoneValidator:
     def __call__(self, value):
 
         # Remove spaces
-        normalized = value.replace(' ', '').replace('\t', '')
+        normalized = value.replace(' ', '').replace('\t', '').strip()
 
         if not self.phone_regex.match(normalized):
             raise ValidationError(self.message, code=self.code)
