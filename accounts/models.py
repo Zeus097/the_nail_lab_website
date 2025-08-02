@@ -22,7 +22,7 @@ class BaseUser(AbstractUser):
         null=True,
     )
     photo = models.ImageField(
-        upload_to='user_photos',
+        # upload_to='user_photos',  --> Because Claudinary
         blank=True,
         null=True,
         # default='defaults/default_user.png',  --> Because Claudinary

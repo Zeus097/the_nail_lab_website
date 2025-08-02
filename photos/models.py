@@ -19,7 +19,7 @@ class GalleryPhoto(models.Model):
     )
     upload_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(
-        upload_to='gallery_photos',
+        # upload_to='gallery_photos', BECAUSE OF CLOUDINARY
         validators=[ImageSizeValidator(5)],
     )
 
@@ -42,7 +42,7 @@ class CertificateImage(models.Model):
 
 
     photo = models.ImageField(
-        upload_to='certificates',
+        # upload_to='certificates', BECAUSE OF CLOUDINARY
         validators=[ImageSizeValidator(5)],
     )
     uploader = models.ForeignKey(
