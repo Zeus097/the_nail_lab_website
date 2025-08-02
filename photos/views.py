@@ -18,7 +18,7 @@ class GalleryView(LoginRequiredMixin, ListView):
         return GalleryPhoto.objects.all().order_by('-upload_date')
 
 
-class GalleryUploadView(LoginRequiredMixin, CreateView):
+class GalleryUploadView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     # Uses js to visualize the photo name
 
     model = GalleryPhoto
@@ -29,9 +29,24 @@ class GalleryUploadView(LoginRequiredMixin, CreateView):
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user.is_employee
 
+    def handle_no_permission(self):
+        return redirect(reverse_lazy("gallery"))
+
     def form_valid(self, form):
         form.instance.uploader = EmployeeBio.objects.get(user=self.request.user)
         return super().form_valid(form)
+
+
+
+    def form_invalid(self, form):
+        print("❌ FORM INVALID:", form.errors)
+        return super().form_invalid(form)
+
+
+
+
+
+
 
 
 class GalleryDeleteView(LoginRequiredMixin, DeleteView):

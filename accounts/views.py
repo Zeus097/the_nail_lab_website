@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib import messages
 from django.http import Http404
