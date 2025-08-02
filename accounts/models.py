@@ -25,7 +25,7 @@ class BaseUser(AbstractUser):
         upload_to='user_photos',
         blank=True,
         null=True,
-        default='defaults/default_user.png',
+        # default='defaults/default_user.png',  --> Because Claudinary
         validators=[ImageSizeValidator(5)],
     )
 
