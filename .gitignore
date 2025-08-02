@@ -1,7 +1,35 @@
+# Virtual environments
 venv/
 .venv/
-.envrc
+
+# Environment files
 .env
 .envrc
-.env
+
+# Django media and static
 /media/
+media/
+staticfiles/
+*.log
+*.sqlite3
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Django extra
+local_settings.py
+
+# IDEs and editors
+.vscode/
+.idea/
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Supabase/Cloudinary temp
+.supabase/
+*.bak
