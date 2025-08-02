@@ -23,9 +23,7 @@ class UserRegistrationView(CreateView):
         user.save()
 
         self.object = user
-
-        # USING LogInWithEmail from authentication.py to log in with email
-        login(self.request, user, backend='accounts.authentication.LogInWithEmail')
+        login(self.request, user)
         return redirect(self.get_success_url())
 
 
