@@ -12,8 +12,9 @@ class TestGalleryUploadView(TestCase):
             email='ivan@test.com',
             password='asd123',
             telephone_number='0899123456',
+            is_employee=True,
         )
-        self.client.login(username='ivan', email='ivan@test.com', password='asd123')
+        self.client.login(username='ivan', password='asd123')
 
     def test_get_request_returns_form(self):
         response = self.client.get('/photos/gallery/upload/')
