@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib import messages
 from django.http import Http404
@@ -23,6 +24,8 @@ class UserRegistrationView(CreateView):
         user.save()
 
         self.object = user
+
+        user.backend = settings.AUTHENTICATION_BACKENDS[0]
         login(self.request, user)
         return redirect(self.get_success_url())
 
