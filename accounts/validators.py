@@ -34,7 +34,9 @@ class PhoneValidator:
     code = 'invalid_phone'
 
     def __call__(self, value):
-        digits_only = re.sub(r'\D', '', value or '')
+        normalized = re.sub(r'\D', '', value or '')
 
-        if not (self.min_digits <= len(digits_only) <= self.max_digits):
+        if not (self.min_digits <= len(normalized) <= self.max_digits):
             raise ValidationError(self.message, code=self.code)
+
+

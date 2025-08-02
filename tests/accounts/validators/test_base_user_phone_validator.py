@@ -27,11 +27,11 @@ class PhoneValidatorTestCase(TestCase):
         self.validator(tel_number)
 
     def test_invalid_phone_input_with_less_than_nine_symbols(self):
-        tel_number = '+3599745'
+        tel_number = '3599745'
         with self.assertRaises(ValidationError):
             self.validator(tel_number)
 
     def test_invalid_phone_input_with_more_than_fifteen_symbols(self):
-        tel_number = '+3599759974545599745'
+        tel_number = '3599759974545599745'
         with self.assertRaises(ValidationError):
             self.validator(tel_number)

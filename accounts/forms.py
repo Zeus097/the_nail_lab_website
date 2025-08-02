@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -54,6 +56,10 @@ class BaseUserCreationForm(UserCreationForm):
         self.fields['password2'].widget.attrs.update({
             'placeholder': _('Потвърди паролата'),
         })
+
+    def clean_telephone_number(self):
+        number = self.cleaned_data['telephone_number']
+        return re.sub(r'\D', '', number)
 
     def save(self, commit=True):
         user = super().save(commit=False)
