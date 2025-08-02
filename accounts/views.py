@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib import messages
 from django.http import Http404
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
@@ -22,13 +22,15 @@ class UserRegistrationView(CreateView):
 
         user.full_clean()
         user.save()
-
         self.object = user
 
-        user.backend = settings.AUTHENTICATION_BACKENDS[0]
-        login(self.request, user)
 
-        print("✅ Успешна регистрация:", user.email)
+        email = form.cleaned_data.get('email')
+        password = form.cleaned_data.get('password1')
+        authenticated_user = authenticate(self.request, username=email, password=password)
+
+        if authenticated_user:
+            login(self.request, authenticated_user)
 
         return redirect(self.get_success_url())
 

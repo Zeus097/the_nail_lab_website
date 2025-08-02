@@ -29,16 +29,6 @@ class BaseUser(AbstractUser):
         validators=[ImageSizeValidator(5)],
     )
 
-    # Saves ph. number without spaces.
-    def clean(self):
-        super().clean()
-        if self.telephone_number:
-            self.telephone_number = self.telephone_number.replace(
-                ' ', ''
-            ).replace(
-                '\t', ''
-            ).strip()
-
 
 
     def __str__(self):

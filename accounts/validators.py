@@ -28,16 +28,13 @@ class ImageSizeValidator:
 
 @deconstructible
 class PhoneValidator:
-
-    # Allowss ph. numbers between 9 and 5 diggits, optional starting with '+'
-    phone_regex = re.compile(r'^\+?\d{9,15}$')
-    message = "Телефонният номер трябва да съдържа от 9 до 15 цифри и може да започва с '+'."
+    min_digits = 9
+    max_digits = 15
+    message = "Телефонният номер трябва да съдържа между 9 и 15 цифри."
     code = 'invalid_phone'
 
     def __call__(self, value):
+        digits_only = re.sub(r'\D', '', value or '')
 
-        # Remove spaces
-        normalized = value.replace(' ', '').replace('\t', '').strip()
-
-        if not self.phone_regex.match(normalized):
+        if not (self.min_digits <= len(digits_only) <= self.max_digits):
             raise ValidationError(self.message, code=self.code)

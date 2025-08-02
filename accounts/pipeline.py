@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import login
 
 from accounts.models import ClientProfile
@@ -20,7 +21,8 @@ def check_profile_data(strategy, details, user=None, *args, **kwargs):
     needs_completion = not user.has_usable_password() or not user.telephone_number
 
     if needs_completion:
-        login(strategy.request, user, backend='django.contrib.auth.backends.ModelBackend')
+        login(strategy.request, user, backend=settings.AUTHENTICATION_BACKENDS[0])
+
         return strategy.redirect('/accounts/complete-profile/')
 
 
