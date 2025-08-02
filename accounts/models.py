@@ -24,10 +24,9 @@ class BaseUser(AbstractUser):
         null=True,
     )
     photo = models.ImageField(
-        # upload_to='user_photos',  --> Because Claudinary
+        # upload_to='user_photos', #    --> Because Claudinary
         blank=True,
         null=True,
-        # default='defaults/default_user.png',  --> Because Claudinary
         storage=MediaCloudinaryStorage(),
         validators=[ImageSizeValidator(5)],
     )
