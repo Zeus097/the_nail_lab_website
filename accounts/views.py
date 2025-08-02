@@ -17,15 +17,16 @@ class UserRegistrationView(CreateView):
     success_url = reverse_lazy('homepage')
 
     def form_valid(self, form):
-        response = super().form_valid(form)
-        user = self.object
+        user = form.save(commit=False)
 
-        user.telephone_number = form.cleaned_data.get('telephone_number', '')
+        user.full_clean()
         user.save()
+
+        self.object = user
 
         # USING LogInWithEmail from authentication.py to log in with email
         login(self.request, user, backend='accounts.authentication.LogInWithEmail')
-        return response
+        return redirect(self.get_success_url())
 
 
 # GOOGLE LOG IN
