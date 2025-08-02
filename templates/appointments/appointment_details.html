@@ -9,7 +9,9 @@
             <p><strong>Вид на услугата:</strong> {{ appointment.service.name }}</p>
             <p><strong>Клиент:</strong> {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}</p>
             <p><strong>Специалист:</strong> {{ appointment.employee.user.get_full_name|default:appointment.employee.user.username }}</p>
-            <p><strong>Телефон:</strong> {{ appointment.client.user.telephone_number }}</p>
+            {% if appointment.client.user.telephone_number %}
+                <p><strong>Телефон:</strong> {{ appointment.client.user.telephone_number }}</p>
+            {% endif %}
             <p><strong>Имейл адрес:</strong> {{ appointment.client.email }}</p>
             <p><strong>Дата и час:</strong> {{ appointment.date }} – {{ appointment.start_time }}</p>
             <p>

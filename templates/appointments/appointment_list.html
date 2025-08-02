@@ -51,10 +51,12 @@
                     </p>
 
                     <p>
-                        Телефон:&nbsp;
-                        <strong>
-                            {{ appointment.client.user.telephone_number }}
-                        </strong>
+                        {% if appointment.client.user.telephone_number %}
+                            Телефон:&nbsp;
+                            <strong>
+                                {{ appointment.client.user.telephone_number }}
+                            </strong>
+                        {% endif %}
                     </p>
 
                     <p>
