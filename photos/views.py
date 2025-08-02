@@ -37,18 +37,6 @@ class GalleryUploadView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return super().form_valid(form)
 
 
-
-    def form_invalid(self, form):
-        print("❌ FORM INVALID:", form.errors)
-        return super().form_invalid(form)
-
-
-
-
-
-
-
-
 class GalleryDeleteView(LoginRequiredMixin, DeleteView):
     model = GalleryPhoto
     template_name = 'photos_gallery/gallery_delete_img.html'
