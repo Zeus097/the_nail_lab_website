@@ -6,21 +6,21 @@
     <div class="appointment-details-div">
 
         <div class="appointment-left-info">
-            <p><strong>Вид на услугата:</strong> {{ appointment.service.name }}</p>
-            <p><strong>Клиент:</strong> {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}</p>
-            <p><strong>Специалист:</strong> {{ appointment.employee.user.get_full_name|default:appointment.employee.user.username }}</p>
+            <p><strong>Вид на услугата:&nbsp;&nbsp;</strong> {{ appointment.service.name }}</p>
+            <p><strong>Клиент:&nbsp;&nbsp;</strong> {{ appointment.client.user.get_full_name|default:appointment.client.user.username }}</p>
+            <p><strong>Специалист:&nbsp;&nbsp;</strong> {{ appointment.employee.user.get_full_name|default:appointment.employee.user.username }}</p>
             {% if appointment.client.user.telephone_number %}
-                <p><strong>Телефон:</strong> {{ appointment.client.user.telephone_number }}</p>
+                <p><strong>Телефон:&nbsp;&nbsp;</strong> {{ appointment.client.user.telephone_number }}</p>
             {% endif %}
-            <p><strong>Имейл адрес:</strong> {{ appointment.client.email }}</p>
-            <p><strong>Дата и час:</strong> {{ appointment.date }} – {{ appointment.start_time }}</p>
+            <p><strong>Имейл адрес:&nbsp;&nbsp;</strong> {{ appointment.client.email }}</p>
+            <p><strong>Дата и час:&nbsp;&nbsp;</strong> {{ appointment.date }} – {{ appointment.start_time }}</p>
             <p>
-                <strong>Време и цена:</strong> 
+                <strong>Време и цена:&nbsp;&nbsp;</strong>
                 {{ appointment.service.duration }}мин. – {{ appointment.service.price}} лв
             </p>
 
             {% if appointment.comment %}
-                <p><strong>Коментар:</strong> {{ appointment.comment }}</p>
+                <p><strong>Коментар:&nbsp;&nbsp;</strong> {{ appointment.comment }}</p>
             {% endif %}
 
             <div class="appointment-buttons">

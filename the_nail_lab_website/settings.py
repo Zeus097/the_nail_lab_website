@@ -193,7 +193,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
-# MEDIA_URL = '/media/'    --> Empty for Cloudinary in Production
+# MEDIA_URL = '/media/'  #  --> Empty for Cloudinary in Production
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
