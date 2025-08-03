@@ -18,7 +18,7 @@
 <p>
   <img src="https://miro.medium.com/v2/resize:fit:1400/1*YWzEFaE_YKwhKYStTkMpGw.png" alt="Media" width="55" style="vertical-align:middle;"/>
   <span style="vertical-align:middle; font-weight: bold
-">&nbsp;&nbsp;&nbsp;Media Service</span>
+">&nbsp;&nbsp;&nbsp;Media Service hosted on <a href="https://cloudinary.com" target="_blank">CLOUDINARY</a></span>
 </p>
 
 
