@@ -223,7 +223,8 @@ Admin intervention, using Admin panel.
 
 ## User point of view
 <img width="583" height="471" alt="userview_gallery" src="https://github.com/user-attachments/assets/15a3fdba-b973-45b3-abcd-b551d92b156e" />
-<img width="733" height="735" alt="certificates" src="https://github.com/user-attachments/assets/a0381ad7-fe2f-4a63-b55f-92e251619096" />
+
+<br></br>
 
 ## Employee point of view
 <img width="608" height="599" alt="employeeview_gallery" src="https://github.com/user-attachments/assets/e8bebc37-0b09-46ba-b1a8-856c60c01122" />
@@ -259,10 +260,8 @@ name and service description.
 * It's contains the logic for homepage.
 * Based on the user role, it shows different content.
     
-* If the user is anonymous it renders homepage with no-profile.
-* This is the landing page and the user have only 'get' permissions.
-
-<br></br>
+* If the user is anonymous it renders homepage with no-profile.</br>
+This is the landing page and the user have only 'get' permissions.
 
 <img width="661" height="845" alt="homepage_annonumous" src="https://github.com/user-attachments/assets/ee9656bb-061c-4f78-b938-01e929c4f103" />
    
