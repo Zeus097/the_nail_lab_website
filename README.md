@@ -1,4 +1,26 @@
-# The Nail Lab PetqG
+# 🌐 [The Nail Lab PetqG](https://the-nail-lab.onrender.com)
+
+
+## Technologies:
+
+
+<p>
+  <img src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" alt="Django Logo" width="40"/>
+  <span style="vertical-align: middle; font-weight: bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Framework&nbsp;&nbsp;&nbsp;</span>
+</p>
+
+
+<p>
+  <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL" width="30"/>
+  <span style="vertical-align: middle; font-weight: bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hosted on <a href="https://supabase.com" target="_blank">SUPABASE</a></span>
+</p>
+
+<p>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/1*YWzEFaE_YKwhKYStTkMpGw.png" alt="Media" width="55" style="vertical-align:middle;"/>
+  <span style="vertical-align:middle; font-weight: bold
+">&nbsp;&nbsp;&nbsp;Media Service</span>
+</p>
+
 
 
 ## Short description
@@ -6,6 +28,8 @@
         
         The website has a home page for users who do not have a user profile,
         with brief information about the site.
+
+
         
 <img width="632" height="841" alt="Screenshot 2025-07-21 at 14 36 07" src="https://github.com/user-attachments/assets/632ff90a-fcf3-47af-9d9d-4d75982a779f" />
 
@@ -46,6 +70,13 @@
     🏠 studio;
 
 ### 👤 accounts app
+
+<span style="font-weight: bold; color: #1b6d85">
+    The <span style="color: #00dd00">employee</span> profiles are set only 
+    by <span style="color: #00dd00">admin user</span> through admin panel. Admin have to <span style="color: #00dd00">assign
+    their services</span> through EmployeeBioAdmin(also through admin panel).
+</span>
+
     This app, contains the user profile logic.
     It has One BaseUser model and two children for 
     different user roles(EmployeeBio and ClientProfile).
@@ -54,9 +85,6 @@
     phone number validation.
 
     Every new user is set as client with the help of a signal.
-    The employee profiles are set only 
-    by admin user through admin panel and the Admin HAVE TO assign
-    their services through EmployeeBioAdmin(through admin panel). 
     Upon creation the signal checks if the new user has status and
     if not employee- it is set as client.
     
@@ -193,3 +221,4 @@
 ### Views tests
     As my SECRET_KEY is not public, the tests need the key assigned as a 
     variable, or to be placed as raw text in 'settings.py' for local debug.
+
