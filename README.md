@@ -21,29 +21,34 @@
 ">&nbsp;&nbsp;&nbsp;Media Service hosted on <a href="https://cloudinary.com" target="_blank">CLOUDINARY</a></span>
 </p>
 
-
+<br></br>
 
 ## Short description
-The Nail Lab PetqG is a Django Web Project.
+* The Nail Lab PetqG is a Django Web Project.
         
-The website has a home page for users who do not have a user profile,</br> 
+* The website has a home page for users who do not have a user profile,</br> 
 with brief information about the site.
 
 
         
 <img width="632" height="841" alt="Screenshot 2025-07-21 at 14 36 07" src="https://github.com/user-attachments/assets/632ff90a-fcf3-47af-9d9d-4d75982a779f" />
 
-Options to log in (if they have an account, they can also log in with Google) </br> 
+
+* Options to log in (if they have an account, they can also log in with Google) </br> 
 or register.
+
 
 <img width="1025" height="842" alt="Screenshot 2025-07-21 at 14 37 54" src="https://github.com/user-attachments/assets/fd8577b6-4465-494f-bcd8-1caa1be6d157" />
 <img width="481" height="796" alt="Screenshot 2025-07-21 at 14 38 19" src="https://github.com/user-attachments/assets/3151b42b-6c25-4181-893b-4d4072c48bdc" />      
 
-The website also has a home page for users who already have a user profile,</br> 
+* The website also has a home page for users who already have a user profile,</br> 
 having permission for full CRUD operations over their profile</br>
 and current appointments.
 
+
 <img width="624" height="734" alt="Screenshot 2025-07-21 at 14 41 00" src="https://github.com/user-attachments/assets/e1d041c5-4579-4c56-b59a-ea8c63d782ef" />
+
+<br></br>
 
 ## Purpose
 Its purpose is:
@@ -58,8 +63,10 @@ whom the appointment is made;
 of their work;
 * to show contacts and information about the specialist
 
-The user has access to their profile and can accordingly edit </br> 
+* The user has access to their profile and can accordingly edit </br> 
 and delete it if they wish;
+
+<br></br>
 
 ## The project has 5 apps
     
@@ -247,6 +254,7 @@ the employee- can see it too.
 
 <img width="614" height="925" alt="homepage_employee" src="https://github.com/user-attachments/assets/801749f6-fe56-437b-88e3-398debba0efe" />
 
+<br></br>
 
 ### Tests
 
@@ -258,7 +266,8 @@ the employee- can see it too.
 * As my SECRET_KEY is not public, the tests need the key assigned as a</br>
 variable, or to be placed as raw text in 'settings.py' for local debug.
 
-
+<br></br>
+  
 ## 💡 👨‍💻 🚀 &nbsp;Upcoming Features
 
 * 📩 Email notification. 
