@@ -24,7 +24,7 @@ class BaseUser(AbstractUser):
         null=True,
     )
     photo = models.ImageField(
-        # upload_to='user_photos', #    --> Because Claudinary
+        upload_to="user_photos/",
         blank=True,
         null=True,
         storage=MediaCloudinaryStorage(),
