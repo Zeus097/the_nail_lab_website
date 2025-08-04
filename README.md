@@ -306,5 +306,15 @@ variable, or to be placed as raw text in 'settings.py' for local debug.
 * 📩 Email notification. 
   * using 'Mailjet', when user create/edit/delete an appointment.
 
+
+* 📋 New Font. 
+
+
+* 👤 Biography hide/show option 
+
+
+* 🔎 Password hide/show option (while typing in Log in / Register form)
+  * Users want to see what they wrote befor submit
+
 <br></br>
 
