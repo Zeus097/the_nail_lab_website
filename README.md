@@ -57,7 +57,7 @@ and current appointments.
 
 * The design if responsive for mobile devices.
 
-<img width="1284" height="2778" alt="IMG_9364" src="https://github.com/user-attachments/assets/8a02d44c-1b1c-4a02-a895-32bb77e95f8c" />
+<img width="600" height="1300" alt="IMG_9364" src="https://github.com/user-attachments/assets/8a02d44c-1b1c-4a02-a895-32bb77e95f8c" />
 
 <br></br>
 
