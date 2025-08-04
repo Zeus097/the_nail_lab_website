@@ -55,6 +55,12 @@ and current appointments.
 
 <br></br>
 
+* The design if responsive for mobile devices.
+
+<img width="1284" height="2778" alt="IMG_9364" src="https://github.com/user-attachments/assets/8a02d44c-1b1c-4a02-a895-32bb77e95f8c" />
+
+<br></br>
+
 ## Purpose
 Its purpose is:
 * to show what services the specialist offers;
