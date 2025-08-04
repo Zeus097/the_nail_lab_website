@@ -48,8 +48,8 @@ PROJECT_APPS = [
     'photos',
     'appointments',
     'storages',  # Required for django-storages
-    'cloudinary',
-    'cloudinary_storage',
+    # 'cloudinary',
+    # 'cloudinary_storage',
 ]
 
 INSTALLED_APPS = [
