@@ -178,11 +178,11 @@ LOCALE_PATHS = [
 
 
 
-#  SECURITY COOKIES
-# ===============================
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
+# #  SECURITY COOKIES
+# # ===============================
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_HTTPONLY = True
 
 
 #  STATIC / MEDIA FILES
@@ -193,7 +193,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
-MEDIA_URL = '/media/' #   --> Empty for Cloudinary in Production
+MEDIA_URL = '/media_files/' #   --> Empty for Cloudinary in Production
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
@@ -223,10 +223,10 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = ENVIRONMENT == "production"
 
 
-if ENVIRONMENT == "production":
-    SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'https://the-nail-lab.onrender.com/complete/google-oauth2/'
-else:
-    SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
+# if ENVIRONMENT == "production":
+#     SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'https://the-nail-lab.onrender.com/complete/google-oauth2/'
+# else:
+SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
 
 
 
