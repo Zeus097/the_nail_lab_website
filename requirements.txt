@@ -118,5 +118,4 @@ wcwidth==0.2.13
 websockets==15.0.1
 Werkzeug==3.0.6
 whitenoise==6.9.0
-cloudinary==1.44.1
-django-cloudinary-storage==0.3.0
+
