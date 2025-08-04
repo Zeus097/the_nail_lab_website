@@ -180,9 +180,9 @@ LOCALE_PATHS = [
 
 #  SECURITY COOKIES
 # ===============================
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default='False').lower() in ('true', '1', 'yes')
+SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default='False').lower() in ('true', '1', 'yes')
+CSRF_COOKIE_HTTPONLY = config('CSRF_COOKIE_HTTPONLY', default='False').lower() in ('true', '1', 'yes')
 
 
 #  STATIC / MEDIA FILES
@@ -278,6 +278,9 @@ SOCIAL_AUTH_STRATEGY = 'social_django.strategy.DjangoStrategy'
 
 
 
+MAILJET_API_KEY = config('MAILJET_API_KEY')
+MAILJET_API_SECRET = config('MAILJET_API_SECRET')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 
 

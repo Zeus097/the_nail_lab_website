@@ -13,6 +13,7 @@ from appointments.forms import AppointmentCreateForm, AppointmentEditForm, DayOf
 from appointments.utils import find_earliest_available_slots
 
 from accounts.models import EmployeeBio, ClientProfile
+from accounts.utils import send_mailjet_email
 
 
 class AppointmentCreateView(LoginRequiredMixin, AppointmentFormPrefillMixin, CreateView):
@@ -40,7 +41,27 @@ class AppointmentCreateView(LoginRequiredMixin, AppointmentFormPrefillMixin, Cre
             form.add_error(None, e)
             return self.form_invalid(form)
 
-        return super().form_valid(form)
+
+        response = super().form_valid(form)
+
+        send_mailjet_email(
+            subject="Запазен час за нокти",
+            client_email=self.request.user.email,
+            employee_email=self.object.employee.user.email,
+            template_name="appointments/email_create_or_edit_appointment.html",
+            context={
+                "appointment": self.object,
+                "client": self.object.client,
+                "employee": self.object.employee,
+                "service": self.object.service,
+                "date": self.object.date,
+                "time": self.object.start_time,
+                "comment": self.object.comment if self.object.comment else "",
+            }
+        )
+
+        return response
+
 
     def get_initial(self):
         initial = super().get_initial()
