@@ -5,13 +5,10 @@
     <section class="register-section">
     
         <form method="post" class="register-form">
-            <h2 style="text-align: center;">Сигурни ли сте?
-            </h2>
+            <h2 style="text-align: center;">Сигурни ли сте?</h2>
             {% csrf_token %}
             <button type="submit">Да</button>
-            <a href="{% url 'appointment-details' object.pk %}" class="delete-form-a">
-                <button type="button">Отказ</button>
-            </a>
+            <button type="button" onclick="window.location.href='{% url 'appointment-details' object.pk %}'">Отказ</button>
         </form>
     
     </section>

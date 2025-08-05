@@ -44,21 +44,26 @@ class AppointmentCreateView(LoginRequiredMixin, AppointmentFormPrefillMixin, Cre
 
         response = super().form_valid(form)
 
-        send_mailjet_email(
-            subject="Запазен час за нокти",
-            client_email=self.request.user.email,
-            employee_email=self.object.employee.user.email,
-            template_name="appointments/email_create_or_edit_appointment.html",
-            context={
-                "appointment": self.object,
-                "client": self.object.client,
-                "employee": self.object.employee,
-                "service": self.object.service,
-                "date": self.object.date,
-                "time": self.object.start_time,
-                "comment": self.object.comment if self.object.comment else "",
-            }
-        )
+        client_email = self.request.user.email
+        employee_email = getattr(self.object.employee.user, 'email', None)
+        subj_message = "Часът е запазен успешно!"
+
+        if client_email and employee_email:
+            send_mailjet_email(
+                subject=subj_message,
+                client_email=client_email,
+                employee_email=employee_email,
+                template_name="appointments/email_notification_appointment.html",
+                context={
+                    "subj_message": subj_message,
+                    "employee": self.object.employee,
+                    "client": self.object.client,
+                    "service": self.object.service,
+                    "date": self.object.date,
+                    "time": self.object.start_time,
+                    "comment": self.object.comment or "",
+                }
+            )
 
         return response
 
@@ -103,7 +108,36 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Appoin
             return self.form_invalid(form)
 
         self.object.save()
-        return super().form_valid(form)
+
+
+        response = super().form_valid(form)
+
+
+        client_email = self.request.user.email
+        employee_email = getattr(self.object.employee.user, 'email', None)
+        subj_message = "Часът е променен успешно!"
+
+        if client_email and employee_email:
+            send_mailjet_email(
+                subject=subj_message,
+                client_email=client_email,
+                employee_email=employee_email,
+                template_name="appointments/email_notification_appointment.html",
+                context={
+                    "subj_message": subj_message,
+                    "employee": self.object.employee,
+                    "client": self.object.client,
+                    "service": self.object.service,
+                    "date": self.object.date,
+                    "time": self.object.start_time,
+                    "comment": self.object.comment or "",
+                }
+            )
+
+        return response
+
+
+
 
     def test_func(self):
         appointment = self.get_object()
@@ -120,6 +154,7 @@ class CurrentAppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, Appoin
 class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Appointment
     template_name = 'appointments/appointment_delete_confirmation.html'
+    success_url = reverse_lazy('homepage')
 
     def test_func(self):
         appointment = self.get_object()
@@ -129,7 +164,31 @@ class CurrentAppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, Dele
     def handle_no_permission(self):
         return redirect(reverse_lazy('homepage'))
 
-    success_url = reverse_lazy('homepage')
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+
+        client_email = self.request.user.email
+        employee_email = getattr(self.object.employee.user, 'email', None)
+        subj_message = "Часът е отменен!"
+
+        if client_email and employee_email:
+            send_mailjet_email(
+                subject=subj_message,
+                client_email=client_email,
+                employee_email=employee_email,
+                template_name="appointments/email_notification_appointment.html",
+                context={
+                    "subj_message": subj_message,
+                    "employee": self.object.employee,
+                    "client": self.object.client,
+                    "service": self.object.service,
+                    "date": self.object.date,
+                    "time": self.object.start_time,
+                    "comment": self.object.comment or "",
+                }
+            )
+
+        return super().post(request, *args, **kwargs)
 
 
 # -----------------------------------------------------------------------------------------------

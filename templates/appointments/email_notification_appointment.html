@@ -1,8 +1,20 @@
+<br>
+<br>
+
+<h1>{{ subj_message }}</h1>
+
+
+
 <section style="font-size: large">
-        <p>Услуга: <strong>{{ service }}</strong></p>
         <p>Служител: <strong>{{ employee }}</strong></p>
+        <p>Клиент: <strong>{{ client }}</strong></p>
+        <br>
+        <br>
+        <p>Услуга: <strong>{{ service }}</strong></p>
+        <br>
         <p>Описание: <strong>{{ service.description }}</strong></p>
         <p>Цена: <strong>{{ service.price }} лв.</strong></p>
+        <br>
         <p>Дата: <strong>{{ date }}</strong></p>
         <p>Час: <strong>{{ time }}</strong></p>
         {% if comment %}

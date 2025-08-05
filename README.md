@@ -21,6 +21,12 @@
 ">&nbsp;&nbsp;&nbsp;Media Service hosted on <a href="https://cloudinary.com" target="_blank">CLOUDINARY</a></span>
 </p>
 
+<p>
+  <img width="52" height="60" alt="idVxchacqs_1754387376722" src="https://github.com/user-attachments/assets/5707e8d8-8445-468b-8683-389eb1c06475" />
+  <span style="vertical-align:middle; font-weight: bold
+">&nbsp;&nbsp;&nbsp;Email provider <a href="https://www.mailjet.com/" target="_blank">MAILJET</a></span>
+</p>
+
 <br></br>
 
 ## Short description
@@ -308,10 +314,6 @@ variable, or to be placed as raw text in 'settings.py' for local debug.
 <br></br>
   
 ## 💡 👨‍💻 🚀 &nbsp;Upcoming Features
-
-* 📩 Email notification. 
-  * using 'Mailjet', when user create/edit/delete an appointment.
-
 
 * 📋 New Font. 
 
