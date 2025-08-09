@@ -30,7 +30,4 @@ def send_mailjet_email(subject, client_email,employee_email, template_name, cont
 
     result = mailjet.send.create(data=data)
 
-    print("STATUS:", result.status_code)
-    print("RESPONSE:", result.json())
-
     return result.status_code == 200
