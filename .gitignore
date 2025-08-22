@@ -12,10 +12,12 @@ media/
 staticfiles/
 *.log
 *.sqlite3
+
+# Bytecode / cache
 *.pyc
-__pycache__/
 *.pyo
 *.pyd
+__pycache__/
 
 # Django extra
 local_settings.py
@@ -33,9 +35,3 @@ htmlcov/
 # Supabase/Cloudinary temp
 .supabase/
 *.bak
-__pycache__/
-__pycache__/
-*.pyc
-__pycache__/
-*.pyc
-.idea/
