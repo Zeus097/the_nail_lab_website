@@ -15,6 +15,7 @@ class BaseService(models.Model):
     service_photo = models.ImageField(
         storage=MediaCloudinaryStorage(),
     )
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.name}"

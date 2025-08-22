@@ -11,7 +11,12 @@ def inject_service_if_valid(service_id, kwargs):
 
 
 def inject_employee_if_valid(employee_id, kwargs):
-    employee = EmployeeBio.objects.filter(id=employee_id).first()
+    try:
+        emp_id = int(str(employee_id).strip())  # ще хвърли ако е '' или None
+    except (TypeError, ValueError):
+        return kwargs  # нищо не добавяме
+
+    employee = EmployeeBio.objects.filter(id=emp_id).first()
     if employee:
         kwargs.setdefault('initial', {})['employee'] = employee.id
     return kwargs

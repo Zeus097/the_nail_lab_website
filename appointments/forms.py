@@ -33,7 +33,6 @@ class AppointmentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         service = kwargs.pop('service', None)
         employee_id = kwargs.pop('employee_id', None)
-
         super().__init__(*args, **kwargs)
 
         if not employee_id:
@@ -47,17 +46,16 @@ class AppointmentForm(forms.ModelForm):
         if employee_id:
             try:
                 employee = EmployeeBio.objects.get(pk=employee_id)
-                self.fields['service'].queryset = employee.services.all()
+                self.fields['service'].queryset = employee.services.filter(is_active=True)
             except EmployeeBio.DoesNotExist:
                 self.fields['service'].queryset = BaseService.objects.none()
         else:
-            self.fields['service'].queryset = BaseService.objects.all()
+            self.fields['service'].queryset = BaseService.objects.filter(is_active=True)
 
         if service:
             self.fields['service'].initial = service
 
         self.service_queryset = self.fields['service'].queryset
-
 
     def clean(self):
         cleaned_data = super().clean()
@@ -76,7 +74,7 @@ class AppointmentEditForm(AppointmentForm):
 
 class SlotSearchForm(forms.Form):
     employee = forms.ModelChoiceField(queryset=EmployeeBio.objects.all(), label="Служител")
-    service = forms.ModelChoiceField(queryset=BaseService.objects.all(), label="Услуга")
+    service = forms.ModelChoiceField(queryset=BaseService.objects.filter(is_active=True), label="Услуга")
     date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label="Дата")
 
 
@@ -93,10 +91,11 @@ class SlotSearchForm(forms.Form):
                 employee_id = self.initial.get('employee')
 
         if employee_id:
-            employee = EmployeeBio.objects.get(pk=employee_id)
-            self.fields['service'].queryset = employee.services.all()
-        else:
-            self.fields['service'].queryset = BaseService.objects.all()
+            try:
+                employee = EmployeeBio.objects.get(pk=employee_id)
+                self.fields['service'].queryset = employee.services.filter(is_active=True)
+            except EmployeeBio.DoesNotExist:
+                self.fields['service'].queryset = BaseService.objects.none()
 
 
 

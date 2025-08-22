@@ -11,7 +11,7 @@ from django.conf import settings
 class Appointment(models.Model):
     client = models.ForeignKey('accounts.ClientProfile', on_delete=models.CASCADE)
     employee = models.ForeignKey('accounts.EmployeeBio', on_delete=models.CASCADE)
-    service = models.ForeignKey('services.BaseService', on_delete=models.CASCADE)
+    service = models.ForeignKey('services.BaseService', on_delete=models.PROTECT)
     date = models.DateField()
     start_time = models.TimeField()
     comment = models.CharField(

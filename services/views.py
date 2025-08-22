@@ -28,7 +28,7 @@ class ServiceListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         #  За да търси и с малки букви - 'datcollate' (bg_BG.UTF-8)
-        queryset = self.model.objects.all()
+        queryset = self.model.objects.filter(is_active=True)
         search_parameter = self.request.GET.get(self.query_param)
 
         if search_parameter:
@@ -49,3 +49,7 @@ class ServiceDetailView(LoginRequiredMixin, DetailView):
     model = BaseService
     template_name = 'services/service_details.html'
     context_object_name = 'service'
+
+    def get_queryset(self):
+        return BaseService.objects.filter(is_active=True)
+

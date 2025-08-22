@@ -6,6 +6,7 @@ from services.models import BaseService
 
 @admin.register(BaseService)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'price', 'duration']
-    list_filter = ['name', 'price', 'duration']
-    search_fields = ['name', 'price', 'duration']
+    list_display = ['name', 'description', 'price', 'duration', 'is_active',]
+    list_editable = ['is_active',]
+    list_filter = ['is_active',]
+    search_fields = ['name',]
