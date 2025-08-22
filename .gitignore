@@ -33,3 +33,4 @@ htmlcov/
 # Supabase/Cloudinary temp
 .supabase/
 *.bak
+__pycache__/
