@@ -17,7 +17,9 @@
                         <div class="right-div">
                             <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
                             <p>Цена: {{ service.price }} лв.</p>
-                            <p>Време: {{ service.duration }}мин.</p>
+                            <p>Време: ≈{{ service.duration }}мин.</p>
+                            <p class="more-info">Цената и Времето са само за базова услуга.</p>
+                            <p class="more-info">За повече инфо: <a href="{% url 'service-prices' %}">Ценоразпис</a></p>
                         </div>
                     </span>
                 </div>

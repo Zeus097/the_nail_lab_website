@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         serviceInfo.innerHTML = `
             <strong>Цена:</strong> ${price} лв.<br>
-            <strong>Продължителност:</strong> ${duration} мин.
+            <strong>Продължителност: ≈</strong> ${duration} мин.
         `;
     }
 
