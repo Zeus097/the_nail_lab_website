@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="price-img-container">
+        <div class="price-img-scroller">
+            <a class="price-img-link"
+                href="{% static 'prices.jpg' %}"
+                target="_blank"
+               rel="noopener noreferrer"
+                title="Отвори ценоразписа в нов таб (пълен размер)"
+            >
+                <img class="price-img"
+                    src="{% static 'prices.jpg' %}"
+                    alt="Ценоразпис"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
