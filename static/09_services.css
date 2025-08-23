@@ -76,9 +76,19 @@
 .right-div {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    text-align: right;
+    text-align: center;
     align-items: center;
     gap: 8px;
+}
+
+.right-div .more-info {
+    opacity: 0.6;
+    font-size: medium;
+}
+
+.right-div .more-info a {
+    color: red;
+    opacity: max(100%);
 }
 
 .service-img {
@@ -134,6 +144,15 @@ body section.service-details-section {
     border-radius: 10px;
     width: 45%;
     height: 100%;
+}
+
+.service-details-div p.more-info {
+    background-color: transparent;
+    text-align: center;
+}
+
+.service-details-div p.more-info a {
+    color: red;
 }
 
 .service-details-div div {

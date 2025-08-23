@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.db.models.functions import Lower
 
 from services.forms import SearchForm
@@ -53,3 +53,6 @@ class ServiceDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         return BaseService.objects.filter(is_active=True)
 
+
+class ServicePricePageView(LoginRequiredMixin, TemplateView):
+    template_name = "services/service-prices.html"

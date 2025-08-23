@@ -10,7 +10,12 @@
             
             <div>
                 <span>Цена: {{ service.price }} лв.</span>
-                <span>Време: {{ service.duration }}мин.</span>
+                <span>Време: ≈{{ service.duration }}мин.</span>
+            </div>
+
+            <div>
+                <p class="more-info">Цената и Времето са само за базова услуга.</p>
+                <p class="more-info">За повече инфо: <a href="{% url 'service-prices' %}">Ценоразпис</a></p>
             </div>
 
             <a href="{% url 'appointment-create' %}?service_id={{ service.id }}" class="button-like-a">Запази час</a>
