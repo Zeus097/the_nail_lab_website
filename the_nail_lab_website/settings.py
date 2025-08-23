@@ -8,7 +8,6 @@ from django.conf.urls import static
 from django.urls import reverse_lazy
 
 
-
 #  ENVIRONMENT SETUP
 # ===============================
 ENVIRONMENT = os.environ.get("DJANGO_ENV", "development").lower()
@@ -21,7 +20,6 @@ if ENVIRONMENT == "development":
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 #  SECURITY
 # ===============================
 SECRET_KEY = config('SECRET_KEY')
@@ -32,7 +30,6 @@ DEBUG = config('DEBUG', default='False').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', cast=Csv())
-
 
 
 #  APPLICATIONS
@@ -62,7 +59,6 @@ INSTALLED_APPS = [
 ] + PROJECT_APPS + GOOGLE_AUTHENTICATION
 
 
-
 # MIDDLEWARE
 # ===============================
 MIDDLEWARE = [
@@ -80,7 +76,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'the_nail_lab_website.urls'
-
 
 
 #  TEMPLATES
@@ -111,7 +106,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'the_nail_lab_website.wsgi.application'
 
 
-
 #  AUTHENTICATION
 # ===============================
 AUTHENTICATION_BACKENDS = [
@@ -122,7 +116,6 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
-
 
 
 #  DATABASE CONFIG
@@ -148,7 +141,6 @@ else:
     }
 
 
-
 #  PASSWORD VALIDATORS
 # ===============================
 AUTH_PASSWORD_VALIDATORS = [
@@ -157,7 +149,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
-
 
 
 #  LOCALIZATION
@@ -177,7 +168,6 @@ LOCALE_PATHS = [
 ]
 
 
-
 #  SECURITY COOKIES
 # ===============================
 CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default='False').lower() in ('true', '1', 'yes')
@@ -187,15 +177,39 @@ CSRF_COOKIE_HTTPONLY = config('CSRF_COOKIE_HTTPONLY', default='False').lower() i
 
 #  STATIC / MEDIA FILES
 # ===============================
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'static']  # project-level static (keep if used)
 
 
-# MEDIA_URL = '/media/'  #  --> Empty for Cloudinary in Production
+# IMPORTANT: storage split for DEV vs PROD
+if DEBUG:
+    STORAGES = {
+        # default (MEDIA) stays on Cloudinary via DEFAULT_FILE_STORAGE below
+        "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
+    }
+    # Handy for dev: serve fresh files without collectstatic
+    WHITENOISE_AUTOREFRESH = True
+    WHITENOISE_USE_FINDERS = True
+else:
+    STORAGES = {
+        # default (MEDIA) stays on Cloudinary via DEFAULT_FILE_STORAGE below
+        "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},
+    }
+
+
+# MEDIA
+# MEDIA_URL = '/media/'  # Empty for Cloudinary in Production
 MEDIA_ROOT = BASE_DIR / 'media'
 
+
+# Cloudinary for MEDIA files
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': config('CLOUDINARY_API_KEY'),
+    'API_SECRET': config('CLOUDINARY_API_SECRET'),
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 #  PRIMARY KEY TYPE
@@ -203,13 +217,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 #  CUSTOM USER MODEL
 # ===============================
 AUTH_USER_MODEL = 'accounts.BaseUser'
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
-
 
 
 #  GOOGLE OAUTH2 SETTINGS
@@ -222,16 +234,12 @@ LOGOUT_URL = reverse_lazy('logout')
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = ENVIRONMENT == "production"
 
-
 if ENVIRONMENT == "production":
     SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'https://the-nail-lab.onrender.com/complete/google-oauth2/'
 else:
     SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/google-oauth2/'
 
-
-
 SOCIAL_AUTH_PIPELINE = [
-
     # 1. Get info from Google
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
@@ -248,45 +256,19 @@ SOCIAL_AUTH_PIPELINE = [
     # 4. Connecting social account with the user
     'social_core.pipeline.social_auth.associate_user',
 
-    # 5. CUSTOM LOGIC (safe, already has `user`)
+    # 5. CUSTOM LOGIC  (safe, already has `user`)
     'accounts.pipeline.create_client_profile',  # Creating client
-    'accounts.pipeline.check_profile_data',     # Redirecting if no password/ph. number
+    'accounts.pipeline.check_profile_data',    # Redirecting if no password/ph. number
 
     # 6. Loading additional data
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 ]
 
-# CLOUDINARY FOR media storage
-# =================================
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': config('CLOUDINARY_API_KEY'),
-    'API_SECRET': config('CLOUDINARY_API_SECRET'),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-
-
 
 # Helps social_django generate absolute URLs correctly
 SOCIAL_AUTH_STRATEGY = 'social_django.strategy.DjangoStrategy'
 
-
-
-
 MAILJET_API_KEY = config('MAILJET_API_KEY')
 MAILJET_API_SECRET = config('MAILJET_API_SECRET')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
-
-
-
-
-
-
-
-
-

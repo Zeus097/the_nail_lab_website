@@ -137,3 +137,18 @@
     background-color: black;
     border-radius: 10px;
 }
+
+.form-errors {
+    background-color: #ffe0e0;
+    border-left: 4px solid #cc103e;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.field-errors p {
+    color: #cc103e;
+    margin: 0;
+    font-weight: 500;
+}
