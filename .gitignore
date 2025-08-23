@@ -35,3 +35,4 @@ htmlcov/
 # Supabase/Cloudinary temp
 .supabase/
 *.bak
+.DS_Store
