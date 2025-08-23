@@ -32,6 +32,10 @@ class HomePageView(TemplateView):
                     date__gte=today
                 ).order_by("date", "start_time")
 
+                context['day_off_list'] = DayOff.objects.select_related(
+                    'employee', 'employee__user'
+                ).order_by('date')
+
             elif hasattr(user, "employeebio"):
                 employee = user.employeebio
                 appointment_qs = Appointment.objects.filter(
@@ -41,6 +45,10 @@ class HomePageView(TemplateView):
                     |
                     Q(date__gte=today)
                 ).order_by("date", "start_time")
+
+                context['day_off_list'] = DayOff.objects.select_related(
+                    'employee', 'employee__user'
+                ).order_by('date')
 
             elif hasattr(user, "clientprofile"):
                 appointment_qs = Appointment.objects.filter(
@@ -57,10 +65,6 @@ class HomePageView(TemplateView):
             context['page_obj'] = page_obj
             context['is_paginated'] = page_obj.has_other_pages()
             context['paginator'] = paginator
-
-            context['day_off_list'] = DayOff.objects.select_related(
-                'employee', 'employee__user'
-            ).order_by('date')
 
         return context
 
