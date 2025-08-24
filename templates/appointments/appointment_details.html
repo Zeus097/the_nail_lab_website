@@ -16,7 +16,11 @@
             <p><strong>Дата и час:&nbsp;&nbsp;</strong> {{ appointment.date }} – {{ appointment.start_time }}</p>
             <p>
                 <strong>Време и цена:&nbsp;&nbsp;</strong>
-                ≈{{ appointment.service.duration }}мин. – {{ appointment.service.price}} лв
+                ≈{{ appointment.service.duration }}мин. //
+                {{ appointment.service.price}} лв.
+                {% if appointment.service.max_price %}
+                    - {{ appointment.service.max_price }} лв.
+                {% endif %}
             </p>
 
             {% if appointment.comment %}
