@@ -13,7 +13,15 @@
         <p>Услуга: <strong>{{ service }}</strong></p>
         <br>
         <p>Описание: <strong>{{ service.description }}</strong></p>
-        <p>Цена: <strong>{{ service.price }} лв.</strong></p>
+        <p>
+            Цена:
+                <strong>
+                    {{ service.price }} лв.
+                    {% if service.max_price %}
+                        - {{ service.max_price }} лв.
+                    {% endif %}
+                </strong>
+        </p>
         <br>
         <p>Дата: <strong>{{ date }}</strong></p>
         <p>Час: <strong>{{ time }}</strong></p>

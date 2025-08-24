@@ -27,6 +27,9 @@
                     <p>
                         <strong>Цена:&nbsp;</strong>
                         {{ appointment.service.price}} лв.
+                        {% if appointment.service.max_price %}
+                            - {{ appointment.service.max_price }} лв.
+                        {% endif %}
                     </p>
 
                     <p>

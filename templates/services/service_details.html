@@ -9,7 +9,12 @@
             <p>{{ service.description }}</p>
             
             <div>
-                <span>Цена: {{ service.price }} лв.</span>
+                <span>
+                    Цена: {{ service.price }} лв.
+                    {% if service.max_price %}
+                        - {{ service.max_price }} лв.
+                    {% endif %}
+                </span>
                 <span>Време: ≈{{ service.duration }}мин.</span>
             </div>
 

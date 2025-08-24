@@ -27,6 +27,10 @@
             {% for service in form.service_queryset %}
                 <option value="{{ service.id }}"
                         data-price="{{ service.price }}"
+                        {% if service.max_price %}
+                            data-max-price="{{ service.max_price }}"
+                        {% endif %}
+
                         data-duration="{{ service.duration }}"
                         {% if service.id == selected_service_id %}selected{% endif %}>
                     {{ service.name }}
