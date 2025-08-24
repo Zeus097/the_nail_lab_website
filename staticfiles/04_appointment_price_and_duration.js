@@ -9,12 +9,27 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         const price = selectedOption.getAttribute('data-price');
+        const maxPrice = selectedOption.getAttribute('data-max-price');
         const duration = selectedOption.getAttribute('data-duration');
 
-        serviceInfo.innerHTML = `
-            <strong>Цена:</strong> ${price} лв.<br>
-            <strong>Продължителност: ≈</strong> ${duration} мин.
-        `;
+        let priceText = '';
+        if (price != null && price !== '') {
+            if (maxPrice != null && maxPrice !== '' && maxPrice !== price) {
+                priceText = `${price} лв. - ${maxPrice} лв.`;
+            } else {
+                priceText = `${price} лв.`;
+            }
+        }
+
+
+        const parts = []
+        if (priceText) parts.push(`<strong>Цена:</strong> ${priceText}`);
+        if (duration != null && duration !== '') {
+            parts.push(`<strong>Продължителност: ≈</strong> ${duration} мин.`);
+        }
+
+        serviceInfo.innerHTML = parts.join('<br>');
+
     }
 
     serviceSelect.addEventListener('change', servicePriceAndDuration);
