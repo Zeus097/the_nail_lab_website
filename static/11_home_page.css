@@ -168,6 +168,17 @@ main {
     width: fit-content;
 }
 
+.client-avatar {
+    max-width: 120px;
+    height: auto;
+    max-height: 140px;
+    border: 2px solid white;
+    width: fit-content;
+    border-radius: 30%;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
 .nails-section a:hover {
     border-radius: 2px;
     transition: all 0.3s ease;

@@ -7,7 +7,13 @@
 
 <section style="font-size: large">
         <p>Служител: <strong>{{ employee }}</strong></p>
-        <p>Клиент: <strong>{{ client }}</strong></p>
+        {% if client.get_full_name %}
+            <p>Клиент: <strong>{{ client.get_full_name }}</strong></p>
+        {% else %}
+            <p>Клиент: <strong>{{ client }}</strong></p>
+        {% endif %}
+
+
         <br>
         <br>
         <p>Услуга: <strong>{{ service }}</strong></p>
