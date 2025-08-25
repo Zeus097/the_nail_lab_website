@@ -10,6 +10,15 @@
                         Вид на услугата:&nbsp;{{ appointment.service.name }}
                     </h3>
 
+                    {% if appointment.client.user.photo %}
+                        <img
+                            class="client-avatar"
+                            src="{{ appointment.client.user.photo.url }}"
+                            alt="Client photo"
+
+                        >
+                    {% endif %}
+
                     <p>
                         Дата:&nbsp;
                         <strong>
