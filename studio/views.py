@@ -38,13 +38,12 @@ class HomePageView(TemplateView):
 
             elif hasattr(user, "employeebio"):
                 employee = user.employeebio
-                appointment_qs = Appointment.objects.filter(
-                    Q(employee=employee)
-                    |
-                    Q(created_by=user)
-                    |
-                    Q(date__gte=today)
-                ).order_by("date", "start_time")
+                appointment_qs = (
+                    Appointment.objects
+                    .filter(date__gte=today)
+                    .filter(Q(employee=employee) | Q(created_by=user))
+                    .order_by("date", "start_time")
+                )
 
                 context['day_off_list'] = DayOff.objects.select_related(
                     'employee', 'employee__user'

@@ -1,0 +1,30 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+    <div class="appointments-list-container">
+
+        {% if appointment_list %}
+
+            <h3>Брой записани часове: {{ appointment_list.count }}</h3>
+
+            <div class="available-appointments">
+                {% for appointment in appointment_list %}
+                    <p class="current-available-appointment">
+                        {{ appointment.service }}:
+                         {{ appointment.date }} - {{ appointment.start_time }}
+                        <a href="{% url 'appointment-details' appointment.pk %}" class="button-like-a">повече...</a>
+                    </p>
+
+                {% endfor %}
+            </div>
+
+        {% else %}
+            <h3>Няма записани часове.</h3>
+        {% endif %}
+
+    </div>
+
+    {% include 'common/pagination.html' %}
+
+{% endblock %}
