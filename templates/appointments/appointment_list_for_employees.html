@@ -6,7 +6,7 @@
 
         {% if appointment_list %}
 
-            <h3>Брой записани часове: {{ appointment_list.count }}</h3>
+            <h3>Всички записани часове: &nbsp;<span>{{ total_appointments }}</span></h3>
 
             <div class="available-appointments">
                 {% for appointment in appointment_list %}
