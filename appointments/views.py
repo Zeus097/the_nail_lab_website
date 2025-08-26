@@ -316,3 +316,8 @@ class BookedAppointmentsView(LoginRequiredMixin,UserPassesTestMixin, ListView):
         )
 
         return query.order_by('date', 'start_time')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_appointments'] = self.get_queryset().count()
+        return context
