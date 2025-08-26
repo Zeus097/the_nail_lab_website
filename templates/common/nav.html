@@ -39,7 +39,8 @@
                 <a href="{% url 'available-slots' %}" title="Свободничасове">
                     <div class="nav-item">
                         <i class="fa-solid fa-calendar-check"></i>
-                        <p>Запази свободен час</p>
+                        <p>Запази </p>
+                        <p>свободен час</p>
                     </div>
                 </a>
                 
@@ -47,7 +48,16 @@
                     <a href="{% url 'employee-day-off' %}" title="Почивен ден">
                         <div class="nav-item">
                             <i class="fa-solid fa-hand-peace"></i>
-                            <p>Почивен ден</p>
+                            <p>Почивен </p>
+                            <p>ден</p>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'booked-appointments' %}" title="Записани часове">
+                        <div class="nav-item">
+                            <i class="fa-solid fa-bookmark"></i>
+                            <p>Записани </p>
+                            <p>часове</p>
                         </div>
                     </a>
                 {% endif %}

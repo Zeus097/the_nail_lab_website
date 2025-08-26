@@ -1,9 +1,11 @@
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
+from django.utils.timezone import localtime
+from django.db.models import Q
 
 from appointments.config import MAX_SLOTS_PER_DAY
 from appointments.mixins import AppointmentFormPrefillMixin
@@ -295,5 +297,23 @@ class AvailableSlotsView(View):
 
 
 
+class BookedAppointmentsView(LoginRequiredMixin,UserPassesTestMixin, ListView):
+    model = Appointment
+    template_name = 'appointments/appointment_list_for_employees.html'
+    context_object_name = 'appointment_list'
+    ordering = ['date', 'start_time']
+    paginate_by = 8
 
 
+    def test_func(self):
+        return self.request.user.is_employee
+
+    def get_queryset(self):
+        now = localtime()
+        query = Appointment.objects.filter(
+            Q(date__gte=now.date())
+            |
+            Q(date=now.date(), start_time__gte=now.time())
+        )
+
+        return query
