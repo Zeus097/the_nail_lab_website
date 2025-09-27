@@ -1,8 +1,8 @@
-from datetime import datetime, date
+from datetime import datetime
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
-from django.utils.timezone import localtime
-from appointments.config import WORK_START, WORK_END
+from django.utils.timezone import localtime, localdate
+from appointments.config import WORK_START, WORK_END, is_sunday
 
 
 @deconstructible
@@ -15,7 +15,7 @@ class AppointmentModelCleanValidator:
         if not all([instance.employee, instance.service, instance.date, instance.start_time]):
             return
 
-        if instance.date < date.today():
+        if instance.date < localdate():
             raise ValidationError("Не може да се записва процедура за минала дата.")
 
         end_time = instance.end_time
@@ -39,10 +39,10 @@ class AppointmentModelCleanValidator:
                 raise ValidationError("Това време е заето – процедурата започнала по-рано още не е приключила.")
 
         day_off_qs = self.get_day_off_qs(instance) if self.get_day_off_qs else self._default_day_off(instance)
-        if day_off_qs.exists():
+        if day_off_qs.exists() or is_sunday(instance.date):
             raise ValidationError("Денят е отбелязан като почивен.")
 
-        if instance.date == date.today():
+        if instance.date == localdate():
             current_time = localtime().time()
             if instance.start_time < current_time:
                 raise ValidationError("Не може да се запазва час за изминал час от днешния ден.")
