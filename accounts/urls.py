@@ -9,8 +9,16 @@ urlpatterns = [
     path('login/', LoginView.as_view(authentication_form=CustomLoginForm), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
 
+
+    path('password-reset/', views.PasswordResetRequestView.as_view(), name='password_reset'),
+    path('password-reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset/complete/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+
+
     path('login/google/', views.google_login_redirect, name='login-google'),
     path('complete-profile/', views.CompleteProfileView.as_view(), name='complete-profile'),
+
 
     path('<int:pk>/', include([
         path('profile/', views.CurrentProfileDetailView.as_view(), name='profile-details'),

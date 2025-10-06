@@ -171,9 +171,10 @@ main {
 .client-avatar {
     max-width: 120px;
     height: auto;
+    max-height: 140px;
     border: 2px solid white;
     width: fit-content;
-    border-radius: 50%;
+    border-radius: 30%;
     padding: 4px;
     margin-bottom: 10px;
 }

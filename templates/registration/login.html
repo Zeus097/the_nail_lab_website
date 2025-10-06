@@ -4,7 +4,6 @@
 <section class="login-section">
 
     <form method="post" class="login-form">
-
         {% csrf_token %}
         {{ form.as_p }}
         <button class="login-button" type="submit">Вход</button>
@@ -16,17 +15,20 @@
             </a>
         </p>
 
+        <p class="register-prompt">
+            Забрави паролата си?
+            <a href="{% url 'password_reset' %}">
+                Натисни тук!
+            </a>
+        </p>
     </form>
 
-
     <div class="google-login-wrapper">
-
         <i class="fa-brands fa-google"></i>
         <p class="google-login-prompt">Или влез с Google:</p>
         <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next|urlencode }}" class="google-login-btn">
             Вход с Google
         </a>
-
     </div>
 
 </section>
