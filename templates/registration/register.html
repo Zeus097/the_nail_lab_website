@@ -1,33 +1,42 @@
 {% extends 'common/base.html' %}
 {% block content %}
 <section class="register-section">
-  <form method="post" class="register-form">
-    {% csrf_token %}
+    <form method="post" class="register-form">
+        {% csrf_token %}
 
-    {% if form.non_field_errors %}
-      <div class="form-errors">
-        {% for error in form.non_field_errors %}
-          <p>{{ error }}</p>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% for field in form %}
-      <div class="form-field">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field }}
-
-        {% if field.errors %}
-          <div class="field-errors">
-            {% for error in field.errors %}
-              <p>{{ error }}</p>
+        {% if form.non_field_errors %}
+            <div class="form-errors">
+            {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
             {% endfor %}
-          </div>
+            </div>
         {% endif %}
-      </div>
-    {% endfor %}
 
-    <button type="submit">Регистрация</button>
-  </form>
+        {% for field in form %}
+            <div class="form-field">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+
+            {% if field.errors %}
+                <div class="field-errors">
+                {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit">Регистрация</button>
+    </form>
+
+    <div class="google-login-wrapper">
+        <i class="fa-brands fa-google"></i>
+        <p class="google-login-prompt">Регистрация с Google:</p>
+        <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next|urlencode }}" class="google-login-btn">
+            Регистрирай се с Google
+        </a>
+    </div>
+
 </section>
 {% endblock %}

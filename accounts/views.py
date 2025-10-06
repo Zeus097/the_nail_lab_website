@@ -1,4 +1,7 @@
+from django.contrib.auth import views as auth_views
+
 from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from django.contrib import messages
 from django.http import Http404
 from django.contrib.auth import login, authenticate
@@ -138,6 +141,28 @@ class CurrentProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVi
 
     def get_success_url(self):
         return reverse_lazy('homepage')
+
+
+
+class PasswordResetRequestView(auth_views.PasswordResetView):
+    form_class = PasswordResetForm
+    template_name = "accounts/password_reset_form.html"
+    email_template_name = "accounts/password_reset_email.txt"
+    html_email_template_name = "accounts/password_reset_email.html"
+    subject_template_name = "accounts/password_reset_subject.txt"
+    success_url = reverse_lazy("password_reset_done")
+
+class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+    template_name = "accounts/password_reset_done.html"
+
+class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    template_name = "accounts/password_reset_confirm.html"
+    form_class = SetPasswordForm
+    success_url = reverse_lazy("password_reset_complete")
+
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = "accounts/password_reset_complete.html"
+
 
 
 
