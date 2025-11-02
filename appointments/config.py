@@ -12,3 +12,5 @@ def is_sunday(d: date) -> bool:
 
 # Work day max slots if employee has a free schedule
 MAX_SLOTS_PER_DAY = 36
+
+
