@@ -6,22 +6,22 @@
     padding: 20px;
 }
 
-/*            NOT CHRISTMAS             */
-/*.service-section {*/
-/*    width: 90%; !* 3 per row and 90% to prevent broken design when SEARCH find 1 service for example*!*/
-/*    min-width: 280px;*/
-/*    max-width: 500px;*/
-/*    height: 300px;*/
-/*    background-color: #e8e8e8;*/
-/*    background-position: right;*/
-/*    background-size: cover;*/
-/*    border-radius: 10px;*/
-/*    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
-/*    overflow: hidden;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    padding: 15px;*/
-/*}*/
+
+.service-section {
+    width: 90%; /* 3 per row and 90% to prevent broken design when SEARCH find 1 service for example*/
+    min-width: 280px;
+    max-width: 500px;
+    height: 300px;
+    background-color: #e8e8e8;
+    background-position: right;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
 
 
 .service-section span {
@@ -31,15 +31,17 @@
     width: 100%;
 }
 
-/*            NOT CHRISTMAS             */
-/*.service-section span div {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    flex: 1;*/
-/*    padding: 20px;*/
-/*    background-color: rgba(255, 255, 255, 0.6);*/
-/*}*/
+
+.service-section span div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
 
 
 .left-div {
@@ -48,10 +50,9 @@
     gap: 8px;
 }
 
-/*            NOT CHRISTMAS             */
-/*.left-div h4 {*/
-/*    margin-bottom: 4px;*/
-/*}*/
+.left-div h4 {
+    margin-bottom: 4px;
+}
 
 
 
