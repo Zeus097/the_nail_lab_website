@@ -1,0 +1,125 @@
+
+/*
+SERVICES
+*/
+.service-section {
+    width: 90%; /* 3 per row and 90% to prevent broken design when SEARCH find 1 service for example*/
+    min-width: 280px;
+    max-width: 500px;
+    height: 300px;
+    background-image: url('christmas_mode/flowers_christmas.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+
+
+.service-section span div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+
+}
+
+
+
+.left-div h4 {
+    margin-bottom: 4px;
+    color: white;
+}
+
+
+.left-div p {
+    color: white;
+}
+
+.right-div p {
+    color: white;
+}
+
+
+/*
+SEARCH BAR
+*/
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    background-image: url('christmas_mode/flowers_christmas.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    opacity: 0.7;
+    font-weight: bolder;
+}
+
+
+.search-form button {
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+}
+
+.search-form button {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c3c9c7;
+    border-color: #c3c9c7;
+    border-width: 3px;
+    border-style: dashed;
+}
+
+/*
+HOME PAGE
+*/
+
+.nails-section {
+    display: flex;
+    flex-direction: column;
+    background-image: url('christmas_mode/green_christmas.jpg');
+    background-position: center;
+    background-size: cover;
+    gap: 10px;
+    width: 100%;
+    height: fit-content;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.rest-day {
+    display: flex;
+    flex-direction: column;
+    background-image: url('christmas_mode/christmas_coffee.jpg');
+    background-position: center;
+    background-size: cover;
+    height: fit-content;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+

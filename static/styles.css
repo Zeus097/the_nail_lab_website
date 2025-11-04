@@ -18,3 +18,23 @@
 @import url("404.css");
 @import url("service-price.css");
 @import url("04_appointment_list_for_employees.css");
+
+
+
+/*
+   ------------  CHRISTMAS STYLE  ------------
+*/
+
+@import url("17_christmas_mode.css");
+
+/*
+To change it:
+    Put back commented code in:
+        09_services.css;
+        10_search_service.css
+        11_home_page.css
+    &
+    make the CHRISTMAS imports(styles.css) --> comment.
+
+    ------------  ---------------  ------------
+*/
