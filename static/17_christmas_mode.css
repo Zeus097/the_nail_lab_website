@@ -56,6 +56,14 @@ SEARCH BAR
 HOME PAGE
 */
 
+body {
+    background-image: url('christmas_mode/christmas-3.jpg');!important;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+
 .nails-section {
     background-image: url('christmas_mode/green_christmas.jpg');!important;
     background-size: cover;
@@ -67,4 +75,105 @@ HOME PAGE
     background-size: cover;
 }
 
+.unauthorized-div {
+    color: white;!important;
+}
 
+
+/*
+NAVIGATION PAGE
+*/
+
+.header-letter {
+    color: green;!important;
+    background: inherit;
+}
+
+
+.base-navigation-bar h1 {
+    color: white;!important;
+
+}
+
+.base-navigation-bar {
+    background-image: url('christmas_mode/christmas-1.jpg');!important;
+    background-position: center;
+    background-size: cover;
+    color: white;!important;
+    border: 1px solid #737773;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.nav-left a,
+.nav-right a,
+.nav-right .nav-item {
+    color: white;!important;
+}
+
+.hamburger {
+    color: white;!important;
+}
+
+
+/*
+FOOTER PAGE
+*/
+
+.footer-column h1 {
+    color: white;!important;
+}
+
+.footer-icon-bg {
+    border: 2px solid white;
+}
+
+
+.get-in-touch-vertical p {
+    color: white;!important;
+}
+
+
+/*
+LOGIN PAGE
+*/
+
+
+.login-form {
+    background-color: inherit;!important;
+}
+
+.register-prompt {
+    color: white;!important;
+}
+
+.google-login-prompt {
+    color: white;!important;
+}
+
+.register-form {
+    background-color: inherit;!important;
+}
+
+.register-form label {
+    color: white;!important;
+}
+
+.login-form label {
+    color: white;!important;
+}
+
+
+/*
+PAGINATION
+*/
+.step-links {
+    background-color: inherit;!important;
+}
+
+/*
+AVAILABLE SLOTS PAGE
+*/
+
+.slot-item {
+    background-color: inherit;!important;
+}
