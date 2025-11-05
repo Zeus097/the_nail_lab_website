@@ -79,6 +79,14 @@ body {
     color: white;!important;
 }
 
+.info-section a {
+    color: white;
+}
+
+.row-line {
+    background-color: white;
+}
+
 
 /*
 NAVIGATION PAGE
@@ -175,5 +183,18 @@ AVAILABLE SLOTS PAGE
 */
 
 .slot-item {
+    background-color: inherit;!important;
+}
+
+
+/*
+PROFILE PAGE
+*/
+
+.profile-details-div {
+    background-color: inherit;!important;
+}
+
+.employee-card {
     background-color: inherit;!important;
 }
