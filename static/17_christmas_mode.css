@@ -28,6 +28,21 @@ SERVICES
     color: white;!important;
 }
 
+.service-details-div p {
+    background-color: inherit;!important;
+}
+
+.service-details-div p.more-info a {
+    color: white;!important;
+    padding: 5px;
+    border-bottom: 2px solid #ffffff;!important;
+    border-radius: 15px;
+}
+
+.service-details-div p.more-info a:hover {
+    color: #cc103e;
+}
+
 
 /*
 SEARCH BAR
@@ -106,7 +121,7 @@ NAVIGATION PAGE
 .base-navigation-bar {
     background-image: url('christmas_mode/christmas-1.jpg');!important;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     color: white;!important;
     border: 1px solid #737773;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -182,8 +197,26 @@ PAGINATION
 AVAILABLE SLOTS PAGE
 */
 
+.no-slots-msg {
+    padding: 13px;
+    color: white!important;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: #cc103e!important;
+}
+
+
 .slot-item {
-    background-color: inherit;!important;
+    padding: 10px;
+    background-color: rgb(19, 117, 2);!important;
+    border: 2px solid white;
+    border-radius: 15px;
+
+
+
+
+
+
 }
 
 
