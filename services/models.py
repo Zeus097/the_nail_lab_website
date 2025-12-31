@@ -10,8 +10,8 @@ class BaseService(models.Model):
 
     name = models.CharField(max_length=150)
     description = models.CharField(max_length=250)
-    leva_price = models.DecimalField(max_digits=100, decimal_places=2)
-    euro_price = models.DecimalField(max_digits=100, decimal_places=2, null=True, blank=True)
+    euro_price = models.DecimalField(max_digits=100, decimal_places=2)
+    leva_price = models.DecimalField(max_digits=100, decimal_places=2, null=True, blank=True)
     duration = models.IntegerField()
     service_photo = models.ImageField(
         storage=MediaCloudinaryStorage(),
