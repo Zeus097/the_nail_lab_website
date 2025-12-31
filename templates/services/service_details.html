@@ -10,9 +10,9 @@
             
             <div>
                 <span>
-                    Цена: {{ service.leva_price }} лв.
-                    {% if service.euro_price %}
-                        // {{ service.euro_price }} €.
+                    Цена: {{ service.euro_price }} €.
+                    {% if service.leva_price %}
+                        // {{ service.leva_price }} лв.
                     {% endif %}
                 </span>
                 <span>Време: ≈{{ service.duration }}мин.</span>
