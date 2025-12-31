@@ -17,9 +17,9 @@
                         <div class="right-div">
                             <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
                             <p>
-                                Цена: {{ service.price }} лв.
-                                {% if service.max_price %}
-                                    - {{ service.max_price }} лв.
+                                Цена: {{ service.leva_price }} лв.
+                                {% if service.euro_price %}
+                                    // {{ service.euro_price }} €.
                                 {% endif %}
                             </p>
                             <p>Време: ≈{{ service.duration }}мин.</p>
