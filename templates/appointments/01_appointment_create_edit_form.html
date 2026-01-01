@@ -26,9 +26,9 @@
             <option value="">-- Избери услуга --</option>
             {% for service in form.service_queryset %}
                 <option value="{{ service.id }}"
-                        data-price="{{ service.price }}"
-                        {% if service.max_price %}
-                            data-max-price="{{ service.max_price }}"
+                        data-price="{{ service.euro_price }}"
+                        {% if service.leva_price %}
+                            data-max-price="{{ service.leva_price }}"
                         {% endif %}
 
                         data-duration="{{ service.duration }}"
