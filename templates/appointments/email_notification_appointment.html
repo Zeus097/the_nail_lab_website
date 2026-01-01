@@ -22,9 +22,9 @@
         <p>
             Цена:
                 <strong>
-                    {{ service.price }} лв.
-                    {% if service.max_price %}
-                        - {{ service.max_price }} лв.
+                    {{ service.euro_price }} €.
+                    {% if service.leva_price %}
+                        // {{ service.leva_price }} лв.
                     {% endif %}
                 </strong>
         </p>
