@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from django.utils.timezone import localtime
+from django.utils.timezone import localtime, now
 from appointments.models import Appointment, DayOff
 from django.core.paginator import Paginator
 
@@ -25,14 +25,19 @@ class HomePageView(TemplateView):
         context['is_admin'] = user.is_superuser
 
         appointment_qs = Appointment.objects.none()
+        current_dt = now()
 
         if user.is_authenticated:
             if user.is_superuser:
                 appointment_qs = Appointment.objects.filter(
-                    date__gte=today
+                    Q(date__gt=current_dt.date())
+                    |
+                    Q(date=current_dt.date(), start_time__gte=current_dt.time())
                 ).order_by("date", "start_time")
 
-                context['day_off_list'] = DayOff.objects.select_related(
+                context['day_off_list'] = DayOff.objects.filter(
+                    date__gte=today
+                ).select_related(
                     'employee', 'employee__user'
                 ).order_by('date')
 
@@ -45,9 +50,12 @@ class HomePageView(TemplateView):
                     .order_by("date", "start_time")
                 )
 
-                context['day_off_list'] = DayOff.objects.select_related(
+                context['day_off_list'] = DayOff.objects.filter(
+                    date__gte=current_dt.date()
+                ).select_related(
                     'employee', 'employee__user'
                 ).order_by('date')
+
 
             elif hasattr(user, "clientprofile"):
                 appointment_qs = Appointment.objects.filter(
