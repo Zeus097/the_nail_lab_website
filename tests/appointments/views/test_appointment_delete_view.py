@@ -45,7 +45,7 @@ class TestAppointmentDeleteView(TestCase):
         cls.service = BaseService.objects.create(
             name='test service',
             duration=120,
-            price=100,
+            euro_price=100,
         )
         cls.service.service_photo.save('small.gif', image, save=True)
 

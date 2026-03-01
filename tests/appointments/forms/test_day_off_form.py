@@ -27,7 +27,7 @@ class DayOffFormTest(TestCase):
         cls.client_profile = ClientProfile.objects.get_or_create(user=cls.client_user)[0]
         cls.employee = EmployeeBio.objects.get_or_create(user=cls.employee_user)[0]
 
-        cls.service = BaseService.objects.create(name="Маникюр", price=50, duration=60)
+        cls.service = BaseService.objects.create(name="Маникюр", euro_price=50, duration=60)
         cls.employee.services.add(cls.service)
 
     def test_valid_day_off(self):

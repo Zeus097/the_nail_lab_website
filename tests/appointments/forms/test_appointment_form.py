@@ -32,8 +32,8 @@ class AppointmentFormTest(TestCase):
         cls.employee = EmployeeBio.objects.get_or_create(user=cls.employee_user)[0]
         cls.employee2 = EmployeeBio.objects.get_or_create(user=cls.employee_user2)[0]
 
-        cls.service1 = BaseService.objects.create(name="Маникюр", price=50, duration=60)
-        cls.service2 = BaseService.objects.create(name="Педикюр", price=60, duration=45)
+        cls.service1 = BaseService.objects.create(name="Маникюр", euro_price=50, duration=60)
+        cls.service2 = BaseService.objects.create(name="Педикюр", euro_price=60, duration=45)
 
         cls.employee.services.add(cls.service1)
         cls.employee2.services.add(cls.service2)

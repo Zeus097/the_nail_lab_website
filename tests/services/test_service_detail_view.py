@@ -32,7 +32,7 @@ class TestServiceDetailView(TestCase):
         cls.service = BaseService.objects.create(
             name='Test Service',
             description='Test Description',
-            price=100,
+            euro_price=100,
             duration=150,
         )
         cls.service.service_photo.save('small.gif', image, save=True)
