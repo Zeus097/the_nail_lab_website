@@ -1,7 +1,7 @@
 
 /*
 SERVICES
-
+*/
 .service-section {
     background-image: url('christmas_mode/flowers_christmas.jpg');!important;
     background-position: center;!important;
@@ -119,11 +119,8 @@ NAVIGATION PAGE
 }
 
 .base-navigation-bar {
-    background-image: url('christmas_mode/christmas-1.jpg');!important;
-    background-position: center;
-    background-size: contain;
-    color: white;!important;
-    border: 1px solid #737773;
+    background-color: inherit;
+    background-image: none;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
@@ -251,5 +248,24 @@ APPOINTMENTS DETAILS PAGE
     background-color: inherit;!important;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;!important;
 }
+
+
+
+
+
+/* --------------------
+   Mobile /
+-------------------- */
+@media (max-width: 1170px) {
+    .base-navigation-bar.open {
+        background-image: url('summer_mode/login_background.jpg');!important;
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(255,255,255,0.9);
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+}
+
+
 
 

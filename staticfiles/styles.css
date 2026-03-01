@@ -23,14 +23,25 @@
 
 /*
    ------------  CHRISTMAS STYLE  ------------
+
+
+
+/*
+@import url("17_christmas_mode.css");
 */
 
-@import url("17_christmas_mode.css");
+
+@import url("18_summer_mode.css");
 
 /*
 
 To change it:
-    make @import url("17_christmas_mode.css"); --> comment.
+    make @import url("18_summer_mode.css"); --> comment.
 
     ------------  ---------------  ------------
+
+    !!!
+    summer mode has updates on hamburger visualisation.
+    !!!
+
 */
