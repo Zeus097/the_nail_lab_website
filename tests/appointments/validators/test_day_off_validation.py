@@ -15,7 +15,7 @@ class TestDayOffValidation(TestCase):
         cls.client_profile = ClientProfile.objects.get_or_create(user=client_user)[0]
         cls.employee = EmployeeBio.objects.get_or_create(user=employee_1_user)[0]
         cls.employee_2 = EmployeeBio.objects.get_or_create(user=employee_2_user)[0]
-        cls.service = BaseService.objects.create(name='test', duration=120, price=100)
+        cls.service = BaseService.objects.create(name='test', duration=120, euro_price=100)
         cls.rest_day_today = date.today()
 
     def test_day_off___same_employees_same_day_case(self):

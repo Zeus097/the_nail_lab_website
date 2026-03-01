@@ -26,7 +26,7 @@ class TestAppointmentValidations(TestCase):
         cls.client_profile = ClientProfile.objects.get_or_create(user=cls.client_user)[0]
         cls.employee = EmployeeBio.objects.get_or_create(user=cls.employee_user)[0]
 
-        cls.service = BaseService.objects.create(name='test service', duration=120, price=100)
+        cls.service = BaseService.objects.create(name='test service', duration=120, euro_price=100)
 
     def test_valid_appointment_creation(self):
         appointment = Appointment(

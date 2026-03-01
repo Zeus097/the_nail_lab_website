@@ -34,7 +34,7 @@ class TestServiceListView(TestCase):
             service = BaseService.objects.create(
                 name=f"service {i}",
                 description=f"Description {i}",
-                price=100,
+                euro_price=100,
                 duration=150
             )
             # Create a fresh SimpleUploadedFile every time!

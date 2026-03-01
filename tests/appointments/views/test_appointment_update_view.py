@@ -32,13 +32,13 @@ class CurrentAppointmentEditViewTests(TestCase):
 
         cls.service1 = BaseService.objects.create(
             name='Ноктопластика',
-            price=100,
+            euro_price=100,
             duration=90,
         )
 
         cls.service2 = BaseService.objects.create(
             name='Manicure',
-            price=60,
+            euro_price=60,
             duration=60,
         )
 

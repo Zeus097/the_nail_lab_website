@@ -30,7 +30,7 @@ class TestHomePageView(TestCase):
         cls.service = BaseService.objects.create(
             name='test_service',
             duration=120,
-            price=100,
+            euro_price=100,
         )
 
         # uploading the image

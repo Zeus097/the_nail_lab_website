@@ -13,7 +13,7 @@ class TestFindEarliestSlots(TestCase):
         cls.employee_user = BaseUser.objects.create_user(username="employee3", email='employee3@mail.com', password="pass123", telephone_number='08971332346')
         cls.client_profile = ClientProfile.objects.get_or_create(user=cls.client_user)[0]
         cls.employee = EmployeeBio.objects.get_or_create(user=cls.employee_user)[0]
-        cls.service = BaseService.objects.create(name="Nails", duration=60, price=90)
+        cls.service = BaseService.objects.create(name="Nails", duration=60, euro_price=90)
 
     def test_earliest_available_slots__excludes_occupied_slots__no_day_off__date_is_present(self):
         target_date = date.today() + timedelta(days=1)

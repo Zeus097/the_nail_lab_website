@@ -3,7 +3,6 @@ from datetime import date, timedelta
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-from django.utils import timezone
 from accounts.models import ClientProfile, EmployeeBio
 from services.models import BaseService
 from appointments.models import Appointment
@@ -32,39 +31,42 @@ class AppointmentCreateViewTests(TestCase):
 
         cls.service = BaseService.objects.create(
             name='Service 1',
-            price=100,
+            euro_price=100,
             duration=150,
         )
-
 
         cls.client_profile = ClientProfile.objects.get(user=cls.client_user)
         cls.employee_profile = EmployeeBio.objects.get(user=cls.employee_user)
         cls.employee_profile.services.add(cls.service)
-        cls.url = reverse('homepage')
+
+        cls.url = reverse('appointment-create')
 
 
     def setUp(self):
         self.client.login(username='client', password='asd123')
-        self.url = reverse('appointment-create')
-        self.future_date = (date.today() + timedelta(days=1)).isoformat()
+        self.future_date = (date.today() + timedelta(days=1)).strftime('%d/%m/%Y')
+
 
     def test_get_request_renders_form(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
         self.assertIn('form', response.context)
 
-
     def test_post_valid_data_creates_appointment_and_redirects(self):
         post_data = {
-            'employee': self.employee_profile.id,
-            'service': self.service.id,
+            'employee': self.employee_profile.pk,
+            'service': self.service.pk,
             'date': self.future_date,
-            'start_time': '09:00',
+            'start_time': '10:00',
             'comment': 'Test comment',
         }
+
         response = self.client.post(self.url, data=post_data)
 
-        # redirect after successful form submission
+        if response.status_code != 302:
+            print("STATUS:", response.status_code)
+            print("FORM ERRORS:", response.context['form'].errors)
+
         self.assertEqual(response.status_code, 302)
 
         appointment = Appointment.objects.first()
@@ -74,10 +76,10 @@ class AppointmentCreateViewTests(TestCase):
         self.assertEqual(appointment.service, self.service)
         self.assertEqual(appointment.comment, 'Test comment')
 
+
     def test_post_invalid_data_returns_form_errors(self):
-        # Missing service, which is required
         post_data = {
-            'employee': self.employee_profile.id,
+            'employee': self.employee_profile.pk,
             'date': self.future_date,
             'start_time': '09:00',
         }
@@ -89,8 +91,8 @@ class AppointmentCreateViewTests(TestCase):
         self.assertIn('service', form.errors)
         self.assertIn('Моля, изберете услуга.', form.errors['service'])
 
+
     def test_initial_data_from_url_parameters(self):
-        # Pass DATE and START_TIME in query string
         date_str = self.future_date
         start_time_str = '10:30'
 
@@ -103,9 +105,10 @@ class AppointmentCreateViewTests(TestCase):
         self.assertEqual(form.initial.get('date'), date_str)
         self.assertEqual(form.initial.get('start_time'), start_time_str)
 
+
     def test_login_required_redirects_anonymous(self):
         self.client.logout()
         response = self.client.get(self.url)
-
         self.assertEqual(response.status_code, 302)
         self.assertIn('login', response.url)
+
