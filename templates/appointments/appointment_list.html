@@ -1,6 +1,17 @@
 {% for appointment in appointment_list %}
     {% if appointment %}
-        <section class="nails-section" style="background-image: url('{{ appointment.service.service_photo.url }}');">
+        <section class="nails-section">
+
+            <!--
+
+                If needed nail service photo as a background
+                    - add this after the class:
+
+                style="background-image: url('{{ appointment.service.service_photo.url }}')
+
+            >-->
+
+
             <a href="{% url 'appointment-details' appointment.pk %}">
                 <div>
 
