@@ -1,10 +1,35 @@
+:root {
+    --glass-gradient: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.04),
+        transparent
+    );
+
+    --glass-blur: blur(3px) saturate(100%);
+
+    --glass-shadow:
+        0 10px 40px rgba(0,0,0,0.25),
+        0 2px 10px rgba(255,255,255,0.05) inset;
+}
 
 /*
 SERVICES
 */
 .service-section {
+
+    /*
     background-image: url('christmas_mode/flowers_christmas.jpg');!important;
     background-position: center;!important;
+    */
+
+    background: var(--glass-gradient);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
+    overflow: visible;
+
 }
 
 
@@ -49,21 +74,28 @@ SEARCH BAR
 */
 
 .search-form {
-    background-image: url('christmas_mode/flowers_christmas.jpg');!important;
-    background-position: center;
-    background-size: cover;
+    background: var(--glass-gradient);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
+    overflow: visible;
 }
 
 .search-input {
-    opacity: 0.7;
-    font-weight: bolder;
+    border: 1px dashed black;!important;
+
+    background: var(--glass-gradient);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
+    overflow: visible;
 }
 
 .search-form button {
     background: inherit;!important;
-    color: #c3c9c7;
-    border-color: #c3c9c7;
-    border-width: 3px;
+    color: #3b3b45;
+    border-color: #3b3b45;
+    border-width: 1px;
     border-style: dashed;
 }
 
@@ -72,7 +104,7 @@ HOME PAGE
 */
 
 body {
-    background-image: url('christmas_mode/christmas-3.jpg');!important;
+    background-image: url('summer_mode/home_page.png');!important;
     background-position: center;
     background-size: cover;
     color: white;
@@ -80,12 +112,15 @@ body {
 
 
 .nails-section {
-    background-image: url('christmas_mode/green_christmas.jpg');!important;
-    background-size: cover;
+    background: var(--glass-gradient);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
+    overflow: visible;
 }
 
 .rest-day {
-    background-image: url('christmas_mode/christmas_coffee.jpg');!important;
+    background-image: url('summer_mode/summer_beach.jpg');!important;
     background-position: center;
     background-size: cover;
 }
@@ -108,7 +143,7 @@ NAVIGATION PAGE
 */
 
 .header-letter {
-    color: green;!important;
+    color: #cd1040;!important;
     background: inherit;
 }
 
@@ -119,9 +154,11 @@ NAVIGATION PAGE
 }
 
 .base-navigation-bar {
-    background-color: inherit;
-    background-image: none;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background: var(--glass-gradient);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow);
+    overflow: visible;
 }
 
 .nav-left a,
@@ -208,12 +245,6 @@ AVAILABLE SLOTS PAGE
     background-color: rgb(19, 117, 2);!important;
     border: 2px solid white;
     border-radius: 15px;
-
-
-
-
-
-
 }
 
 
