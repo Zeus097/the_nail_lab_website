@@ -108,6 +108,13 @@ body {
     background-position: center;
     background-size: cover;
     color: white;
+
+
+
+    /*
+        SAFARI- resolution fix!
+    */
+    height: 100dvh;
 }
 
 
