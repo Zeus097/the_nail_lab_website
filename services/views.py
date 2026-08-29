@@ -42,7 +42,7 @@ class ServiceListView(LoginRequiredMixin, ListView):
             )
 
 
-        return queryset.order_by('id')
+        return queryset.order_by('name')
 
 
 class ServiceDetailView(LoginRequiredMixin, DetailView):
@@ -63,12 +63,12 @@ class ServicePricePageView(LoginRequiredMixin, TemplateView):
         context["manicure_services"] = BaseService.objects.filter(
             category=BaseService.Category.MANICURE,
             is_active=True,
-        )
+        ).order_by('name')
 
         context["pedicure_services"] = BaseService.objects.filter(
             category=BaseService.Category.PEDICURE,
             is_active=True,
-        )
+        ).order_by('name')
 
         return context
 
