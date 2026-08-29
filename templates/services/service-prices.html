@@ -1,23 +1,113 @@
 {% extends 'common/base.html' %}
-{% load static %}
+
 {% block content %}
 
-    <div class="price-img-container">
-        <div class="price-img-scroller">
-            <a class="price-img-link"
-                href="{% static 'prices.jpg' %}"
-                target="_blank"
-               rel="noopener noreferrer"
-                title="Отвори ценоразписа в нов таб (пълен размер)"
-            >
-                <img class="price-img"
-                    src="{% static 'prices.jpg' %}"
-                    alt="Ценоразпис"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </a>
-        </div>
-    </div>
+
+<div class="price-filters">
+    <button type="button" class="price-filter active" data-category="all">
+        Всички
+    </button>
+
+    <button type="button" class="price-filter" data-category="manicure">
+        Маникюр
+    </button>
+
+    <button type="button" class="price-filter" data-category="pedicure">
+        Педикюр
+    </button>
+</div>
+
+
+
+<div class="price-list">
+
+    <section class="price-category" data-category="manicure">
+        <h2>Маникюр</h2>
+
+        {% for service in manicure_services %}
+            <div class="service-row">
+
+                <div class="service-info">
+                    <h3>{{ service.name }}</h3>
+
+                    {% if service.description %}
+                        <p>{{ service.description }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="service-price">
+                    {% if service.euro_price and service.leva_price %}
+                        {{ service.euro_price }} € ({{ service.leva_price }} лв.)
+                    {% elif service.euro_price %}
+                        {{ service.euro_price }} €
+                    {% elif service.leva_price %}
+                        {{ service.leva_price }} лв.
+                    {% endif %}
+                </div>
+
+            </div>
+        {% endfor %}
+    </section>
+
+
+    <section class="price-category" data-category="pedicure">
+        <h2>Педикюр</h2>
+
+        {% for service in pedicure_services %}
+            <div class="service-row">
+
+                <div class="service-info">
+                    <h3>{{ service.name }}</h3>
+
+                    {% if service.description %}
+                        <p>{{ service.description }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="service-price">
+                    {% if service.euro_price and service.leva_price %}
+                        {{ service.euro_price }} € ({{ service.leva_price }} лв.)
+                    {% elif service.euro_price %}
+                        {{ service.euro_price }} €
+                    {% elif service.leva_price %}
+                        {{ service.leva_price }} лв.
+                    {% endif %}
+                </div>
+
+            </div>
+        {% endfor %}
+    </section>
+
+</div>
+
+
+<script>
+    const filterButtons = document.querySelectorAll('.price-filter');
+    const priceCategories = document.querySelectorAll('.price-category');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedCategory = button.dataset.category;
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            priceCategories.forEach(category => {
+                if (
+                    selectedCategory === 'all' ||
+                    category.dataset.category === selectedCategory
+                ) {
+                    category.style.display = '';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
 
 {% endblock %}

@@ -260,3 +260,128 @@ body section.service-details-section {
 }
 
 
+.price-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 30px 20px;
+}
+
+.price-category {
+    width: 90%;
+    max-width: 800px;
+    padding: 25px;
+    color: black;
+    background-color: #8fb9a5;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 5px 15px;
+}
+
+.price-category h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #0d0d0d;
+}
+
+.service-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.service-row:last-child {
+    border-bottom: none;
+}
+
+.service-info {
+    flex: 1;
+}
+
+.service-info h3 {
+    margin: 0 0 5px 0;
+}
+
+.service-info p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+.service-price {
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    .price-list {
+        padding: 20px 10px;
+    }
+
+    .price-category {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .service-row {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .service-price {
+        font-size: 1rem;
+    }
+
+    .service-info h3 {
+        font-size: 1rem;
+    }
+
+    .service-info p {
+        font-size: 0.9rem;
+    }
+
+    .price-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-filter {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.price-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 20px 0;
+}
+
+.price-filter {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8fb9a5;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.price-filter:hover {
+    background-color: #d0d0d0;
+}
+
+.price-filter.active {
+    background-color: #000;
+    color: #fff;
+}

@@ -8,7 +8,18 @@ class BaseService(models.Model):
         verbose_name = "Услуга"
         verbose_name_plural = "Услуги"
 
+    class Category(models.TextChoices):
+        MANICURE = "manicure", "Маникюр"
+        PEDICURE = "pedicure", "Педикюр"
+
     name = models.CharField(max_length=150)
+
+    category = models.CharField(
+        max_length=20,
+        choices=Category.choices,
+        default=Category.MANICURE,
+    )
+
     description = models.CharField(max_length=250)
     euro_price = models.DecimalField(max_digits=100, decimal_places=2)
     leva_price = models.DecimalField(max_digits=100, decimal_places=2, null=True, blank=True)
