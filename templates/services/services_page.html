@@ -1,45 +1,196 @@
 {% extends 'common/base.html' %}
 {% block content %}
-    
+
     {% include 'common/search_service.html' %}
 
+    <div class="service-filters">
+        <button type="button" class="service-filter active" data-category="all">
+            Всички
+        </button>
+
+        <button type="button" class="service-filter" data-category="manicure">
+            Маникюр
+        </button>
+
+        <button type="button" class="service-filter" data-category="pedicure">
+            Педикюр
+        </button>
+    </div>
+
+
     <section class="services-main">
+
         {% if services %}
-            {% for service in services %}
-                <div class="service-section">
-                    <span>
-                        <div class="left-div">
-                            <h4>{{ service.name }}</h4>
-                            <p>{{ service.description|truncatechars:10 }}</p>
-                            <a href="{% url 'service_details' service.id %}" class="button-like-a">Прочети още...</a>
-                        </div>
-    
-                        <div class="right-div">
-                            <img src="{{ service.service_photo.url }}" alt="{{ service.name }}" class="service-img">
-                            <p>
-                                Цена: {{ service.euro_price }} €.
-                                {% if service.leva_price %}
-                                    // {{ service.leva_price }} лв.
-                                {% endif %}
-                            </p>
-                            <p>Време: ≈{{ service.duration }}мин.</p>
-{#                            <p class="more-info">Цената и Времето са само за базова услуга.</p>#}
-{#                            <p class="more-info">За повече инфо: <a href="{% url 'service-prices' %}">Ценоразпис</a></p>#}
-                        </div>
-                    </span>
+
+            <div class="services-category" data-category="manicure">
+
+                <h2 class="services-category-title">Маникюр</h2>
+
+                <div class="services-category-list">
+
+                    {% for service in services %}
+                        {% if service.category == 'manicure' %}
+
+                            <div class="service-section">
+                                <span>
+
+                                    <div class="left-div">
+                                        <h4>{{ service.name }}</h4>
+
+                                        <p>
+                                            {{ service.description|truncatechars:10 }}
+                                        </p>
+
+                                        <a
+                                            href="{% url 'service_details' service.id %}"
+                                            class="button-like-a"
+                                        >
+                                            Прочети още...
+                                        </a>
+                                    </div>
+
+
+                                    <div class="right-div">
+
+                                        <img
+                                            src="{{ service.service_photo.url }}"
+                                            alt="{{ service.name }}"
+                                            class="service-img"
+                                        >
+
+                                        <p>
+                                            Цена:
+
+                                            {% if service.euro_price %}
+                                                {{ service.euro_price }} €.
+                                            {% endif %}
+
+                                            {% if service.leva_price %}
+                                                ({{ service.leva_price }} лв.)
+                                            {% endif %}
+                                        </p>
+
+                                        <p>
+                                            Време: ≈{{ service.duration }}мин.
+                                        </p>
+
+                                    </div>
+
+                                </span>
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+
                 </div>
-            {% endfor %}
+            </div>
+
+
+            <div class="services-category" data-category="pedicure">
+
+                <h2 class="services-category-title">Педикюр</h2>
+
+                <div class="services-category-list">
+
+                    {% for service in services %}
+                        {% if service.category == 'pedicure' %}
+
+                            <div class="service-section">
+                                <span>
+
+                                    <div class="left-div">
+                                        <h4>{{ service.name }}</h4>
+
+                                        <p>
+                                            {{ service.description|truncatechars:10 }}
+                                        </p>
+
+                                        <a
+                                            href="{% url 'service_details' service.id %}"
+                                            class="button-like-a"
+                                        >
+                                            Прочети още...
+                                        </a>
+                                    </div>
+
+
+                                    <div class="right-div">
+
+                                        <img
+                                            src="{{ service.service_photo.url }}"
+                                            alt="{{ service.name }}"
+                                            class="service-img"
+                                        >
+
+                                        <p>
+                                            Цена:
+
+                                            {% if service.euro_price %}
+                                                {{ service.euro_price }} €.
+                                            {% endif %}
+
+                                            {% if service.leva_price %}
+                                                ({{ service.leva_price }} лв.)
+                                            {% endif %}
+                                        </p>
+
+                                        <p>
+                                            Време: ≈{{ service.duration }}мин.
+                                        </p>
+
+                                    </div>
+
+                                </span>
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+
+
         {% else %}
-            
+
             {% if query %}
                 <p>Няма намерени резултати за "{{ query }}".</p>
             {% else %}
                 <p>Няма налични услуги.</p>
-            
             {% endif %}
+
         {% endif %}
+
     </section>
-    
+
+
     {% include 'common/pagination.html' %}
+
+<script>
+    const serviceFilterButtons = document.querySelectorAll('.service-filter');
+    const serviceCategories = document.querySelectorAll('.services-category');
+
+    serviceFilterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedCategory = button.dataset.category;
+
+            serviceFilterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            serviceCategories.forEach(category => {
+                if (
+                    selectedCategory === 'all' ||
+                    category.dataset.category === selectedCategory
+                ) {
+                    category.style.display = '';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}
