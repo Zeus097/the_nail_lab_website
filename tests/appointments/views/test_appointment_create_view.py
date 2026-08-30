@@ -44,7 +44,7 @@ class AppointmentCreateViewTests(TestCase):
 
     def setUp(self):
         self.client.login(username='client', password='asd123')
-        self.future_date = (date.today() + timedelta(days=1)).strftime('%d/%m/%Y')
+        self.future_date = (date.today() + timedelta(days=1)).strftime('%Y-%m-%d')
 
 
     def test_get_request_renders_form(self):
