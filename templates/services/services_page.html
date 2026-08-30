@@ -24,7 +24,7 @@
 
             <div class="services-category" data-category="manicure">
 
-                <h2 class="services-category-title">Маникюр</h2>
+<!--                <h2 class="services-category-title">Маникюр</h2>-->
 
                 <div class="services-category-list">
 
@@ -88,7 +88,7 @@
 
             <div class="services-category" data-category="pedicure">
 
-                <h2 class="services-category-title">Педикюр</h2>
+<!--                <h2 class="services-category-title">Педикюр</h2>-->
 
                 <div class="services-category-list">
 
@@ -167,28 +167,21 @@
 
 <script>
     const serviceFilterButtons = document.querySelectorAll('.service-filter');
-    const serviceCategories = document.querySelectorAll('.services-category');
 
     serviceFilterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const selectedCategory = button.dataset.category;
+            const category = button.dataset.category;
+            const url = new URL(window.location.href);
 
-            serviceFilterButtons.forEach(btn => {
-                btn.classList.remove('active');
-            });
+            url.searchParams.delete('page');
 
-            button.classList.add('active');
+            if (category === 'all') {
+                url.searchParams.delete('category');
+            } else {
+                url.searchParams.set('category', category);
+            }
 
-            serviceCategories.forEach(category => {
-                if (
-                    selectedCategory === 'all' ||
-                    category.dataset.category === selectedCategory
-                ) {
-                    category.style.display = '';
-                } else {
-                    category.style.display = 'none';
-                }
-            });
+            window.location.href = url.toString();
         });
     });
 </script>

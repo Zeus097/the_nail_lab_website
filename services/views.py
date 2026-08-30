@@ -19,17 +19,21 @@ class ServiceListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         query = self.request.GET.get(self.query_param, '')
+        category = self.request.GET.get('category', 'all')
 
         kwargs.update({
             'search_form': self.form_class(initial={'query': query}),
             'query': query,
+            'category': category,
         })
         return super().get_context_data(object_list=object_list, **kwargs)
 
     def get_queryset(self):
-        #  За да търси и с малки букви - 'datcollate' (bg_BG.UTF-8)
+        # За да търси и с малки букви - 'datcollate' (bg_BG.UTF-8)
         queryset = self.model.objects.filter(is_active=True)
+
         search_parameter = self.request.GET.get(self.query_param)
+        category_parameter = self.request.GET.get('category')
 
         if search_parameter:
             lower_query = search_parameter.lower()
@@ -41,6 +45,8 @@ class ServiceListView(LoginRequiredMixin, ListView):
                 Q(lower_description__contains=lower_query)
             )
 
+        if category_parameter in ['manicure', 'pedicure']:
+            queryset = queryset.filter(category=category_parameter)
 
         return queryset.order_by('name')
 
